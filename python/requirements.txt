@@ -1,0 +1,10 @@
+# Graph_x_0x0 Python Engine — Core dependencies
+# No external dependencies required for core engine (stdlib only)
+# Install with: pip install -e python/
+
+# Optional dependencies (install as needed):
+# requests==2.32.3          # HTTP client for Ollama API
+# pytest==8.3.4             # Testing framework
+# pytest-asyncio==0.25.2    # Async test support
+# aiohttp==3.11.11          # Async HTTP for daemon
+# rich==13.9.4              # Rich terminal output

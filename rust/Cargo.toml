@@ -1,0 +1,50 @@
+[package]
+name = "high-agent-rs"
+version = "0.1.0"
+edition = "2021"
+rust-version = "1.75"
+description = "AIOS for Mobile TUI Deep Agents — graph-based agent orchestration with live Φ(G) optimization"
+license = "MIT"
+repository = "https://github.com/graphx0x0/high-agent"
+keywords = ["ai", "agents", "graph", "tui", "orchestration"]
+
+[dependencies]
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+serde_yaml = "0.9"
+ahash = { version = "0.8", features = ["serde"] }
+thiserror = "1.0"
+once_cell = "1.19"
+parking_lot = "0.12"
+anyhow = "1.0"
+reqwest = { version = "0.12", features = ["json", "blocking"] }
+tokio = { version = "1", features = ["full"] }
+
+# TUI dependencies — feature-gated
+ratatui = { version = "0.29", optional = true }
+crossterm = { version = "0.28", optional = true }
+
+[dev-dependencies]
+criterion = "0.5"
+
+[[bench]]
+name = "graph_bench"
+harness = false
+path = "benches/graph_bench.rs"
+
+[features]
+default = []
+tui = ["dep:ratatui", "dep:crossterm"]
+
+[[bin]]
+name = "high-agent-rs"
+path = "src/main.rs"
+
+[[bin]]
+name = "high-agent-tui"
+path = "src/bin/tui.rs"
+required-features = ["tui"]
+
+[lib]
+name = "high_agent"
+path = "src/lib.rs"

@@ -1,0 +1,22 @@
+[
+  "tests/test_high_agent_engine.py::test_crawler_init",
+  "tests/test_high_agent_engine.py::test_daemon_init",
+  "tests/test_high_agent_engine.py::test_detector",
+  "tests/test_high_agent_engine.py::test_edge_creation",
+  "tests/test_high_agent_engine.py::test_graph_basics",
+  "tests/test_high_agent_engine.py::test_graph_modularity",
+  "tests/test_high_agent_engine.py::test_graph_snapshot",
+  "tests/test_high_agent_engine.py::test_node_creation",
+  "tests/test_high_agent_engine.py::test_ollama_client_init",
+  "tests/test_high_agent_engine.py::test_regime_coeffs",
+  "tests/test_high_agent_engine.py::test_regime_defaults",
+  "tests/test_high_agent_engine.py::test_regime_engine_from_json",
+  "tests/test_high_agent_engine.py::test_regime_engine_metrics",
+  "tests/test_high_agent_engine.py::test_regime_engine_process_task",
+  "tests/test_high_agent_engine.py::test_regime_engine_seed",
+  "tests/test_high_agent_engine.py::test_regime_engine_simulate",
+  "tests/test_high_agent_engine.py::test_regime_engine_sweep",
+  "tests/test_high_agent_engine.py::test_regime_engine_switch",
+  "tests/test_high_agent_engine.py::test_regime_engine_to_json",
+  "tests/test_high_agent_engine.py::test_regime_transition"
+]
