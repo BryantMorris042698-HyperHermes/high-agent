@@ -1,0 +1,908 @@
+#!/usr/bin/env python3
+"""
+HIGH-AGENTS  ─  Live ASCII Animated TUI  ·  Storm · Swarm · AIOS
+=================================================================
+  Run directly:   python high-agents      (or ./high-agents)
+  Install Termux: bash scripts/install-termux.sh  →  high-agents
+
+  ── Easy Customisation ─────────────────────────────────────────
+  · Add/remove agents  →  AGENTS list  (~line 60)
+  · Add log messages   →  LOG_EVENTS list  (~line 80)
+  · Tune animation     →  CONFIG dict  (~line 40)
+  · Change the chat    →  _chat_respond()  (~line 330)
+"""
+
+import curses
+import curses.textpad
+import time
+import random
+import math
+import sys
+import os
+from collections import deque
+from datetime import datetime
+
+# ──────────────────────────────────────────────────────────────────
+VERSION  = "v0.2.0"
+APP_NAME = "HIGH-AGENTS"
+SUBTITLE = "CODEBASE ANALYSIS ENGINE  ·  ADAPTIVE REGIME OPTIMIZATION  ·  STORM SWARM AIOS"
+
+# ═══════════════════════════════════════════════════════════════
+#  CONFIG  ─ all tunable knobs in one place
+# ═══════════════════════════════════════════════════════════════
+CONFIG = {
+    "fps":              20,      # target frames per second  (5-60)
+    "log_capacity":    200,      # activity log lines kept in memory
+    "sparkline_len":    60,      # Φ(G) sparkline history points
+    "matrix_density":  0.09,     # matrix-rain drop density  (0.0-1.0)
+    "metric_drift":    0.018,    # metric simulation drift per frame
+    "log_interval":    2.2,      # seconds between auto log lines
+    "regime_interval": 22.0,     # seconds between auto regime changes
+    "wave_speed":      0.11,     # banner colour-wave speed (rad/frame)
+    "spinner_speed":   0.28,     # agent spinner rotation (rad/frame)
+    "chat_history":    50,       # chat messages to keep
+}
+
+# ═══════════════════════════════════════════════════════════════
+#  AGENTS  ─ add / remove entries to change the swarm roster
+# ═══════════════════════════════════════════════════════════════
+AGENTS = [
+    ("OrchestratorAgent", "Routes tasks · owns Φ(G) · switches regimes"),
+    ("RefactorAgent",     "Restructures graph · splits nodes · reduces coupling"),
+    ("QualityAgent",      "Monitors cyclomatic complexity · flags violations"),
+    ("TestAgent",         "Ensures test coverage matches modularity targets"),
+    ("SkillAgent",        "Manages learned patterns · runtime skill creation"),
+    ("RepoAgent",         "GitHub ops · clone · fork · PR · sync"),
+    ("BuildAgent",        "Multi-lang compilation · verification · cache"),
+    ("PlannerAgent",      "Multi-step decomposition · rollback planning"),
+]
+
+# ═══════════════════════════════════════════════════════════════
+#  REGIMES  ─ order determines auto-cycle sequence
+# ═══════════════════════════════════════════════════════════════
+REGIMES = [
+    ("Simple",      1.0, 0.0, 0.0),   # (name, α₁Q, α₂D, α₃V)
+    ("Advanced",    0.5, 1.0, 0.0),
+    ("Hybrid",      0.5, 1.0, 0.5),
+    ("Balanced",    0.6, 0.8, 0.4),
+    ("Performance", 0.3, 1.0, 0.8),
+    ("Conservative",0.8, 0.5, 0.2),
+]
+
+# ═══════════════════════════════════════════════════════════════
+#  LOG EVENTS  ─ add your own lines; played in random order
+#  tag choices:  "OK" | "INFO" | "WARN" | "ERR"
+# ═══════════════════════════════════════════════════════════════
+LOG_EVENTS = [
+    ("OK",   "Φ(G) optimisation cycle complete"),
+    ("OK",   "Modularity Q increased: +0.0234"),
+    ("INFO", "RefactorAgent split fn_auth  V:12→4"),
+    ("INFO", "TestAgent: coverage 94.2%"),
+    ("OK",   "Coupling D reduced: 0.612 → 0.589"),
+    ("INFO", "SkillAgent learned 'reduce_coupling_v3'"),
+    ("INFO", "RepoAgent: PR #47 opened (graph refactor)"),
+    ("OK",   "OrchestratorAgent: Φ(G) = 0.7341  (↑ +0.012)"),
+    ("INFO", "BuildAgent: Rust build OK — 0 warnings"),
+    ("INFO", "PlannerAgent: task queue depth = 3"),
+    ("WARN", "z-score exceeded: V(fn_parse_json) = 9.1"),
+    ("INFO", "Swarm consensus: regime = Balanced"),
+    ("INFO", "New node: fn_validate_schema"),
+    ("INFO", "Edge removed: fn_legacy → fn_deprecated"),
+    ("OK",   "Hot spot cleared: fn_auth  V=4.2 (was 12.3)"),
+    ("INFO", "Regime sweep — Balanced Φ=0.731  Perf Φ=0.718"),
+    ("INFO", "Cyclomatic complexity scan done"),
+    ("INFO", "GitHub sync: 3 commits pulled"),
+    ("INFO", "Daemon heartbeat OK"),
+    ("OK",   "Swarm cycle complete — Φ(G) ↑"),
+    ("WARN", "Coupling deviation in module: core"),
+    ("INFO", "Neural chat context refreshed"),
+    ("INFO", "Graph snapshot → metrics.json"),
+    ("OK",   "Regime: Hybrid → Balanced  Φ +0.009"),
+    ("INFO", "QualityAgent: 2 violations cleared"),
+    ("INFO", "Skills inventory: 14 learned patterns active"),
+    ("INFO", "Build cache hit ratio: 87%"),
+    ("WARN", "High complexity: fn_config_loader  V=8.4"),
+    ("INFO", "Swarm idle — awaiting next Φ(G) trigger"),
+    ("OK",   "All agent health checks passed"),
+    ("INFO", "Graph nodes: 47  edges: 83  modules: 6"),
+    ("OK",   "Self-improvement loop: iteration #128"),
+    ("INFO", "SkillAgent: applying pattern 'decouple_io_layer'"),
+    ("INFO", "PlannerAgent: 5 tasks decomposed → queued"),
+    ("WARN", "Modularity Q dipped below threshold 0.60"),
+    ("OK",   "Regime deviation corrected: z-score back to 1.2"),
+]
+
+# ═══════════════════════════════════════════════════════════════
+#  BANNER  ─ wide (≥90 cols) / compact (≥58 cols) / micro
+# ═══════════════════════════════════════════════════════════════
+BANNER_WIDE = [
+    " ██╗  ██╗██╗ ██████╗ ██╗  ██╗     █████╗  ██████╗ ███████╗███╗   ██╗████████╗███████╗",
+    " ██║  ██║██║██╔════╝ ██║  ██║    ██╔══██╗██╔════╝ ██╔════╝████╗  ██║╚══██╔══╝██╔════╝",
+    " ███████║██║██║  ███╗███████║    ███████║██║  ███╗█████╗  ██╔██╗ ██║   ██║   ███████╗",
+    " ██╔══██║██║██║   ██║██╔══██║    ██╔══██║██║   ██║██╔══╝  ██║╚██╗██║   ██║   ╚════██║",
+    " ██║  ██║██║╚██████╔╝██║  ██║    ██║  ██║╚██████╔╝███████╗██║ ╚████║   ██║   ███████║",
+    " ╚═╝  ╚═╝╚═╝ ╚═════╝ ╚═╝  ╚═╝    ╚═╝  ╚═╝ ╚═════╝ ╚══════╝╚═╝  ╚═══╝   ╚═╝   ╚══════╝",
+]
+
+BANNER_COMPACT = [
+    "  _   _ ___ ____ _  _      __   ___  __  _  _ ___  __  ",
+    "  |___|  |  | __ |__|     / _| | __|/  \\| \\| || _||/ _|",
+    "  |   |  |  |__| |  |    \\_ \\ | _| | () | .` || _| \\_ \\",
+    "  |_|_|  |   ___|_  |    |__/ |___|\\__/ |_|\\_||___|___/",
+]
+
+# ─── animation constants ───────────────────────────────────────
+SPINNER    = "⠋⠙⠹⠸⠼⠴⠦⠧⠇⠏"
+SPARK      = " ▁▂▃▄▅▆▇█"
+MATRIX_CH  = (
+    "ｦｧｨｩｪｫｬｭｮｯｱｲｳｴｵｶｷｸｹｺｻｼｽｾｿﾀﾁﾂﾃﾄﾅﾆﾇﾈﾉﾊﾋﾌﾍﾎﾏﾐﾑﾒﾓﾔﾕﾖﾗﾘﾙﾚﾛﾜﾝ"
+    "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ+=-*#@!?<>"
+)
+
+# Wave colours for banner (indices into colour pairs defined below)
+WAVE_CP = [4, 5, 2, 3, 6, 5, 4]   # CYAN MAGENTA GREEN YELLOW RED …
+
+# ═══════════════════════════════════════════════════════════════
+#  COLOUR PAIRS  (initialised in _init_colors)
+# ═══════════════════════════════════════════════════════════════
+class CP:
+    BORDER  = 1
+    GREEN   = 2
+    YELLOW  = 3
+    RED     = 4   # ← also used as "CYAN" label below; actual index = 4
+    CYAN    = 4   # alias — curses.COLOR_CYAN mapped to pair 4
+    MAGENTA = 5
+    RED2    = 6
+    WHITE   = 7
+    DIM     = 8
+    MAT_HI  = 9
+    MAT_LO  = 10
+
+def _init_colors():
+    curses.start_color()
+    try:
+        curses.use_default_colors()
+        bg = -1
+    except Exception:
+        bg = curses.COLOR_BLACK
+    # pair 1 → border (cyan)
+    curses.init_pair(CP.BORDER,  curses.COLOR_CYAN,    bg)
+    curses.init_pair(CP.GREEN,   curses.COLOR_GREEN,   bg)
+    curses.init_pair(CP.YELLOW,  curses.COLOR_YELLOW,  bg)
+    curses.init_pair(4,          curses.COLOR_CYAN,    bg)   # CYAN
+    curses.init_pair(CP.MAGENTA, curses.COLOR_MAGENTA, bg)
+    curses.init_pair(CP.RED2,    curses.COLOR_RED,     bg)
+    curses.init_pair(CP.WHITE,   curses.COLOR_WHITE,   bg)
+    try:
+        curses.init_pair(CP.DIM, 8, bg)                      # dark grey (256-col)
+    except Exception:
+        curses.init_pair(CP.DIM, curses.COLOR_BLACK, bg)
+    curses.init_pair(CP.MAT_HI, curses.COLOR_GREEN,   bg)
+    curses.init_pair(CP.MAT_LO, curses.COLOR_GREEN,   bg)
+
+
+# ═══════════════════════════════════════════════════════════════
+#  CHAT RESPONSE ENGINE
+#  ─ integrates with high_agent_engine when installed;
+#    falls back to the built-in knowledge base otherwise
+# ═══════════════════════════════════════════════════════════════
+try:
+    from high_agent_engine import DirectedGraph, RegimeEngine, Regime
+    _ENGINE_AVAILABLE = True
+except ImportError:
+    _ENGINE_AVAILABLE = False
+
+# Built-in response table for offline / standalone operation
+_CHAT_KB = {
+    "phi":      "Φ(G) = α₁·Q(G) + α₂·(1-D(G)) + α₃·(1/V̄)  — the master fitness function. "
+                "Higher Φ means better modularity, less coupling, lower complexity.",
+    "regime":   "Regimes control the α coefficients that weight Q, D, V in Φ(G). "
+                "OrchestratorAgent sweeps all regimes and commits the one with highest Φ.",
+    "q":        "Q(G) is Newman–Girvan modularity — measures how well-separated your modules are. "
+                "Ideal Q > 0.70.",
+    "d":        "D(G) = mean inter-module coupling per node. "
+                "Lower is better; RefactorAgent targets D < 0.50.",
+    "v":        "V = mean cyclomatic complexity per function. "
+                "QualityAgent flags nodes with V > 5.0 as hot spots.",
+    "agent":    "The swarm has 8 specialised agents: Orchestrator, Refactor, Quality, Test, "
+                "Skill, Repo, Build, Planner. Each owns a slice of the Φ(G) optimisation loop.",
+    "help":     "Commands: phi, q, d, v, regime, agent, swarm, skill, crawl, graph, version, help",
+    "swarm":    "The storm swarm runs a self-improving loop: baseline → z-score deviation check → "
+                "regime sweep → commit best Φ(G) → rollback on failure → next iteration.",
+    "skill":    "SkillAgent manages learned patterns stored as Markdown in skills/. "
+                "New patterns are learned at runtime with: learn <name>: <description>",
+    "graph":    "Graph G=(V,E) where V=functions and E=call dependencies with weights. "
+                "Crawler parses your codebase into this graph automatically.",
+    "crawl":    "Run: python -m high_agent_engine crawl <path>   to build a graph from source. "
+                "Supports Python, JavaScript, Rust, and more.",
+    "version":  f"HIGH-AGENTS {VERSION} — Codebase Analysis Engine with Adaptive Regime Optimization",
+}
+
+def _chat_respond(msg: str, state) -> str:
+    """Return a chat response. Uses high_agent_engine when available."""
+    msg_l = msg.strip().lower()
+
+    if _ENGINE_AVAILABLE:
+        try:
+            g = DirectedGraph()
+            snap = g.snapshot()
+            if "phi" in msg_l:
+                return f"Live Φ(G) = {snap.phi:+.4f}  Q={snap.q:.3f}  D={snap.coupling:.3f}  V={snap.mean_cyclomatic:.1f}  Regime: {snap.regime.name}"
+            if "q" == msg_l or "modularity" in msg_l:
+                return f"Q(G) = {snap.q:.4f}  (target > 0.70)"
+        except Exception as e:
+            pass  # fall through to KB
+
+    # keyword search through built-in knowledge base
+    for kw, ans in _CHAT_KB.items():
+        if kw in msg_l:
+            return ans
+
+    # dynamic metric echo
+    if any(w in msg_l for w in ("status", "metrics", "stats")):
+        return (f"Φ(G)={state.phi:.4f}  Q={state.q_val:.3f}  "
+                f"D={state.d_val:.3f}  V={state.v_val:.1f}  "
+                f"Regime: {state.regime}  Uptime: {state.uptime}")
+
+    return (f"[{APP_NAME}] Skill: Codebase Analysis Engine — "
+            f"ask about: phi, q, d, v, regime, agent, swarm, skill, crawl, graph. "
+            f"Current Φ(G)={state.phi:.4f}  Regime={state.regime}")
+
+
+# ═══════════════════════════════════════════════════════════════
+#  STATE
+# ═══════════════════════════════════════════════════════════════
+class State:
+    def __init__(self):
+        self.tick          = 0
+        self.start_t       = time.monotonic()
+        # live metrics (simulated; replaced by engine when available)
+        self.phi           = 0.680
+        self.q_val         = 0.724
+        self.d_val         = 0.451
+        self.v_val         = 4.83
+        self.regime_idx    = 3   # "Balanced"
+        self.regime        = REGIMES[self.regime_idx][0]
+        self.phi_history   = deque([0.680] * CONFIG["sparkline_len"],
+                                    maxlen=CONFIG["sparkline_len"])
+        # activity log
+        self.log           = deque(maxlen=CONFIG["log_capacity"])
+        self.log_scroll    = 0
+        # chat history  [(speaker, text), ...]  speaker = "you" | "ai"
+        self.chat          = deque(maxlen=CONFIG["chat_history"])
+        self.chat_input    = ""
+        # agent animation phases
+        self.agent_angle   = [random.random() * math.tau for _ in AGENTS]
+        # matrix rain state  {col: [head_row, trail_len, speed, acc]}
+        self.matrix        = {}
+        # timing
+        self.last_log_t    = 0.0
+        self.last_regime_t = 0.0
+        self.wave_phase    = 0.0
+        # ui flags
+        self.paused        = False
+        self.view          = "dash"   # "dash" | "chat" | "help"
+
+        # seed log
+        for _ in range(8):
+            k, m = random.choice(LOG_EVENTS)
+            self.log.appendleft((datetime.now().strftime("%H:%M:%S"), k, m))
+        # seed chat
+        self.chat.append(("ai",
+            f"[{APP_NAME}] Online.  Skill: Codebase Analysis Engine · "
+            "Adaptive Regime Optimization · Storm Swarm AIOS.  "
+            "Type a question (phi / q / d / v / regime / swarm / help)."))
+
+    # ── properties ─────────────────────────────────────────────
+    @property
+    def uptime(self):
+        s = int(time.monotonic() - self.start_t)
+        h, m = divmod(s, 3600)
+        m, s = divmod(m, 60)
+        return f"{h:02d}:{m:02d}:{s:02d}"
+
+    @property
+    def regime_coeffs(self):
+        return REGIMES[self.regime_idx][1:]   # (α₁, α₂, α₃)
+
+    # ── per-frame update ────────────────────────────────────────
+    def update(self):
+        if self.paused:
+            return
+        now = time.monotonic()
+        self.tick += 1
+
+        sp = CONFIG["metric_drift"]
+        self.phi   = max(0.01, min(0.99, self.phi   + random.gauss(0, sp)))
+        self.q_val = max(0.01, min(0.99, self.q_val + random.gauss(0, sp)))
+        self.d_val = max(0.01, min(0.99, self.d_val + random.gauss(0, sp)))
+        self.v_val = max(1.0,  min(20.0, self.v_val + random.gauss(0, sp * 5)))
+        self.phi_history.append(self.phi)
+
+        for i in range(len(AGENTS)):
+            self.agent_angle[i] = (
+                self.agent_angle[i] + CONFIG["spinner_speed"]) % math.tau
+
+        self.wave_phase += CONFIG["wave_speed"]
+
+        if now - self.last_log_t >= CONFIG["log_interval"]:
+            self.last_log_t = now
+            k, m = random.choice(LOG_EVENTS)
+            self.log.appendleft((datetime.now().strftime("%H:%M:%S"), k, m))
+
+        if now - self.last_regime_t >= CONFIG["regime_interval"]:
+            self.last_regime_t = now
+            old = self.regime
+            self.regime_idx = (self.regime_idx + 1) % len(REGIMES)
+            self.regime = REGIMES[self.regime_idx][0]
+            msg = f"Regime: {old} → {self.regime}"
+            self.log.appendleft((datetime.now().strftime("%H:%M:%S"), "OK", msg))
+
+    def next_regime(self):
+        old = self.regime
+        self.regime_idx = (self.regime_idx + 1) % len(REGIMES)
+        self.regime = REGIMES[self.regime_idx][0]
+        self.last_regime_t = time.monotonic()
+        self.log.appendleft((
+            datetime.now().strftime("%H:%M:%S"), "OK",
+            f"[manual] {old} → {self.regime}"))
+
+    def send_chat(self):
+        msg = self.chat_input.strip()
+        if not msg:
+            return
+        self.chat.append(("you", msg))
+        reply = _chat_respond(msg, self)
+        self.chat.append(("ai", reply))
+        self.log.appendleft((
+            datetime.now().strftime("%H:%M:%S"), "INFO",
+            f"Chat: {msg[:40]}"))
+        self.chat_input = ""
+
+
+# ═══════════════════════════════════════════════════════════════
+#  RENDERER
+# ═══════════════════════════════════════════════════════════════
+class Renderer:
+    def __init__(self, scr, state):
+        self.scr   = scr
+        self.state = state
+        self.h     = 0
+        self.w     = 0
+
+    # ── safe addstr / addch ─────────────────────────────────────
+    def _put(self, y, x, text, attr=0):
+        if y < 0 or y >= self.h or x >= self.w:
+            return
+        if x < 0:
+            text = text[-x:]
+            x = 0
+        clip = self.w - x - 1
+        if clip <= 0:
+            return
+        try:
+            self.scr.addstr(y, x, text[:clip], attr)
+        except curses.error:
+            pass
+
+    def _putch(self, y, x, ch, attr=0):
+        if 0 <= y < self.h and 0 <= x < self.w - 1:
+            try:
+                self.scr.addch(y, x, ch, attr)
+            except curses.error:
+                pass
+
+    # ── main draw entry ─────────────────────────────────────────
+    def draw(self):
+        self.h, self.w = self.scr.getmaxyx()
+        s = self.state
+        self.scr.erase()
+
+        if s.view == "help":
+            self._draw_help()
+        elif s.view == "chat":
+            self._draw_chat_view()
+        else:
+            self._draw_dashboard()
+
+        self.scr.refresh()
+
+    # ── outer box ───────────────────────────────────────────────
+    def _outer_box(self):
+        try:
+            self.scr.box()
+        except curses.error:
+            pass
+        title = f"  {APP_NAME} {VERSION}  "
+        tx = max(2, (self.w - len(title)) // 2)
+        self._put(0, tx, title, curses.color_pair(CP.CYAN) | curses.A_BOLD)
+
+    # ── divider ─────────────────────────────────────────────────
+    def _hline(self, y, label=""):
+        if y <= 0 or y >= self.h - 1:
+            return
+        try:
+            self.scr.hline(y, 1, curses.ACS_HLINE, self.w - 2,
+                           curses.color_pair(CP.BORDER))
+            self.scr.addch(y, 0, curses.ACS_LTEE,
+                           curses.color_pair(CP.BORDER))
+            self.scr.addch(y, self.w - 1, curses.ACS_RTEE,
+                           curses.color_pair(CP.BORDER))
+        except curses.error:
+            pass
+        if label:
+            self._put(y, 3, f" {label} ", curses.color_pair(CP.DIM))
+
+    # ── banner ──────────────────────────────────────────────────
+    def _banner(self):
+        if self.w >= 90:
+            lines = BANNER_WIDE
+        elif self.w >= 58:
+            lines = BANNER_COMPACT
+        else:
+            lines = [APP_NAME]
+
+        phase = self.state.wave_phase
+        for row, line in enumerate(lines):
+            cx = max(1, (self.w - len(line)) // 2)
+            for ci, ch in enumerate(line):
+                if cx + ci >= self.w - 1:
+                    break
+                # wave colour per character
+                wave = math.sin(phase + ci * 0.10 + row * 0.45)
+                ci2  = int((wave + 1) / 2 * (len(WAVE_CP) - 1))
+                cp   = WAVE_CP[ci2 % len(WAVE_CP)]
+                attr = curses.color_pair(cp)
+                if ch not in (' ', '\t'):
+                    attr |= curses.A_BOLD
+                self._putch(row + 1, cx + ci, ch, attr)
+
+        # subtitle
+        bh = len(lines) + 1
+        sub = SUBTITLE if self.w >= len(SUBTITLE) + 4 else "ADAPTIVE REGIME OPTIMIZATION  ·  STORM SWARM AIOS"
+        if self.w < len(sub) + 4:
+            sub = "CODEBASE ANALYSIS ENGINE"
+        sx = max(1, (self.w - len(sub)) // 2)
+        self._put(bh, sx, sub, curses.color_pair(CP.DIM))
+        return bh + 1   # return first row after banner
+
+    # ── matrix rain ─────────────────────────────────────────────
+    def _matrix(self, top, bot):
+        s = self.state
+        h = bot - top
+        # spawn new drops
+        for col in range(1, self.w - 1):
+            if col not in s.matrix:
+                if random.random() < CONFIG["matrix_density"] * 0.04:
+                    s.matrix[col] = [
+                        random.randint(top, top + h),
+                        random.randint(3, 12),
+                        random.uniform(0.4, 1.2),
+                        0.0,
+                    ]
+
+        for col in list(s.matrix.keys()):
+            entry = s.matrix[col]
+            head, trail, speed, acc = entry
+            acc += speed * 0.05
+            if acc >= 1.0:
+                acc -= 1.0
+                head += 1
+                s.matrix[col] = [head, trail, speed, acc]
+                if head - trail > bot:
+                    del s.matrix[col]
+                    continue
+            else:
+                s.matrix[col][3] = acc
+
+            for row in range(max(top, head - trail), min(bot, head + 1)):
+                dist = head - row
+                ch   = random.choice(MATRIX_CH)
+                if dist == 0:
+                    attr = curses.color_pair(CP.WHITE) | curses.A_BOLD
+                elif dist <= 2:
+                    attr = curses.color_pair(CP.MAT_HI) | curses.A_BOLD
+                elif dist <= 6:
+                    attr = curses.color_pair(CP.MAT_HI)
+                else:
+                    attr = curses.color_pair(CP.DIM)
+                self._putch(row, col, ch, attr)
+
+    # ── spinner char ────────────────────────────────────────────
+    def _spin(self, angle):
+        idx = int(angle / math.tau * len(SPINNER)) % len(SPINNER)
+        return SPINNER[idx]
+
+    # ── agents panel ────────────────────────────────────────────
+    def _agents(self, y, x, h, w):
+        s = self.state
+        self._put(y, x, "AGENTS", curses.color_pair(CP.CYAN) | curses.A_BOLD | curses.A_UNDERLINE)
+        for i, (name, desc) in enumerate(AGENTS):
+            row = y + 2 + i
+            if row >= y + h - 1:
+                break
+            spin = self._spin(s.agent_angle[i])
+            # occasional pulse highlight
+            if s.tick % (41 + i * 7) < 3:
+                attr = curses.color_pair(CP.YELLOW) | curses.A_BOLD
+            else:
+                attr = curses.color_pair(CP.GREEN)
+            short = name.replace("Agent", "").strip()
+            label = f" {spin} {short:<12}"[:w - 1]
+            self._put(row, x, label, attr)
+
+        sep_y = y + 2 + len(AGENTS) + 1
+        if sep_y < y + h:
+            self._put(sep_y, x, "─" * min(w, self.w - x - 1), curses.color_pair(CP.BORDER))
+        if sep_y + 1 < y + h:
+            a1, a2, a3 = s.regime_coeffs
+            self._put(sep_y + 1, x, f" Regime:", curses.color_pair(CP.DIM))
+            self._put(sep_y + 1, x + 8, f"{s.regime}",
+                      curses.color_pair(CP.YELLOW) | curses.A_BOLD)
+        if sep_y + 2 < y + h:
+            a1, a2, a3 = s.regime_coeffs
+            self._put(sep_y + 2, x,
+                      f" α₁={a1:.1f} α₂={a2:.1f} α₃={a3:.1f}",
+                      curses.color_pair(CP.DIM))
+
+    # ── bar helper ───────────────────────────────────────────────
+    def _bar(self, val, w, col):
+        pct    = max(0.0, min(1.0, val))
+        filled = int(pct * w)
+        bar    = "█" * filled + "░" * (w - filled)
+        return bar, curses.color_pair(col)
+
+    # ── metrics panel ────────────────────────────────────────────
+    def _metrics(self, y, x, h, w):
+        s = self.state
+        self._put(y, x, "METRICS", curses.color_pair(CP.CYAN) | curses.A_BOLD | curses.A_UNDERLINE)
+
+        bar_w = max(4, w - 12)
+
+        def mrow(row, label, val, maxv, col, fmt=".3f"):
+            if row >= y + h:
+                return
+            pct = val / maxv
+            bar, battr = self._bar(pct, bar_w, col)
+            self._put(row, x, f" {label:<5}", curses.color_pair(CP.DIM))
+            self._put(row, x + 6, bar, battr)
+            self._put(row, x + 6 + bar_w + 1,
+                      format(val, fmt), curses.color_pair(CP.WHITE))
+
+        mrow(y + 2, "Φ(G)", s.phi,   1.0, CP.CYAN)
+        mrow(y + 3, "Q",    s.q_val, 1.0, CP.GREEN)
+        mrow(y + 4, "D",    s.d_val, 1.0, CP.YELLOW)
+        mrow(y + 5, "V",    s.v_val, 20., CP.RED2, ".1f")
+
+        # pulsing big Φ box
+        phi_y = y + 7
+        if phi_y + 4 < y + h:
+            pval  = f"{s.phi:.4f}"
+            box_w = len(pval) + 6
+            bx    = x + max(0, (w - box_w) // 2)
+            pulse = math.sin(time.monotonic() * 2.5)
+            attr  = (curses.color_pair(CP.CYAN) | curses.A_BOLD
+                     if pulse > 0 else curses.color_pair(CP.CYAN))
+            self._put(phi_y,     bx, "┌" + "─" * (box_w - 2) + "┐",
+                      curses.color_pair(CP.BORDER))
+            self._put(phi_y + 1, bx, f"│  Φ = {pval}  │", attr)
+            self._put(phi_y + 2, bx, "└" + "─" * (box_w - 2) + "┘",
+                      curses.color_pair(CP.BORDER))
+
+        if phi_y + 3 < y + h:
+            hist   = list(s.phi_history)
+            trend  = (hist[-1] - hist[-6]) if len(hist) >= 6 else 0.0
+            arrow  = "↑" if trend > 0.004 else ("↓" if trend < -0.004 else "─")
+            acol   = CP.GREEN if trend > 0.004 else (CP.RED2 if trend < -0.004 else CP.YELLOW)
+            self._put(phi_y + 3, x,
+                      f"  trend: {arrow}  ({trend:+.4f})",
+                      curses.color_pair(acol))
+
+        # regime coefficients mini-display
+        if phi_y + 5 < y + h:
+            a1, a2, a3 = s.regime_coeffs
+            self._put(phi_y + 5, x,
+                      f"  α₁={a1:.1f}·Q  α₂={a2:.1f}·D  α₃={a3:.1f}·V",
+                      curses.color_pair(CP.DIM))
+
+    # ── log panel ────────────────────────────────────────────────
+    def _log(self, y, x, h, w):
+        s = self.state
+        self._put(y, x, "ACTIVITY LOG", curses.color_pair(CP.CYAN) | curses.A_BOLD | curses.A_UNDERLINE)
+        tag_cp = {"OK": CP.GREEN, "INFO": CP.WHITE, "WARN": CP.YELLOW, "ERR": CP.RED2}
+        entries = list(s.log)
+        start   = max(0, s.log_scroll)
+        shown   = entries[start:start + (h - 2)]
+        for i, (ts, tag, msg) in enumerate(shown):
+            row = y + 2 + i
+            if row >= y + h:
+                break
+            tc  = tag_cp.get(tag, CP.WHITE)
+            t   = f"{ts} "
+            tg  = f"[{tag:<4}] "
+            avail = w - len(t) - len(tg) - 1
+            self._put(row, x, t, curses.color_pair(CP.DIM))
+            self._put(row, x + len(t), tg,
+                      curses.color_pair(tc) | curses.A_BOLD)
+            self._put(row, x + len(t) + len(tg),
+                      msg[:max(0, avail)], curses.color_pair(CP.WHITE))
+
+    # ── sparkline ────────────────────────────────────────────────
+    def _sparkline(self, y):
+        s    = self.state
+        w    = self.w - 2
+        hist = list(s.phi_history)
+        if not hist:
+            return
+        n       = min(len(hist), w - 30)
+        step    = len(hist) / max(n, 1)
+        samples = [hist[int(i * step)] for i in range(n)]
+        lo, hi  = min(samples), max(samples)
+        rng     = hi - lo if hi != lo else 0.001
+        spark   = "".join(
+            SPARK[max(0, min(len(SPARK) - 1, int((v - lo) / rng * (len(SPARK) - 1))))]
+            for v in samples)
+        if s.phi > 0.75:
+            attr = curses.color_pair(CP.GREEN) | curses.A_BOLD
+        elif s.phi > 0.55:
+            attr = curses.color_pair(CP.YELLOW)
+        else:
+            attr = curses.color_pair(CP.RED2)
+        self._put(y, 1, spark, attr)
+        meta = f" min:{lo:.3f} max:{hi:.3f} now:{s.phi:.4f} "
+        self._put(y, self.w - len(meta) - 1, meta, curses.color_pair(CP.DIM))
+
+    # ── status bar ───────────────────────────────────────────────
+    def _statusbar(self, y):
+        s   = self.state
+        now = datetime.now().strftime("%H:%M:%S")
+        psd = " [PAUSED]" if s.paused else ""
+        eng = " [ENGINE]" if _ENGINE_AVAILABLE else ""
+        lft = f"  q=quit  d=dash  c=chat  ?=help  s=regime({s.regime})  p=pause{psd}{eng}"
+        rgt = f"Up:{s.uptime}  {now}  "
+        gap = max(0, self.w - len(lft) - len(rgt))
+        self._put(y, 0, lft, curses.color_pair(CP.DIM))
+        self._put(y, self.w - len(rgt), rgt, curses.color_pair(CP.DIM))
+
+    # ── DASHBOARD view ───────────────────────────────────────────
+    def _draw_dashboard(self):
+        s = self.state
+        self._outer_box()
+        bh = self._banner()           # returns first row after banner
+        self._hline(bh, "Φ(G) SPARKLINE")
+        self._sparkline(bh + 1)
+        content_y = bh + 3
+        self._hline(content_y - 1)
+
+        # panel widths
+        left_w   = max(20, self.w // 4)
+        right_w  = max(28, self.w // 3)
+        center_w = max(18, self.w - left_w - right_w - 4)
+        panel_h  = max(5, self.h - content_y - 3)
+
+        ax = 1
+        bx = ax + left_w + 1
+        cx = bx + center_w + 1
+
+        # matrix rain in background
+        self._matrix(content_y, content_y + panel_h)
+
+        # vertical dividers
+        for row in range(content_y, content_y + panel_h):
+            self._putch(row, bx - 1, "│", curses.color_pair(CP.BORDER))
+            self._putch(row, cx - 1, "│", curses.color_pair(CP.BORDER))
+
+        # three panels (painted over matrix)
+        self._agents( content_y, ax, panel_h, left_w)
+        self._metrics(content_y, bx, panel_h, center_w)
+        self._log(    content_y, cx, panel_h, right_w)
+
+        self._hline(self.h - 2)
+        self._statusbar(self.h - 2)
+
+    # ── CHAT view ────────────────────────────────────────────────
+    def _draw_chat_view(self):
+        s = self.state
+        self._outer_box()
+        bh = self._banner()
+        self._hline(bh, "CHAT · Codebase Analysis Engine · Adaptive Regime Optimization")
+
+        chat_y  = bh + 2
+        input_y = self.h - 3
+        log_h   = input_y - chat_y
+        w       = self.w - 2
+
+        # chat history
+        msgs  = list(s.chat)
+        # wrap each message
+        lines = []
+        for (who, txt) in msgs:
+            prefix = "YOU › " if who == "you" else "AI  › "
+            col    = CP.YELLOW if who == "you" else CP.GREEN
+            wrapped = []
+            max_len = w - len(prefix) - 1
+            while txt:
+                wrapped.append(txt[:max_len])
+                txt = txt[max_len:]
+                if txt:
+                    prefix2 = " " * len(prefix)
+                    lines.append((prefix2, txt[:max_len], col))
+                    txt = txt[max_len:]
+            if wrapped:
+                lines.append((prefix, wrapped[0], col))
+                for ln in wrapped[1:]:
+                    lines.append((" " * len(prefix), ln, col))
+
+        # show last log_h lines
+        visible = lines[-log_h:] if len(lines) > log_h else lines
+        for i, (pre, txt, col) in enumerate(visible):
+            row = chat_y + i
+            if row >= input_y:
+                break
+            self._put(row, 1, pre, curses.color_pair(col) | curses.A_BOLD)
+            self._put(row, 1 + len(pre), txt, curses.color_pair(CP.WHITE))
+
+        # input box
+        self._hline(input_y - 1)
+        prompt = f" › {s.chat_input}"
+        cursor = "█" if s.tick % 20 < 10 else " "
+        self._put(input_y, 1, prompt + cursor,
+                  curses.color_pair(CP.CYAN) | curses.A_BOLD)
+
+        self._hline(self.h - 2)
+        self._statusbar(self.h - 2)
+
+    # ── HELP view ────────────────────────────────────────────────
+    def _draw_help(self):
+        self._outer_box()
+        lines = [
+            f"  HIGH-AGENTS {VERSION} — Keyboard Reference",
+            "",
+            "  KEY BINDINGS",
+            "  ───────────────────────────────────────────",
+            "  q / ESC     quit",
+            "  d           dashboard view",
+            "  c           chat view  (Codebase Analysis Engine)",
+            "  ?           toggle this help",
+            "  p / SPACE   pause / resume live updates",
+            "  r           reset metrics",
+            "  s           cycle to next regime",
+            "  ↑ / ↓       scroll activity log",
+            "  PgUp/PgDn   scroll log by page",
+            "  Enter       send chat message",
+            "  Backspace   delete chat character",
+            "",
+            "  CHAT SKILL: Codebase Analysis Engine",
+            "  ───────────────────────────────────────────",
+            "  Ask about: phi  q  d  v  regime  swarm  agent",
+            "             skill  crawl  graph  status  version",
+            "",
+            "  EASY CUSTOMISATION",
+            "  ───────────────────────────────────────────",
+            "  · Edit AGENTS list    → change the swarm roster",
+            "  · Edit LOG_EVENTS     → change activity messages",
+            "  · Edit CONFIG dict    → change speeds/density",
+            "  · Edit _chat_respond()→ extend the chat engine",
+            "",
+            "  Press ?  or  d  to return to dashboard.",
+        ]
+        top = max(1, (self.h - len(lines)) // 2)
+        bw  = min(self.w - 4, 56)
+        lx  = max(1, (self.w - bw) // 2)
+        for i, line in enumerate(lines):
+            row  = top + i
+            if row <= 0 or row >= self.h - 1:
+                continue
+            attr = (curses.color_pair(CP.CYAN) | curses.A_BOLD
+                    if i == 0 else
+                    curses.color_pair(CP.YELLOW) | curses.A_BOLD
+                    if line.startswith("  KEY") or line.startswith("  CHAT") or line.startswith("  EASY")
+                    else curses.color_pair(CP.WHITE))
+            self._put(row, lx, line[:bw], attr)
+
+        self._statusbar(self.h - 2)
+
+
+# ═══════════════════════════════════════════════════════════════
+#  MAIN LOOP
+# ═══════════════════════════════════════════════════════════════
+def main(scr):
+    _init_colors()
+    curses.curs_set(0)
+    scr.nodelay(True)
+
+    state    = State()
+    renderer = Renderer(scr, state)
+    interval = 1.0 / CONFIG["fps"]
+    last_t   = time.monotonic()
+
+    while True:
+        try:
+            key = scr.getch()
+        except curses.error:
+            key = -1
+
+        s = state
+
+        # ── global keys ──────────────────────────────────────
+        if key in (ord('q'), ord('Q'), 27):       # quit / ESC
+            break
+        elif key in (ord('?'), ord('H')):          # help toggle
+            s.view = "help" if s.view != "help" else "dash"
+        elif key in (ord('d'), ord('D')):          # dashboard
+            s.view = "dash"
+        elif key in (ord('c'), ord('C')):          # chat
+            s.view = "chat"
+        elif key in (ord('p'), ord('P'), ord(' ')):# pause
+            s.paused = not s.paused
+        elif key in (ord('r'), ord('R')):          # reset
+            s.phi = 0.680; s.q_val = 0.724
+            s.d_val = 0.451; s.v_val = 4.83
+        elif key in (ord('s'), ord('S')):          # swap regime
+            s.next_regime()
+        elif key == curses.KEY_UP:
+            s.log_scroll = min(len(s.log) - 1, s.log_scroll + 1)
+        elif key == curses.KEY_DOWN:
+            s.log_scroll = max(0, s.log_scroll - 1)
+        elif key == curses.KEY_PPAGE:
+            s.log_scroll = min(len(s.log) - 1, s.log_scroll + 10)
+        elif key == curses.KEY_NPAGE:
+            s.log_scroll = max(0, s.log_scroll - 10)
+        elif key == curses.KEY_RESIZE:
+            s.matrix.clear()
+
+        # ── chat input keys ──────────────────────────────────
+        if s.view == "chat":
+            if key == curses.KEY_ENTER or key == 10 or key == 13:
+                s.send_chat()
+            elif key in (curses.KEY_BACKSPACE, 127, 8):
+                s.chat_input = s.chat_input[:-1]
+            elif 32 <= key < 127:
+                s.chat_input += chr(key)
+
+        # ── update + render ──────────────────────────────────
+        now = time.monotonic()
+        if now - last_t >= interval:
+            last_t = now
+            state.update()
+            renderer.draw()
+
+        time.sleep(0.001)
+
+
+# ═══════════════════════════════════════════════════════════════
+#  ENTRY POINT
+# ═══════════════════════════════════════════════════════════════
+if __name__ == "__main__":
+    if "--help" in sys.argv or "-h" in sys.argv:
+        print(f"""
+HIGH-AGENTS {VERSION}  ─  Codebase Analysis Engine · Adaptive Regime Optimization · Storm Swarm AIOS
+
+Usage:
+  high-agents           launch the live ASCII TUI dashboard
+  high-agents --help    show this help
+
+Keys inside TUI:
+  d=dashboard  c=chat  s=swap-regime  p=pause  r=reset  ?=help  q=quit
+
+Customise at the top of this file:
+  AGENTS      agent roster
+  LOG_EVENTS  activity log messages
+  CONFIG      fps / densities / speeds
+
+Install in Termux:
+  bash scripts/install-termux.sh
+  then call:  high-agents
+""")
+        sys.exit(0)
+
+    if "--version" in sys.argv:
+        print(f"HIGH-AGENTS {VERSION}")
+        sys.exit(0)
+
+    try:
+        curses.wrapper(main)
+    except KeyboardInterrupt:
+        pass
+    finally:
+        print(f"\n[HIGH-AGENTS] Session ended. Uptime logged.")
