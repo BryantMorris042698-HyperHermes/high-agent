@@ -1,10 +1,1 @@
-# Graph_x_0x0 Python Engine — Core dependencies
-# No external dependencies required for core engine (stdlib only)
-# Install with: pip install -e python/
-
-# Optional dependencies (install as needed):
-# requests==2.32.3          # HTTP client for Ollama API
-# pytest==8.3.4             # Testing framework
-# pytest-asyncio==0.25.2    # Async test support
-# aiohttp==3.11.11          # Async HTTP for daemon
-# rich==13.9.4              # Rich terminal output
+IyBHcmFwaF94XzB4MCBQeXRob24gRW5naW5lIOKAlCBDb3JlIGRlcGVuZGVuY2llcwojIE5vIGV4dGVybmFsIGRlcGVuZGVuY2llcyByZXF1aXJlZCBmb3IgY29yZSBlbmdpbmUgKHN0ZGxpYiBvbmx5KQojIEluc3RhbGwgd2l0aDogcGlwIGluc3RhbGwgLWUgcHl0aG9uLwoKIyBPcHRpb25hbCBkZXBlbmRlbmNpZXMgKGluc3RhbGwgYXMgbmVlZGVkKToKIyByZXF1ZXN0cz09Mi4zMi4zICAgICAgICAgICMgSFRUUCBjbGllbnQgZm9yIE9sbGFtYSBBUEkKIyBweXRlc3Q9PTguMy40ICAgICAgICAgICAgICMgVGVzdGluZyBmcmFtZXdvcmsKIyBweXRlc3QtYXN5bmNpbz09MC4yNS4yICAgICMgQXN5bmMgdGVzdCBzdXBwb3J0CiMgYWlvaHR0cD09My4xMS4xMSAgICAgICAgICAjIEFzeW5jIEhUVFAgZm9yIGRhZW1vbgojIHJpY2g9PTEzLjkuNCAgICAgICAgICAgICAgIyBSaWNoIHRlcm1pbmFsIG91dHB1dAo=
