@@ -1,8 +1,16 @@
 #!/bin/bash
 # ═══════════════════════════════════════════════════════════════
 #  HIGH-AGENTS  ─  Termux Installer
-#  After running this script you can launch the TUI with:
-#      high-agents
+#
+#  Quick one-liner (no git needed):
+#    pkg install python curl -y && \
+#    curl -fsSL https://raw.githubusercontent.com/BryantMorris042698-HyperHermes/high-agent/main/high-agents \
+#         -o $PREFIX/bin/high-agents && chmod +x $PREFIX/bin/high-agents && high-agents
+#
+#  Or run this full script after cloning:
+#    bash scripts/install-termux.sh
+#
+#  After install, launch with:  high-agents
 # ═══════════════════════════════════════════════════════════════
 set -euo pipefail
 
