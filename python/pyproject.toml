@@ -1,0 +1,83 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "high-agent"
+version = "0.1.0"
+description = "Graph_x_0x0 — AIOS for Mobile TUI Deep Agents Storm Swarm"
+readme = "README.md"
+license = {text = "MIT"}
+authors = [
+    {name = "Graph_x_0x0", email = "graph@high-agent.ai"}
+]
+keywords = [
+    "ai", "agents", "graph", "code-analysis", "tui",
+    "codebase-graph", "modularity", "regime-switching",
+    "self-improving", "deep-agents"
+]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+]
+requires-python = ">=3.9"
+dependencies = []
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0",
+    "pytest-asyncio>=0.25",
+    "pytest-cov>=6.0",
+]
+ollama = [
+    "requests>=2.32",
+    "aiohttp>=3.11",
+]
+all = [
+    "requests>=2.32",
+    "aiohttp>=3.11",
+    "pytest>=8.0",
+    "pytest-asyncio>=0.25",
+    "pytest-cov>=6.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/Graph_x_0x0/high-agent"
+Repository = "https://github.com/Graph_x_0x0/high-agent"
+Documentation = "https://github.com/Graph_x_0x0/high-agent#readme"
+Issues = "https://github.com/Graph_x_0x0/high-agent/issues"
+
+[project.scripts]
+high-agent = "high_agent_engine.__main__:main"
+high-agent-repl = "high_agent_engine.repl:main"
+high-agent-daemon = "high_agent_engine.daemon:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["high_agent_engine*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests", "python"]
+python_files = ["test_*.py", "*_test.py"]
+addopts = "-v --tb=short"
+asyncio_mode = "auto"
+
+[tool.coverage.run]
+source = ["high_agent_engine"]
+branch = true
+
+[tool.coverage.report]
+exclude_lines = [
+    "pragma: no cover",
+    "def __repr__",
+    "raise NotImplementedError",
+    "if __name__ == .__main__.:",
+]
