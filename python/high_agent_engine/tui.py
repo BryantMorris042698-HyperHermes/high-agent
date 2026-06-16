@@ -17,6 +17,7 @@ from enum import Enum
 
 from .engine import RegimeEngine
 from .regime import Regime
+from .filesystem import FileTree, color_line
 
 
 # ── Catppuccin Mocha 256-color palette ────────────────────────────────────────
@@ -98,6 +99,22 @@ _PAIR_DEFS: List[Tuple[str, str, str]] = [
     ("skill_off",   "subtext",  "base"),
     ("feed_hdr",    "lavender", "surface"),
     ("agent_name",  "pink",     "base"),
+    ("code_hdr",    "base",     "mauve"),
+    ("code_ln",     "subtext",  "base"),
+    ("code_kw",     "blue",     "base"),
+    ("code_str",    "green",    "base"),
+    ("code_fn",     "pink",     "base"),
+    ("code_cls",    "mauve",    "base"),
+    ("code_imp",    "lavender", "base"),
+    ("code_cmt",    "subtext",  "base"),
+    ("code_flow",   "peach",    "base"),
+    ("code_sel",    "text",     "overlay"),
+    ("tree_dir",    "yellow",   "base"),
+    ("tree_file",   "text",     "base"),
+    ("tree_sel",    "base",     "teal"),
+    ("peach_lbl",   "peach",    "base"),
+    ("teal_lbl",    "teal",     "base"),
+    ("phi_warn",    "yellow",   "base"),
 ]
 
 # Module-level pair number registry
@@ -219,6 +236,7 @@ class Tab(Enum):
     THEORY  = 2
     HISTORY = 3
     AGENTS  = 4
+    CODE    = 5
 
 
 @dataclass
@@ -230,9 +248,13 @@ class AppState:
     chat_scroll: int = 0
     show_help: bool = False
     error: Optional[str] = None
-    _agent: object = None   # lazy NeuralAgent
+    _agent: object = None          # lazy NeuralAgent
     agent_events: List[AgentEvent] = field(default_factory=list)
     active_skills: List[dict] = field(default_factory=list)
+    filetree: Optional[FileTree] = None   # connected directory
+    file_selected: int = 0                # selected index in file tree
+    file_scroll: int = 0                  # code viewer scroll offset
+    tree_scroll: int = 0                  # file tree scroll offset
 
 
 # ── Header ────────────────────────────────────────────────────────────────────
@@ -295,6 +317,7 @@ def draw_header(stdscr, state: AppState) -> None:
         (Tab.THEORY,  "3 THEORY"),
         (Tab.HISTORY, "4 HISTORY"),
         (Tab.AGENTS,  "5 AGENTS"),
+        (Tab.CODE,    "6 CODE"),
     ]
 
     col = 1
@@ -880,6 +903,231 @@ def draw_agents_tab(stdscr, state: AppState, top: int, bottom: int) -> None:
         row += 1
 
 
+# ── Code tab ──────────────────────────────────────────────────────────────────
+
+_COLOR_MAP = {
+    'dim':          'code_cmt',
+    'phi_good':     'code_str',
+    'regime_lbl_s': 'code_imp',
+    'agent_lbl':    'code_fn',
+    'sidebar_h':    'code_cls',
+    'peach_lbl':    'code_flow',
+    'teal_lbl':     'code_flow',
+    'lavender':     'code_flow',
+    'phi_warn':     'phi_warn',
+    'text':         'text',
+}
+
+
+def _syntax_pair(line: str, ext: str) -> int:
+    """Return curses color attr for a source line."""
+    raw = color_line(line, ext)
+    pair_name = _COLOR_MAP.get(raw, 'text')
+    return cp(pair_name)
+
+
+def draw_code_tab(stdscr, state: AppState, top: int, bottom: int) -> None:
+    """Tab.CODE — file tree (left) + syntax-highlighted code viewer (right)."""
+    h, w = stdscr.getmaxyx()
+    visible = bottom - top
+
+    def _cline(row_offset: int, text: str, attr: int = 0, col: int = 0) -> None:
+        screen_row = top + row_offset
+        if screen_row >= bottom or screen_row >= h:
+            return
+        try:
+            stdscr.addstr(screen_row, col, " " * max(0, w - col), cp("text"))
+        except curses.error:
+            pass
+        if text:
+            _safe_addstr(stdscr, screen_row, col, text, attr)
+
+    ft = state.filetree
+
+    # ── No directory connected ─────────────────────────────────────────────────
+    if ft is None:
+        _cline(0, "  ══ CODE VIEWER ══════════════════════════════════════", cp("code_hdr", bold=True))
+        _cline(1, "", 0)
+        _cline(2, "  No directory connected.", cp("dim"))
+        _cline(3, "", 0)
+        _cline(4, "  Connect to your file system:", cp("text"))
+        _cline(5, "    /connect ~              → your Termux home", cp("code_imp"))
+        _cline(6, "    /connect ~/projects     → projects folder", cp("code_imp"))
+        _cline(7, "    /connect /sdcard        → Android storage", cp("code_imp"))
+        _cline(8, "", 0)
+        _cline(9, "  Then agents can read, write, and modify files.", cp("dim"))
+        _cline(10, "  Type /connect <path> in the CHAT tab.", cp("dim"))
+        _cline(11, "", 0)
+        if state.agent_events:
+            _cline(12, "  ── Recent agent writes ───────────────────────", cp("feed_hdr"))
+            row = 13
+            for ev in reversed(state.agent_events):
+                if row >= visible - 1:
+                    break
+                if ev.tool and ('write' in ev.action or 'create' in ev.action.lower()):
+                    _cline(row, f"  [{ev.agent}] {ev.action}", cp("agent_done"))
+                    row += 1
+        for r in range(12, visible):
+            _cline(r, "", 0)
+        return
+
+    # ── Layout: tree panel (left) | code panel (right) ────────────────────────
+    tree_w = min(28, max(18, w // 5))
+    code_start = tree_w + 1
+
+    # ── File tree panel ────────────────────────────────────────────────────────
+    files = ft.files
+    total_files = len(files)
+
+    for r in range(visible):
+        screen_row = top + r
+        if screen_row >= h:
+            break
+        try:
+            stdscr.addstr(screen_row, 0, " " * tree_w, cp("text"))
+        except curses.error:
+            pass
+
+    # Tree header
+    root_short = ft.root[-tree_w + 4:] if len(ft.root) > tree_w - 4 else ft.root
+    _safe_addstr(stdscr, top, 0, f" {root_short}"[:tree_w], cp("code_hdr", bold=True))
+
+    # Vertical divider
+    for r in range(visible):
+        screen_row = top + r
+        if screen_row < h:
+            _safe_addstr(stdscr, screen_row, tree_w, "│", cp("border"))
+
+    # File list
+    tree_visible = visible - 1
+    tree_start = state.tree_scroll
+
+    for i in range(tree_visible):
+        idx = tree_start + i
+        screen_row = top + 1 + i
+        if screen_row >= bottom or screen_row >= h:
+            break
+        try:
+            stdscr.addstr(screen_row, 0, " " * tree_w, cp("text"))
+        except curses.error:
+            pass
+        if idx >= total_files:
+            continue
+
+        fpath = files[idx]
+        depth = fpath.count(os.sep)
+        fname = os.path.basename(fpath)
+        indent = "  " * min(depth, 3)
+        is_open = (fpath == ft.open_path)
+        is_sel = (idx == state.file_selected)
+
+        prefix = "▶ " if is_open else "  "
+        display = f"{indent}{prefix}{fname}"[:tree_w - 1]
+
+        if is_sel:
+            attr = cp("tree_sel", bold=True)
+        elif is_open:
+            attr = cp("code_fn", bold=True)
+        elif fname.endswith('.py'):
+            attr = cp("code_imp")
+        elif fname.endswith(('.rs', '.go', '.c', '.cpp')):
+            attr = cp("peach_lbl")
+        elif fname.endswith(('.md', '.txt')):
+            attr = cp("code_cmt")
+        else:
+            attr = cp("tree_file")
+
+        _safe_addstr(stdscr, screen_row, 0, display, attr)
+
+    # ── Code viewer panel ──────────────────────────────────────────────────────
+    open_path = ft.open_path
+    content = ft.content(open_path) if open_path else None
+
+    code_w = max(10, w - code_start)
+
+    if content is None:
+        # No file open — show last write event or prompt
+        for r in range(visible):
+            screen_row = top + r
+            if screen_row >= h:
+                break
+            try:
+                stdscr.addstr(screen_row, code_start, " " * code_w, cp("text"))
+            except curses.error:
+                pass
+
+        _safe_addstr(stdscr, top, code_start,
+                     " ── Select a file ─────────────────────────────"[:code_w],
+                     cp("code_hdr", bold=True))
+
+        row = 1
+        if ft.events:
+            _safe_addstr(stdscr, top + row, code_start, " Recent file events:", cp("dim"))
+            row += 1
+            for ev in reversed(ft.events[-8:]):
+                if row >= visible:
+                    break
+                ts = time.strftime("%H:%M:%S", time.localtime(ev.ts))
+                icon = "✎" if ev.action in ("write", "create") else "◎"
+                line = f" {icon} [{ev.agent}] {ev.action}: {ev.path}"[:code_w]
+                pair = "agent_done" if ev.action in ("write", "create") else "code_imp"
+                _safe_addstr(stdscr, top + row, code_start, line, cp(pair))
+                row += 1
+        else:
+            row += 1
+            _safe_addstr(stdscr, top + row, code_start,
+                         " /read <file> or press Enter on a file in the tree"[:code_w], cp("dim"))
+        return
+
+    # ── Render file content ────────────────────────────────────────────────────
+    ext = os.path.splitext(open_path)[1].lower()
+    lines = content.splitlines()
+    total_lines = len(lines)
+
+    # Header bar
+    fname_short = open_path[-(code_w - 20):] if len(open_path) > code_w - 20 else open_path
+    last_ev = next((e for e in reversed(ft.events) if e.path == open_path), None)
+    agent_tag = f"  [by {last_ev.agent}]" if last_ev else ""
+    hdr = f" {fname_short}{agent_tag} · {total_lines} lines"[:code_w]
+    try:
+        stdscr.addstr(top, code_start, hdr.ljust(code_w), cp("code_hdr", bold=True))
+    except curses.error:
+        pass
+
+    # Code lines
+    code_visible = visible - 1
+    scroll = max(0, min(state.file_scroll, max(0, total_lines - code_visible)))
+    ln_w = len(str(total_lines)) + 1
+
+    for i in range(code_visible):
+        screen_row = top + 1 + i
+        if screen_row >= bottom or screen_row >= h:
+            break
+
+        try:
+            stdscr.addstr(screen_row, code_start, " " * code_w, cp("text"))
+        except curses.error:
+            pass
+
+        line_idx = scroll + i
+        if line_idx >= total_lines:
+            continue
+
+        line = lines[line_idx]
+        ln_str = f"{line_idx + 1:>{ln_w}} "
+
+        # Line number
+        _safe_addstr(stdscr, screen_row, code_start, ln_str, cp("code_ln"))
+
+        # Syntax-colored line content
+        content_x = code_start + len(ln_str)
+        avail = code_w - len(ln_str)
+        if avail > 0:
+            display_line = line[:avail]
+            attr = _syntax_pair(line, ext)
+            _safe_addstr(stdscr, screen_row, content_x, display_line, attr)
+
+
 # ── Divider ───────────────────────────────────────────────────────────────────
 
 def draw_divider(stdscr, top: int, bottom: int, col: int) -> None:
@@ -899,22 +1147,22 @@ def draw_help_overlay(stdscr) -> None:
         "  ─────────────────────────────────",
         "  [1] CHAT   [2] METRICS           ",
         "  [3] THEORY [4] HISTORY           ",
-        "  [5] AGENTS (live activity feed)  ",
-        "  [r]     Refresh metrics          ",
-        "  [↑↓]    Scroll chat              ",
-        "  [PgUp]  Scroll up fast           ",
-        "  [Esc]   Clear input              ",
-        "  [q]     Quit                     ",
-        "  [?]     Toggle this help         ",
+        "  [5] AGENTS [6] CODE VIEWER       ",
+        "  [r]   Refresh  [q] Quit          ",
+        "  [↑↓]  Scroll / select file       ",
+        "  [PgUp/Dn] Scroll code            ",
+        "  [Enter] Open selected file       ",
+        "  [?]   Toggle this help           ",
         "  ─────────────────────────────────",
         "  CHAT COMMANDS                    ",
-        "  /metrics  Live Φ(G) breakdown    ",
-        "  /sweep    Compare regimes         ",
-        "  /theory   Full math               ",
+        "  /metrics   Φ(G) breakdown        ",
+        "  /sweep     Compare regimes        ",
+        "  /skills    Show skills            ",
+        "  /swarm <task>  Run swarm          ",
+        "  /connect <path>  Connect FS       ",
+        "  /ls        List files             ",
+        "  /read <file>   Open file          ",
         "  /switch <r>  Change regime        ",
-        "  /skills   Show all skills         ",
-        "  /swarm <task>  Run agent swarm    ",
-        "  /simulate  Run deviation          ",
         "  ─────────────────────────────────",
         "  Press any key to close           ",
     ]
@@ -1073,6 +1321,9 @@ def render(stdscr, state: AppState) -> None:
     elif state.tab == Tab.AGENTS:
         draw_agents_tab(stdscr, state, main_top, main_bottom)
 
+    elif state.tab == Tab.CODE:
+        draw_code_tab(stdscr, state, main_top, main_bottom)
+
     # ── Input + status ────────────────────────────────────────────────────────
     draw_input(stdscr, state, input_row)
     draw_status(stdscr, state, status_row)
@@ -1109,6 +1360,25 @@ def _run_swarm(state: AppState, task: str) -> str:
     phi_before = snap_before.get("phi", 0.0) if isinstance(snap_before, dict) else snap_before.phi
 
     _emit(state, "Swarm", f"task: {task[:40]}", "", 0.0, "working")
+
+    # If file system connected, let agents read/scan the open file
+    if state.filetree and state.filetree.open_path:
+        open_file = state.filetree.open_path
+        content = state.filetree.content(open_file)
+        if content:
+            _emit(state, "FileSystem", f"reading: {open_file}",
+                  "read_file", 0.0, "done")
+            # Crawl the connected directory into the engine graph
+            try:
+                from .crawler import CodebaseCrawler
+                crawler = CodebaseCrawler()
+                graph = crawler.crawl(state.filetree.root)
+                engine.graph = graph
+                engine.update_metrics()
+                _emit(state, "Refactor", f"crawled: {len(graph.nodes)} nodes",
+                      "crawl_codebase", 0.0, "done")
+            except Exception:
+                pass
 
     # Check active skills first
     try:
@@ -1165,6 +1435,16 @@ def _run_swarm(state: AppState, task: str) -> str:
     total_delta = phi_after - phi_before
     _emit(state, "Swarm", f"done · {len(result.get('agents_used', []))} agents · ΔΦ {total_delta:+.4f}",
           "", total_delta, "done")
+
+    # Write a swarm report file if filetree is connected
+    if state.filetree:
+        report_content = result.get("report", "")
+        if report_content:
+            report_path = ".agent-storm/last-swarm-report.md"
+            import time as _t
+            header = f"# Swarm Report\n_Task: {task}_\n_Time: {_t.strftime('%Y-%m-%d %H:%M:%S')}_\n\n"
+            state.filetree.write(report_path, header + report_content, agent="Swarm")
+            _emit(state, "Swarm", f"wrote: {report_path}", "write_file", total_delta, "done")
 
     return result.get("report", "Swarm complete.")
 
@@ -1271,6 +1551,86 @@ def _smart_response(state: AppState, user_msg: str) -> str:
             f"\n"
             f"Type /metrics for full breakdown."
         )
+
+    # /connect <path>
+    if msg_lower.startswith("/connect") or msg_lower.startswith("connect "):
+        parts = user_msg.strip().split(maxsplit=1)
+        path = parts[1].strip() if len(parts) > 1 else "~"
+        path = os.path.expanduser(path)
+        path = os.path.expandvars(path)
+        if not os.path.isdir(path):
+            return f"Not a directory: {path}\n\nTry:\n  /connect ~\n  /connect ~/projects\n  /connect /sdcard"
+        try:
+            state.filetree = FileTree(path)
+            n = len(state.filetree.files)
+            summary = state.filetree.summary()
+            state.file_selected = 0
+            state.file_scroll = 0
+            state.tree_scroll = 0
+            _emit(state, "FileSystem", f"connected: {path}", "scan_dir", 0.0, "done")
+            return (
+                f"Connected to: {path}\n"
+                f"{summary}\n"
+                f"\n"
+                f"Tab [6] → browse and view files\n"
+                f"Commands:\n"
+                f"  /ls           list files\n"
+                f"  /read <file>  open a file\n"
+                f"  /write <file> <content>  write a file\n"
+                f"  /swarm <task> run agents on your code"
+            )
+        except Exception as e:
+            return f"Connect failed: {e}"
+
+    # /ls [path]
+    if msg_lower in ("/ls", "ls") or msg_lower.startswith("/ls "):
+        if state.filetree is None:
+            return "No directory connected. Use /connect <path> first."
+        parts = user_msg.strip().split(maxsplit=1)
+        subpath = parts[1].strip() if len(parts) > 1 else ""
+        entries = state.filetree.list_dir(subpath)
+        if not entries:
+            return f"Empty directory: {subpath or state.filetree.root}"
+        lines = [f"Contents of {subpath or '/'}: ({len(entries)} items)\n"]
+        for name, is_dir in entries[:40]:
+            icon = "📁" if is_dir else "  "
+            lines.append(f"  {icon} {name}")
+        if len(entries) > 40:
+            lines.append(f"  … {len(entries) - 40} more")
+        return "\n".join(lines)
+
+    # /read <file>
+    if msg_lower.startswith("/read ") or msg_lower.startswith("read "):
+        if state.filetree is None:
+            return "No directory connected. Use /connect <path> first."
+        parts = user_msg.strip().split(maxsplit=1)
+        relpath = parts[1].strip() if len(parts) > 1 else ""
+        if not relpath:
+            return "Usage: /read <file>"
+        content = state.filetree.read(relpath, agent="Chat")
+        _emit(state, "FileSystem", f"read: {relpath}", "read_file",
+              0.0, "done")
+        state.tab = Tab.CODE  # auto-switch to code tab
+        lines = content.splitlines()
+        preview = "\n".join(lines[:20])
+        suffix = f"\n… ({len(lines) - 20} more lines)" if len(lines) > 20 else ""
+        return f"Opened: {relpath} ({len(lines)} lines)\nTab [6] → full view\n\n```\n{preview}{suffix}\n```"
+
+    # /write <file>
+    if msg_lower.startswith("/write "):
+        if state.filetree is None:
+            return "No directory connected. Use /connect <path> first."
+        parts = user_msg.strip().split(maxsplit=2)
+        if len(parts) < 3:
+            return "Usage: /write <file> <content>"
+        relpath = parts[1].strip()
+        content = parts[2]
+        ok = state.filetree.write(relpath, content, agent="Chat")
+        if ok:
+            _emit(state, "FileSystem", f"wrote: {relpath}", "write_file", 0.0, "done")
+            state.tab = Tab.CODE
+            return f"Written: {relpath} ({content.count(chr(10)) + 1} lines)\nTab [6] → view file"
+        return f"Write failed: {relpath}"
 
     # /skills
     if msg_lower in ("/skills", "skills") or msg_lower.startswith("/skills"):
@@ -1449,9 +1809,10 @@ def _initial_messages(engine: RegimeEngine) -> List[Message]:
         f"Deep Agent Storm Swarm · 8-agent swarm online\n"
         f"Φ(G) = {phi:+.4f} · regime: {regime}\n"
         f"─────────────────────────────────────────────\n"
-        f"Type a message or use a command:\n"
-        f"  /metrics  /sweep  /skills  /swarm <task>  /help\n"
-        f"Tab [5] → live agent activity & active skills"
+        f"  /connect ~        connect to your files\n"
+        f"  /swarm <task>     run 8-agent swarm\n"
+        f"  /skills  /metrics  /sweep  /help\n"
+        f"Tab [5] agents · [6] code viewer"
     )
     return [Message(Role.SYSTEM, text)]
 
@@ -1525,6 +1886,9 @@ def _main(stdscr) -> None:
         if key == ord('5'):
             state.tab = Tab.AGENTS
             continue
+        if key == ord('6'):
+            state.tab = Tab.CODE
+            continue
 
         # ── Refresh ───────────────────────────────────────────────────────────
         if key == ord('r'):
@@ -1544,7 +1908,35 @@ def _main(stdscr) -> None:
         if key == ord('q') and not state.input_buf:
             break
 
-        # ── Scroll ────────────────────────────────────────────────────────────
+        # ── Scroll / navigation ───────────────────────────────────────────────
+        if state.tab == Tab.CODE and state.filetree:
+            ft = state.filetree
+            n_files = len(ft.files)
+            if key == curses.KEY_UP:
+                state.file_selected = max(0, state.file_selected - 1)
+                if state.file_selected < state.tree_scroll:
+                    state.tree_scroll = state.file_selected
+                continue
+            if key == curses.KEY_DOWN:
+                state.file_selected = min(n_files - 1, state.file_selected + 1)
+                h2, _ = stdscr.getmaxyx()
+                tree_visible = h2 - 4 - 1
+                if state.file_selected >= state.tree_scroll + tree_visible:
+                    state.tree_scroll = state.file_selected - tree_visible + 1
+                continue
+            if key == curses.KEY_PPAGE:
+                state.file_scroll = max(0, state.file_scroll - 20)
+                continue
+            if key == curses.KEY_NPAGE:
+                state.file_scroll += 20
+                continue
+            if key in (curses.KEY_ENTER, ord('\r'), ord('\n'), 10, 13):
+                if 0 <= state.file_selected < n_files and not state.input_buf:
+                    relpath = ft.files[state.file_selected]
+                    ft.read(relpath, agent="FileSystem")
+                    state.file_scroll = 0
+                    _emit(state, "FileSystem", f"opened: {relpath}", "read_file", 0.0, "done")
+                    continue
         if key == curses.KEY_UP:
             state.chat_scroll += 1
             continue
