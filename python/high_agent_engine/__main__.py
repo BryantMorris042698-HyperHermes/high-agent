@@ -130,7 +130,7 @@ def cmd_status(model: str = None, api_key: str = None, provider: str = None):
 
 def cmd_setup(model: str = None, api_key: str = None, provider: str = None):
     try:
-        from high_agent_engine.llm import LLMClient, print_status
+        from high_agent_engine.llm import LLMClient, print_status, _save_config
     except ImportError:
         print("LLM support requires 'requests'. Install with: pip install high-agent[ollama]")
         sys.exit(1)
@@ -149,7 +149,11 @@ def cmd_setup(model: str = None, api_key: str = None, provider: str = None):
 
     client = LLMClient(**kwargs)
     if client.is_available():
+        # Save so the TUI picks it up automatically next time
+        _save_config(client.provider, client.model, api_key or "")
         print(f"[{client.provider}] Connected — {client.model}")
+        print(f"Config saved to ~/.high-agent/llm-config.json")
+        print(f"The TUI will use {client.provider}/{client.model} automatically.")
     else:
         print(f"[{client.provider}] Not available with {client.model}")
         print(f"  Check your API key or try: pip install high-agent[ollama]")

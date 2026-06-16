@@ -10,9 +10,33 @@ Auto-detects provider from URL or model name. Pass a model like:
 """
 
 from __future__ import annotations
+import json
 import os
 import requests
 from typing import List, Dict, Any, Optional
+from pathlib import Path
+
+# Config file — persists provider/model choice across runs
+_CONFIG_PATH = Path.home() / ".high-agent" / "llm-config.json"
+
+
+def _save_config(provider: str, model: str, api_key: str = "") -> None:
+    """Save LLM choice to ~/.high-agent/llm-config.json."""
+    _CONFIG_PATH.parent.mkdir(parents=True, exist_ok=True)
+    data = {"provider": provider, "model": model}
+    if api_key:
+        data["api_key"] = api_key
+    _CONFIG_PATH.write_text(json.dumps(data, indent=2))
+
+
+def _load_config() -> Optional[Dict]:
+    """Load saved LLM config, return None if not found."""
+    try:
+        if _CONFIG_PATH.exists():
+            return json.loads(_CONFIG_PATH.read_text())
+    except Exception:
+        pass
+    return None
 import json
 
 # ── Provider defaults ─────────────────────────────────────────────────────────
@@ -483,37 +507,51 @@ def setup_api_key(
 
 
 def auto_setup() -> LLMClient:
-    """Try Ollama first, then fall back to API key providers.
-    Priority: Ollama > OpenAI > OpenRouter > Groq
+    """Detect the best available LLM. Priority:
+    1. Saved config (from `setup` command)
+    2. Ollama (if running locally)
+    3. Env vars: DEEPSEEK > OPENAI > OPENROUTER > GROQ
     """
-    # Try Ollama
+    # 1. Saved config from previous `setup` run
+    cfg = _load_config()
+    if cfg:
+        kwargs: Dict[str, Any] = {"provider": cfg["provider"], "model": cfg["model"]}
+        if "api_key" in cfg:
+            kwargs["api_key"] = cfg["api_key"]
+        client = LLMClient(**kwargs)
+        if client.is_available():
+            return client
+
+    # 2. Ollama (local, no key needed)
     client = LLMClient(model="llama3.2:3b")
     if client.is_available():
-        print(f"[Ollama] Active — {client.model} @ {client.base_url}")
         return client
 
-    # Try OpenAI
+    # 3. DeepSeek
+    if os.getenv("DEEPSEEK_API_KEY"):
+        client = LLMClient(provider="deepseek")
+        if client.is_available():
+            return client
+
+    # 4. OpenAI
     if os.getenv("OPENAI_API_KEY"):
         client = LLMClient(provider="openai")
         if client.is_available():
-            print(f"[OpenAI] Active — {client.model}")
             return client
 
-    # Try OpenRouter
+    # 5. OpenRouter
     if os.getenv("OPENROUTER_API_KEY"):
         client = LLMClient(provider="openrouter")
         if client.is_available():
-            print(f"[OpenRouter] Active — {client.model}")
             return client
 
-    # Try Groq
+    # 6. Groq
     if os.getenv("GROQ_API_KEY"):
         client = LLMClient(provider="groq")
         if client.is_available():
-            print(f"[Groq] Active — {client.model}")
             return client
 
-    # Return Ollama client anyway (will show not available)
+    # Fallback — not available, but returns something
     return LLMClient(model="llama3.2:3b")
 
 
