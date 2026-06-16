@@ -1,1 +1,283 @@
-IyBHcmFwaF94XzB4MCDigJQgQUlPUyBmb3IgTW9iaWxlIFRVSSBEZWVwIEFnZW50cyBTdG9ybSBTd2FybQoKKirOpihHKSA9IM6xwrdRKEcpIOKIkiDOssK3xIwoRykg4oiSIM6zwrdtZWFuKFYpKiog4oCUIFRoZSBtYXRoZW1hdGljYWwgZm91bmRhdGlvbiBkcml2aW5nIHJlZ2ltZS1hd2FyZSBBSSBhZ2VudCBvcmNoZXN0cmF0aW9uLgoKLS0tCgojIyBXaGF0IElzIFRoaXM/CgpHcmFwaF94XzB4MCBpcyBhbiBBSSBPcGVyYXRpbmcgU3lzdGVtIGJ1aWx0IGFyb3VuZCBhIGxpdmUgY29kZS1ncmFwaCBtb2RlbC4gWW91ciBlbnRpcmUgY29kZWJhc2UgaXMgcmVwcmVzZW50ZWQgYXMgYSBkaXJlY3RlZCBncmFwaCBHPShWLEUpLCB3aGVyZSAqKm5vZGVzIGFyZSBmdW5jdGlvbnMqKiBhbmQgKiplZGdlcyBhcmUgY2FsbHMvaW1wb3J0cyoqLiBFdmVyeSBkZWNpc2lvbiDigJQgcmVnaW1lIHN3aXRjaGVzLCBkZXZpYXRpb24gYWxlcnRzLCBhZ2VudCB0YXNrIHJvdXRpbmcg4oCUIHRyYWNlcyBiYWNrIHRvIM6mKEcpIGNvbXB1dGVkIGxpdmUgb24gdGhlIGdyYXBoLgoKSXQncyBkZXNpZ25lZCBmb3IgKipNb2JpbGUgVFVJKiogKFRlcm11eCwgT01FTiBMYXB0b3ApIHdpdGggYW4gOC1hZ2VudCBkZWVwIHN3YXJtLCBPbGxhbWEgQVBJIGludGVncmF0aW9uLCBhbmQgYSBzZWxmLWltcHJvdmluZyBsb29wIHRoYXQgbWVhc3VyZXMsIGNvbW1pdHMsIG9yIHJvbGxzIGJhY2sgY2hhbmdlcyBiYXNlZCBvbiB0aGVpciBpbXBhY3Qgb24gY29kZSBhcmNoaXRlY3R1cmUgcXVhbGl0eS4KCi0tLQoKIyMgVGhlIE1hdGgKCmBgYArOpihHKSA9IM6xwrdRKEcpIOKIkiDOssK3xIwoRykg4oiSIM6zwrdtZWFuKFYpCmBgYAoKfCBTeW1ib2wgfCBNZWFuaW5nIHwKfC0tLS0tLS0tfC0tLS0tLS0tLXwKfCAqKkcgPSAoVixFKSoqIHwgWW91ciBjb2RlYmFzZSBhcyBhIGRpcmVjdGVkIGdyYXBoLiBOb2Rlcz1mdW5jdGlvbnMsIEVkZ2VzPWNhbGxzL2ltcG9ydHMgfAp8ICoqUShHKSoqIHwgTmV3bWFuLUdpcnZhbiBtb2R1bGFyaXR5IOKAlCBob3cgd2VsbCBmdW5jdGlvbnMgY2x1c3RlciB3aXRoaW4gbW9kdWxlcy4gSGlnaGVyID0gYmV0dGVyIGNvaGVzaW9uIHwKfCAqKsSMKEcpKiogfCBNZWFuIGludGVyLW1vZHVsZSBjb3VwbGluZyBwZXIgbm9kZS4gTG93ZXIgPSBsZXNzIHNwYWdoZXR0aSB8CnwgKipWKiogfCBDeWNsb21hdGljIGNvbXBsZXhpdHkgKE1jQ2FiZSkuIEJyYW5jaGVzLCBsb29wcywgY29uZGl0aW9uYWxzIHBlciBmdW5jdGlvbiB8CnwgKirOsSwgzrIsIM6zKiogfCBSZWdpbWUtZGVwZW5kZW50IGNvZWZmaWNpZW50cyB0aGF0IHNoaWZ0IHdoYXQgdGhlIHN5c3RlbSBvcHRpbWl6ZXMgfAoKLS0tCgojIyBUaHJlZSBSZWdpbWVzCgp8IFJlZ2ltZSB8IM6xIHwgzrIgfCDOsyB8IFN0cmF0ZWd5IHwKfC0tLS0tLS0tfC0tLXwtLS18LS0tfC0tLXwKfCAqKlNpbXBsZSoqIHwgMC44IHwgMC45IHwgMC4yIHwgTWluaW1pemUgY291cGxpbmcuIEZhc3QgaXRlcmF0aW9uLiB8CnwgKipBZHZhbmNlZCoqIHwgMS4yIHwgMC41IHwgMC4zIHwgTWF4aW1pemUgbW9kdWxhcml0eS4gUFIgcmV2aWV3IG1vZGUuIHwKfCAqKkh5YnJpZCoqIHwgMS4wIHwgMC42IHwgMC40IHwgQmFsYW5jZSBhbGwgdGVybXMuIFRlYW0gaGFuZG9mZiBtb2RlLiB8CgoqKkRldmlhdGlvbiBEZXRlY3Rpb24qKjogU2xpZGluZyB3aW5kb3cg4oaSIHotc2NvcmUg4oaSIGlmIHx6fCA+IDIuMCwgY2hhbmdlLXBvaW50IGRldGVjdGVkLiAgCioqSHlzdGVyZXNpcyoqOiBSZWdpbWUgc3dpdGNoIG9ubHkgaWYgzpTOpihHKSA+IDAuMDUgKHByZXZlbnRzIG9zY2lsbGF0aW9uKS4KCi0tLQoKIyMgOC1BZ2VudCBEZWVwIFN3YXJtCgp8IEFnZW50IHwgUm9sZSB8CnwtLS0tLS0tfC0tLS0tLXwKfCAqKk9yY2hlc3RyYXRvcioqIHwgUmVnaW1lLWF3YXJlIHRhc2sgcm91dGluZyArIM6mKEcpIG9wdGltaXphdGlvbiB8CnwgKipSZWZhY3RvcioqIHwgQ29kZSByZXN0cnVjdHVyaW5nICsgY291cGxpbmcgcmVkdWN0aW9uIHwKfCAqKlF1YWxpdHkqKiB8IENvZGUgcmV2aWV3ICsgcXVhbGl0eSBzY29yaW5nIHwKfCAqKlRlc3QqKiB8IFRlc3QgZ2VuZXJhdGlvbiArIGNvdmVyYWdlIGFuYWx5c2lzIHwKfCAqKlNraWxsKiogfCBTa2lsbCBkaXNjb3ZlcnkgKyBtYW5hZ2VtZW50IHwKfCAqKlJlcG8qKiB8IFJlcG9zaXRvcnkgYW5hbHlzaXMgKyBjbG9uaW5nIHwKfCAqKkJ1aWxkKiogfCBCdWlsZCBvcmNoZXN0cmF0aW9uICsgbXVsdGktbGFuZ3VhZ2Ugc3VwcG9ydCB8CnwgKipQbGFubmVyKiogfCBUYXNrIGRlY29tcG9zaXRpb24gKyBleGVjdXRpb24gcGxhbm5pbmcgfAoKLS0tCgojIyBQcm9qZWN0IFN0cnVjdHVyZQoKYGBgCn4vaGlnaC1hZ2VudC9ydXN0LwrilJzilIDilIAgQ2FyZ28udG9tbCAgICAgICAgICAgICAgIyBQYWNrYWdlIG1hbmlmZXN0ICsgZmVhdHVyZSBmbGFncwrilJzilIDilIAgc3JjLwrilIIgICDilJzilIDilIAgbGliLnJzICAgICAgICAgICAgICAjIFB1YmxpYyBBUEkgKyByZS1leHBvcnRzCuKUgiAgIOKUnOKUgOKUgCBtYWluLnJzICAgICAgICAgICAgICMgQ0xJIGJpbmFyeSAoImhpZ2gtYWdlbnQiKQrilIIgICDilJzilIDilIAgZ3JhcGgucnMgICAgICAgICAgICAjIEc9KFYsRSksIG1ldHJpY3MsIE5ld21hbi1HaXJ2YW4sIHNuYXBzaG90CuKUgiAgIOKUnOKUgOKUgCBjb3JlLnJzICAgICAgICAgICAgICMgUmVnaW1lRW5naW5lICsgZGV0ZWN0X2FuZF9zd2l0Y2gK4pSCICAg4pSc4pSA4pSAIG9yY2hlc3RyYXRvci5ycyAgICAgIyBQaWVjZXdpc2UgcmVnaW1lIHN3aXRjaGluZwrilIIgICDilJzilIDilIAgcmVnaW1lLnJzICAgICAgICAgICAjIFJlZ2ltZSBlbnVtLCBSZWdpbWVDb2VmZnMsIGNvbXB1dGVfcGhpKCkK4pSCICAg4pSc4pSA4pSAIG1ldHJpY3MucnMgICAgICAgICAgIyBNZXRyaWNzLCBIaXN0b3J5LCBQaGlDb2xvciwgVHJlbmQK4pSCICAg4pSc4pSA4pSAIG9sbGFtYS5ycyAgICAgICAgICAgIyBPbGxhbWFDbGllbnQ6IC9hcGkvdGFncywgL2FwaS9nZW5lcmF0ZSwgL2FwaS9jaGF0CuKUgiAgIOKUnOKUgOKUgCBlcnJvci5ycyAgICAgICAgICAgICMgQWdlbnRFcnJvciwgRnJvbSBpbXBscywgaGFuZGxlX2Vycm9yISBtYWNybwrilIIgICDilJzilIDilIAgYWdlbnQucnMgICAgICAgICAgICAjIEFnZW50U3RhdGUsIEFnZW50SWQsIEFnZW50Um9sZQrilIIgICDilJzilIDilIAgc2tpbGxzLnJzICAgICAgICAgICAjIFNraWxsTWFuYWdlcjogc2F2ZS9kZWxldGUvbGlzdC9sb2FkCuKUgiAgIOKUnOKUgOKUgCByZXBvcy5ycyAgICAgICAgICAgICMgUmVwb01hbmFnZXI6IGFkZC9yZW1vdmUvbGlzdC9jbG9uZQrilIIgICDilJzilIDilIAgYnVpbGQucnMgICAgICAgICAgICAjIEJ1aWxkTWFuYWdlcjogZGV0ZWN0L2J1aWxkL2NsZWFuIChSdXN0L1B5dGhvbi9Ob2RlL0dvL0phdmEvQysrKQrilIIgICDilJzilIDilIAgc3dhcm0ucnMgICAgICAgICAgICAjIFN3YXJtU3RhdGUsIFN3YXJtVGFzaywgcnVuX3N3YXJtCuKUgiAgIOKUnOKUgOKUgCBwbGFubmVyLnJzICAgICAgICAgICMgUGxhbm5lclN0YXRlLCBwbGFuX3Rhc2ssIGRlY29tcG9zZQrilIIgICDilJTilIDilIAgYmluLwrilIIgICAgICAg4pSU4pSA4pSAIHR1aS5ycyAgICAgICAgICAjIEZ1bGwgVFVJIGJpbmFyeSAocmVxdWlyZXMgLS1mZWF0dXJlcyB0dWkpCuKUlOKUgOKUgCBiZW5jaGVzLwogICAg4pSU4pSA4pSAIGdyYXBoX2JlbmNoLnJzICAgICAgIyBCZW5jaG1hcms6IG1vZHVsYXJpdHksIGNvdXBsaW5nLCBzbmFwc2hvdAoKfi9oaWdoLWFnZW50L3B5dGhvbi8gICAgICAgICMgUHl0aG9uIG1pcnJvciBlbmdpbmUK4pSc4pSA4pSAIGhpZ2hfYWdlbnRfZW5naW5lLwrilIIgICDilJzilIDilIAgX19pbml0X18ucHkK4pSCICAg4pSc4pSA4pSAIGdyYXBoLnB5ICAgICAgICAgICAgIyBHPShWLEUpLCDOpihHKSBjb21wdXRhdGlvbgrilIIgICDilJzilIDilIAgZW5naW5lLnB5ICAgICAgICAgICAjIFJlZ2ltZUVuZ2luZSB3aXRoIGRldGVjdF9hbmRfZXZhbHVhdGUK4pSCICAg4pSc4pSA4pSAIHJlZ2ltZS5weSAgICAgICAgICAgIyBSZWdpbWUgZW51bSwgaHlzdGVyZXNpcywgZGV0ZWN0b3IK4pSCICAg4pSc4pSA4pSAIG9sbGFtYS5weSAgICAgICAgICAgIyBPbGxhbWEgQVBJIGNsaWVudArilIIgICDilJTilIDilIAgY3Jhd2xlci5weSAgICAgICAgICAjIENvZGViYXNlIGdyYXBoIGNyYXdsZXIK4pSc4pSA4pSAIGhpZ2gtYWdlbnQtcmVwbC5weSAgICAgICMgTGl2ZSBSRVBMIHdpdGggc3dlZXAsIHRoZW9yeSwgaGlzdG9yeSwgd2F0Y2gK4pSc4pSA4pSAIHNlbGYtaW1wcm92aW5nLWxvb3AucHkgICMgYmFzZWxpbmUg4oaSIHZlcmlmeSDihpIgY29tbWl0IOKGkiByb2xsYmFjawrilJTilIDilIAgZGFlbW9uLnB5ICAgICAgICAgICAgICAgIyBCYWNrZ3JvdW5kIGV2YWx1YXRpb24g4oaSIH4vLmhpZ2gtYWdlbnQvc3RhdGUuanNvbgpgYGAKCi0tLQoKIyMgUXVpY2sgU3RhcnQKCiMjIyBCdWlsZAoKYGBgYmFzaAojIENvcmUgb25seSAoZmFzdCwgd29ya3Mgb24gVGVybXV4L01vYmlsZSkKY2FyZ28gYnVpbGQKCiMgRnVsbCBUVUkgKGRlc2t0b3AvbGFwdG9wKQpjYXJnbyBidWlsZCAtLWZlYXR1cmVzIHR1aQoKIyBSZWxlYXNlCmNhcmdvIGJ1aWxkIC0tZmVhdHVyZXMgdHVpIC0tcmVsZWFzZQpgYGAKCiMjIyBSdW4KCmBgYGJhc2gKIyBDTEkgbW9kZQpjYXJnbyBydW4gLS1mZWF0dXJlcyB0dWkKCiMgSW5zaWRlIHRoZSBUVUk6CiMgICBbMS02XSAgIFN3aXRjaCB0YWJzOiBEYXNoYm9hcmQgLyBHcmFwaCAvIFRoZW9yeSAvIEhpc3RvcnkgLyBBZ2VudHMgLyBDaGF0CiMgICBbcl0gICAgIFJlZnJlc2ggbWV0cmljcwojICAgW3NdICAgICBTd2VlcCBhbGwgMyByZWdpbWVzIGFuZCBzd2l0Y2ggdG8gYmVzdAojICAgW2RdICAgICBTaW11bGF0ZSBkZXZpYXRpb24gYW5kIHJlLWV2YWx1YXRlCiMgICBbNl0gICAgIE9wZW4gY2hhdCDigJQgdHlwZSBuYXR1cmFsIGNvbW1hbmRzCiMgICBbP10gICAgIFRvZ2dsZSBoZWxwIG92ZXJsYXkKIyAgIFtxXSAgICAgUXVpdApgYGAKCiMjIyBDaGF0IENvbW1hbmRzCgpgYGAKYnVpbGQgcnVzdCAgICAgICAgICAgQnVpbGQgYSBSdXN0IHByb2plY3QKYnVpbGQgcHl0aG9uICAgICAgICAgQnVpbGQgYSBQeXRob24gcHJvamVjdApjcmVhdGUgYXBpIG15YXBpICAgICBTY2FmZm9sZCBhIG5ldyBBUEkgcHJvamVjdApjcmVhdGUgY2xpIG15dG9vbCAgICBTY2FmZm9sZCBhIG5ldyBDTEkgdG9vbApjcmVhdGUgd2ViIG15c2l0ZSAgICBTY2FmZm9sZCBhIHdlYiBhcHAKYW5hbHl6ZSAuL3NyYyAgICAgICAgQW5hbHl6ZSBjb2RlIHF1YWxpdHkKdGVzdCAuICAgICAgICAgICAgICAgUnVuIHRlc3RzCnNraWxsIGFkZCBteXNraWxsICAgIEFkZCBhIG5ldyBza2lsbApza2lsbCBsaXN0ICAgICAgICAgICBMaXN0IGxvYWRlZCBza2lsbHMKY2xvbmUgaHR0cHM6Ly8uLi4gICAgQ2xvbmUgYSByZXBvc2l0b3J5CmBgYAoKIyMjIFB5dGhvbiBFbmdpbmUKCmBgYGJhc2gKY2Qgfi9oaWdoLWFnZW50L3B5dGhvbgpwaXAgaW5zdGFsbCAtZSAuCgojIFJ1biB0aGUgUkVQTApweXRob24gaGlnaC1hZ2VudC1yZXBsLnB5CgojIFJ1biB0aGUgZGFlbW9uICh3cml0ZXMgdG8gfi8uaGlnaC1hZ2VudC9zdGF0ZS5qc29uKQpweXRob24gZGFlbW9uLnB5CgojIFJ1biB0aGUgc2VsZi1pbXByb3ZpbmcgbG9vcApweXRob24gc2VsZi1pbXByb3ZpbmctbG9vcC5weQpgYGAKCi0tLQoKIyMgRmVhdHVyZXMKCi0gKirOpihHKSBMaXZlIERhc2hib2FyZCoqIOKAlCBjb2xvci1jb2RlZCAoZ3JlZW4gPiAwLCB5ZWxsb3cgPiAtMiwgcmVkIDwgLTIpIHdpdGggMy1iYXIgZ2F1Z2VzIGZvciBRL8SML1YKLSAqKlJlZ2ltZSBFbmdpbmUqKiDigJQgMyBtb2RlcyB3aXRoIGF1dG9tYXRpYyBzd2l0Y2hpbmcgdmlhIHotc2NvcmUgZGV2aWF0aW9uIGRldGVjdGlvbgotICoqOC1BZ2VudCBTd2FybSoqIOKAlCBPcmNoZXN0cmF0b3IgKyA3IHNwZWNpYWxpc3QgYWdlbnRzIHdvcmtpbmcgaW4gY29uY2VydAotICoqT2xsYW1hIEludGVncmF0aW9uKiog4oCUIExvY2FsIExMTSBzdXBwb3J0IGZvciBjb2RlIGdlbmVyYXRpb24sIHJldmlldywgYW5kIGV4cGxhbmF0aW9uCi0gKipTa2lsbCBNYW5hZ2VyKiog4oCUIExvYWQsIHNhdmUsIGxpc3QsIGFuZCBkZWxldGUgYWdlbnQgc2tpbGxzIG9uIHRoZSBmbHkKLSAqKlJlcG8gTWFuYWdlcioqIOKAlCBUcmFjayBhbmQgY2xvbmUgcmVwb3MsIGFuYWx5emUgdGhlaXIgZ3JhcGhzCi0gKipCdWlsZCBNYW5hZ2VyKiog4oCUIE11bHRpLWxhbmd1YWdlIGRldGVjdGlvbiBhbmQgYnVpbGQgKFJ1c3QsIFB5dGhvbiwgTm9kZSwgR28sIEphdmEsIEMrKykKLSAqKlRVSSB3aXRoIENhdHBwdWNjaW4gTW9jaGEqKiDigJQgRGFyayB0aGVtZSwgNiB0YWJzLCBjaGF0IGlucHV0LCBoZWxwIG92ZXJsYXkKLSAqKlB5dGhvbiBNaXJyb3IqKiDigJQgRnVsbCBSdXN0IGVuZ2luZSBtaXJyb3JlZCBpbiBQeXRob24gZm9yIFRlcm11eC9wcm90b3R5cGluZyBlbnZpcm9ubWVudHMKLSAqKlNlbGYtSW1wcm92aW5nIExvb3AqKiDigJQgTWVhc3VyZXMgzqYoRyksIGNvbW1pdHMgaW1wcm92ZW1lbnRzLCByb2xscyBiYWNrIGRlZ3JhZGF0aW9uCi0gKipEYWVtb24gTW9kZSoqIOKAlCBCYWNrZ3JvdW5kIGV2YWx1YXRpb24gd3JpdGluZyBKU09OIHN0YXRlOyBUVUkgcmVhZHMgb24gW3JdCi0gKipTZWdtZW50ZWQgUmVnaW1lIERldGVjdG9yKiog4oCUIFNsaWRpbmcgd2luZG93IHotc2NvcmUgZm9yIGNoYW5nZS1wb2ludCBkZXRlY3Rpb24KLSAqKkh5c3RlcmVzaXMgR3VhcmQqKiDigJQgUHJldmVudHMgcmVnaW1lIG9zY2lsbGF0aW9uIChvbmx5IHN3aXRjaGVzIGlmIM6UzqYgPiAwLjA1KQoKLS0tCgojIyBBcmNoaXRlY3R1cmUKCmBgYArilIzilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilJAK4pSCICAgICAgICAgICAgICAgICAgIFRVSSAocmF0YXR1aSkgICAgICAgICAgICAgICAgICAgICAg4pSCCuKUgiAgRGFzaGJvYXJkIOKUgiBHcmFwaCDilIIgVGhlb3J5IOKUgiBIaXN0b3J5IOKUgiBBZ2VudHMg4pSCIENoYXTilIIK4pSU4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSs4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSs4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSYCiAgICAgICAgICAgICAgIOKUgiByZWFkcyAgICAgICAgICAgICAgIOKUgiB3cml0ZXMKICAgICAgICAgICAgICAg4pa8ICAgICAgICAgICAgICAgICAgICAg4pa8CiAgICAgICAgIH4vLmhpZ2gtYWdlbnQvc3RhdGUuanNvbiAgIH4vLmhpZ2gtYWdlbnQvc3RhdGUuanNvbgogICAgICAgICAgICAgICDilrIgICAgICAgICAgICAgICAgICAgICDilIIKICAgICAgICAgICAgICAg4pSCICAgICAgICAgICAgICAgICAgICAg4pSCCuKUjOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUtOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUtOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUkArilIIgICAgICAgICAgICAgIFJ1c3QgRW5naW5lIChSZWdpbWVFbmdpbmUpICAgICAgICAgICAgICDilIIK4pSCICDilIzilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilJAgIOKUjOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUkCAg4pSM4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSQICDilIIK4pSCICDilIIgICBHcmFwaCAg4pSCICDilIIgUmVnaW1lICAg4pSCICDilIIgICBPbGxhbWEgQ2xpZW50ICAg4pSCICDilIIK4pSCICDilIIgRz0oVixFKSAg4pSCICDilIIgRW5naW5lICAg4pSCICDilIIgIC9hcGkvZ2VuZXJhdGUgICAg4pSCICDilIIK4pSCICDilJTilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilJggIOKUlOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUmCAg4pSU4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSYICDilIIK4pSCICDilIzilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilJAgIOKUggrilIIgIOKUgiAgICAgICAgICAgOC1BZ2VudCBTd2FybSAgICAgICAgICAgICAgICAgICAgICAg4pSCICDilIIK4pSCICDilIIgT3JjaGVzdHJhdG9yIOKUgiBSZWZhY3RvciDilIIgUXVhbGl0eSDilIIgVGVzdCAgICAg4pSCICDilIIK4pSCICDilIIgU2tpbGwg4pSCIFJlcG8g4pSCIEJ1aWxkIOKUgiBQbGFubmVyICAgICAgICAgICAgICAgIOKUgiAg4pSCCuKUgiAg4pSU4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSYICDilIIK4pSU4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSYCmBgYAoKVGhlIFRVSSBpcyBhICoqcHJvamVjdGlvbioqIG9mIHRoZSBtYXRoZW1hdGljYWwgbW9kZWwuIEl0IGRvZXNuJ3QgY29tcHV0ZSBhbnl0aGluZyDigJQgaXQgcmVhZHMgzqYoRyksIFEsIMSMLCBWIGZyb20gdGhlIGVuZ2luZSBhbmQgcGFpbnRzIHRoZW0uIFRoZSBlbmdpbmUgaGFzIG5vIGlkZWEgd2hhdCBhIHRlcm1pbmFsIGlzLiBUaGlzIHNlcGFyYXRpb24gbWVhbnMgeW91IGNhbiBydW4gdGhlIGVuZ2luZSBoZWFkbGVzcyAoZGFlbW9uLCBjcm9uLCB0ZXN0cykgYW5kIGF0dGFjaCB0aGUgVFVJIHdoZW5ldmVyIHlvdSB3YW50IHRvIHNlZSB3aGF0J3MgaGFwcGVuaW5nLgoKLS0tCgojIyBEb3dubG9hZCAmIEluc3RhbGwKCiMjIyBQcmUtYnVpbHQgUmVsZWFzZQoKRG93bmxvYWQgZnJvbSBHaXRIdWIgUmVsZWFzZXM6CmBgYGJhc2gKIyBMaW51eCB4ODZfNjQKY3VybCAtTCBodHRwczovL2dpdGh1Yi5jb20vR3JhcGhfeF8weDAvaGlnaC1hZ2VudC9yZWxlYXNlcy9sYXRlc3QvZG93bmxvYWQvaGlnaC1hZ2VudC14ODZfNjQtdW5rbm93bi1saW51eC1tdXNsLnRhci5neiBcCiAgfCB0YXIgeHogJiYgLi9oaWdoLWFnZW50LXR1aQoKIyBPciB1c2UgdGhlIFB5dGhvbiB2ZXJzaW9uIChubyBjb21waWxhdGlvbiBuZWVkZWQpCnBpcCBpbnN0YWxsIGhpZ2gtYWdlbnQKcHl0aG9uIC1tIGhpZ2hfYWdlbnRfZW5naW5lLmVuZ2luZQpgYGAKCiMjIyBGcm9tIFNvdXJjZQoKYGBgYmFzaApnaXQgY2xvbmUgaHR0cHM6Ly9naXRodWIuY29tL0dyYXBoX3hfMHgwL2hpZ2gtYWdlbnQuZ2l0CmNkIGhpZ2gtYWdlbnQvcnVzdAoKIyBDb3JlIGVuZ2luZSAoVGVybXV4L01vYmlsZSkKY2FyZ28gYnVpbGQKCiMgRnVsbCBUVUkgKGRlc2t0b3ApCmNhcmdvIGJ1aWxkIC0tZmVhdHVyZXMgdHVpCgojIFJ1bgpjYXJnbyBydW4gLS1mZWF0dXJlcyB0dWkKYGBgCgojIyMgUHl0aG9uIE9ubHkgKE5vIFJ1c3QpCgpgYGBiYXNoCmdpdCBjbG9uZSBodHRwczovL2dpdGh1Yi5jb20vR3JhcGhfeF8weDAvaGlnaC1hZ2VudC5naXQKY2QgaGlnaC1hZ2VudC9weXRob24KcGlwIGluc3RhbGwgLWUgLgoKcHl0aG9uIGhpZ2gtYWdlbnQtcmVwbC5weQpgYGAKCi0tLQoKIyMgUmVxdWlyZW1lbnRzCgotICoqUnVzdCoqIDEuNzArIChmb3IgY29yZSBlbmdpbmUgKyBUVUkpCi0gKipQeXRob24qKiAzLjkrIChmb3IgUHl0aG9uIG1pcnJvcikKLSAqKk9sbGFtYSoqIChvcHRpb25hbCwgZm9yIExMTSBpbnRlZ3JhdGlvbikg4oCUIGh0dHBzOi8vb2xsYW1hLmFpCi0gKipyYXRhdHVpIDAuMjkqKiArICoqY3Jvc3N0ZXJtIDAuMjgqKiAob3B0aW9uYWwsIGZvciBUVUkg4oCUIHVzZSBgLS1mZWF0dXJlcyB0dWlgKQoKLS0tCgojIyBDb25maWd1cmF0aW9uCgpFbnZpcm9ubWVudCB2YXJpYWJsZXM6CgpgYGBiYXNoCmV4cG9ydCBPTExBTUFfQkFTRV9VUkw9aHR0cDovL2xvY2FsaG9zdDoxMTQzNCAgICAgICMgT2xsYW1hIEFQSSBlbmRwb2ludApleHBvcnQgT0xMQU1BX01PREVMPWxsYW1hMy4yICAgICAgICAgICAgICAgICAgICAgICAjIERlZmF1bHQgbW9kZWwKZXhwb3J0IEhJR0hfQUdFTlRfU1RBVEU9fi8uaGlnaC1hZ2VudC9zdGF0ZS5qc29uICAgIyBTdGF0ZSBmaWxlIGxvY2F0aW9uCmV4cG9ydCBISUdIX0FHRU5UX1NLSUxMUz1+Ly5oaWdoLWFnZW50L3NraWxscy8gICAgICMgU2tpbGxzIGRpcmVjdG9yeQpgYGAKCi0tLQoKIyMgTGljZW5zZQoKTUlUIOKAlCBTZWUgTElDRU5TRSBmaWxlLgoKLS0tCgoqKkJ1aWx0IHdpdGggzqYoRykuIEV2ZXJ5IGRlY2lzaW9uIHRyYWNlcyBiYWNrIHRvIHRoZSBncmFwaC4qKgo=
+# Graph_x_0x0 — AIOS for Mobile TUI Deep Agents Storm Swarm
+
+**Φ(G) = α·Q(G) − β·Č(G) − γ·mean(V)** — The mathematical foundation driving regime-aware AI agent orchestration.
+
+---
+
+## What Is This?
+
+Graph_x_0x0 is an AI Operating System built around a live code-graph model. Your entire codebase is represented as a directed graph G=(V,E), where **nodes are functions** and **edges are calls/imports**. Every decision — regime switches, deviation alerts, agent task routing — traces back to Φ(G) computed live on the graph.
+
+It's designed for **Mobile TUI** (Termux, OMEN Laptop) with an 8-agent deep swarm, Ollama API integration, and a self-improving loop that measures, commits, or rolls back changes based on their impact on code architecture quality.
+
+---
+
+## The Math
+
+```
+Φ(G) = α·Q(G) − β·Č(G) − γ·mean(V)
+```
+
+| Symbol | Meaning |
+|--------|---------|
+| **G = (V,E)** | Your codebase as a directed graph. Nodes=functions, Edges=calls/imports |
+| **Q(G)** | Newman-Girvan modularity — how well functions cluster within modules. Higher = better cohesion |
+| **Č(G)** | Mean inter-module coupling per node. Lower = less spaghetti |
+| **V** | Cyclomatic complexity (McCabe). Branches, loops, conditionals per function |
+| **α, β, γ** | Regime-dependent coefficients that shift what the system optimizes |
+
+---
+
+## Three Regimes
+
+| Regime | α | β | γ | Strategy |
+|--------|---|---|---|---|
+| **Simple** | 0.8 | 0.9 | 0.2 | Minimize coupling. Fast iteration. |
+| **Advanced** | 1.2 | 0.5 | 0.3 | Maximize modularity. PR review mode. |
+| **Hybrid** | 1.0 | 0.6 | 0.4 | Balance all terms. Team handoff mode. |
+
+**Deviation Detection**: Sliding window → z-score → if |z| > 2.0, change-point detected.  
+**Hysteresis**: Regime switch only if ΔΦ(G) > 0.05 (prevents oscillation).
+
+---
+
+## 8-Agent Deep Swarm
+
+| Agent | Role |
+|-------|------|
+| **Orchestrator** | Regime-aware task routing + Φ(G) optimization |
+| **Refactor** | Code restructuring + coupling reduction |
+| **Quality** | Code review + quality scoring |
+| **Test** | Test generation + coverage analysis |
+| **Skill** | Skill discovery + management |
+| **Repo** | Repository analysis + cloning |
+| **Build** | Build orchestration + multi-language support |
+| **Planner** | Task decomposition + execution planning |
+
+---
+
+## Project Structure
+
+```
+~/high-agent/rust/
+├── Cargo.toml              # Package manifest + feature flags
+├── src/
+│   ├── lib.rs              # Public API + re-exports
+│   ├── main.rs             # CLI binary ("high-agent")
+│   ├── graph.rs            # G=(V,E), metrics, Newman-Girvan, snapshot
+│   ├── core.rs             # RegimeEngine + detect_and_switch
+│   ├── orchestrator.rs     # Piecewise regime switching
+│   ├── regime.rs           # Regime enum, RegimeCoeffs, compute_phi()
+│   ├── metrics.rs          # Metrics, History, PhiColor, Trend
+│   ├── ollama.rs           # OllamaClient: /api/tags, /api/generate, /api/chat
+│   ├── error.rs            # AgentError, From impls, handle_error! macro
+│   ├── agent.rs            # AgentState, AgentId, AgentRole
+│   ├── skills.rs           # SkillManager: save/delete/list/load
+│   ├── repos.rs            # RepoManager: add/remove/list/clone
+│   ├── build.rs            # BuildManager: detect/build/clean (Rust/Python/Node/Go/Java/C++)
+│   ├── swarm.rs            # SwarmState, SwarmTask, run_swarm
+│   ├── planner.rs          # PlannerState, plan_task, decompose
+│   └── bin/
+│       └── tui.rs          # Full TUI binary (requires --features tui)
+└── benches/
+    └── graph_bench.rs      # Benchmark: modularity, coupling, snapshot
+
+~/high-agent/python/        # Python mirror engine
+├── high_agent_engine/
+│   ├── __init__.py
+│   ├── graph.py            # G=(V,E), Φ(G) computation
+│   ├── engine.py           # RegimeEngine with detect_and_evaluate
+│   ├── regime.py           # Regime enum, hysteresis, detector
+│   ├── ollama.py           # Ollama API client
+│   └── crawler.py          # Codebase graph crawler
+├── high-agent-repl.py      # Live REPL with sweep, theory, history, watch
+├── self-improving-loop.py  # baseline → verify → commit → rollback
+└── daemon.py               # Background evaluation → ~/.high-agent/state.json
+```
+
+---
+
+## Quick Start
+
+### Build
+
+```bash
+# Core only (fast, works on Termux/Mobile)
+cargo build
+
+# Full TUI (desktop/laptop)
+cargo build --features tui
+
+# Release
+cargo build --features tui --release
+```
+
+### Run
+
+```bash
+# CLI mode
+cargo run --features tui
+
+# Inside the TUI:
+#   [1-6]   Switch tabs: Dashboard / Graph / Theory / History / Agents / Chat
+#   [r]     Refresh metrics
+#   [s]     Sweep all 3 regimes and switch to best
+#   [d]     Simulate deviation and re-evaluate
+#   [6]     Open chat — type natural commands
+#   [?]     Toggle help overlay
+#   [q]     Quit
+```
+
+### Chat Commands
+
+```
+build rust           Build a Rust project
+build python         Build a Python project
+create api myapi     Scaffold a new API project
+create cli mytool    Scaffold a new CLI tool
+create web mysite    Scaffold a web app
+analyze ./src        Analyze code quality
+test .               Run tests
+skill add myskill    Add a new skill
+skill list           List loaded skills
+clone https://...    Clone a repository
+```
+
+### Python Engine
+
+```bash
+cd ~/high-agent/python
+pip install -e .
+
+# Run the REPL
+python high-agent-repl.py
+
+# Run the daemon (writes to ~/.high-agent/state.json)
+python daemon.py
+
+# Run the self-improving loop
+python self-improving-loop.py
+```
+
+---
+
+## Features
+
+- **Φ(G) Live Dashboard** — color-coded (green > 0, yellow > -2, red < -2) with 3-bar gauges for Q/Č/V
+- **Regime Engine** — 3 modes with automatic switching via z-score deviation detection
+- **8-Agent Swarm** — Orchestrator + 7 specialist agents working in concert
+- **Ollama Integration** — Local LLM support for code generation, review, and explanation
+- **Skill Manager** — Load, save, list, and delete agent skills on the fly
+- **Repo Manager** — Track and clone repos, analyze their graphs
+- **Build Manager** — Multi-language detection and build (Rust, Python, Node, Go, Java, C++)
+- **TUI with Catppuccin Mocha** — Dark theme, 6 tabs, chat input, help overlay
+- **Python Mirror** — Full Rust engine mirrored in Python for Termux/prototyping environments
+- **Self-Improving Loop** — Measures Φ(G), commits improvements, rolls back degradation
+- **Daemon Mode** — Background evaluation writing JSON state; TUI reads on [r]
+- **Segmented Regime Detector** — Sliding window z-score for change-point detection
+- **Hysteresis Guard** — Prevents regime oscillation (only switches if ΔΦ > 0.05)
+
+---
+
+## Architecture
+
+```
+┌─────────────────────────────────────────────────────┐
+│                   TUI (ratatui)                      │
+│  Dashboard │ Graph │ Theory │ History │ Agents │ Chat│
+└──────────────┬──────────────────────┬─────────────────┘
+               │ reads               │ writes
+               ▼                     ▼
+         ~/.high-agent/state.json   ~/.high-agent/state.json
+               ▲                     │
+               │                     │
+┌──────────────┴──────────────────────┴─────────────────┐
+│              Rust Engine (RegimeEngine)              │
+│  ┌──────────┐  ┌──────────┐  ┌───────────────────┐  │
+│  │   Graph  │  │ Regime   │  │   Ollama Client   │  │
+│  │ G=(V,E)  │  │ Engine   │  │  /api/generate    │  │
+│  └──────────┘  └──────────┘  └───────────────────┘  │
+│  ┌──────────────────────────────────────────────┐  │
+│  │           8-Agent Swarm                       │  │
+│  │ Orchestrator │ Refactor │ Quality │ Test     │  │
+│  │ Skill │ Repo │ Build │ Planner                │  │
+│  └──────────────────────────────────────────────┘  │
+└─────────────────────────────────────────────────────┘
+```
+
+The TUI is a **projection** of the mathematical model. It doesn't compute anything — it reads Φ(G), Q, Č, V from the engine and paints them. The engine has no idea what a terminal is. This separation means you can run the engine headless (daemon, cron, tests) and attach the TUI whenever you want to see what's happening.
+
+---
+
+## Download & Install
+
+### Pre-built Release
+
+Download from GitHub Releases:
+```bash
+# Linux x86_64
+curl -L https://github.com/Graph_x_0x0/high-agent/releases/latest/download/high-agent-x86_64-unknown-linux-musl.tar.gz \
+  | tar xz && ./high-agent-tui
+
+# Or use the Python version (no compilation needed)
+pip install high-agent
+python -m high_agent_engine.engine
+```
+
+### From Source
+
+```bash
+git clone https://github.com/Graph_x_0x0/high-agent.git
+cd high-agent/rust
+
+# Core engine (Termux/Mobile)
+cargo build
+
+# Full TUI (desktop)
+cargo build --features tui
+
+# Run
+cargo run --features tui
+```
+
+### Python Only (No Rust)
+
+```bash
+git clone https://github.com/Graph_x_0x0/high-agent.git
+cd high-agent/python
+pip install -e .
+
+python high-agent-repl.py
+```
+
+---
+
+## Requirements
+
+- **Rust** 1.70+ (for core engine + TUI)
+- **Python** 3.9+ (for Python mirror)
+- **Ollama** (optional, for LLM integration) — https://ollama.ai
+- **ratatui 0.29** + **crossterm 0.28** (optional, for TUI — use `--features tui`)
+
+---
+
+## Configuration
+
+Environment variables:
+
+```bash
+export OLLAMA_BASE_URL=http://localhost:11434      # Ollama API endpoint
+export OLLAMA_MODEL=llama3.2                       # Default model
+export HIGH_AGENT_STATE=~/.high-agent/state.json   # State file location
+export HIGH_AGENT_SKILLS=~/.high-agent/skills/     # Skills directory
+```
+
+---
+
+## License
+
+MIT — See LICENSE file.
+
+---
+
+**Built with Φ(G). Every decision traces back to the graph.**

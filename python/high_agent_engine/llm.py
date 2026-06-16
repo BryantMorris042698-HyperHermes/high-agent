@@ -1,1 +1,567 @@
-IiIiVW5pZmllZCBMTE0gY2xpZW50IOKAlCBPbGxhbWEsIE9wZW5BSSwgT3BlblJvdXRlciwgR3JvcSwgRGVlcFNlZWsuCgpBdXRvLWRldGVjdHMgcHJvdmlkZXIgZnJvbSBVUkwgb3IgbW9kZWwgbmFtZS4gUGFzcyBhIG1vZGVsIGxpa2U6CiAgLSAibGxhbWEzLjI6M2IiICAgICAgICAgICAgIOKGkiBPbGxhbWEgKGh0dHA6Ly9sb2NhbGhvc3Q6MTE0MzQpCiAgLSAiZ3B0LTRvIiAgICAgICAgICAgICAgICAgIOKGkiBPcGVuQUkgKG5lZWRzIE9QRU5BSV9BUElfS0VZKQogIC0gImFudGhyb3BpYy9jbGF1ZGUtc29ubmV0LTQiIOKGkiBPcGVuUm91dGVyCiAgLSAiZ3JvcS9sbGFtYS0zLjMtNzBiIiAgICAgIOKGkiBHcm9xCiAgLSAiZGVlcHNlZWstY2hhdCIgICAgICAgICAgIOKGkiBEZWVwU2VlawogIC0gImh0dHA6Ly9sb2NhbGhvc3Q6MTE0MzQvcXdlbjIuNToxLjViIiDihpIgY3VzdG9tIE9sbGFtYSBVUkwKIiIiCgpmcm9tIF9fZnV0dXJlX18gaW1wb3J0IGFubm90YXRpb25zCmltcG9ydCBvcwppbXBvcnQgcmVxdWVzdHMKZnJvbSB0eXBpbmcgaW1wb3J0IExpc3QsIERpY3QsIEFueSwgT3B0aW9uYWwKaW1wb3J0IGpzb24KCiMg4pSA4pSAIFByb3ZpZGVyIGRlZmF1bHRzIOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgAoKUFJPVklERVJfTU9ERUxTID0gewogICAgIm9wZW5haSI6IHsKICAgICAgICAiZGVmYXVsdCI6ICJncHQtNG8tbWluaSIsCiAgICAgICAgImJhc2VfdXJsIjogImh0dHBzOi8vYXBpLm9wZW5haS5jb20vdjEiLAogICAgICAgICJlbnZfa2V5IjogIk9QRU5BSV9BUElfS0VZIiwKICAgIH0sCiAgICAib3BlbnJvdXRlciI6IHsKICAgICAgICAiZGVmYXVsdCI6ICJhbnRocm9waWMvY2xhdWRlLXNvbm5ldC00IiwKICAgICAgICAiYmFzZV91cmwiOiAiaHR0cHM6Ly9vcGVucm91dGVyLmFpL2FwaS92MSIsCiAgICAgICAgImVudl9rZXkiOiAiT1BFTlJPVVRFUl9BUElfS0VZIiwKICAgIH0sCiAgICAiZ3JvcSI6IHsKICAgICAgICAiZGVmYXVsdCI6ICJsbGFtYS0zLjMtNzBiLXZlcnNhdGlsZSIsCiAgICAgICAgImJhc2VfdXJsIjogImh0dHBzOi8vYXBpLmdyb3EuY29tL29wZW5haS92MSIsCiAgICAgICAgImVudl9rZXkiOiAiR1JPUV9BUElfS0VZIiwKICAgIH0sCiAgICAiZGVlcHNlZWsiOiB7CiAgICAgICAgImRlZmF1bHQiOiAiZGVlcHNlZWstY2hhdCIsCiAgICAgICAgImJhc2VfdXJsIjogImh0dHBzOi8vYXBpLmRlZXBzZWVrLmNvbS92MSIsCiAgICAgICAgImVudl9rZXkiOiAiREVFUFNFRUtfQVBJX0tFWSIsCiAgICB9LAogICAgIm9sbGFtYSI6IHsKICAgICAgICAiZGVmYXVsdCI6ICJsbGFtYTMuMjozYiIsCiAgICAgICAgImJhc2VfdXJsIjogImh0dHA6Ly9sb2NhbGhvc3Q6MTE0MzQiLAogICAgICAgICJlbnZfa2V5IjogIk9MTEFNQV9IT1NUIiwKICAgIH0sCn0KCk9MTEFNQV9NT0RFTFMgPSB7CiAgICAibGxhbWEzLjI6M2IiLCAibGxhbWEzLjI6MWIiLCAibGxhbWEzLjE6OGIiLCAibGxhbWEzLjE6NzBiIiwKICAgICJsbGFtYTM6OGIiLCAibGxhbWEzOjcwYiIsCiAgICAibWlzdHJhbDo3YiIsICJtaXN0cmFsLW5lbW86MTJiIiwKICAgICJjb2RlbGxhbWE6N2IiLCAiY29kZWxsYW1hOjEzYiIsICJjb2RlbGxhbWE6MzRiIiwKICAgICJxd2VuMi41OjAuNWIiLCAicXdlbjIuNToxLjViIiwgInF3ZW4yLjU6M2IiLCAicXdlbjIuNTo3YiIsICJxd2VuMi41OjE0YiIsICJxd2VuMi41OjMyYiIsCiAgICAicGhpMzozLjhiIiwgInBoaTM6MTRiIiwKICAgICJub21pYy1lbWJlZC10ZXh0IiwgIm14YmFpLWVtYmVkLWxhcmdlIiwKICAgICJnZW1tYTI6MmIiLCAiZ2VtbWEyOjliIiwgImdlbW1hMjoyN2IiLAogICAgImxsYXZhOjdiIiwgImxsYXZhOjEzYiIsICJsbGF2YTozNGIiLAogICAgImRvbHBoaW4tbWl4dHJhbDo4eDIyYiIsCiAgICAid2l6YXJkbG0yOjh4MjJiIiwKICAgICJheWE6OGIiLCAiYXlhOjM1YiIsCiAgICAicGhpNDoxNGIiLAogICAgInF3ZW4yLjUtY29kZXI6MS41YiIsICJxd2VuMi41LWNvZGVyOjNiIiwgInF3ZW4yLjUtY29kZXI6N2IiLCAicXdlbjIuNS1jb2RlcjoxNGIiLAp9CgoKZGVmIF9kZXRlY3RfcHJvdmlkZXIobW9kZWw6IHN0ciwgYmFzZV91cmw6IE9wdGlvbmFsW3N0cl0pIC0+IHR1cGxlW3N0ciwgc3RyLCBzdHJdOgogICAgIiIiUmV0dXJucyAocHJvdmlkZXIsIGZpbmFsX2Jhc2VfdXJsLCBlbnZfa2V5KS4iIiIKICAgIGlmIGJhc2VfdXJsOgogICAgICAgIGlmICJsb2NhbGhvc3QiIGluIGJhc2VfdXJsIG9yICIxMjcuMC4wLjEiIGluIGJhc2VfdXJsOgogICAgICAgICAgICByZXR1cm4gIm9sbGFtYSIsIGJhc2VfdXJsLCAiT0xMQU1BX0hPU1QiCiAgICAgICAgaWYgIm9wZW5yb3V0ZXIiIGluIGJhc2VfdXJsOgogICAgICAgICAgICByZXR1cm4gIm9wZW5yb3V0ZXIiLCBiYXNlX3VybCwgIk9QRU5ST1VURVJfQVBJX0tFWSIKICAgICAgICBpZiAiZ3JvcSIgaW4gYmFzZV91cmw6CiAgICAgICAgICAgIHJldHVybiAiZ3JvcSIsIGJhc2VfdXJsLCAiR1JPUV9BUElfS0VZIgogICAgICAgIGlmICJkZWVwc2VlayIgaW4gYmFzZV91cmw6CiAgICAgICAgICAgIHJldHVybiAiZGVlcHNlZWsiLCBiYXNlX3VybCwgIkRFRVBTRUVLX0FQSV9LRVkiCiAgICAgICAgcmV0dXJuICJvcGVuYWkiLCBiYXNlX3VybCwgIk9QRU5BSV9BUElfS0VZIgoKICAgICMgQXV0by1kZXRlY3QgZnJvbSBtb2RlbCBuYW1lCiAgICBpZiAiOiIgaW4gbW9kZWwgb3IgbW9kZWwubG93ZXIoKSBpbiB7bS5sb3dlcigpIGZvciBtIGluIE9MTEFNQV9NT0RFTFN9OgogICAgICAgIGhvc3QgPSBvcy5nZXRlbnYoIk9MTEFNQV9IT1NUIiwgImh0dHA6Ly9sb2NhbGhvc3Q6MTE0MzQiKQogICAgICAgIHJldHVybiAib2xsYW1hIiwgaG9zdCwgIk9MTEFNQV9IT1NUIgogICAgaWYgIi8iIGluIG1vZGVsOgogICAgICAgICMgb3BlbnJvdXRlciBmb3JtYXQ6IHByb3ZpZGVyL21vZGVsCiAgICAgICAgcmV0dXJuICJvcGVucm91dGVyIiwgUFJPVklERVJfTU9ERUxTWyJvcGVucm91dGVyIl1bImJhc2VfdXJsIl0sICJPUEVOUk9VVEVSX0FQSV9LRVkiCiAgICBpZiBtb2RlbC5zdGFydHN3aXRoKCJncHQtIikgb3IgbW9kZWwuc3RhcnRzd2l0aCgibzEtIikgb3IgbW9kZWwuc3RhcnRzd2l0aCgibzMtIik6CiAgICAgICAgcmV0dXJuICJvcGVuYWkiLCBQUk9WSURFUl9NT0RFTFNbIm9wZW5haSJdWyJiYXNlX3VybCJdLCAiT1BFTkFJX0FQSV9LRVkiCiAgICBpZiBtb2RlbC5zdGFydHN3aXRoKCJkZWVwc2VlayIpOgogICAgICAgIHJldHVybiAiZGVlcHNlZWsiLCBQUk9WSURFUl9NT0RFTFNbImRlZXBzZWVrIl1bImJhc2VfdXJsIl0sICJERUVQU0VFS19BUElfS0VZIgogICAgaWYgbW9kZWwuc3RhcnRzd2l0aCgiZ3JvcS8iKToKICAgICAgICByZXR1cm4gImdyb3EiLCBQUk9WSURFUl9NT0RFTFNbImdyb3EiXVsiYmFzZV91cmwiXSwgIkdST1FfQVBJX0tFWSIKCiAgICAjIERlZmF1bHQ6IHRyeSBvbGxhbWEgZmlyc3QsIGZhbGwgYmFjayB0byBvcGVuYWkKICAgIHJldHVybiAib2xsYW1hIiwgUFJPVklERVJfTU9ERUxTWyJvbGxhbWEiXVsiYmFzZV91cmwiXSwgIk9MTEFNQV9IT1NUIgoKCmNsYXNzIExMTUNsaWVudDoKICAgICIiIlVuaWZpZWQgTExNIGNsaWVudCBmb3IgT2xsYW1hICsgT3BlbkFJLWNvbXBhdGlibGUgQVBJcy4KCiAgICBVc2FnZToKICAgICAgICAjIE9sbGFtYSAobG9jYWwpCiAgICAgICAgY2xpZW50ID0gTExNQ2xpZW50KG1vZGVsPSJsbGFtYTMuMjozYiIpCgogICAgICAgICMgT3BlbkFJCiAgICAgICAgY2xpZW50ID0gTExNQ2xpZW50KG1vZGVsPSJncHQtNG8iLCBhcGlfa2V5PW9zLmdldGVudigiT1BFTkFJX0FQSV9LRVkiKSkKCiAgICAgICAgIyBPcGVuUm91dGVyCiAgICAgICAgY2xpZW50ID0gTExNQ2xpZW50KG1vZGVsPSJhbnRocm9waWMvY2xhdWRlLXNvbm5ldC00IiwgYXBpX2tleT1vcy5nZXRlbnYoIk9QRU5ST1VURVJfQVBJX0tFWSIpKQoKICAgICAgICAjIEF1dG8tZGV0ZWN0CiAgICAgICAgY2xpZW50ID0gTExNQ2xpZW50KG1vZGVsPSJsbGFtYTMuMjozYiIpICAjIOKGkiBPbGxhbWEKICAgICAgICBjbGllbnQgPSBMTE1DbGllbnQobW9kZWw9ImdwdC00byIpICAgICAgICAjIOKGkiBPcGVuQUkKCiAgICAgICAgIyBDaGF0CiAgICAgICAgcmVzcCA9IGNsaWVudC5jaGF0KFsoInVzZXIiLCAiSGVsbG8iKV0pCiAgICAgICAgcmVzcCA9IGNsaWVudC5jaGF0KFsoInN5c3RlbSIsICJZb3UgYXJlIGhlbHBmdWwuIiksICgidXNlciIsICJIaSIpXSkKCiAgICAgICAgIyBHZW5lcmF0ZQogICAgICAgIHJlc3AgPSBjbGllbnQuZ2VuZXJhdGUoIkV4cGxhaW4gzqYoRykgaW4gb25lIHNlbnRlbmNlLiIpCgogICAgICAgICMgU3RyZWFtaW5nCiAgICAgICAgZm9yIGNodW5rIGluIGNsaWVudC5nZW5lcmF0ZSgiV3JpdGUgY29kZSIsIHN0cmVhbT1UcnVlKToKICAgICAgICAgICAgcHJpbnQoY2h1bmssIGVuZD0iIiwgZmx1c2g9VHJ1ZSkKICAgICIiIgoKICAgIGRlZiBfX2luaXRfXygKICAgICAgICBzZWxmLAogICAgICAgIG1vZGVsOiBPcHRpb25hbFtzdHJdID0gTm9uZSwKICAgICAgICBhcGlfa2V5OiBPcHRpb25hbFtzdHJdID0gTm9uZSwKICAgICAgICBiYXNlX3VybDogT3B0aW9uYWxbc3RyXSA9IE5vbmUsCiAgICAgICAgcHJvdmlkZXI6IE9wdGlvbmFsW3N0cl0gPSBOb25lLAogICAgICAgIHRlbXBlcmF0dXJlOiBmbG9hdCA9IDAuNywKICAgICAgICBtYXhfdG9rZW5zOiBpbnQgPSAyMDQ4LAogICAgICAgIHRpbWVvdXQ6IGludCA9IDEyMCwKICAgICk6CiAgICAgICAgIyBSZXNvbHZlIHByb3ZpZGVyCiAgICAgICAgaWYgcHJvdmlkZXIgYW5kIHByb3ZpZGVyIGluIFBST1ZJREVSX01PREVMUzoKICAgICAgICAgICAgc2VsZi5wcm92aWRlciA9IHByb3ZpZGVyCiAgICAgICAgICAgIGRlZmF1bHRzID0gUFJPVklERVJfTU9ERUxTW3Byb3ZpZGVyXQogICAgICAgICAgICBzZWxmLm1vZGVsID0gbW9kZWwgb3IgZGVmYXVsdHNbImRlZmF1bHQiXQogICAgICAgICAgICBzZWxmLmJhc2VfdXJsID0gYmFzZV91cmwgb3IgZGVmYXVsdHNbImJhc2VfdXJsIl0KICAgICAgICAgICAgc2VsZi5fYXBpX2tleV9lbnYgPSBkZWZhdWx0c1siZW52X2tleSJdCiAgICAgICAgZWxzZToKICAgICAgICAgICAgc2VsZi5tb2RlbCA9IG1vZGVsIG9yIFBST1ZJREVSX01PREVMU1sib2xsYW1hIl1bImRlZmF1bHQiXQogICAgICAgICAgICBzZWxmLnByb3ZpZGVyLCBzZWxmLmJhc2VfdXJsLCBzZWxmLl9hcGlfa2V5X2VudiA9IF9kZXRlY3RfcHJvdmlkZXIoCiAgICAgICAgICAgICAgICBzZWxmLm1vZGVsLCBiYXNlX3VybAogICAgICAgICAgICApCgogICAgICAgICMgQVBJIGtleSDigJQgZnJvbSBwYXJhbSwgdGhlbiBlbnYgdmFyCiAgICAgICAgc2VsZi5fYXBpX2tleSA9IGFwaV9rZXkgb3Igb3MuZ2V0ZW52KHNlbGYuX2FwaV9rZXlfZW52LCAiIikKICAgICAgICBzZWxmLnRlbXBlcmF0dXJlID0gdGVtcGVyYXR1cmUKICAgICAgICBzZWxmLm1heF90b2tlbnMgPSBtYXhfdG9rZW5zCiAgICAgICAgc2VsZi50aW1lb3V0ID0gdGltZW91dAoKICAgICAgICAjIFNlc3Npb24gcmV1c2UKICAgICAgICBzZWxmLl9zZXNzaW9uID0gTm9uZQoKICAgIGRlZiBfc2Vzc2lvbl9nZXQoc2VsZikgLT4gcmVxdWVzdHMuU2Vzc2lvbjoKICAgICAgICBpZiBzZWxmLl9zZXNzaW9uIGlzIE5vbmU6CiAgICAgICAgICAgIHNlbGYuX3Nlc3Npb24gPSByZXF1ZXN0cy5TZXNzaW9uKCkKICAgICAgICAgICAgaWYgc2VsZi5fYXBpX2tleSBhbmQgc2VsZi5wcm92aWRlciAhPSAib2xsYW1hIjoKICAgICAgICAgICAgICAgIHNlbGYuX3Nlc3Npb24uaGVhZGVyc1siQXV0aG9yaXphdGlvbiJdID0gZiJCZWFyZXIge3NlbGYuX2FwaV9rZXl9IgogICAgICAgIHJldHVybiBzZWxmLl9zZXNzaW9uCgogICAgQHByb3BlcnR5CiAgICBkZWYgaXNfb2xsYW1hKHNlbGYpIC0+IGJvb2w6CiAgICAgICAgcmV0dXJuIHNlbGYucHJvdmlkZXIgPT0gIm9sbGFtYSIKCiAgICBkZWYgX3VybChzZWxmLCBwYXRoOiBzdHIpIC0+IHN0cjoKICAgICAgICByZXR1cm4gZiJ7c2VsZi5iYXNlX3VybC5yc3RyaXAoJy8nKX0ve3BhdGgubHN0cmlwKCcvJyl9IgoKICAgICMg4pSA4pSAIEF2YWlsYWJpbGl0eSDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIAKCiAgICBkZWYgaXNfYXZhaWxhYmxlKHNlbGYpIC0+IGJvb2w6CiAgICAgICAgIiIiQ2hlY2sgaWYgdGhlIExMTSBlbmRwb2ludCBpcyByZWFjaGFibGUuIiIiCiAgICAgICAgdHJ5OgogICAgICAgICAgICBpZiBzZWxmLmlzX29sbGFtYToKICAgICAgICAgICAgICAgIHIgPSBzZWxmLl9zZXNzaW9uX2dldCgpLmdldCgKICAgICAgICAgICAgICAgICAgICBzZWxmLl91cmwoIi9hcGkvdGFncyIpLCB0aW1lb3V0PTUKICAgICAgICAgICAgICAgICkKICAgICAgICAgICAgICAgIHJldHVybiByLnN0YXR1c19jb2RlID09IDIwMAogICAgICAgICAgICBlbHNlOgogICAgICAgICAgICAgICAgciA9IHNlbGYuX3Nlc3Npb25fZ2V0KCkuZ2V0KAogICAgICAgICAgICAgICAgICAgIHNlbGYuX3VybCgiL21vZGVscyIpLAogICAgICAgICAgICAgICAgICAgIHRpbWVvdXQ9MTAsCiAgICAgICAgICAgICAgICAgICAgaGVhZGVycz17IkhUVFAtUmVmZXJlciI6ICJodHRwczovL2hpZ2gtYWdlbnQuYWkifSwKICAgICAgICAgICAgICAgICkKICAgICAgICAgICAgICAgIHJldHVybiByLnN0YXR1c19jb2RlIGluICgyMDAsIDQwMykgICMgNDAzID0gdmFsaWQga2V5LCBubyBtb2RlbHMgbGlzdGVkCiAgICAgICAgZXhjZXB0IEV4Y2VwdGlvbjoKICAgICAgICAgICAgcmV0dXJuIEZhbHNlCgogICAgZGVmIHN0YXR1cyhzZWxmKSAtPiBEaWN0W3N0ciwgQW55XToKICAgICAgICAiIiJSZXR1cm4gZnVsbCBzdGF0dXMgZGljdC4iIiIKICAgICAgICBhdmFpbCA9IHNlbGYuaXNfYXZhaWxhYmxlKCkKICAgICAgICBtb2RlbHMgPSBbXQogICAgICAgIGlmIGF2YWlsIGFuZCBzZWxmLmlzX29sbGFtYToKICAgICAgICAgICAgdHJ5OgogICAgICAgICAgICAgICAgciA9IHNlbGYuX3Nlc3Npb25fZ2V0KCkuZ2V0KHNlbGYuX3VybCgiL2FwaS90YWdzIiksIHRpbWVvdXQ9MTApCiAgICAgICAgICAgICAgICBtb2RlbHMgPSBbbVsibmFtZSJdIGZvciBtIGluIHIuanNvbigpLmdldCgibW9kZWxzIiwgW10pXQogICAgICAgICAgICBleGNlcHQgRXhjZXB0aW9uOgogICAgICAgICAgICAgICAgcGFzcwogICAgICAgIHJldHVybiB7CiAgICAgICAgICAgICJwcm92aWRlciI6IHNlbGYucHJvdmlkZXIsCiAgICAgICAgICAgICJtb2RlbCI6IHNlbGYubW9kZWwsCiAgICAgICAgICAgICJiYXNlX3VybCI6IHNlbGYuYmFzZV91cmwsCiAgICAgICAgICAgICJhcGlfa2V5X3NldCI6IGJvb2woc2VsZi5fYXBpX2tleSksCiAgICAgICAgICAgICJhdmFpbGFibGUiOiBhdmFpbCwKICAgICAgICAgICAgIm1vZGVscyI6IG1vZGVscywKICAgICAgICB9CgogICAgIyDilIDilIAgR2VuZXJhdGUg4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSACgogICAgZGVmIGdlbmVyYXRlKAogICAgICAgIHNlbGYsCiAgICAgICAgcHJvbXB0OiBzdHIsCiAgICAgICAgc3lzdGVtOiBPcHRpb25hbFtzdHJdID0gTm9uZSwKICAgICAgICBzdHJlYW06IGJvb2wgPSBGYWxzZSwKICAgICAgICAqKmt3YXJncywKICAgICkgLT4gc3RyOgogICAgICAgICIiIlNpbmdsZS1zaG90IHRleHQgZ2VuZXJhdGlvbi4gUmV0dXJucyBmdWxsIHJlc3BvbnNlIChvciBnZW5lcmF0b3IgaWYgc3RyZWFtPVRydWUpLiIiIgogICAgICAgIGlmIHNlbGYuaXNfb2xsYW1hOgogICAgICAgICAgICByZXR1cm4gc2VsZi5fb2xsYW1hX2dlbmVyYXRlKHByb21wdCwgc3lzdGVtPXN5c3RlbSwgc3RyZWFtPXN0cmVhbSwgKiprd2FyZ3MpCiAgICAgICAgZWxzZToKICAgICAgICAgICAgcmV0dXJuIHNlbGYuX29wZW5haV9nZW5lcmF0ZShwcm9tcHQsIHN5c3RlbT1zeXN0ZW0sIHN0cmVhbT1zdHJlYW0sICoqa3dhcmdzKQoKICAgIGRlZiBfb2xsYW1hX2dlbmVyYXRlKAogICAgICAgIHNlbGYsIHByb21wdDogc3RyLCBzeXN0ZW06IE9wdGlvbmFsW3N0cl0gPSBOb25lLCBzdHJlYW06IGJvb2wgPSBGYWxzZSwgKipfCiAgICApIC0+IHN0cjoKICAgICAgICByZXEgPSB7CiAgICAgICAgICAgICJtb2RlbCI6IHNlbGYubW9kZWwsCiAgICAgICAgICAgICJwcm9tcHQiOiBwcm9tcHQsCiAgICAgICAgICAgICJzdHJlYW0iOiBzdHJlYW0sCiAgICAgICAgICAgICJvcHRpb25zIjogewogICAgICAgICAgICAgICAgInRlbXBlcmF0dXJlIjoga3dhcmdzLmdldCgidGVtcGVyYXR1cmUiLCBzZWxmLnRlbXBlcmF0dXJlKSwKICAgICAgICAgICAgICAgICJudW1fcHJlZGljdCI6IGt3YXJncy5nZXQoIm1heF90b2tlbnMiLCBzZWxmLm1heF90b2tlbnMpLAogICAgICAgICAgICB9LAogICAgICAgIH0KICAgICAgICBpZiBzeXN0ZW06CiAgICAgICAgICAgIHJlcVsic3lzdGVtIl0gPSBzeXN0ZW0KICAgICAgICByID0gc2VsZi5fc2Vzc2lvbl9nZXQoKS5wb3N0KAogICAgICAgICAgICBzZWxmLl91cmwoIi9hcGkvZ2VuZXJhdGUiKSwganNvbj1yZXEsIHRpbWVvdXQ9c2VsZi50aW1lb3V0LCBzdHJlYW09c3RyZWFtCiAgICAgICAgKQogICAgICAgIHIucmFpc2VfZm9yX3N0YXR1cygpCiAgICAgICAgaWYgc3RyZWFtOgogICAgICAgICAgICBkZWYgZ2VuKCk6CiAgICAgICAgICAgICAgICBmb3IgbGluZSBpbiByLml0ZXJfbGluZXMoKToKICAgICAgICAgICAgICAgICAgICBpZiBsaW5lOgogICAgICAgICAgICAgICAgICAgICAgICB0cnk6CiAgICAgICAgICAgICAgICAgICAgICAgICAgICB5aWVsZCBqc29uLmxvYWRzKGxpbmUpWyJyZXNwb25zZSJdCiAgICAgICAgICAgICAgICAgICAgICAgIGV4Y2VwdCAoanNvbi5KU09ORGVjb2RlRXJyb3IsIEtleUVycm9yKToKICAgICAgICAgICAgICAgICAgICAgICAgICAgIHBhc3MKICAgICAgICAgICAgcmV0dXJuIGdlbigpICAjIHR5cGU6IGlnbm9yZQogICAgICAgIHJldHVybiByLmpzb24oKS5nZXQoInJlc3BvbnNlIiwgIiIpCgogICAgZGVmIF9vcGVuYWlfZ2VuZXJhdGUoCiAgICAgICAgc2VsZiwKICAgICAgICBwcm9tcHQ6IHN0ciwKICAgICAgICBzeXN0ZW06IE9wdGlvbmFsW3N0cl0gPSBOb25lLAogICAgICAgIHN0cmVhbTogYm9vbCA9IEZhbHNlLAogICAgICAgICoqa3dhcmdzLAogICAgKSAtPiBzdHI6CiAgICAgICAgbWVzc2FnZXMgPSBbXQogICAgICAgIGlmIHN5c3RlbToKICAgICAgICAgICAgbWVzc2FnZXMuYXBwZW5kKHsicm9sZSI6ICJzeXN0ZW0iLCAiY29udGVudCI6IHN5c3RlbX0pCiAgICAgICAgbWVzc2FnZXMuYXBwZW5kKHsicm9sZSI6ICJ1c2VyIiwgImNvbnRlbnQiOiBwcm9tcHR9KQogICAgICAgIGRhdGEgPSB7CiAgICAgICAgICAgICJtb2RlbCI6IHNlbGYubW9kZWwsCiAgICAgICAgICAgICJtZXNzYWdlcyI6IG1lc3NhZ2VzLAogICAgICAgICAgICAic3RyZWFtIjogc3RyZWFtLAogICAgICAgICAgICAidGVtcGVyYXR1cmUiOiBrd2FyZ3MuZ2V0KCJ0ZW1wZXJhdHVyZSIsIHNlbGYudGVtcGVyYXR1cmUpLAogICAgICAgICAgICAibWF4X3Rva2VucyI6IGt3YXJncy5nZXQoIm1heF90b2tlbnMiLCBzZWxmLm1heF90b2tlbnMpLAogICAgICAgIH0KICAgICAgICBoZWFkZXJzID0gewogICAgICAgICAgICAiQ29udGVudC1UeXBlIjogImFwcGxpY2F0aW9uL2pzb24iLAogICAgICAgICAgICAiSFRUUC1SZWZlcmVyIjogImh0dHBzOi8vaGlnaC1hZ2VudC5haSIsCiAgICAgICAgICAgICJYLVRpdGxlIjogIkdyYXBoX3hfMHgwIiwKICAgICAgICB9CiAgICAgICAgaWYgc2VsZi5wcm92aWRlciA9PSAib3BlbnJvdXRlciI6CiAgICAgICAgICAgIGhlYWRlcnNbIkhUVFAtUmVmZXJlciJdID0gImh0dHBzOi8vb3BlbnJvdXRlci5haSIKICAgICAgICByID0gc2VsZi5fc2Vzc2lvbl9nZXQoKS5wb3N0KAogICAgICAgICAgICBzZWxmLl91cmwoIi9jaGF0L2NvbXBsZXRpb25zIiksIGpzb249ZGF0YSwgaGVhZGVycz1oZWFkZXJzLAogICAgICAgICAgICB0aW1lb3V0PXNlbGYudGltZW91dCwgc3RyZWFtPXN0cmVhbQogICAgICAgICkKICAgICAgICByLnJhaXNlX2Zvcl9zdGF0dXMoKQogICAgICAgIGlmIHN0cmVhbToKICAgICAgICAgICAgZGVmIGdlbigpOgogICAgICAgICAgICAgICAgZm9yIGxpbmUgaW4gci5pdGVyX2xpbmVzKCk6CiAgICAgICAgICAgICAgICAgICAgaWYgbGluZSBhbmQgbGluZS5zdGFydHN3aXRoKGIiZGF0YTogIik6CiAgICAgICAgICAgICAgICAgICAgICAgIGlmIGxpbmUgPT0gYiJkYXRhOiBbRE9ORV0iOgogICAgICAgICAgICAgICAgICAgICAgICAgICAgYnJlYWsKICAgICAgICAgICAgICAgICAgICAgICAgdHJ5OgogICAgICAgICAgICAgICAgICAgICAgICAgICAgeWllbGQganNvbi5sb2FkcyhsaW5lWzY6XSlbImNob2ljZXMiXVswXVsiZGVsdGEiXS5nZXQoImNvbnRlbnQiLCAiIikKICAgICAgICAgICAgICAgICAgICAgICAgZXhjZXB0IChqc29uLkpTT05EZWNvZGVFcnJvciwgS2V5RXJyb3IsIEluZGV4RXJyb3IpOgogICAgICAgICAgICAgICAgICAgICAgICAgICAgcGFzcwogICAgICAgICAgICByZXR1cm4gZ2VuKCkgICMgdHlwZTogaWdub3JlCiAgICAgICAgcmV0dXJuIHIuanNvbigpWyJjaG9pY2VzIl1bMF1bIm1lc3NhZ2UiXVsiY29udGVudCJdCgogICAgIyDilIDilIAgQ2hhdCDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIAKCiAgICBkZWYgY2hhdCgKICAgICAgICBzZWxmLAogICAgICAgIG1lc3NhZ2VzOiBMaXN0W3R1cGxlXSwKICAgICAgICBzdHJlYW06IGJvb2wgPSBGYWxzZSwKICAgICAgICAqKmt3YXJncywKICAgICkgLT4gc3RyOgogICAgICAgICIiIkNoYXQgd2l0aCBtZXNzYWdlcyBsaXN0IG9mIChyb2xlLCBjb250ZW50KSB0dXBsZXMuCgogICAgICAgIFJvbGVzOiAnc3lzdGVtJywgJ3VzZXInLCAnYXNzaXN0YW50JwogICAgICAgICIiIgogICAgICAgIGlmIHNlbGYuaXNfb2xsYW1hOgogICAgICAgICAgICByZXR1cm4gc2VsZi5fb2xsYW1hX2NoYXQobWVzc2FnZXMsIHN0cmVhbT1zdHJlYW0sICoqa3dhcmdzKQogICAgICAgIGVsc2U6CiAgICAgICAgICAgIHJldHVybiBzZWxmLl9vcGVuYWlfY2hhdChtZXNzYWdlcywgc3RyZWFtPXN0cmVhbSwgKiprd2FyZ3MpCgogICAgZGVmIF9vbGxhbWFfY2hhdCgKICAgICAgICBzZWxmLCBtZXNzYWdlczogTGlzdFt0dXBsZV0sIHN0cmVhbTogYm9vbCA9IEZhbHNlLCAqKmt3YXJncwogICAgKSAtPiBzdHI6CiAgICAgICAgb2xsYW1hX21zZ3MgPSBbCiAgICAgICAgICAgIHsicm9sZSI6IHJvbGUsICJjb250ZW50IjogY29udGVudH0KICAgICAgICAgICAgZm9yIHJvbGUsIGNvbnRlbnQgaW4gbWVzc2FnZXMKICAgICAgICAgICAgaWYgY29udGVudAogICAgICAgIF0KICAgICAgICBkYXRhID0gewogICAgICAgICAgICAibW9kZWwiOiBzZWxmLm1vZGVsLAogICAgICAgICAgICAibWVzc2FnZXMiOiBvbGxhbWFfbXNncywKICAgICAgICAgICAgInN0cmVhbSI6IHN0cmVhbSwKICAgICAgICAgICAgIm9wdGlvbnMiOiB7CiAgICAgICAgICAgICAgICAidGVtcGVyYXR1cmUiOiBrd2FyZ3MuZ2V0KCJ0ZW1wZXJhdHVyZSIsIHNlbGYudGVtcGVyYXR1cmUpLAogICAgICAgICAgICAgICAgIm51bV9wcmVkaWN0Ijoga3dhcmdzLmdldCgibWF4X3Rva2VucyIsIHNlbGYubWF4X3Rva2VucyksCiAgICAgICAgICAgIH0sCiAgICAgICAgfQogICAgICAgIHIgPSBzZWxmLl9zZXNzaW9uX2dldCgpLnBvc3QoCiAgICAgICAgICAgIHNlbGYuX3VybCgiL2FwaS9jaGF0IiksIGpzb249ZGF0YSwgdGltZW91dD1zZWxmLnRpbWVvdXQsIHN0cmVhbT1zdHJlYW0KICAgICAgICApCiAgICAgICAgci5yYWlzZV9mb3Jfc3RhdHVzKCkKICAgICAgICBpZiBzdHJlYW06CiAgICAgICAgICAgIGRlZiBnZW4oKToKICAgICAgICAgICAgICAgIGZvciBsaW5lIGluIHIuaXRlcl9saW5lcygpOgogICAgICAgICAgICAgICAgICAgIGlmIGxpbmU6CiAgICAgICAgICAgICAgICAgICAgICAgIHRyeToKICAgICAgICAgICAgICAgICAgICAgICAgICAgIHlpZWxkIGpzb24ubG9hZHMobGluZSlbIm1lc3NhZ2UiXVsiY29udGVudCJdCiAgICAgICAgICAgICAgICAgICAgICAgIGV4Y2VwdCAoanNvbi5KU09ORGVjb2RlRXJyb3IsIEtleUVycm9yKToKICAgICAgICAgICAgICAgICAgICAgICAgICAgIHBhc3MKICAgICAgICAgICAgcmV0dXJuIGdlbigpICAjIHR5cGU6IGlnbm9yZQogICAgICAgIHJldHVybiByLmpzb24oKS5nZXQoIm1lc3NhZ2UiLCB7fSkuZ2V0KCJjb250ZW50IiwgIiIpCgogICAgZGVmIF9vcGVuYWlfY2hhdCgKICAgICAgICBzZWxmLCBtZXNzYWdlczogTGlzdFt0dXBsZV0sIHN0cmVhbTogYm9vbCA9IEZhbHNlLCAqKmt3YXJncwogICAgKSAtPiBzdHI6CiAgICAgICAgZm9ybWF0dGVkID0gWwogICAgICAgICAgICB7InJvbGUiOiByb2xlLCAiY29udGVudCI6IGNvbnRlbnR9CiAgICAgICAgICAgIGZvciByb2xlLCBjb250ZW50IGluIG1lc3NhZ2VzCiAgICAgICAgICAgIGlmIGNvbnRlbnQKICAgICAgICBdCiAgICAgICAgZGF0YSA9IHsKICAgICAgICAgICAgIm1vZGVsIjogc2VsZi5tb2RlbCwKICAgICAgICAgICAgIm1lc3NhZ2VzIjogZm9ybWF0dGVkLAogICAgICAgICAgICAic3RyZWFtIjogc3RyZWFtLAogICAgICAgICAgICAidGVtcGVyYXR1cmUiOiBrd2FyZ3MuZ2V0KCJ0ZW1wZXJhdHVyZSIsIHNlbGYudGVtcGVyYXR1cmUpLAogICAgICAgICAgICAibWF4X3Rva2VucyI6IGt3YXJncy5nZXQoIm1heF90b2tlbnMiLCBzZWxmLm1heF90b2tlbnMpLAogICAgICAgIH0KICAgICAgICBoZWFkZXJzID0gewogICAgICAgICAgICAiQ29udGVudC1UeXBlIjogImFwcGxpY2F0aW9uL2pzb24iLAogICAgICAgICAgICAiSFRUUC1SZWZlcmVyIjogImh0dHBzOi8vaGlnaC1hZ2VudC5haSIsCiAgICAgICAgICAgICJYLVRpdGxlIjogIkdyYXBoX3hfMHgwIiwKICAgICAgICB9CiAgICAgICAgciA9IHNlbGYuX3Nlc3Npb25fZ2V0KCkucG9zdCgKICAgICAgICAgICAgc2VsZi5fdXJsKCIvY2hhdC9jb21wbGV0aW9ucyIpLCBqc29uPWRhdGEsIGhlYWRlcnM9aGVhZGVycywKICAgICAgICAgICAgdGltZW91dD1zZWxmLnRpbWVvdXQsIHN0cmVhbT1zdHJlYW0KICAgICAgICApCiAgICAgICAgci5yYWlzZV9mb3Jfc3RhdHVzKCkKICAgICAgICBpZiBzdHJlYW06CiAgICAgICAgICAgIGRlZiBnZW4oKToKICAgICAgICAgICAgICAgIGZvciBsaW5lIGluIHIuaXRlcl9saW5lcygpOgogICAgICAgICAgICAgICAgICAgIGlmIGxpbmUgYW5kIGxpbmUuc3RhcnRzd2l0aChiImRhdGE6ICIpOgogICAgICAgICAgICAgICAgICAgICAgICBpZiBsaW5lID09IGIiZGF0YTogW0RPTkVdIjoKICAgICAgICAgICAgICAgICAgICAgICAgICAgIGJyZWFrCiAgICAgICAgICAgICAgICAgICAgICAgIHRyeToKICAgICAgICAgICAgICAgICAgICAgICAgICAgIHlpZWxkIGpzb24ubG9hZHMobGluZVs2Ol0pWyJjaG9pY2VzIl1bMF1bImRlbHRhIl0uZ2V0KCJjb250ZW50IiwgIiIpCiAgICAgICAgICAgICAgICAgICAgICAgIGV4Y2VwdCAoanNvbi5KU09ORGVjb2RlRXJyb3IsIEtleUVycm9yLCBJbmRleEVycm9yKToKICAgICAgICAgICAgICAgICAgICAgICAgICAgIHBhc3MKICAgICAgICAgICAgcmV0dXJuIGdlbigpICAjIHR5cGU6IGlnbm9yZQogICAgICAgIHJldHVybiByLmpzb24oKVsiY2hvaWNlcyJdWzBdWyJtZXNzYWdlIl1bImNvbnRlbnQiXQoKICAgICMg4pSA4pSAIEVtYmVkZGluZ3Mg4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSACgogICAgZGVmIGVtYmVkKHNlbGYsIHRleHQ6IHN0cikgLT4gTGlzdFtmbG9hdF06CiAgICAgICAgIiIiR2V0IGVtYmVkZGluZyB2ZWN0b3IgZm9yIHRleHQuIiIiCiAgICAgICAgaWYgc2VsZi5pc19vbGxhbWE6CiAgICAgICAgICAgIHIgPSBzZWxmLl9zZXNzaW9uX2dldCgpLnBvc3QoCiAgICAgICAgICAgICAgICBzZWxmLl91cmwoIi9hcGkvZW1iZWRkaW5ncyIpLAogICAgICAgICAgICAgICAganNvbj17Im1vZGVsIjogc2VsZi5tb2RlbCwgInByb21wdCI6IHRleHR9LAogICAgICAgICAgICAgICAgdGltZW91dD0zMCwKICAgICAgICAgICAgKQogICAgICAgICAgICByLnJhaXNlX2Zvcl9zdGF0dXMoKQogICAgICAgICAgICByZXR1cm4gci5qc29uKCkuZ2V0KCJlbWJlZGRpbmciLCBbXSkKICAgICAgICBlbHNlOgogICAgICAgICAgICByID0gc2VsZi5fc2Vzc2lvbl9nZXQoKS5wb3N0KAogICAgICAgICAgICAgICAgc2VsZi5fdXJsKCIvZW1iZWRkaW5ncyIpLAogICAgICAgICAgICAgICAganNvbj17Im1vZGVsIjogc2VsZi5tb2RlbCwgImlucHV0IjogdGV4dH0sCiAgICAgICAgICAgICAgICBoZWFkZXJzPXsiQ29udGVudC1UeXBlIjogImFwcGxpY2F0aW9uL2pzb24ifSwKICAgICAgICAgICAgICAgIHRpbWVvdXQ9MzAsCiAgICAgICAgICAgICkKICAgICAgICAgICAgci5yYWlzZV9mb3Jfc3RhdHVzKCkKICAgICAgICAgICAgcmV0dXJuIHIuanNvbigpLmdldCgiZGF0YSIsIFt7fV0pWzBdLmdldCgiZW1iZWRkaW5nIiwgW10pCgogICAgIyDilIDilIAgTW9kZWwgbWFuYWdlbWVudCDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIAKCiAgICBkZWYgbGlzdF9tb2RlbHMoc2VsZikgLT4gTGlzdFtEaWN0W3N0ciwgQW55XV06CiAgICAgICAgIiIiTGlzdCBhdmFpbGFibGUgbW9kZWxzLiIiIgogICAgICAgIGlmIHNlbGYuaXNfb2xsYW1hOgogICAgICAgICAgICB0cnk6CiAgICAgICAgICAgICAgICByID0gc2VsZi5fc2Vzc2lvbl9nZXQoKS5nZXQoc2VsZi5fdXJsKCIvYXBpL3RhZ3MiKSwgdGltZW91dD0xMCkKICAgICAgICAgICAgICAgIHJldHVybiByLmpzb24oKS5nZXQoIm1vZGVscyIsIFtdKQogICAgICAgICAgICBleGNlcHQgRXhjZXB0aW9uOgogICAgICAgICAgICAgICAgcmV0dXJuIFtdCiAgICAgICAgcmV0dXJuIFt7Im5hbWUiOiBzZWxmLm1vZGVsLCAicHJvdmlkZXIiOiBzZWxmLnByb3ZpZGVyfV0KCiAgICBkZWYgcHVsbChzZWxmLCBtb2RlbDogT3B0aW9uYWxbc3RyXSA9IE5vbmUpIC0+IE5vbmU6CiAgICAgICAgIiIiUHVsbCBhIG1vZGVsIChPbGxhbWEgb25seSkuIiIiCiAgICAgICAgaWYgbm90IHNlbGYuaXNfb2xsYW1hOgogICAgICAgICAgICByYWlzZSBSdW50aW1lRXJyb3IoInB1bGwoKSBvbmx5IHdvcmtzIHdpdGggT2xsYW1hIHByb3ZpZGVyIikKICAgICAgICBuYW1lID0gbW9kZWwgb3Igc2VsZi5tb2RlbAogICAgICAgIHIgPSByZXF1ZXN0cy5wb3N0KAogICAgICAgICAgICBzZWxmLl91cmwoIi9hcGkvcHVsbCIpLAogICAgICAgICAgICBqc29uPXsibmFtZSI6IG5hbWV9LAogICAgICAgICAgICBzdHJlYW09VHJ1ZSwKICAgICAgICAgICAgdGltZW91dD0zNjAwLAogICAgICAgICkKICAgICAgICBmb3IgbGluZSBpbiByLml0ZXJfbGluZXMoKToKICAgICAgICAgICAgaWYgbGluZToKICAgICAgICAgICAgICAgIHRyeToKICAgICAgICAgICAgICAgICAgICBzID0ganNvbi5sb2FkcyhsaW5lKQogICAgICAgICAgICAgICAgICAgIGlmICJlcnJvciIgaW4gczoKICAgICAgICAgICAgICAgICAgICAgICAgcmFpc2UgUnVudGltZUVycm9yKHNbImVycm9yIl0pCiAgICAgICAgICAgICAgICAgICAgc3RhdHVzID0gcy5nZXQoInN0YXR1cyIsICIiKQogICAgICAgICAgICAgICAgICAgIGlmICJwdWxsaW5nIiBpbiBzdGF0dXMgb3IgInZlcmlmeWluZyIgaW4gc3RhdHVzIG9yICJ3cml0aW5nIiBpbiBzdGF0dXM6CiAgICAgICAgICAgICAgICAgICAgICAgIHByaW50KGYiXHIgIFt7bmFtZX1dIHtzdGF0dXN9Li4uIiwgZW5kPSIiLCBmbHVzaD1UcnVlKQogICAgICAgICAgICAgICAgZXhjZXB0IEV4Y2VwdGlvbjoKICAgICAgICAgICAgICAgICAgICBwYXNzCiAgICAgICAgcHJpbnQoKQoKICAgIGRlZiBzaG93X21vZGVsKHNlbGYsIG1vZGVsOiBPcHRpb25hbFtzdHJdID0gTm9uZSkgLT4gRGljdFtzdHIsIEFueV06CiAgICAgICAgIiIiU2hvdyBtb2RlbCBpbmZvIChPbGxhbWEgb25seSkuIiIiCiAgICAgICAgaWYgbm90IHNlbGYuaXNfb2xsYW1hOgogICAgICAgICAgICByZXR1cm4geyJuYW1lIjogbW9kZWwgb3Igc2VsZi5tb2RlbCwgInByb3ZpZGVyIjogc2VsZi5wcm92aWRlcn0KICAgICAgICByID0gc2VsZi5fc2Vzc2lvbl9nZXQoKS5wb3N0KAogICAgICAgICAgICBzZWxmLl91cmwoIi9hcGkvc2hvdyIpLAogICAgICAgICAgICBqc29uPXsibmFtZSI6IG1vZGVsIG9yIHNlbGYubW9kZWx9LAogICAgICAgICAgICB0aW1lb3V0PTMwLAogICAgICAgICkKICAgICAgICByLnJhaXNlX2Zvcl9zdGF0dXMoKQogICAgICAgIHJldHVybiByLmpzb24oKQoKCiMg4pSA4pSAIFF1aWNrIHNldHVwIGhlbHBlcnMg4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSACgpkZWYgc2V0dXBfb2xsYW1hKG1vZGVsOiBzdHIgPSAibGxhbWEzLjI6M2IiKSAtPiBMTE1DbGllbnQ6CiAgICAiIiJDcmVhdGUgTExNQ2xpZW50IHBvaW50aW5nIGF0IGxvY2FsIE9sbGFtYS4gQXV0by1kZXRlY3RzIHJ1bm5pbmcgc3RhdHVzLiIiIgogICAgY2xpZW50ID0gTExNQ2xpZW50KG1vZGVsPW1vZGVsKQogICAgaWYgY2xpZW50LmlzX2F2YWlsYWJsZSgpOgogICAgICAgIHByaW50KGYiW09sbGFtYV0gQ29ubmVjdGVkIOKAlCB7Y2xpZW50Lm1vZGVsfSBAIHtjbGllbnQuYmFzZV91cmx9IikKICAgIGVsc2U6CiAgICAgICAgcHJpbnQoZiJbT2xsYW1hXSBOb3QgcnVubmluZyBhdCB7Y2xpZW50LmJhc2VfdXJsfSIpCiAgICAgICAgcHJpbnQoIiAgSW5zdGFsbDogY3VybCAtZnNTTCBodHRwczovL29sbGFtYS5jb20vaW5zdGFsbC5zaCB8IHNoIikKICAgICAgICBwcmludCgiICBTdGFydDogICBvbGxhbWEgc2VydmUiKQogICAgICAgIHByaW50KCIgIFB1bGw6ICAgIG9sbGFtYSBwdWxsIGxsYW1hMy4yOjNiIikKICAgIHJldHVybiBjbGllbnQKCgpkZWYgc2V0dXBfYXBpX2tleSgKICAgIG1vZGVsOiBzdHIgPSAiZ3B0LTRvLW1pbmkiLAogICAgcHJvdmlkZXI6IHN0ciA9ICJvcGVuYWkiLAopIC0+IExMTUNsaWVudDoKICAgICIiIkNyZWF0ZSBMTE1DbGllbnQgdXNpbmcgYW4gQVBJIGtleS4gVmFsaWRhdGVzIGtleSBiZWZvcmUgcmV0dXJuaW5nLiIiIgogICAgY2xpZW50ID0gTExNQ2xpZW50KG1vZGVsPW1vZGVsLCBwcm92aWRlcj1wcm92aWRlcikKICAgIGlmIGNsaWVudC5pc19hdmFpbGFibGUoKToKICAgICAgICBwcmludChmIlt7Y2xpZW50LnByb3ZpZGVyfV0gQ29ubmVjdGVkIOKAlCB7Y2xpZW50Lm1vZGVsfSIpCiAgICBlbHNlOgogICAgICAgIHByaW50KGYiW3tjbGllbnQucHJvdmlkZXJ9XSBGYWlsZWQgdG8gY29ubmVjdCB3aXRoIHtjbGllbnQubW9kZWx9IikKICAgICAgICBwcmludChmIiAgQ2hlY2sgeW91ciB7Y2xpZW50Ll9hcGlfa2V5X2Vudn0gZW52aXJvbm1lbnQgdmFyaWFibGUiKQogICAgcmV0dXJuIGNsaWVudAoKCmRlZiBhdXRvX3NldHVwKCkgLT4gTExNQ2xpZW50OgogICAgIiIiVHJ5IE9sbGFtYSBmaXJzdCwgdGhlbiBmYWxsIGJhY2sgdG8gQVBJIGtleSBwcm92aWRlcnMuCiAgICBQcmlvcml0eTogT2xsYW1hID4gT3BlbkFJID4gT3BlblJvdXRlciA+IEdyb3EKICAgICIiIgogICAgIyBUcnkgT2xsYW1hCiAgICBjbGllbnQgPSBMTE1DbGllbnQobW9kZWw9ImxsYW1hMy4yOjNiIikKICAgIGlmIGNsaWVudC5pc19hdmFpbGFibGUoKToKICAgICAgICBwcmludChmIltPbGxhbWFdIEFjdGl2ZSDigJQge2NsaWVudC5tb2RlbH0gQCB7Y2xpZW50LmJhc2VfdXJsfSIpCiAgICAgICAgcmV0dXJuIGNsaWVudAoKICAgICMgVHJ5IE9wZW5BSQogICAgaWYgb3MuZ2V0ZW52KCJPUEVOQUlfQVBJX0tFWSIpOgogICAgICAgIGNsaWVudCA9IExMTUNsaWVudChwcm92aWRlcj0ib3BlbmFpIikKICAgICAgICBpZiBjbGllbnQuaXNfYXZhaWxhYmxlKCk6CiAgICAgICAgICAgIHByaW50KGYiW09wZW5BSV0gQWN0aXZlIOKAlCB7Y2xpZW50Lm1vZGVsfSIpCiAgICAgICAgICAgIHJldHVybiBjbGllbnQKCiAgICAjIFRyeSBPcGVuUm91dGVyCiAgICBpZiBvcy5nZXRlbnYoIk9QRU5ST1VURVJfQVBJX0tFWSIpOgogICAgICAgIGNsaWVudCA9IExMTUNsaWVudChwcm92aWRlcj0ib3BlbnJvdXRlciIpCiAgICAgICAgaWYgY2xpZW50LmlzX2F2YWlsYWJsZSgpOgogICAgICAgICAgICBwcmludChmIltPcGVuUm91dGVyXSBBY3RpdmUg4oCUIHtjbGllbnQubW9kZWx9IikKICAgICAgICAgICAgcmV0dXJuIGNsaWVudAoKICAgICMgVHJ5IEdyb3EKICAgIGlmIG9zLmdldGVudigiR1JPUV9BUElfS0VZIik6CiAgICAgICAgY2xpZW50ID0gTExNQ2xpZW50KHByb3ZpZGVyPSJncm9xIikKICAgICAgICBpZiBjbGllbnQuaXNfYXZhaWxhYmxlKCk6CiAgICAgICAgICAgIHByaW50KGYiW0dyb3FdIEFjdGl2ZSDigJQge2NsaWVudC5tb2RlbH0iKQogICAgICAgICAgICByZXR1cm4gY2xpZW50CgogICAgIyBSZXR1cm4gT2xsYW1hIGNsaWVudCBhbnl3YXkgKHdpbGwgc2hvdyBub3QgYXZhaWxhYmxlKQogICAgcmV0dXJuIExMTUNsaWVudChtb2RlbD0ibGxhbWEzLjI6M2IiKQoKCiMg4pSA4pSAIFByZXR0eSBzdGF0dXMg4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSACgpkZWYgcHJpbnRfc3RhdHVzKGNsaWVudDogT3B0aW9uYWxbTExNQ2xpZW50XSA9IE5vbmUpIC0+IE5vbmU6CiAgICAiIiJQcmludCBhIHByZXR0eSBzdGF0dXMgdGFibGUgb2YgYWxsIHByb3ZpZGVycy4iIiIKICAgIHByaW50KCJcbkxMTSBQcm92aWRlciBTdGF0dXMiKQogICAgcHJpbnQoIuKUgCIgKiA1MCkKICAgIHByaW50KGYiICB7J1Byb3ZpZGVyJzo8MTJ9IHsnTW9kZWwnOjwzMH0geydTdGF0dXMnfSIpCiAgICBwcmludCgiICAiICsgIi0iICogNTApCiAgICB0cmllZCA9IHNldCgpCgogICAgIyBUcnkgZWFjaCBwcm92aWRlcgogICAgZm9yIHByb3ZfbmFtZSwgZGVmYXVsdHMgaW4gUFJPVklERVJfTU9ERUxTLml0ZW1zKCk6CiAgICAgICAga2V5ID0gb3MuZ2V0ZW52KGRlZmF1bHRzWyJlbnZfa2V5Il0sICIiKQogICAgICAgIGlmIG5vdCBrZXk6CiAgICAgICAgICAgIGNvbnRpbnVlCiAgICAgICAgaWYgcHJvdl9uYW1lIGluIHRyaWVkOgogICAgICAgICAgICBjb250aW51ZQogICAgICAgIHRyeToKICAgICAgICAgICAgYyA9IExMTUNsaWVudChwcm92aWRlcj1wcm92X25hbWUpCiAgICAgICAgICAgIGF2YWlsID0gYy5pc19hdmFpbGFibGUoKQogICAgICAgICAgICBzdGF0dXMgPSAi4pyTIGF2YWlsYWJsZSIgaWYgYXZhaWwgZWxzZSAi4pyXIGF1dGggZmFpbGVkIgogICAgICAgICAgICBwcmludChmIiAge3Byb3ZfbmFtZTo8MTJ9IHtjLm1vZGVsOjwzMH0ge3N0YXR1c30iKQogICAgICAgICAgICB0cmllZC5hZGQocHJvdl9uYW1lKQogICAgICAgIGV4Y2VwdCBFeGNlcHRpb24gYXMgZToKICAgICAgICAgICAgcHJpbnQoZiIgIHtwcm92X25hbWU6PDEyfSB7Jyc6MzB9IOKclyB7ZX0iKQoKICAgICMgVHJ5IE9sbGFtYSAobm8ga2V5IG5lZWRlZCkKICAgIGlmICJvbGxhbWEiIG5vdCBpbiB0cmllZDoKICAgICAgICBjID0gTExNQ2xpZW50KHByb3ZpZGVyPSJvbGxhbWEiKQogICAgICAgIGF2YWlsID0gYy5pc19hdmFpbGFibGUoKQogICAgICAgIHN0YXR1cyA9ICLinJMgYXZhaWxhYmxlIiBpZiBhdmFpbCBlbHNlICLinJcgbm90IHJ1bm5pbmciCiAgICAgICAgcHJpbnQoZiIgIHsnb2xsYW1hJzo8MTJ9IHtjLm1vZGVsOjwzMH0ge3N0YXR1c30iKQoKICAgIHByaW50KCkKCgppZiBfX25hbWVfXyA9PSAiX19tYWluX18iOgogICAgcHJpbnRfc3RhdHVzKCkKICAgIHByaW50KCJcblRyeWluZyBhdXRvLXNldHVwLi4uIikKICAgIGNsaWVudCA9IGF1dG9fc2V0dXAoKQogICAgaWYgY2xpZW50LmlzX2F2YWlsYWJsZSgpOgogICAgICAgIHByaW50KGYiXG5RdWljayB0ZXN0OiB7Y2xpZW50LmdlbmVyYXRlKCdXaGF0IGlzIM6mKEcpPyBLZWVwIGl0IHVuZGVyIDIwIHdvcmRzLicpfSIpCiAgICBlbHNlOgogICAgICAgIHByaW50KCJcbk5vIExMTSBwcm92aWRlciBhdmFpbGFibGUuIFNldCB1cCB3aXRoOiIpCiAgICAgICAgcHJpbnQoIiAgT2xsYW1hOiAgICBjdXJsIC1mc1NMIGh0dHBzOi8vb2xsYW1hLmNvbS9pbnN0YWxsLnNoIHwgc2ggJiYgb2xsYW1hIHB1bGwgbGxhbWEzLjI6M2IiKQogICAgICAgIHByaW50KCIgIE9wZW5BSTogICAgZXhwb3J0IE9QRU5BSV9BUElfS0VZPXNrLS4uLiIpCiAgICAgICAgcHJpbnQoIiAgT3BlblJvdXRlcjogZXhwb3J0IE9QRU5ST1VURVJfQVBJX0tFWT1zay1vci0uLi4iKQogICAgICAgIHByaW50KCIgIEdyb3E6ICAgICAgZXhwb3J0IEdST1FfQVBJX0tFWT1nc2tfLi4uIikK
+"""Unified LLM client — Ollama, OpenAI, OpenRouter, Groq, DeepSeek.
+
+Auto-detects provider from URL or model name. Pass a model like:
+  - "llama3.2:3b"             → Ollama (http://localhost:11434)
+  - "gpt-4o"                  → OpenAI (needs OPENAI_API_KEY)
+  - "anthropic/claude-sonnet-4" → OpenRouter
+  - "groq/llama-3.3-70b"      → Groq
+  - "deepseek-chat"           → DeepSeek
+  - "http://localhost:11434/qwen2.5:1.5b" → custom Ollama URL
+"""
+
+from __future__ import annotations
+import os
+import requests
+from typing import List, Dict, Any, Optional
+import json
+
+# ── Provider defaults ─────────────────────────────────────────────────────────
+
+PROVIDER_MODELS = {
+    "openai": {
+        "default": "gpt-4o-mini",
+        "base_url": "https://api.openai.com/v1",
+        "env_key": "OPENAI_API_KEY",
+    },
+    "openrouter": {
+        "default": "anthropic/claude-sonnet-4",
+        "base_url": "https://openrouter.ai/api/v1",
+        "env_key": "OPENROUTER_API_KEY",
+    },
+    "groq": {
+        "default": "llama-3.3-70b-versatile",
+        "base_url": "https://api.groq.com/openai/v1",
+        "env_key": "GROQ_API_KEY",
+    },
+    "deepseek": {
+        "default": "deepseek-chat",
+        "base_url": "https://api.deepseek.com/v1",
+        "env_key": "DEEPSEEK_API_KEY",
+    },
+    "ollama": {
+        "default": "llama3.2:3b",
+        "base_url": "http://localhost:11434",
+        "env_key": "OLLAMA_HOST",
+    },
+}
+
+OLLAMA_MODELS = {
+    "llama3.2:3b", "llama3.2:1b", "llama3.1:8b", "llama3.1:70b",
+    "llama3:8b", "llama3:70b",
+    "mistral:7b", "mistral-nemo:12b",
+    "codellama:7b", "codellama:13b", "codellama:34b",
+    "qwen2.5:0.5b", "qwen2.5:1.5b", "qwen2.5:3b", "qwen2.5:7b", "qwen2.5:14b", "qwen2.5:32b",
+    "phi3:3.8b", "phi3:14b",
+    "nomic-embed-text", "mxbai-embed-large",
+    "gemma2:2b", "gemma2:9b", "gemma2:27b",
+    "llava:7b", "llava:13b", "llava:34b",
+    "dolphin-mixtral:8x22b",
+    "wizardlm2:8x22b",
+    "aya:8b", "aya:35b",
+    "phi4:14b",
+    "qwen2.5-coder:1.5b", "qwen2.5-coder:3b", "qwen2.5-coder:7b", "qwen2.5-coder:14b",
+}
+
+
+def _detect_provider(model: str, base_url: Optional[str]) -> tuple[str, str, str]:
+    """Returns (provider, final_base_url, env_key)."""
+    if base_url:
+        if "localhost" in base_url or "127.0.0.1" in base_url:
+            return "ollama", base_url, "OLLAMA_HOST"
+        if "openrouter" in base_url:
+            return "openrouter", base_url, "OPENROUTER_API_KEY"
+        if "groq" in base_url:
+            return "groq", base_url, "GROQ_API_KEY"
+        if "deepseek" in base_url:
+            return "deepseek", base_url, "DEEPSEEK_API_KEY"
+        return "openai", base_url, "OPENAI_API_KEY"
+
+    # Auto-detect from model name
+    if ":" in model or model.lower() in {m.lower() for m in OLLAMA_MODELS}:
+        host = os.getenv("OLLAMA_HOST", "http://localhost:11434")
+        return "ollama", host, "OLLAMA_HOST"
+    if "/" in model:
+        # openrouter format: provider/model
+        return "openrouter", PROVIDER_MODELS["openrouter"]["base_url"], "OPENROUTER_API_KEY"
+    if model.startswith("gpt-") or model.startswith("o1-") or model.startswith("o3-"):
+        return "openai", PROVIDER_MODELS["openai"]["base_url"], "OPENAI_API_KEY"
+    if model.startswith("deepseek"):
+        return "deepseek", PROVIDER_MODELS["deepseek"]["base_url"], "DEEPSEEK_API_KEY"
+    if model.startswith("groq/"):
+        return "groq", PROVIDER_MODELS["groq"]["base_url"], "GROQ_API_KEY"
+
+    # Default: try ollama first, fall back to openai
+    return "ollama", PROVIDER_MODELS["ollama"]["base_url"], "OLLAMA_HOST"
+
+
+class LLMClient:
+    """Unified LLM client for Ollama + OpenAI-compatible APIs.
+
+    Usage:
+        # Ollama (local)
+        client = LLMClient(model="llama3.2:3b")
+
+        # OpenAI
+        client = LLMClient(model="gpt-4o", api_key=os.getenv("OPENAI_API_KEY"))
+
+        # OpenRouter
+        client = LLMClient(model="anthropic/claude-sonnet-4", api_key=os.getenv("OPENROUTER_API_KEY"))
+
+        # Auto-detect
+        client = LLMClient(model="llama3.2:3b")  # → Ollama
+        client = LLMClient(model="gpt-4o")        # → OpenAI
+
+        # Chat
+        resp = client.chat([("user", "Hello")])
+        resp = client.chat([("system", "You are helpful."), ("user", "Hi")])
+
+        # Generate
+        resp = client.generate("Explain Φ(G) in one sentence.")
+
+        # Streaming
+        for chunk in client.generate("Write code", stream=True):
+            print(chunk, end="", flush=True)
+    """
+
+    def __init__(
+        self,
+        model: Optional[str] = None,
+        api_key: Optional[str] = None,
+        base_url: Optional[str] = None,
+        provider: Optional[str] = None,
+        temperature: float = 0.7,
+        max_tokens: int = 2048,
+        timeout: int = 120,
+    ):
+        # Resolve provider
+        if provider and provider in PROVIDER_MODELS:
+            self.provider = provider
+            defaults = PROVIDER_MODELS[provider]
+            self.model = model or defaults["default"]
+            self.base_url = base_url or defaults["base_url"]
+            self._api_key_env = defaults["env_key"]
+        else:
+            self.model = model or PROVIDER_MODELS["ollama"]["default"]
+            self.provider, self.base_url, self._api_key_env = _detect_provider(
+                self.model, base_url
+            )
+
+        # API key — from param, then env var
+        self._api_key = api_key or os.getenv(self._api_key_env, "")
+        self.temperature = temperature
+        self.max_tokens = max_tokens
+        self.timeout = timeout
+
+        # Session reuse
+        self._session = None
+
+    def _session_get(self) -> requests.Session:
+        if self._session is None:
+            self._session = requests.Session()
+            if self._api_key and self.provider != "ollama":
+                self._session.headers["Authorization"] = f"Bearer {self._api_key}"
+        return self._session
+
+    @property
+    def is_ollama(self) -> bool:
+        return self.provider == "ollama"
+
+    def _url(self, path: str) -> str:
+        return f"{self.base_url.rstrip('/')}/{path.lstrip('/')}"
+
+    # ── Availability ──────────────────────────────────────────────────────────
+
+    def is_available(self) -> bool:
+        """Check if the LLM endpoint is reachable."""
+        try:
+            if self.is_ollama:
+                r = self._session_get().get(
+                    self._url("/api/tags"), timeout=5
+                )
+                return r.status_code == 200
+            else:
+                r = self._session_get().get(
+                    self._url("/models"),
+                    timeout=10,
+                    headers={"HTTP-Referer": "https://high-agent.ai"},
+                )
+                return r.status_code in (200, 403)  # 403 = valid key, no models listed
+        except Exception:
+            return False
+
+    def status(self) -> Dict[str, Any]:
+        """Return full status dict."""
+        avail = self.is_available()
+        models = []
+        if avail and self.is_ollama:
+            try:
+                r = self._session_get().get(self._url("/api/tags"), timeout=10)
+                models = [m["name"] for m in r.json().get("models", [])]
+            except Exception:
+                pass
+        return {
+            "provider": self.provider,
+            "model": self.model,
+            "base_url": self.base_url,
+            "api_key_set": bool(self._api_key),
+            "available": avail,
+            "models": models,
+        }
+
+    # ── Generate ────────────────────────────────────────────────────────────
+
+    def generate(
+        self,
+        prompt: str,
+        system: Optional[str] = None,
+        stream: bool = False,
+        **kwargs,
+    ) -> str:
+        """Single-shot text generation. Returns full response (or generator if stream=True)."""
+        if self.is_ollama:
+            return self._ollama_generate(prompt, system=system, stream=stream, **kwargs)
+        else:
+            return self._openai_generate(prompt, system=system, stream=stream, **kwargs)
+
+    def _ollama_generate(
+        self, prompt: str, system: Optional[str] = None, stream: bool = False, **_
+    ) -> str:
+        req = {
+            "model": self.model,
+            "prompt": prompt,
+            "stream": stream,
+            "options": {
+                "temperature": kwargs.get("temperature", self.temperature),
+                "num_predict": kwargs.get("max_tokens", self.max_tokens),
+            },
+        }
+        if system:
+            req["system"] = system
+        r = self._session_get().post(
+            self._url("/api/generate"), json=req, timeout=self.timeout, stream=stream
+        )
+        r.raise_for_status()
+        if stream:
+            def gen():
+                for line in r.iter_lines():
+                    if line:
+                        try:
+                            yield json.loads(line)["response"]
+                        except (json.JSONDecodeError, KeyError):
+                            pass
+            return gen()  # type: ignore
+        return r.json().get("response", "")
+
+    def _openai_generate(
+        self,
+        prompt: str,
+        system: Optional[str] = None,
+        stream: bool = False,
+        **kwargs,
+    ) -> str:
+        messages = []
+        if system:
+            messages.append({"role": "system", "content": system})
+        messages.append({"role": "user", "content": prompt})
+        data = {
+            "model": self.model,
+            "messages": messages,
+            "stream": stream,
+            "temperature": kwargs.get("temperature", self.temperature),
+            "max_tokens": kwargs.get("max_tokens", self.max_tokens),
+        }
+        headers = {
+            "Content-Type": "application/json",
+            "HTTP-Referer": "https://high-agent.ai",
+            "X-Title": "Graph_x_0x0",
+        }
+        if self.provider == "openrouter":
+            headers["HTTP-Referer"] = "https://openrouter.ai"
+        r = self._session_get().post(
+            self._url("/chat/completions"), json=data, headers=headers,
+            timeout=self.timeout, stream=stream
+        )
+        r.raise_for_status()
+        if stream:
+            def gen():
+                for line in r.iter_lines():
+                    if line and line.startswith(b"data: "):
+                        if line == b"data: [DONE]":
+                            break
+                        try:
+                            yield json.loads(line[6:])["choices"][0]["delta"].get("content", "")
+                        except (json.JSONDecodeError, KeyError, IndexError):
+                            pass
+            return gen()  # type: ignore
+        return r.json()["choices"][0]["message"]["content"]
+
+    # ── Chat ────────────────────────────────────────────────────────────────
+
+    def chat(
+        self,
+        messages: List[tuple],
+        stream: bool = False,
+        **kwargs,
+    ) -> str:
+        """Chat with messages list of (role, content) tuples.
+
+        Roles: 'system', 'user', 'assistant'
+        """
+        if self.is_ollama:
+            return self._ollama_chat(messages, stream=stream, **kwargs)
+        else:
+            return self._openai_chat(messages, stream=stream, **kwargs)
+
+    def _ollama_chat(
+        self, messages: List[tuple], stream: bool = False, **kwargs
+    ) -> str:
+        ollama_msgs = [
+            {"role": role, "content": content}
+            for role, content in messages
+            if content
+        ]
+        data = {
+            "model": self.model,
+            "messages": ollama_msgs,
+            "stream": stream,
+            "options": {
+                "temperature": kwargs.get("temperature", self.temperature),
+                "num_predict": kwargs.get("max_tokens", self.max_tokens),
+            },
+        }
+        r = self._session_get().post(
+            self._url("/api/chat"), json=data, timeout=self.timeout, stream=stream
+        )
+        r.raise_for_status()
+        if stream:
+            def gen():
+                for line in r.iter_lines():
+                    if line:
+                        try:
+                            yield json.loads(line)["message"]["content"]
+                        except (json.JSONDecodeError, KeyError):
+                            pass
+            return gen()  # type: ignore
+        return r.json().get("message", {}).get("content", "")
+
+    def _openai_chat(
+        self, messages: List[tuple], stream: bool = False, **kwargs
+    ) -> str:
+        formatted = [
+            {"role": role, "content": content}
+            for role, content in messages
+            if content
+        ]
+        data = {
+            "model": self.model,
+            "messages": formatted,
+            "stream": stream,
+            "temperature": kwargs.get("temperature", self.temperature),
+            "max_tokens": kwargs.get("max_tokens", self.max_tokens),
+        }
+        headers = {
+            "Content-Type": "application/json",
+            "HTTP-Referer": "https://high-agent.ai",
+            "X-Title": "Graph_x_0x0",
+        }
+        r = self._session_get().post(
+            self._url("/chat/completions"), json=data, headers=headers,
+            timeout=self.timeout, stream=stream
+        )
+        r.raise_for_status()
+        if stream:
+            def gen():
+                for line in r.iter_lines():
+                    if line and line.startswith(b"data: "):
+                        if line == b"data: [DONE]":
+                            break
+                        try:
+                            yield json.loads(line[6:])["choices"][0]["delta"].get("content", "")
+                        except (json.JSONDecodeError, KeyError, IndexError):
+                            pass
+            return gen()  # type: ignore
+        return r.json()["choices"][0]["message"]["content"]
+
+    # ── Embeddings ──────────────────────────────────────────────────────────
+
+    def embed(self, text: str) -> List[float]:
+        """Get embedding vector for text."""
+        if self.is_ollama:
+            r = self._session_get().post(
+                self._url("/api/embeddings"),
+                json={"model": self.model, "prompt": text},
+                timeout=30,
+            )
+            r.raise_for_status()
+            return r.json().get("embedding", [])
+        else:
+            r = self._session_get().post(
+                self._url("/embeddings"),
+                json={"model": self.model, "input": text},
+                headers={"Content-Type": "application/json"},
+                timeout=30,
+            )
+            r.raise_for_status()
+            return r.json().get("data", [{}])[0].get("embedding", [])
+
+    # ── Model management ───────────────────────────────────────────────────
+
+    def list_models(self) -> List[Dict[str, Any]]:
+        """List available models."""
+        if self.is_ollama:
+            try:
+                r = self._session_get().get(self._url("/api/tags"), timeout=10)
+                return r.json().get("models", [])
+            except Exception:
+                return []
+        return [{"name": self.model, "provider": self.provider}]
+
+    def pull(self, model: Optional[str] = None) -> None:
+        """Pull a model (Ollama only)."""
+        if not self.is_ollama:
+            raise RuntimeError("pull() only works with Ollama provider")
+        name = model or self.model
+        r = requests.post(
+            self._url("/api/pull"),
+            json={"name": name},
+            stream=True,
+            timeout=3600,
+        )
+        for line in r.iter_lines():
+            if line:
+                try:
+                    s = json.loads(line)
+                    if "error" in s:
+                        raise RuntimeError(s["error"])
+                    status = s.get("status", "")
+                    if "pulling" in status or "verifying" in status or "writing" in status:
+                        print(f"\r  [{name}] {status}...", end="", flush=True)
+                except Exception:
+                    pass
+        print()
+
+    def show_model(self, model: Optional[str] = None) -> Dict[str, Any]:
+        """Show model info (Ollama only)."""
+        if not self.is_ollama:
+            return {"name": model or self.model, "provider": self.provider}
+        r = self._session_get().post(
+            self._url("/api/show"),
+            json={"name": model or self.model},
+            timeout=30,
+        )
+        r.raise_for_status()
+        return r.json()
+
+
+# ── Quick setup helpers ────────────────────────────────────────────────────────
+
+def setup_ollama(model: str = "llama3.2:3b") -> LLMClient:
+    """Create LLMClient pointing at local Ollama. Auto-detects running status."""
+    client = LLMClient(model=model)
+    if client.is_available():
+        print(f"[Ollama] Connected — {client.model} @ {client.base_url}")
+    else:
+        print(f"[Ollama] Not running at {client.base_url}")
+        print("  Install: curl -fsSL https://ollama.com/install.sh | sh")
+        print("  Start:   ollama serve")
+        print("  Pull:    ollama pull llama3.2:3b")
+    return client
+
+
+def setup_api_key(
+    model: str = "gpt-4o-mini",
+    provider: str = "openai",
+) -> LLMClient:
+    """Create LLMClient using an API key. Validates key before returning."""
+    client = LLMClient(model=model, provider=provider)
+    if client.is_available():
+        print(f"[{client.provider}] Connected — {client.model}")
+    else:
+        print(f"[{client.provider}] Failed to connect with {client.model}")
+        print(f"  Check your {client._api_key_env} environment variable")
+    return client
+
+
+def auto_setup() -> LLMClient:
+    """Try Ollama first, then fall back to API key providers.
+    Priority: Ollama > OpenAI > OpenRouter > Groq
+    """
+    # Try Ollama
+    client = LLMClient(model="llama3.2:3b")
+    if client.is_available():
+        print(f"[Ollama] Active — {client.model} @ {client.base_url}")
+        return client
+
+    # Try OpenAI
+    if os.getenv("OPENAI_API_KEY"):
+        client = LLMClient(provider="openai")
+        if client.is_available():
+            print(f"[OpenAI] Active — {client.model}")
+            return client
+
+    # Try OpenRouter
+    if os.getenv("OPENROUTER_API_KEY"):
+        client = LLMClient(provider="openrouter")
+        if client.is_available():
+            print(f"[OpenRouter] Active — {client.model}")
+            return client
+
+    # Try Groq
+    if os.getenv("GROQ_API_KEY"):
+        client = LLMClient(provider="groq")
+        if client.is_available():
+            print(f"[Groq] Active — {client.model}")
+            return client
+
+    # Return Ollama client anyway (will show not available)
+    return LLMClient(model="llama3.2:3b")
+
+
+# ── Pretty status ─────────────────────────────────────────────────────────────
+
+def print_status(client: Optional[LLMClient] = None) -> None:
+    """Print a pretty status table of all providers."""
+    print("\nLLM Provider Status")
+    print("─" * 50)
+    print(f"  {'Provider':<12} {'Model':<30} {'Status'}")
+    print("  " + "-" * 50)
+    tried = set()
+
+    # Try each provider
+    for prov_name, defaults in PROVIDER_MODELS.items():
+        key = os.getenv(defaults["env_key"], "")
+        if not key:
+            continue
+        if prov_name in tried:
+            continue
+        try:
+            c = LLMClient(provider=prov_name)
+            avail = c.is_available()
+            status = "✓ available" if avail else "✗ auth failed"
+            print(f"  {prov_name:<12} {c.model:<30} {status}")
+            tried.add(prov_name)
+        except Exception as e:
+            print(f"  {prov_name:<12} {'':30} ✗ {e}")
+
+    # Try Ollama (no key needed)
+    if "ollama" not in tried:
+        c = LLMClient(provider="ollama")
+        avail = c.is_available()
+        status = "✓ available" if avail else "✗ not running"
+        print(f"  {'ollama':<12} {c.model:<30} {status}")
+
+    print()
+
+
+if __name__ == "__main__":
+    print_status()
+    print("\nTrying auto-setup...")
+    client = auto_setup()
+    if client.is_available():
+        print(f"\nQuick test: {client.generate('What is Φ(G)? Keep it under 20 words.')}")
+    else:
+        print("\nNo LLM provider available. Set up with:")
+        print("  Ollama:    curl -fsSL https://ollama.com/install.sh | sh && ollama pull llama3.2:3b")
+        print("  OpenAI:    export OPENAI_API_KEY=sk-...")
+        print("  OpenRouter: export OPENROUTER_API_KEY=sk-or-...")
+        print("  Groq:      export GROQ_API_KEY=gsk_...")

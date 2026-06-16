@@ -1,1 +1,137 @@
-Ly8hIFJlcG9zaXRvcnkgbWFuYWdlbWVudCDigJQgY2xvbmUsIGZldGNoLCBzeW5jLCBtYW5hZ2UgbXVsdGlwbGUgcmVwb3MuCgp1c2UgY3JhdGU6OmVycm9yOjp7SGlnaEFnZW50RXJyb3IsIFJlc3VsdH07CnVzZSBzZXJkZTo6e0Rlc2VyaWFsaXplLCBTZXJpYWxpemV9Owp1c2Ugc3RkOjpjb2xsZWN0aW9uczo6SGFzaE1hcDsKdXNlIHN0ZDo6cGF0aDo6UGF0aEJ1ZjsKCiNbZGVyaXZlKERlYnVnLCBDbG9uZSwgU2VyaWFsaXplLCBEZXNlcmlhbGl6ZSldCnB1YiBzdHJ1Y3QgUmVwbyB7CiAgICBwdWIgbmFtZTogU3RyaW5nLAogICAgcHViIHVybDogU3RyaW5nLAogICAgcHViIGxvY2FsX3BhdGg6IFBhdGhCdWYsCiAgICBwdWIgYnJhbmNoOiBTdHJpbmcsCiAgICBwdWIgc3RhdHVzOiBSZXBvU3RhdHVzLAogICAgcHViIGxhc3Rfc3luYzogU3RyaW5nLAp9CgojW2Rlcml2ZShEZWJ1ZywgQ2xvbmUsIFNlcmlhbGl6ZSwgRGVzZXJpYWxpemUsIFBhcnRpYWxFcSwgRXEpXQpwdWIgZW51bSBSZXBvU3RhdHVzIHsKICAgIENsZWFuLAogICAgRGlydHksCiAgICBVbmluaXRpYWxpemVkLAogICAgRXJyb3IoU3RyaW5nKSwKfQoKcHViIHN0cnVjdCBSZXBvTWFuYWdlciB7CiAgICBwdWIgcmVwb3M6IEhhc2hNYXA8U3RyaW5nLCBSZXBvPiwKICAgIHB1YiBjb25maWdfZmlsZTogUGF0aEJ1ZiwKfQoKaW1wbCBSZXBvTWFuYWdlciB7CiAgICBwdWIgZm4gbmV3KCkgLT4gU2VsZiB7CiAgICAgICAgbGV0IGNvbmZpZ19maWxlID0gc3RkOjplbnY6OnZhcigiSE9NRSIpLm1hcCh8aHwgewogICAgICAgICAgICBsZXQgbXV0IHAgPSBQYXRoQnVmOjpmcm9tKGgpOwogICAgICAgICAgICBwLnB1c2goIi5oaWdoLWFnZW50L3JlcG9zLmpzb24iKTsKICAgICAgICAgICAgcAogICAgICAgIH0pLnVud3JhcF9vcl9lbHNlKHxffCBQYXRoQnVmOjpmcm9tKCJ+Ly5oaWdoLWFnZW50L3JlcG9zLmpzb24iKSk7CgogICAgICAgIGxldCBtdXQgbWdyID0gU2VsZiB7IHJlcG9zOiBIYXNoTWFwOjpuZXcoKSwgY29uZmlnX2ZpbGUgfTsKICAgICAgICBtZ3IubG9hZCgpLm9rKCk7CiAgICAgICAgbWdyCiAgICB9CgogICAgcHViIGZuIGFkZCgmbXV0IHNlbGYsIG5hbWU6ICZzdHIsIHVybDogJnN0ciwgbG9jYWxfcGF0aDogJnN0ciwgYnJhbmNoOiAmc3RyKSAtPiBSZXN1bHQ8KCk+IHsKICAgICAgICBsZXQgcGF0aCA9IFBhdGhCdWY6OmZyb20obG9jYWxfcGF0aCk7CiAgICAgICAgaWYgcGF0aC5leGlzdHMoKSAmJiBwYXRoLmpvaW4oIi5naXQiKS5leGlzdHMoKSB7CiAgICAgICAgICAgIHJldHVybiBFcnIoSGlnaEFnZW50RXJyb3I6OlJlcG8oZm9ybWF0ISgiUGF0aCAne30nIGFscmVhZHkgZXhpc3RzIGFuZCBpcyBhIGdpdCByZXBvIiwgbG9jYWxfcGF0aCkpKTsKICAgICAgICB9CiAgICAgICAgbGV0IHJlcG8gPSBSZXBvIHsKICAgICAgICAgICAgbmFtZTogbmFtZS50b19zdHJpbmcoKSwgdXJsOiB1cmwudG9fc3RyaW5nKCksIGxvY2FsX3BhdGg6IHBhdGgsCiAgICAgICAgICAgIGJyYW5jaDogYnJhbmNoLnRvX3N0cmluZygpLCBzdGF0dXM6IFJlcG9TdGF0dXM6OlVuaW5pdGlhbGl6ZWQsIGxhc3Rfc3luYzogU3RyaW5nOjpuZXcoKSwKICAgICAgICB9OwogICAgICAgIHNlbGYucmVwb3MuaW5zZXJ0KG5hbWUudG9fc3RyaW5nKCksIHJlcG8pOwogICAgICAgIHNlbGYuc2F2ZSgpCiAgICB9CgogICAgcHViIGZuIGNsb25lX3JlcG8oJm11dCBzZWxmLCBuYW1lOiAmc3RyKSAtPiBSZXN1bHQ8KCk+IHsKICAgICAgICBsZXQgcmVwbyA9IHNlbGYucmVwb3MuZ2V0X211dChuYW1lKS5va19vcl9lbHNlKHx8IEhpZ2hBZ2VudEVycm9yOjpSZXBvKGZvcm1hdCEoIlJlcG8gJ3t9JyBub3QgZm91bmQiLCBuYW1lKSkpPzsKICAgICAgICBpZiByZXBvLmxvY2FsX3BhdGguZXhpc3RzKCkgeyByZXR1cm4gT2soKCkpOyB9CgogICAgICAgIGlmIGxldCBTb21lKHBhcmVudCkgPSByZXBvLmxvY2FsX3BhdGgucGFyZW50KCkgewogICAgICAgICAgICBzdGQ6OmZzOjpjcmVhdGVfZGlyX2FsbChwYXJlbnQpPzsKICAgICAgICB9CgogICAgICAgIGxldCBvdXRwdXQgPSBzdGQ6OnByb2Nlc3M6OkNvbW1hbmQ6Om5ldygiZ2l0IikKICAgICAgICAgICAgLmFyZ3MoWyJjbG9uZSIsICItLWJyYW5jaCIsICZyZXBvLmJyYW5jaCwgJnJlcG8udXJsLCByZXBvLmxvY2FsX3BhdGgudG9fc3RyKCkudW53cmFwKCldKQogICAgICAgICAgICAub3V0cHV0KCk/OwogICAgICAgIGlmICFvdXRwdXQuc3RhdHVzLnN1Y2Nlc3MoKSB7CiAgICAgICAgICAgIHJlcG8uc3RhdHVzID0gUmVwb1N0YXR1czo6RXJyb3IoU3RyaW5nOjpmcm9tX3V0ZjhfbG9zc3koJm91dHB1dC5zdGRlcnIpLnRvX3N0cmluZygpKTsKICAgICAgICAgICAgcmV0dXJuIEVycihIaWdoQWdlbnRFcnJvcjo6UmVwbyhmb3JtYXQhKCJDbG9uZSBmYWlsZWQ6IHt9IiwgU3RyaW5nOjpmcm9tX3V0ZjhfbG9zc3koJm91dHB1dC5zdGRlcnIpKSkpOwogICAgICAgIH0KICAgICAgICByZXBvLnN0YXR1cyA9IFJlcG9TdGF0dXM6OkNsZWFuOwogICAgICAgIHJlcG8ubGFzdF9zeW5jID0gY2hyb25vX25vdygpOwogICAgICAgIHNlbGYuc2F2ZSgpCiAgICB9CgogICAgcHViIGZuIHN5bmMoJm11dCBzZWxmLCBuYW1lOiAmc3RyKSAtPiBSZXN1bHQ8KCk+IHsKICAgICAgICBsZXQgcmVwbyA9IHNlbGYucmVwb3MuZ2V0X211dChuYW1lKS5va19vcl9lbHNlKHx8IEhpZ2hBZ2VudEVycm9yOjpSZXBvKGZvcm1hdCEoIlJlcG8gJ3t9JyBub3QgZm91bmQiLCBuYW1lKSkpPzsKICAgICAgICBpZiAhcmVwby5sb2NhbF9wYXRoLmV4aXN0cygpIHsgcmV0dXJuIHNlbGYuY2xvbmVfcmVwbyhuYW1lKTsgfQoKICAgICAgICBsZXQgb3V0cHV0ID0gc3RkOjpwcm9jZXNzOjpDb21tYW5kOjpuZXcoImdpdCIpCiAgICAgICAgICAgIC5jdXJyZW50X2RpcigmcmVwby5sb2NhbF9wYXRoKQogICAgICAgICAgICAuYXJncyhbInB1bGwiLCAib3JpZ2luIiwgJnJlcG8uYnJhbmNoXSkKICAgICAgICAgICAgLm91dHB1dCgpPzsKICAgICAgICBpZiAhb3V0cHV0LnN0YXR1cy5zdWNjZXNzKCkgewogICAgICAgICAgICByZXBvLnN0YXR1cyA9IFJlcG9TdGF0dXM6OkVycm9yKFN0cmluZzo6ZnJvbV91dGY4X2xvc3N5KCZvdXRwdXQuc3RkZXJyKS50b19zdHJpbmcoKSk7CiAgICAgICAgICAgIHJldHVybiBFcnIoSGlnaEFnZW50RXJyb3I6OlJlcG8oZm9ybWF0ISgiU3luYyBmYWlsZWQ6IHt9IiwgU3RyaW5nOjpmcm9tX3V0ZjhfbG9zc3koJm91dHB1dC5zdGRlcnIpKSkpOwogICAgICAgIH0KICAgICAgICByZXBvLnN0YXR1cyA9IFJlcG9TdGF0dXM6OkNsZWFuOwogICAgICAgIHJlcG8ubGFzdF9zeW5jID0gY2hyb25vX25vdygpOwogICAgICAgIHNlbGYuc2F2ZSgpCiAgICB9CgogICAgcHViIGZuIHN0YXR1cygmbXV0IHNlbGYsIG5hbWU6ICZzdHIpIC0+IFJlc3VsdDxSZXBvU3RhdHVzPiB7CiAgICAgICAgbGV0IHJlcG8gPSBzZWxmLnJlcG9zLmdldChuYW1lKS5va19vcl9lbHNlKHx8IEhpZ2hBZ2VudEVycm9yOjpSZXBvKGZvcm1hdCEoIlJlcG8gJ3t9JyBub3QgZm91bmQiLCBuYW1lKSkpPzsKICAgICAgICBpZiAhcmVwby5sb2NhbF9wYXRoLmV4aXN0cygpIHsgcmV0dXJuIE9rKFJlcG9TdGF0dXM6OlVuaW5pdGlhbGl6ZWQpOyB9CgogICAgICAgIGxldCBvdXRwdXQgPSBzdGQ6OnByb2Nlc3M6OkNvbW1hbmQ6Om5ldygiZ2l0IikKICAgICAgICAgICAgLmN1cnJlbnRfZGlyKCZyZXBvLmxvY2FsX3BhdGgpCiAgICAgICAgICAgIC5hcmdzKFsic3RhdHVzIiwgIi0tcG9yY2VsYWluIl0pCiAgICAgICAgICAgIC5vdXRwdXQoKT87CiAgICAgICAgbGV0IGlzX2RpcnR5ID0gIVN0cmluZzo6ZnJvbV91dGY4X2xvc3N5KCZvdXRwdXQuc3Rkb3V0KS50cmltKCkuaXNfZW1wdHkoKTsKICAgICAgICBPayhpZiBpc19kaXJ0eSB7IFJlcG9TdGF0dXM6OkRpcnR5IH0gZWxzZSB7IFJlcG9TdGF0dXM6OkNsZWFuIH0pCiAgICB9CgogICAgcHViIGZuIGxpc3QoJnNlbGYpIC0+IFZlYzwmUmVwbz4geyBzZWxmLnJlcG9zLnZhbHVlcygpLmNvbGxlY3QoKSB9CgogICAgcHViIGZuIHJlbW92ZSgmbXV0IHNlbGYsIG5hbWU6ICZzdHIpIC0+IFJlc3VsdDwoKT4gewogICAgICAgIHNlbGYucmVwb3MucmVtb3ZlKG5hbWUpLm9rX29yX2Vsc2UofHwgSGlnaEFnZW50RXJyb3I6OlJlcG8oZm9ybWF0ISgiUmVwbyAne30nIG5vdCBmb3VuZCIsIG5hbWUpKSk/OwogICAgICAgIHNlbGYuc2F2ZSgpCiAgICB9CgogICAgcHViIGZuIGxvYWQoJm11dCBzZWxmKSAtPiBzdGQ6OmlvOjpSZXN1bHQ8KCk+IHsKICAgICAgICBpZiAhc2VsZi5jb25maWdfZmlsZS5leGlzdHMoKSB7IHJldHVybiBPaygoKSk7IH0KICAgICAgICBsZXQgZGF0YSA9IHN0ZDo6ZnM6OnJlYWRfdG9fc3RyaW5nKCZzZWxmLmNvbmZpZ19maWxlKT87CiAgICAgICAgc2VsZi5yZXBvcyA9IHNlcmRlX2pzb246OmZyb21fc3RyKCZkYXRhKS51bndyYXBfb3JfZGVmYXVsdCgpOwogICAgICAgIE9rKCgpKQogICAgfQoKICAgIHB1YiBmbiBzYXZlKCZzZWxmKSAtPiBSZXN1bHQ8KCk+IHsKICAgICAgICBpZiBsZXQgU29tZShwYXJlbnQpID0gc2VsZi5jb25maWdfZmlsZS5wYXJlbnQoKSB7CiAgICAgICAgICAgIHN0ZDo6ZnM6OmNyZWF0ZV9kaXJfYWxsKHBhcmVudCk/OwogICAgICAgIH0KICAgICAgICBsZXQganNvbiA9IHNlcmRlX2pzb246OnRvX3N0cmluZ19wcmV0dHkoJnNlbGYucmVwb3MpPzsKICAgICAgICBzdGQ6OmZzOjp3cml0ZSgmc2VsZi5jb25maWdfZmlsZSwganNvbik/OwogICAgICAgIE9rKCgpKQogICAgfQp9CgppbXBsIERlZmF1bHQgZm9yIFJlcG9NYW5hZ2VyIHsKICAgIGZuIGRlZmF1bHQoKSAtPiBTZWxmIHsgU2VsZjo6bmV3KCkgfQp9CgpmbiBjaHJvbm9fbm93KCkgLT4gU3RyaW5nIHsKICAgIGxldCBkdXIgPSBzdGQ6OnRpbWU6OlN5c3RlbVRpbWU6Om5vdygpLmR1cmF0aW9uX3NpbmNlKHN0ZDo6dGltZTo6VU5JWF9FUE9DSCkudW53cmFwX29yX2RlZmF1bHQoKTsKICAgIGZvcm1hdCEoInt9Lns6MDl9IiwgZHVyLmFzX3NlY3MoKSwgZHVyLnN1YnNlY19uYW5vcygpKQp9
+//! Repository management — clone, fetch, sync, manage multiple repos.
+
+use crate::error::{HighAgentError, Result};
+use serde::{Deserialize, Serialize};
+use std::collections::HashMap;
+use std::path::PathBuf;
+
+#[derive(Debug, Clone, Serialize, Deserialize)]
+pub struct Repo {
+    pub name: String,
+    pub url: String,
+    pub local_path: PathBuf,
+    pub branch: String,
+    pub status: RepoStatus,
+    pub last_sync: String,
+}
+
+#[derive(Debug, Clone, Serialize, Deserialize, PartialEq, Eq)]
+pub enum RepoStatus {
+    Clean,
+    Dirty,
+    Uninitialized,
+    Error(String),
+}
+
+pub struct RepoManager {
+    pub repos: HashMap<String, Repo>,
+    pub config_file: PathBuf,
+}
+
+impl RepoManager {
+    pub fn new() -> Self {
+        let config_file = std::env::var("HOME").map(|h| {
+            let mut p = PathBuf::from(h);
+            p.push(".high-agent/repos.json");
+            p
+        }).unwrap_or_else(|_| PathBuf::from("~/.high-agent/repos.json"));
+
+        let mut mgr = Self { repos: HashMap::new(), config_file };
+        mgr.load().ok();
+        mgr
+    }
+
+    pub fn add(&mut self, name: &str, url: &str, local_path: &str, branch: &str) -> Result<()> {
+        let path = PathBuf::from(local_path);
+        if path.exists() && path.join(".git").exists() {
+            return Err(HighAgentError::Repo(format!("Path '{}' already exists and is a git repo", local_path)));
+        }
+        let repo = Repo {
+            name: name.to_string(), url: url.to_string(), local_path: path,
+            branch: branch.to_string(), status: RepoStatus::Uninitialized, last_sync: String::new(),
+        };
+        self.repos.insert(name.to_string(), repo);
+        self.save()
+    }
+
+    pub fn clone_repo(&mut self, name: &str) -> Result<()> {
+        let repo = self.repos.get_mut(name).ok_or_else(|| HighAgentError::Repo(format!("Repo '{}' not found", name)))?;
+        if repo.local_path.exists() { return Ok(()); }
+
+        if let Some(parent) = repo.local_path.parent() {
+            std::fs::create_dir_all(parent)?;
+        }
+
+        let output = std::process::Command::new("git")
+            .args(["clone", "--branch", &repo.branch, &repo.url, repo.local_path.to_str().unwrap()])
+            .output()?;
+        if !output.status.success() {
+            repo.status = RepoStatus::Error(String::from_utf8_lossy(&output.stderr).to_string());
+            return Err(HighAgentError::Repo(format!("Clone failed: {}", String::from_utf8_lossy(&output.stderr))));
+        }
+        repo.status = RepoStatus::Clean;
+        repo.last_sync = chrono_now();
+        self.save()
+    }
+
+    pub fn sync(&mut self, name: &str) -> Result<()> {
+        let repo = self.repos.get_mut(name).ok_or_else(|| HighAgentError::Repo(format!("Repo '{}' not found", name)))?;
+        if !repo.local_path.exists() { return self.clone_repo(name); }
+
+        let output = std::process::Command::new("git")
+            .current_dir(&repo.local_path)
+            .args(["pull", "origin", &repo.branch])
+            .output()?;
+        if !output.status.success() {
+            repo.status = RepoStatus::Error(String::from_utf8_lossy(&output.stderr).to_string());
+            return Err(HighAgentError::Repo(format!("Sync failed: {}", String::from_utf8_lossy(&output.stderr))));
+        }
+        repo.status = RepoStatus::Clean;
+        repo.last_sync = chrono_now();
+        self.save()
+    }
+
+    pub fn status(&mut self, name: &str) -> Result<RepoStatus> {
+        let repo = self.repos.get(name).ok_or_else(|| HighAgentError::Repo(format!("Repo '{}' not found", name)))?;
+        if !repo.local_path.exists() { return Ok(RepoStatus::Uninitialized); }
+
+        let output = std::process::Command::new("git")
+            .current_dir(&repo.local_path)
+            .args(["status", "--porcelain"])
+            .output()?;
+        let is_dirty = !String::from_utf8_lossy(&output.stdout).trim().is_empty();
+        Ok(if is_dirty { RepoStatus::Dirty } else { RepoStatus::Clean })
+    }
+
+    pub fn list(&self) -> Vec<&Repo> { self.repos.values().collect() }
+
+    pub fn remove(&mut self, name: &str) -> Result<()> {
+        self.repos.remove(name).ok_or_else(|| HighAgentError::Repo(format!("Repo '{}' not found", name)))?;
+        self.save()
+    }
+
+    pub fn load(&mut self) -> std::io::Result<()> {
+        if !self.config_file.exists() { return Ok(()); }
+        let data = std::fs::read_to_string(&self.config_file)?;
+        self.repos = serde_json::from_str(&data).unwrap_or_default();
+        Ok(())
+    }
+
+    pub fn save(&self) -> Result<()> {
+        if let Some(parent) = self.config_file.parent() {
+            std::fs::create_dir_all(parent)?;
+        }
+        let json = serde_json::to_string_pretty(&self.repos)?;
+        std::fs::write(&self.config_file, json)?;
+        Ok(())
+    }
+}
+
+impl Default for RepoManager {
+    fn default() -> Self { Self::new() }
+}
+
+fn chrono_now() -> String {
+    let dur = std::time::SystemTime::now().duration_since(std::time::UNIX_EPOCH).unwrap_or_default();
+    format!("{}.{:09}", dur.as_secs(), dur.subsec_nanos())
+}

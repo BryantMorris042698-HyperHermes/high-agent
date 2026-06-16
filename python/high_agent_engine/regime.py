@@ -1,1 +1,56 @@
-IiIiUmVnaW1lIGRlZmluaXRpb25zIOKAlCBtaXJyb3JzIFJ1c3QgcmVnaW1lLnJzLiIiIgoKZnJvbSBfX2Z1dHVyZV9fIGltcG9ydCBhbm5vdGF0aW9ucwpmcm9tIGRhdGFjbGFzc2VzIGltcG9ydCBkYXRhY2xhc3MKZnJvbSB0eXBpbmcgaW1wb3J0IE9wdGlvbmFsCmltcG9ydCB0aW1lCgpAZGF0YWNsYXNzCmNsYXNzIFJlZ2ltZUNvZWZmczoKICAgIGFscGhhOiBmbG9hdAogICAgYmV0YTogZmxvYXQKICAgIGdhbW1hOiBmbG9hdAoKUmVnaW1lQ29lZmZzLlNJTVBMRSA9IFJlZ2ltZUNvZWZmcygwLjgsIDAuOSwgMC4yKQpSZWdpbWVDb2VmZnMuQURWQU5DRUQgPSBSZWdpbWVDb2VmZnMoMS4yLCAwLjUsIDAuMykKUmVnaW1lQ29lZmZzLkhZQlJJRCA9IFJlZ2ltZUNvZWZmcygxLjAsIDAuNiwgMC40KQoKY2xhc3MgUmVnaW1lOgogICAgU0lNUExFID0gInNpbXBsZSIKICAgIEFEVkFOQ0VEID0gImFkdmFuY2VkIgogICAgSFlCUklEID0gImh5YnJpZCIKCiAgICBAc3RhdGljbWV0aG9kCiAgICBkZWYgY29lZmZzKHI6IHN0cikgLT4gUmVnaW1lQ29lZmZzOgogICAgICAgIHJldHVybiB7InNpbXBsZSI6IFJlZ2ltZUNvZWZmcy5TSU1QTEUsICJhZHZhbmNlZCI6IFJlZ2ltZUNvZWZmcy5BRFZBTkNFRCwgImh5YnJpZCI6IFJlZ2ltZUNvZWZmcy5IWUJSSUR9LmdldChyLCBSZWdpbWVDb2VmZnMuSFlCUklEKQoKICAgIEBzdGF0aWNtZXRob2QKICAgIGRlZiBkZXNjcmlwdGlvbihyOiBzdHIpIC0+IHN0cjoKICAgICAgICByZXR1cm4geyJzaW1wbGUiOiAiTWluaW1pemUgY291cGxpbmcuIEZhc3QgaXRlcmF0aW9uLiIsICJhZHZhbmNlZCI6ICJNYXhpbWl6ZSBtb2R1bGFyaXR5LiBQUiByZXZpZXcgbW9kZS4iLCAiaHlicmlkIjogIkJhbGFuY2UgYWxsIHRlcm1zLiBUZWFtIGhhbmRvZmYgbW9kZS4ifS5nZXQociwgIiIpCgogICAgQHN0YXRpY21ldGhvZAogICAgZGVmIGFsbCgpIC0+IGxpc3Q6CiAgICAgICAgcmV0dXJuIFsic2ltcGxlIiwgImFkdmFuY2VkIiwgImh5YnJpZCJdCgogICAgQHN0YXRpY21ldGhvZAogICAgZGVmIGRlZmF1bHQoKSAtPiBzdHI6CiAgICAgICAgcmV0dXJuICJoeWJyaWQiCgogICAgQHN0YXRpY21ldGhvZAogICAgZGVmIGZyb21fc3RyKHM6IHN0cikgLT4gT3B0aW9uYWxbc3RyXToKICAgICAgICBzID0gcy5sb3dlcigpCiAgICAgICAgcmV0dXJuIHMgaWYgcyBpbiAoInNpbXBsZSIsICJhZHZhbmNlZCIsICJoeWJyaWQiKSBlbHNlIE5vbmUKCkhZU1RFUkVTSVNfTUFSR0lOID0gMC4wNQoKY2xhc3MgUmVnaW1lVHJhbnNpdGlvbjoKICAgIGRlZiBfX2luaXRfXyhzZWxmLCBmcm9tXzogc3RyLCB0bzogc3RyLCByZWFzb246IHN0ciwgcGhpX2JlZm9yZTogZmxvYXQsIHBoaV9hZnRlcjogZmxvYXQpOgogICAgICAgIHNlbGYuZnJvbV8gPSBmcm9tXwogICAgICAgIHNlbGYudG8gPSB0bwogICAgICAgIHNlbGYucmVhc29uID0gcmVhc29uCiAgICAgICAgc2VsZi5waGlfYmVmb3JlID0gcGhpX2JlZm9yZQogICAgICAgIHNlbGYucGhpX2FmdGVyID0gcGhpX2FmdGVyCiAgICAgICAgc2VsZi50aW1lc3RhbXAgPSBmInt0aW1lLnRpbWUoKTouOWZ9IgoKICAgIGRlZiBpbXByb3ZlbWVudChzZWxmKSAtPiBmbG9hdDoKICAgICAgICByZXR1cm4gc2VsZi5waGlfYWZ0ZXIgLSBzZWxmLnBoaV9iZWZvcmU=
+"""Regime definitions — mirrors Rust regime.rs."""
+
+from __future__ import annotations
+from dataclasses import dataclass
+from typing import Optional
+import time
+
+@dataclass
+class RegimeCoeffs:
+    alpha: float
+    beta: float
+    gamma: float
+
+RegimeCoeffs.SIMPLE = RegimeCoeffs(0.8, 0.9, 0.2)
+RegimeCoeffs.ADVANCED = RegimeCoeffs(1.2, 0.5, 0.3)
+RegimeCoeffs.HYBRID = RegimeCoeffs(1.0, 0.6, 0.4)
+
+class Regime:
+    SIMPLE = "simple"
+    ADVANCED = "advanced"
+    HYBRID = "hybrid"
+
+    @staticmethod
+    def coeffs(r: str) -> RegimeCoeffs:
+        return {"simple": RegimeCoeffs.SIMPLE, "advanced": RegimeCoeffs.ADVANCED, "hybrid": RegimeCoeffs.HYBRID}.get(r, RegimeCoeffs.HYBRID)
+
+    @staticmethod
+    def description(r: str) -> str:
+        return {"simple": "Minimize coupling. Fast iteration.", "advanced": "Maximize modularity. PR review mode.", "hybrid": "Balance all terms. Team handoff mode."}.get(r, "")
+
+    @staticmethod
+    def all() -> list:
+        return ["simple", "advanced", "hybrid"]
+
+    @staticmethod
+    def default() -> str:
+        return "hybrid"
+
+    @staticmethod
+    def from_str(s: str) -> Optional[str]:
+        s = s.lower()
+        return s if s in ("simple", "advanced", "hybrid") else None
+
+HYSTERESIS_MARGIN = 0.05
+
+class RegimeTransition:
+    def __init__(self, from_: str, to: str, reason: str, phi_before: float, phi_after: float):
+        self.from_ = from_
+        self.to = to
+        self.reason = reason
+        self.phi_before = phi_before
+        self.phi_after = phi_after
+        self.timestamp = f"{time.time():.9f}"
+
+    def improvement(self) -> float:
+        return self.phi_after - self.phi_before

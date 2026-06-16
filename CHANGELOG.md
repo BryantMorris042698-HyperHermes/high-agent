@@ -1,1 +1,50 @@
-IyBDaGFuZ2Vsb2cKCkFsbCBub3RhYmxlIGNoYW5nZXMgdG8gR3JhcGhfeF8weDAgd2lsbCBiZSBkb2N1bWVudGVkIGluIHRoaXMgZmlsZS4KClRoZSBmb3JtYXQgaXMgYmFzZWQgb24gW0tlZXAgYSBDaGFuZ2Vsb2ddKGh0dHBzOi8va2VlcGFjaGFuZ2Vsb2cuY29tL2VuLzEuMC4wLykuCgojIyBbMC4yLjBdIOKAlCAyMDI1LVhYLVhYCgojIyMgQWRkZWQKLSAqKk5ldXJhbCBDaGF0IExheWVyKiogKGBsbG0ucHlgLCBgY2hhdC5weWAsIGBhZ2VudC5weWApOgogIC0gVW5pZmllZCBMTE0gY2xpZW50IHN1cHBvcnRpbmcgT2xsYW1hLCBPcGVuQUksIE9wZW5Sb3V0ZXIsIEdyb3EsIGFuZCBEZWVwU2VlayB3aXRoIGF1dG8tZGV0ZWN0aW9uCiAgLSBgTmV1cmFsQWdlbnRgIGNsYXNzIHRoYXQgZW5yaWNoZXMgZXZlcnkgbWVzc2FnZSB3aXRoIGxpdmUgzqYoRykgbWV0cmljcywgaG90IHNwb3RzLCBhbmQgcmVnaW1lIGNvbnRleHQKICAtIGBPcmNoZXN0cmF0b3JBZ2VudGAgd2l0aCByZWdpbWUtYXdhcmUgdGFzayByb3V0aW5nIGFuZCBob3Qgc3BvdCBkZXRlY3Rpb24KICAtIGBSZWZhY3RvckFnZW50YCwgYFF1YWxpdHlBZ2VudGAsIGBUZXN0QWdlbnRgLCBgU2tpbGxBZ2VudGAsIGBSZXBvQWdlbnRgLCBgQnVpbGRBZ2VudGAsIGBQbGFubmVyQWdlbnRgCiAgLSBBZ2VudCBTd2FybSB3aXRoIG11bHRpLWFnZW50IHBhcmFsbGVsIGV4ZWN1dGlvbiBhbmQgcmVzdWx0IHN5bnRoZXNpcwotICoqRnVsbCBSRVBMKiogKGByZXBsLnB5YCk6IHN3ZWVwLCB0aGVvcnksIGhpc3RvcnksIGhvdCwgY291cGxpbmcsIHNraWxscywgbGVhcm4sIHNldHVwLCBzY2FuLCBhbmFseXplLCBjaGF0LCBzd2FybSwgcmVmYWN0b3IgY29tbWFuZHMKLSAqKlN0YW5kYWxvbmUgUkVQTCoqIChgaGlnaC1hZ2VudC1yZXBsLnB5YCk6IFJ1biB3aXRob3V0IGluc3RhbGxhdGlvbiDigJQgYHB5dGhvbiBoaWdoLWFnZW50LXJlcGwucHlgCi0gKipDTEkgRW50cnkgUG9pbnQqKiAoYF9fbWFpbl9fLnB5YCk6IGBweXRob24gLW0gaGlnaF9hZ2VudF9lbmdpbmVgIHdpdGggc3ViY29tbWFuZHMgKG1ldHJpY3MsIHN3ZWVwLCB0aGVvcnksIGNyYXdsLCBjaGF0LCBzd2FybSwgc3RhdHVzLCBzZXR1cCkKLSAqKnB5cHJvamVjdC50b21sKio6IHYwLjIuMCB3aXRoIGFsbCBtb2R1bGVzLCBlbnRyeSBwb2ludHMsIG9wdGlvbmFsIGV4dHJhcyAoYFtvbGxhbWFdYCwgYFthbGxdYCkKLSAqKlJ1c3QgRXhhbXBsZSoqIChgcnVzdC9leGFtcGxlcy9iYXNpYy5yc2ApOiBDb21wbGV0ZSB3b3JraW5nIGV4YW1wbGUgd2l0aCDOpihHKSBvdXRwdXQKLSAqKlB5dGhvbiB0ZXN0cyoqIChgdGVzdHMvdGVzdF9oaWdoX2FnZW50X2VuZ2luZS5weWApOiBDb3JlIHRlc3RzIGZvciBncmFwaCwgZW5naW5lLCByZWdpbWUsIGNyYXdsZXIKCiMjIyBGaXhlZAotIGBlbmdpbmUucHlgOiBBZGRlZCBgc25hcHNob3QoKWAsIGBjb21wdXRlX3BoaSgpYCwgYHJlZ2ltZV9jb2VmZnMoKWAsIGB1cGRhdGUoKWAgd3JhcHBlciBtZXRob2RzCi0gYGVuZ2luZS5weWA6IEZpeGVkIGBhaV9hbmFseXplKClgIG1ldGhvZCB3aXRoIG51bGwtY2hlY2sgZ3VhcmRzCi0gYGVuZ2luZS5weWA6IEZpeGVkIGBzd2l0Y2hfcmVnaW1lKClgIGZvciBjYXNlIHdoZW4gbWV0cmljcyBpcyBOb25lCi0gYGVuZ2luZS5weWA6IEZpeGVkIGBwcm9jZXNzX3Rhc2soKWAg4oCUIGBuX25vZGVzYCBwcm9wZXJ0eSBjYWxsIGZpeGVkIHRvIGBuX25vZGVzYCBhdHRyaWJ1dGUKLSBgX19pbml0X18ucHlgOiBMYXp5IGltcG9ydHMgd2l0aCBgX2xsbV9hdmFpbGFibGUoKWAgY2hlY2sgc28gcGFja2FnZSBpbnN0YWxscyB3aXRob3V0IExMTSBkZXBzCi0gYGhpZ2gtYWdlbnQtcmVwbC5weWA6IFN5bnRheCBlcnJvciBvbiBsaW5lIDY3IChleHRyYSBgZntgIHByZWZpeCkKCiMjIFswLjEuMF0g4oCUIDIwMjUtMDYtMTUKCiMjIyBBZGRlZAotICoqR3JhcGggQ29yZSoqOiBgRGlyZWN0ZWRHcmFwaGAsIGBOb2RlYCwgYEVkZ2VgLCBgR3JhcGhTbmFwc2hvdGAg4oCUIEc9KFYsRSkgY29kZSBtb2RlbAotICoqTWV0cmljcyBFbmdpbmUqKjogTmV3bWFuLUdpcnZhbiBtb2R1bGFyaXR5IFEoRyksIGNvdXBsaW5nIMSMKEcpLCBjeWNsb21hdGljIGNvbXBsZXhpdHkgVgotICoqzqYoRykgT2JqZWN0aXZlKio6IGDOscK3UShHKSDiiJIgzrLCt8SMKEcpIOKIkiDOs8K3bWVhbihWKWAgY29tcHV0ZWQgbGl2ZSBvbiB0aGUgZ3JhcGgKLSAqKlRocmVlIFJlZ2ltZXMqKjogU2ltcGxlICjOsT0xLjApLCBBZHZhbmNlZCAozrE9MC41LM6yPTEuMCksIEh5YnJpZCAozrE9MC41LM6yPTEuMCzOsz0wLjUpCi0gKipTZWdtZW50ZWRSZWdpbWVEZXRlY3RvcioqOiBaLXNjb3JlIHJvbGxpbmcgd2luZG93IGZvciBkZXZpYXRpb24gZGV0ZWN0aW9uCi0gKipSZWdpbWVFbmdpbmUqKjogT3JjaGVzdHJhdGVzIGdyYXBoICsgZGV0ZWN0b3IgKyByZWdpbWUgc3dpdGNoaW5nIHdpdGggaHlzdGVyZXNpcwotICoqQ29kZWJhc2VDcmF3bGVyKio6IFBhcnNlcyBkaXJlY3RvcmllcyBpbnRvIERpcmVjdGVkR3JhcGgKLSAqKlJ1c3QgVFVJIERhc2hib2FyZCoqIChgcmF0YXR1aWApOiA0LXRhYiBkYXNoYm9hcmQgKERhc2hib2FyZCwgR3JhcGgsIFRoZW9yeSwgSGlzdG9yeSkKLSAqKlNlbGYtaW1wcm92aW5nIGxvb3AqKjogYHB5dGhvbiBoaWdoX2FnZW50X2VuZ2luZS9zZWxmLWltcHJvdmluZy1sb29wLnB5YAotICoqR2l0SHViIHdvcmtmbG93cyoqOiBDSSAoNiBwYXJhbGxlbCBqb2JzKSwgUmVsZWFzZSAoUHlQSSBvbiB2ZXJzaW9uIHRhZ3MpCi0gKipHaXRIdWIgaXNzdWUvUFIgdGVtcGxhdGVzKio6IEJ1ZyByZXBvcnQsIGZlYXR1cmUgcmVxdWVzdCwgUFIgdGVtcGxhdGUKLSAqKlNoZWxsIHNjcmlwdHMqKjogaW5zdGFsbC5zaCwgZGVtby5zaCwgdGVybXV4LXNldHVwLnNoLCBidWlsZC1yZWxlYXNlLnNoCi0gKipEb2N1bWVudGF0aW9uKio6IFNQRUMubWQsIENPTlRSSUJVVElORy5tZCwgTElDRU5TRSwgc2tpbGxzL1JFQURNRS5tZCwgYWdlbnRzL1JFQURNRS5tZAoKIyMjIEtub3duIElzc3VlcwotIGB0ZXN0X3JlZ2ltZV9kZXRlY3RvcmAgKFJ1c3QpIGlzIGAjW2lnbm9yZV1gZCDigJQgei1zY29yZSB3aW5kb3cgaW5jbHVkZXMgdGVzdCBzbmFwc2hvdCBpbiBiYXNlbGluZSwgbWFraW5nIGl0IGVudmlyb25tZW50LXNlbnNpdGl2ZQotIFRVSSByZXF1aXJlcyBgY2FyZ28gYnVpbGQgLS1mZWF0dXJlcyB0dWlgIOKAlCBub3QgYXZhaWxhYmxlIG9uIFRlcm11eCAodXNlIFB5dGhvbiBlbmdpbmUgaW5zdGVhZCk=
+# Changelog
+
+All notable changes to Graph_x_0x0 will be documented in this file.
+
+The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
+
+## [0.2.0] — 2025-XX-XX
+
+### Added
+- **Neural Chat Layer** (`llm.py`, `chat.py`, `agent.py`):
+  - Unified LLM client supporting Ollama, OpenAI, OpenRouter, Groq, and DeepSeek with auto-detection
+  - `NeuralAgent` class that enriches every message with live Φ(G) metrics, hot spots, and regime context
+  - `OrchestratorAgent` with regime-aware task routing and hot spot detection
+  - `RefactorAgent`, `QualityAgent`, `TestAgent`, `SkillAgent`, `RepoAgent`, `BuildAgent`, `PlannerAgent`
+  - Agent Swarm with multi-agent parallel execution and result synthesis
+- **Full REPL** (`repl.py`): sweep, theory, history, hot, coupling, skills, learn, setup, scan, analyze, chat, swarm, refactor commands
+- **Standalone REPL** (`high-agent-repl.py`): Run without installation — `python high-agent-repl.py`
+- **CLI Entry Point** (`__main__.py`): `python -m high_agent_engine` with subcommands (metrics, sweep, theory, crawl, chat, swarm, status, setup)
+- **pyproject.toml**: v0.2.0 with all modules, entry points, optional extras (`[ollama]`, `[all]`)
+- **Rust Example** (`rust/examples/basic.rs`): Complete working example with Φ(G) output
+- **Python tests** (`tests/test_high_agent_engine.py`): Core tests for graph, engine, regime, crawler
+
+### Fixed
+- `engine.py`: Added `snapshot()`, `compute_phi()`, `regime_coeffs()`, `update()` wrapper methods
+- `engine.py`: Fixed `ai_analyze()` method with null-check guards
+- `engine.py`: Fixed `switch_regime()` for case when metrics is None
+- `engine.py`: Fixed `process_task()` — `n_nodes` property call fixed to `n_nodes` attribute
+- `__init__.py`: Lazy imports with `_llm_available()` check so package installs without LLM deps
+- `high-agent-repl.py`: Syntax error on line 67 (extra `f{` prefix)
+
+## [0.1.0] — 2025-06-15
+
+### Added
+- **Graph Core**: `DirectedGraph`, `Node`, `Edge`, `GraphSnapshot` — G=(V,E) code model
+- **Metrics Engine**: Newman-Girvan modularity Q(G), coupling Č(G), cyclomatic complexity V
+- **Φ(G) Objective**: `α·Q(G) − β·Č(G) − γ·mean(V)` computed live on the graph
+- **Three Regimes**: Simple (α=1.0), Advanced (α=0.5,β=1.0), Hybrid (α=0.5,β=1.0,γ=0.5)
+- **SegmentedRegimeDetector**: Z-score rolling window for deviation detection
+- **RegimeEngine**: Orchestrates graph + detector + regime switching with hysteresis
+- **CodebaseCrawler**: Parses directories into DirectedGraph
+- **Rust TUI Dashboard** (`ratatui`): 4-tab dashboard (Dashboard, Graph, Theory, History)
+- **Self-improving loop**: `python high_agent_engine/self-improving-loop.py`
+- **GitHub workflows**: CI (6 parallel jobs), Release (PyPI on version tags)
+- **GitHub issue/PR templates**: Bug report, feature request, PR template
+- **Shell scripts**: install.sh, demo.sh, termux-setup.sh, build-release.sh
+- **Documentation**: SPEC.md, CONTRIBUTING.md, LICENSE, skills/README.md, agents/README.md
+
+### Known Issues
+- `test_regime_detector` (Rust) is `#[ignore]`d — z-score window includes test snapshot in baseline, making it environment-sensitive
+- TUI requires `cargo build --features tui` — not available on Termux (use Python engine instead)

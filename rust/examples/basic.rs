@@ -1,1 +1,156 @@
-Ly8hIEdyYXBoX3hfMHgwIOKAlCBCYXNpYyB1c2FnZSBleGFtcGxlCi8vIQovLyEgRGVtb25zdHJhdGVzIHRoZSBmdWxsIEdyYXBoX3hfMHgwIGVuZ2luZTogZ3JhcGggY29uc3RydWN0aW9uLAovLyEgzqYoRykgY29tcHV0YXRpb24sIHJlZ2ltZSBldmFsdWF0aW9uLCByZWdpbWUgc3dpdGNoaW5nLCBkZXZpYXRpb24KLy8hIGRldGVjdGlvbiwgYW5kIE9sbGFtYSBpbnRlZ3JhdGlvbi4KLy8hCi8vISBSdW4gd2l0aDogIGNhcmdvIHJ1biAtLWV4YW1wbGUgYmFzaWMgLS1mZWF0dXJlcyB0dWkKLy8hIE9yIChDTEkgb25seSwgbm8gVFVJIGRlcHMpOiAgY2FyZ28gcnVuIC0tZXhhbXBsZSBiYXNpYwoKdXNlIGhpZ2hfYWdlbnQ6OnsKICAgIERpcmVjdGVkR3JhcGgsIEVkZ2UsIEVkZ2VUeXBlLCBHcmFwaFNuYXBzaG90LCBOb2RlLAogICAgTWV0cmljcywgT3JjaGVzdHJhdG9yLAogICAgUmVnaW1lLCBSZWdpbWVFbmdpbmUsIFJlZ2ltZVRyYW5zaXRpb24sIFRhc2tUeXBlLAogICAgT2xsYW1hQ2xpZW50LAp9OwoKZm4gbWFpbigpIHsKICAgIHByaW50bG4hKCI9PT0gR3JhcGhfeF8weDAg4oCUIEJhc2ljIEV4YW1wbGUgPT09XG4iKTsKCiAgICAvLyDilIDilIAgMS4gQnVpbGQgYSBncmFwaCDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIAKICAgIHByaW50bG4hKCIxLiBCdWlsZGluZyBjb2RlIGdyYXBoICg3IG1vZHVsZXMsIDggZWRnZXMp4oCmIik7CgogICAgbGV0IG11dCBnID0gRGlyZWN0ZWRHcmFwaDo6bmV3KCk7CgogICAgLy8gQ29yZSBtb2R1bGUKICAgIGcuYWRkX25vZGUoTm9kZTo6bmV3KCJvcmNoZXN0cmF0ZSIuaW50bygpLCAiY29yZSIuaW50bygpLCAiY29yZS5ycyIuaW50bygpKQogICAgICAgIC53aXRoX2N5Y2xvbWF0aWMoNC4wKS53aXRoX3F1YWxpdHkoMC44NSkud2l0aF9saW5lcygxODApKTsKICAgIGcuYWRkX25vZGUoTm9kZTo6bmV3KCJldmFsdWF0ZSIuaW50bygpLCAiY29yZSIuaW50bygpLCAiY29yZS5ycyIuaW50bygpKQogICAgICAgIC53aXRoX2N5Y2xvbWF0aWMoMy4wKS53aXRoX3F1YWxpdHkoMC45MCkud2l0aF9saW5lcygxMjApKTsKICAgIGcuYWRkX25vZGUoTm9kZTo6bmV3KCJkZXRlY3QiLmludG8oKSwgImNvcmUiLmludG8oKSwgImNvcmUucnMiLmludG8oKSkKICAgICAgICAud2l0aF9jeWNsb21hdGljKDUuMCkud2l0aF9xdWFsaXR5KDAuODApLndpdGhfbGluZXMoOTUpKTsKCiAgICAvLyBDTEkgbW9kdWxlCiAgICBnLmFkZF9ub2RlKE5vZGU6Om5ldygiaGFuZGxlX2NvbW1hbmQiLmludG8oKSwgImNsaSIuaW50bygpLCAiY2xpLnJzIi5pbnRvKCkpCiAgICAgICAgLndpdGhfY3ljbG9tYXRpYygyLjApLndpdGhfcXVhbGl0eSgwLjgyKS53aXRoX2xpbmVzKDYwKSk7CiAgICBnLmFkZF9ub2RlKE5vZGU6Om5ldygicGFyc2VfYXJncyIuaW50bygpLCAiY2xpIi5pbnRvKCksICJjbGkucnMiLmludG8oKSkKICAgICAgICAud2l0aF9jeWNsb21hdGljKDIuMCkud2l0aF9xdWFsaXR5KDAuOTEpLndpdGhfbGluZXMoNDApKTsKCiAgICAvLyBTa2lsbHMgbW9kdWxlCiAgICBnLmFkZF9ub2RlKE5vZGU6Om5ldygibG9hZF9za2lsbCIuaW50bygpLCAic2tpbGxzIi5pbnRvKCksICJza2lsbHMucnMiLmludG8oKSkKICAgICAgICAud2l0aF9jeWNsb21hdGljKDQuMCkud2l0aF9xdWFsaXR5KDAuODcpLndpdGhfbGluZXMoMTUwKSk7CiAgICBnLmFkZF9ub2RlKE5vZGU6Om5ldygiY3JlYXRlX3NraWxsIi5pbnRvKCksICJza2lsbHMiLmludG8oKSwgInNraWxscy5ycyIuaW50bygpKQogICAgICAgIC53aXRoX2N5Y2xvbWF0aWMoMy4wKS53aXRoX3F1YWxpdHkoMC44Mykud2l0aF9saW5lcygyMDApKTsKCiAgICAvLyBJbnRyYS1tb2R1bGUgZWRnZXMgKGdvb2Qg4oCUIGxvdyBjb3VwbGluZykKICAgIGcuYWRkX2VkZ2UoRWRnZTo6bmV3KCJvcmNoZXN0cmF0ZSIuaW50bygpLCAiZXZhbHVhdGUiLmludG8oKSkKICAgICAgICAud2l0aF93ZWlnaHQoMS4wKS53aXRoX3R5cGUoRWRnZVR5cGU6OkNhbGwpKTsKICAgIGcuYWRkX2VkZ2UoRWRnZTo6bmV3KCJldmFsdWF0ZSIuaW50bygpLCAiZGV0ZWN0Ii5pbnRvKCkpCiAgICAgICAgLndpdGhfd2VpZ2h0KDAuOSkud2l0aF90eXBlKEVkZ2VUeXBlOjpDYWxsKSk7CiAgICBnLmFkZF9lZGdlKEVkZ2U6Om5ldygiZGV0ZWN0Ii5pbnRvKCksICJvcmNoZXN0cmF0ZSIuaW50bygpKQogICAgICAgIC53aXRoX3dlaWdodCgwLjgpLndpdGhfdHlwZShFZGdlVHlwZTo6Q2FsbCkpOwoKICAgIC8vIENyb3NzLW1vZHVsZSBlZGdlcyAoc29tZSBjb3VwbGluZyDigJQgcmVhbGlzdGljKQogICAgZy5hZGRfZWRnZShFZGdlOjpuZXcoImhhbmRsZV9jb21tYW5kIi5pbnRvKCksICJvcmNoZXN0cmF0ZSIuaW50bygpKQogICAgICAgIC53aXRoX3dlaWdodCgxLjApLndpdGhfdHlwZShFZGdlVHlwZTo6Q2FsbCkpOwogICAgZy5hZGRfZWRnZShFZGdlOjpuZXcoImhhbmRsZV9jb21tYW5kIi5pbnRvKCksICJwYXJzZV9hcmdzIi5pbnRvKCkpCiAgICAgICAgLndpdGhfd2VpZ2h0KDEuMCkud2l0aF90eXBlKEVkZ2VUeXBlOjpDYWxsKSk7CiAgICBnLmFkZF9lZGdlKEVkZ2U6Om5ldygibG9hZF9za2lsbCIuaW50bygpLCAiZXZhbHVhdGUiLmludG8oKSkKICAgICAgICAud2l0aF93ZWlnaHQoMC43KS53aXRoX3R5cGUoRWRnZVR5cGU6OkNhbGwpKTsKICAgIGcuYWRkX2VkZ2UoRWRnZTo6bmV3KCJjcmVhdGVfc2tpbGwiLmludG8oKSwgImxvYWRfc2tpbGwiLmludG8oKSkKICAgICAgICAud2l0aF93ZWlnaHQoMC42KS53aXRoX3R5cGUoRWRnZVR5cGU6OkNhbGwpKTsKICAgIGcuYWRkX2VkZ2UoRWRnZTo6bmV3KCJoYW5kbGVfY29tbWFuZCIuaW50bygpLCAibG9hZF9za2lsbCIuaW50bygpKQogICAgICAgIC53aXRoX3dlaWdodCgwLjUpLndpdGhfdHlwZShFZGdlVHlwZTo6SW1wb3J0KSk7CgogICAgcHJpbnRsbiEoIiAgIE5vZGVzOiB7fSwgRWRnZXM6IHt9IiwgZy5uX25vZGVzKCksIGcubl9lZGdlcygpKTsKCiAgICAvLyDilIDilIAgMi4gQ29tcHV0ZSBtZXRyaWNzIOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgAogICAgcHJpbnRsbiEoIlxuMi4gQ29tcHV0aW5nIG1ldHJpY3PigKYiKTsKCiAgICBsZXQgcSA9IGcubW9kdWxhcml0eSgpOwogICAgbGV0IGNvdXBsaW5nID0gZy5tZWFuX2NvdXBsaW5nKCk7CiAgICBsZXQgbWVhbl92ID0gZy5tZWFuX2N5Y2xvbWF0aWMoKTsKCiAgICBwcmludGxuISgiICAgUShHKTogICAgICB7Oj43LjR9ICAobW9kdWxhcml0eSDigJQgaGlnaGVyID0gYmV0dGVyIGNvaGVzaW9uKSIsIHEpOwogICAgcHJpbnRsbiEoIiAgIEMoRyk6ICAgICAgezo+Ny40fSAgKGNvdXBsaW5nICAg4oCUIGxvd2VyID0gbGVzcyBzcGFnaGV0dGkpIiwgY291cGxpbmcpOwogICAgcHJpbnRsbiEoIiAgIG1lYW4oVik6ICAgezo+Ny4yfSAgKGN5Y2xvbWF0aWMgY29tcGxleGl0eSkiLCBtZWFuX3YpOwoKICAgIC8vIOKUgOKUgCAzLiBDb21wdXRlIM6mKEcpIGZvciBhbGwgMyByZWdpbWVzIOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgAogICAgcHJpbnRsbiEoIlxuMy4gzqYoRykgYWNyb3NzIGFsbCByZWdpbWVz4oCmIik7CiAgICBwcmludGxuISgiICAgzqYoRykgPSBhbHBoYSpRKEcpIC0gYmV0YSpDKEcpIC0gZ2FtbWEqbWVhbihWKSIpOwogICAgcHJpbnRsbiEoIiAgIOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgCIpOwoKICAgIGZvciByZWdpbWUgaW4gUmVnaW1lOjphbGwoKSB7CiAgICAgICAgbGV0IGNvZWZmcyA9IHJlZ2ltZS5jb2VmZnMoKTsKICAgICAgICBsZXQgcGhpID0gZy5waGlfcmVnaW1lKHJlZ2ltZSk7CiAgICAgICAgcHJpbnRsbiEoIiAgIHs6OH0gIGFscGhhPXs6LjF9IGJldGE9ezouMX0gZ2FtbWE9ezouMX0gIC0+IFBoaSA9IHs6Ky40fSIsCiAgICAgICAgICAgICAgICAgcmVnaW1lLCBjb2VmZnMuYWxwaGEsIGNvZWZmcy5iZXRhLCBjb2VmZnMuZ2FtbWEsIHBoaSk7CiAgICB9CgogICAgLy8g4pSA4pSAIDQuIFJlZ2ltZUVuZ2luZSDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIAKICAgIHByaW50bG4hKCJcbjQuIFJlZ2ltZUVuZ2luZSAob3JjaGVzdHJhdGVkIHJlZ2ltZSBzd2l0Y2hpbmcp4oCmIik7CgogICAgbGV0IG11dCBlbmdpbmUgPSBSZWdpbWVFbmdpbmU6Om5ldygpOwogICAgZW5naW5lLnNlZWRfZ3JhcGgoKTsKICAgIGVuZ2luZS51cGRhdGVfbWV0cmljcygpOwoKICAgIGxldCBtID0gJmVuZ2luZS5tZXRyaWNzOwogICAgcHJpbnRsbiEoIiAgIFJlZ2ltZTogIHt9IiwgbS5yZWdpbWUpOwogICAgcHJpbnRsbiEoIiAgIFBoaTogICAgIHs6Ky40fSIsIG0ucGhpKTsKICAgIHByaW50bG4hKCIgICBROiAgICAgICB7Oi40fSAgQzogezouNH0gIG1lYW4oVik6IHs6LjJ9IiwgbS5xLCBtLmNvdXBsaW5nLCBtLm1lYW5fdik7CgogICAgLy8g4pSA4pSAIDUuIFN3ZWVwIGFsbCByZWdpbWVzIOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgAogICAgcHJpbnRsbiEoIlxuNS4gU3dlZXBpbmcgYWxsIHJlZ2ltZXPigKYiKTsKCiAgICBsZXQgcmVzdWx0cyA9IGVuZ2luZS5zd2VlcF9yZWdpbWVzKCk7CiAgICBmb3IgKHJlZ2ltZSwgcGhpKSBpbiAmcmVzdWx0cyB7CiAgICAgICAgbGV0IG1hcmtlciA9IGlmIHJlZ2ltZSA9PSAmZW5naW5lLm9yY2hlc3RyYXRvci5jdXJyZW50X3JlZ2ltZSB7ICIgPC0tIGN1cnJlbnQiIH0gZWxzZSB7ICIiIH07CiAgICAgICAgcHJpbnRsbiEoIiAgIHs6OH06IFBoaSA9IHs6Ky40fXt9IiwgcmVnaW1lLCBwaGksIG1hcmtlcik7CiAgICB9CgogICAgLy8g4pSA4pSAIDYuIFJlZ2ltZSBzd2l0Y2ggZGVtbyDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIAKICAgIHByaW50bG4hKCJcbjYuIE1hbnVhbCByZWdpbWUgc3dpdGNo4oCmIik7CgogICAgZm9yIHJlZ2ltZSBpbiBSZWdpbWU6OmFsbCgpIHsKICAgICAgICBpZiByZWdpbWUgIT0gZW5naW5lLm9yY2hlc3RyYXRvci5jdXJyZW50X3JlZ2ltZSB7CiAgICAgICAgICAgIGxldCBvbGQgPSBlbmdpbmUub3JjaGVzdHJhdG9yLmN1cnJlbnRfcmVnaW1lOwogICAgICAgICAgICBsZXQgbmV3X3JlZ2ltZSA9IGVuZ2luZS5zd2l0Y2hfcmVnaW1lKHJlZ2ltZSk7CiAgICAgICAgICAgIHByaW50bG4hKCIgICBTd2l0Y2hlZDoge30gLT4ge30iLCBvbGQsIG5ld19yZWdpbWUpOwogICAgICAgICAgICBwcmludGxuISgiICAgTmV3IFBoaTogIHs6Ky40fSIsIGVuZ2luZS5tZXRyaWNzLnBoaSk7CiAgICAgICAgICAgIGJyZWFrOwogICAgICAgIH0KICAgIH0KCiAgICAvLyDilIDilIAgNy4gVGFzayBwcm9jZXNzaW5nIOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgAogICAgcHJpbnRsbiEoIlxuNy4gUHJvY2Vzc2luZyB0YXNrcyAocmVmYWN0b3IgLyBmZWF0dXJlIC8gdGVzdCnigKYiKTsKCiAgICBmb3IgdGFzayBpbiBbVGFza1R5cGU6OlJlZmFjdG9yLCBUYXNrVHlwZTo6RmVhdHVyZSwgVGFza1R5cGU6OlRlc3RdIHsKICAgICAgICBsZXQgcGhpX2JlZm9yZSA9IGVuZ2luZS5tZXRyaWNzLnBoaTsKICAgICAgICBlbmdpbmUucHJvY2Vzc190YXNrKHRhc2spOwogICAgICAgIGxldCBwaGlfYWZ0ZXIgPSBlbmdpbmUubWV0cmljcy5waGk7CiAgICAgICAgbGV0IGRlbHRhID0gcGhpX2FmdGVyIC0gcGhpX2JlZm9yZTsKICAgICAgICBwcmludGxuISgiICAgezoyNX0gIFBoaTogezorLjR9IC0+IHs6Ky40fSAgKGRlbHRhOiB7OisuNH0pIiwKICAgICAgICAgICAgICAgICBmb3JtYXQhKCJ7Oj99IiwgdGFzayksIHBoaV9iZWZvcmUsIHBoaV9hZnRlciwgZGVsdGEpOwogICAgfQoKICAgIC8vIOKUgOKUgCA4LiBEZXZpYXRpb24gZGV0ZWN0aW9uIOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgAogICAgcHJpbnRsbiEoIlxuOC4gU2ltdWxhdGluZyBkZXZpYXRpb24gKyBhdXRvLXN3aXRjaOKApiIpOwogICAgZW5naW5lLnNpbXVsYXRlX2RldmlhdGlvbl9hbmRfc3dpdGNoKCk7CiAgICBwcmludGxuISgiICAgQ3VycmVudCByZWdpbWUgYWZ0ZXIgZGVtbzoge30iLCBlbmdpbmUub3JjaGVzdHJhdG9yLmN1cnJlbnRfcmVnaW1lKTsKCiAgICAvLyDilIDilIAgOS4gVGhlb3J5IGV4cGxhbmF0aW9uIOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgAogICAgcHJpbnRsbiEoIlxuOS4gVGhlb3J5IE1vZGUgZXhwbGFuYXRpb24gKGZpcnN0IDQwMCBjaGFycynigKYiKTsKICAgIGxldCB0aGVvcnkgPSBlbmdpbmUudGhlb3J5X2V4cGxhaW4oKTsKICAgIGxldCBwcmV2aWV3ID0gJnRoZW9yeVsuLnRoZW9yeS5sZW4oKS5taW4oNDAwKV07CiAgICBwcmludGxuISgiICAge30iLCBwcmV2aWV3LnJlcGxhY2UoJ1xuJywgIlxuICAgIikpOwoKICAgIC8vIOKUgOKUgCAxMC4gT2xsYW1hIGludGVncmF0aW9uIOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgAogICAgcHJpbnRsbiEoIlxuMTAuIE9sbGFtYSBjbGllbnQgKG5vbi1ibG9ja2luZyDigJQgdHJpZXMgdG8gY29ubmVjdCnigKYiKTsKICAgIGxldCBjbGllbnQgPSBPbGxhbWFDbGllbnQ6Om5ldygiaHR0cDovL2xvY2FsaG9zdDoxMTQzNCIsICJsbGFtYTMuMjoxYiIpOwogICAgcHJpbnRsbiEoIiAgICBCYXNlIFVSTDogIHt9IiwgY2xpZW50LmJhc2VfdXJsKTsKICAgIHByaW50bG4hKCIgICAgTW9kZWw6ICAgICB7fSIsIGNsaWVudC5kZWZhdWx0X21vZGVsKTsKICAgIHByaW50bG4hKCIgICAgKFVzZSBPTExBTUFfSE9TVCBlbnYgdmFyIHRvIG92ZXJyaWRlIGJhc2UgVVJMKSIpOwoKICAgIC8vIOKUgOKUgCBEb25lIOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgAogICAgcHJpbnRsbiEoIlxuPT09IERvbmUgPT09Iik7Cn0K
+//! Graph_x_0x0 — Basic usage example
+//!
+//! Demonstrates the full Graph_x_0x0 engine: graph construction,
+//! Φ(G) computation, regime evaluation, regime switching, deviation
+//! detection, and Ollama integration.
+//!
+//! Run with:  cargo run --example basic --features tui
+//! Or (CLI only, no TUI deps):  cargo run --example basic
+
+use high_agent::{
+    DirectedGraph, Edge, EdgeType, GraphSnapshot, Node,
+    Metrics, Orchestrator,
+    Regime, RegimeEngine, RegimeTransition, TaskType,
+    OllamaClient,
+};
+
+fn main() {
+    println!("=== Graph_x_0x0 — Basic Example ===\n");
+
+    // ── 1. Build a graph ──────────────────────────────────────────────────────
+    println!("1. Building code graph (7 modules, 8 edges)…");
+
+    let mut g = DirectedGraph::new();
+
+    // Core module
+    g.add_node(Node::new("orchestrate".into(), "core".into(), "core.rs".into())
+        .with_cyclomatic(4.0).with_quality(0.85).with_lines(180));
+    g.add_node(Node::new("evaluate".into(), "core".into(), "core.rs".into())
+        .with_cyclomatic(3.0).with_quality(0.90).with_lines(120));
+    g.add_node(Node::new("detect".into(), "core".into(), "core.rs".into())
+        .with_cyclomatic(5.0).with_quality(0.80).with_lines(95));
+
+    // CLI module
+    g.add_node(Node::new("handle_command".into(), "cli".into(), "cli.rs".into())
+        .with_cyclomatic(2.0).with_quality(0.82).with_lines(60));
+    g.add_node(Node::new("parse_args".into(), "cli".into(), "cli.rs".into())
+        .with_cyclomatic(2.0).with_quality(0.91).with_lines(40));
+
+    // Skills module
+    g.add_node(Node::new("load_skill".into(), "skills".into(), "skills.rs".into())
+        .with_cyclomatic(4.0).with_quality(0.87).with_lines(150));
+    g.add_node(Node::new("create_skill".into(), "skills".into(), "skills.rs".into())
+        .with_cyclomatic(3.0).with_quality(0.83).with_lines(200));
+
+    // Intra-module edges (good — low coupling)
+    g.add_edge(Edge::new("orchestrate".into(), "evaluate".into())
+        .with_weight(1.0).with_type(EdgeType::Call));
+    g.add_edge(Edge::new("evaluate".into(), "detect".into())
+        .with_weight(0.9).with_type(EdgeType::Call));
+    g.add_edge(Edge::new("detect".into(), "orchestrate".into())
+        .with_weight(0.8).with_type(EdgeType::Call));
+
+    // Cross-module edges (some coupling — realistic)
+    g.add_edge(Edge::new("handle_command".into(), "orchestrate".into())
+        .with_weight(1.0).with_type(EdgeType::Call));
+    g.add_edge(Edge::new("handle_command".into(), "parse_args".into())
+        .with_weight(1.0).with_type(EdgeType::Call));
+    g.add_edge(Edge::new("load_skill".into(), "evaluate".into())
+        .with_weight(0.7).with_type(EdgeType::Call));
+    g.add_edge(Edge::new("create_skill".into(), "load_skill".into())
+        .with_weight(0.6).with_type(EdgeType::Call));
+    g.add_edge(Edge::new("handle_command".into(), "load_skill".into())
+        .with_weight(0.5).with_type(EdgeType::Import));
+
+    println!("   Nodes: {}, Edges: {}", g.n_nodes(), g.n_edges());
+
+    // ── 2. Compute metrics ─────────────────────────────────────────────────────
+    println!("\n2. Computing metrics…");
+
+    let q = g.modularity();
+    let coupling = g.mean_coupling();
+    let mean_v = g.mean_cyclomatic();
+
+    println!("   Q(G):      {:>7.4}  (modularity — higher = better cohesion)", q);
+    println!("   C(G):      {:>7.4}  (coupling   — lower = less spaghetti)", coupling);
+    println!("   mean(V):   {:>7.2}  (cyclomatic complexity)", mean_v);
+
+    // ── 3. Compute Φ(G) for all 3 regimes ─────────────────────────────────────
+    println!("\n3. Φ(G) across all regimes…");
+    println!("   Φ(G) = alpha*Q(G) - beta*C(G) - gamma*mean(V)");
+    println!("   ──────────────────────────────────────────────");
+
+    for regime in Regime::all() {
+        let coeffs = regime.coeffs();
+        let phi = g.phi_regime(regime);
+        println!("   {:8}  alpha={:.1} beta={:.1} gamma={:.1}  -> Phi = {:+.4}",
+                 regime, coeffs.alpha, coeffs.beta, coeffs.gamma, phi);
+    }
+
+    // ── 4. RegimeEngine ────────────────────────────────────────────────────────
+    println!("\n4. RegimeEngine (orchestrated regime switching)…");
+
+    let mut engine = RegimeEngine::new();
+    engine.seed_graph();
+    engine.update_metrics();
+
+    let m = &engine.metrics;
+    println!("   Regime:  {}", m.regime);
+    println!("   Phi:     {:+.4}", m.phi);
+    println!("   Q:       {:.4}  C: {:.4}  mean(V): {:.2}", m.q, m.coupling, m.mean_v);
+
+    // ── 5. Sweep all regimes ───────────────────────────────────────────────────
+    println!("\n5. Sweeping all regimes…");
+
+    let results = engine.sweep_regimes();
+    for (regime, phi) in &results {
+        let marker = if regime == &engine.orchestrator.current_regime { " <-- current" } else { "" };
+        println!("   {:8}: Phi = {:+.4}{}", regime, phi, marker);
+    }
+
+    // ── 6. Regime switch demo ─────────────────────────────────────────────────
+    println!("\n6. Manual regime switch…");
+
+    for regime in Regime::all() {
+        if regime != engine.orchestrator.current_regime {
+            let old = engine.orchestrator.current_regime;
+            let new_regime = engine.switch_regime(regime);
+            println!("   Switched: {} -> {}", old, new_regime);
+            println!("   New Phi:  {:+.4}", engine.metrics.phi);
+            break;
+        }
+    }
+
+    // ── 7. Task processing ───────────────────────────────────────────────────
+    println!("\n7. Processing tasks (refactor / feature / test)…");
+
+    for task in [TaskType::Refactor, TaskType::Feature, TaskType::Test] {
+        let phi_before = engine.metrics.phi;
+        engine.process_task(task);
+        let phi_after = engine.metrics.phi;
+        let delta = phi_after - phi_before;
+        println!("   {:25}  Phi: {:+.4} -> {:+.4}  (delta: {:+.4})",
+                 format!("{:?}", task), phi_before, phi_after, delta);
+    }
+
+    // ── 8. Deviation detection ────────────────────────────────────────────────
+    println!("\n8. Simulating deviation + auto-switch…");
+    engine.simulate_deviation_and_switch();
+    println!("   Current regime after demo: {}", engine.orchestrator.current_regime);
+
+    // ── 9. Theory explanation ─────────────────────────────────────────────────
+    println!("\n9. Theory Mode explanation (first 400 chars)…");
+    let theory = engine.theory_explain();
+    let preview = &theory[..theory.len().min(400)];
+    println!("   {}", preview.replace('\n', "\n   "));
+
+    // ── 10. Ollama integration ───────────────────────────────────────────────
+    println!("\n10. Ollama client (non-blocking — tries to connect)…");
+    let client = OllamaClient::new("http://localhost:11434", "llama3.2:1b");
+    println!("    Base URL:  {}", client.base_url);
+    println!("    Model:     {}", client.default_model);
+    println!("    (Use OLLAMA_HOST env var to override base URL)");
+
+    // ── Done ──────────────────────────────────────────────────────────────────
+    println!("\n=== Done ===");
+}

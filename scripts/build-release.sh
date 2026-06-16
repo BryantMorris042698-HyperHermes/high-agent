@@ -1,1 +1,111 @@
-IyEvYmluL2Jhc2gKIyBCdWlsZCByZWxlYXNlIGJpbmFyaWVzIGZvciBkaXN0cmlidXRpb24KIyBDcmVhdGVzIHBvcnRhYmxlIHRhcmJhbGxzIGZvciBMaW51eCwgbWFjT1MsIGFuZCBXaW5kb3dzCgpzZXQgLWV1byBwaXBlZmFpbAoKU0NSSVBUX0RJUj0iJChjZCAiJChkaXJuYW1lICIke0JBU0hfU09VUkNFWzBdfSIpIiAmJiBwd2QpIgpISUdIX0FHRU5UX1JPT1Q9IiQoY2QgIiRTQ1JJUFRfRElSLy4uIiAmJiBwd2QpIgpESVNUX0RJUj0iJEhJR0hfQUdFTlRfUk9PVC9kaXN0IgpCVUlMRF9ESVI9IiRESVNUX0RJUi9idWlsZCIKCmVjaG8gIuKVlOKVkOKVkOKVkOKVkOKVkOKVkOKVkOKVkOKVkOKVkOKVkOKVkOKVkOKVkOKVkOKVkOKVkOKVkOKVkOKVkOKVkOKVkOKVkOKVkOKVkOKVkOKVkOKVkOKVkOKVkOKVkOKVkOKVkOKVkOKVkOKVkOKVkOKVkOKVkOKVkOKVkOKVkOKVkOKVkOKVkOKVkOKVkOKVkOKVkOKVkOKVlyIKZWNobyAi4pWRICBHcmFwaF94XzB4MCBSZWxlYXNlIEJ1aWxkZXIgICAgICAgICAgICAgICAgICDilZEiCmVjaG8gIuKVmuKVkOKVkOKVkOKVkOKVkOKVkOKVkOKVkOKVkOKVkOKVkOKVkOKVkOKVkOKVkOKVkOKVkOKVkOKVkOKVkOKVkOKVkOKVkOKVkOKVkOKVkOKVkOKVkOKVkOKVkOKVkOKVkOKVkOKVkOKVkOKVkOKVkOKVkOKVkOKVkOKVkOKVkOKVkOKVkOKVkOKVkOKVkOKVkOKVkOKVkOKVnSIKCm1rZGlyIC1wICIkRElTVF9ESVIiICIkQlVJTERfRElSIgpjZCAiJEhJR0hfQUdFTlRfUk9PVCIKCiMg4pSA4pSAIExpbnV4IHg4Nl82NCBtdXNsIOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgApidWlsZF9saW51eF9tdXNsKCkgewogICAgZWNobyAiIgogICAgZWNobyAiWypdIEJ1aWxkaW5nOiBMaW51eCB4ODZfNjQgKG11c2wpIgogICAgcnVzdHVwIHRhcmdldCBhZGQgeDg2XzY0LXVua25vd24tbGludXgtbXVzbCAyPi9kZXYvbnVsbCB8fCB0cnVlCiAgICBjYXJnbyBidWlsZCAtLWZlYXR1cmVzIHR1aSAtLXJlbGVhc2UgLS10YXJnZXQgeDg2XzY0LXVua25vd24tbGludXgtbXVzbAogICAgbWtkaXIgLXAgIiRCVUlMRF9ESVIvaGlnaC1hZ2VudC14ODZfNjQtdW5rbm93bi1saW51eC1tdXNsIgogICAgY3AgcnVzdC90YXJnZXQveDg2XzY0LXVua25vd24tbGludXgtbXVzbC9yZWxlYXNlL2hpZ2gtYWdlbnQtdHVpIFwKICAgICAgICIkQlVJTERfRElSL2hpZ2gtYWdlbnQteDg2XzY0LXVua25vd24tbGludXgtbXVzbC8iIDI+L2Rldi9udWxsIHx8IFwKICAgIGNwIHJ1c3QvdGFyZ2V0L3g4Nl82NC11bmtub3duLWxpbnV4LW11c2wvcmVsZWFzZS9oaWdoLWFnZW50IFwKICAgICAgICIkQlVJTERfRElSL2hpZ2gtYWdlbnQteDg2XzY0LXVua25vd24tbGludXgtbXVzbC8iCiAgICBjcCAiJEhJR0hfQUdFTlRfUk9PVC9ydXN0L1JFQURNRS5tZCIgIiRCVUlMRF9ESVIvaGlnaC1hZ2VudC14ODZfNjQtdW5rbm93bi1saW51eC1tdXNsL1JFQURNRS50eHQiCiAgICB0YXIgLUMgIiRCVUlMRF9ESVIiIC1jemYgIiRESVNUX0RJUi9oaWdoLWFnZW50LXg4Nl82NC11bmtub3duLWxpbnV4LW11c2wudGFyLmd6IiBcCiAgICAgICAgaGlnaC1hZ2VudC14ODZfNjQtdW5rbm93bi1saW51eC1tdXNsLwogICAgZWNobyAiWytdIENyZWF0ZWQ6IGRpc3QvaGlnaC1hZ2VudC14ODZfNjQtdW5rbm93bi1saW51eC1tdXNsLnRhci5neiIKfQoKIyDilIDilIAgTGludXggR05VIOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgApidWlsZF9saW51eF9nbnUoKSB7CiAgICBlY2hvICIiCiAgICBlY2hvICJbKl0gQnVpbGRpbmc6IExpbnV4IHg4Nl82NCAoR05VKSIKICAgIGNhcmdvIGJ1aWxkIC0tZmVhdHVyZXMgdHVpIC0tcmVsZWFzZQogICAgbWtkaXIgLXAgIiRCVUlMRF9ESVIvaGlnaC1hZ2VudC14ODZfNjQtdW5rbm93bi1saW51eC1nbnUiCiAgICBjcCBydXN0L3RhcmdldC9yZWxlYXNlL2hpZ2gtYWdlbnQtdHVpICIkQlVJTERfRElSL2hpZ2gtYWdlbnQteDg2XzY0LXVua25vd24tbGludXgtZ251LyIgMj4vZGV2L251bGwgfHwgXAogICAgY3AgcnVzdC90YXJnZXQvcmVsZWFzZS9oaWdoLWFnZW50ICIkQlVJTERfRElSL2hpZ2gtYWdlbnQteDg2XzY0LXVua25vd24tbGludXgtZ251LyIKICAgIGNwICIkSElHSF9BR0VOVF9ST09UL3J1c3QvUkVBRE1FLm1kIiAiJEJVSUxEX0RJUi9oaWdoLWFnZW50LXg4Nl82NC11bmtub3duLWxpbnV4LWdudS9SRUFETUUudHh0IgogICAgdGFyIC1DICIkQlVJTERfRElSIiAtY3pmICIkRElTVF9ESVIvaGlnaC1hZ2VudC14ODZfNjQtdW5rbm93bi1saW51eC1nbnUudGFyLmd6IiBcCiAgICAgICAgaGlnaC1hZ2VudC14ODZfNjQtdW5rbm93bi1saW51eC1nbnUvCiAgICBlY2hvICJbK10gQ3JlYXRlZDogZGlzdC9oaWdoLWFnZW50LXg4Nl82NC11bmtub3duLWxpbnV4LWdudS50YXIuZ3oiCn0KCiMg4pSA4pSAIG1hY09TIOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgApidWlsZF9tYWNvcygpIHsKICAgIGVjaG8gIiIKICAgIGVjaG8gIlsqXSBCdWlsZGluZzogbWFjT1MgKHVuaXZlcnNhbCkiCiAgICBjYXJnbyBidWlsZCAtLWZlYXR1cmVzIHR1aSAtLXJlbGVhc2UgMj4mMSB8fCB7CiAgICAgICAgZWNobyAiWyFdIG1hY09TIGJ1aWxkIGZhaWxlZCAobGlrZWx5IG5vdCBvbiBtYWNPUykiCiAgICAgICAgcmV0dXJuIDEKICAgIH0KICAgIG1rZGlyIC1wICIkQlVJTERfRElSL2hpZ2gtYWdlbnQtYWFyY2g2NC1hcHBsZS1kYXJ3aW4iCiAgICBjcCBydXN0L3RhcmdldC9yZWxlYXNlL2hpZ2gtYWdlbnQtdHVpICIkQlVJTERfRElSL2hpZ2gtYWdlbnQtYWFyY2g2NC1hcHBsZS1kYXJ3aW4vIiAyPi9kZXYvbnVsbCB8fCBcCiAgICBjcCBydXN0L3RhcmdldC9yZWxlYXNlL2hpZ2gtYWdlbnQgIiRCVUlMRF9ESVIvaGlnaC1hZ2VudC1hYXJjaDY0LWFwcGxlLWRhcndpbi8iCiAgICBjcCAiJEhJR0hfQUdFTlRfUk9PVC9ydXN0L1JFQURNRS5tZCIgIiRCVUlMRF9ESVIvaGlnaC1hZ2VudC1hYXJjaDY0LWFwcGxlLWRhcndpbi9SRUFETUUudHh0IgogICAgdGFyIC1DICIkQlVJTERfRElSIiAtY3pmICIkRElTVF9ESVIvaGlnaC1hZ2VudC1hYXJjaDY0LWFwcGxlLWRhcndpbi50YXIuZ3oiIFwKICAgICAgICBoaWdoLWFnZW50LWFhcmNoNjQtYXBwbGUtZGFyd2luLwogICAgZWNobyAiWytdIENyZWF0ZWQ6IGRpc3QvaGlnaC1hZ2VudC1hYXJjaDY0LWFwcGxlLWRhcndpbi50YXIuZ3oiCn0KCiMg4pSA4pSAIFB5dGhvbiB3aGVlbCDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIAKYnVpbGRfcHl0aG9uKCkgewogICAgZWNobyAiIgogICAgZWNobyAiWypdIEJ1aWxkaW5nOiBQeXRob24gd2hlZWwiCiAgICBjZCAiJEhJR0hfQUdFTlRfUk9PVC9weXRob24iCiAgICBweXRob24gLW0gYnVpbGQgLS13aGVlbCAyPi9kZXYvbnVsbCB8fCB7CiAgICAgICAgcGlwIGluc3RhbGwgYnVpbGQgLS1xdWlldCAyPi9kZXYvbnVsbAogICAgICAgIHB5dGhvbiAtbSBidWlsZCAtLXdoZWVsCiAgICB9CiAgICBjcCBkaXN0Lyoud2hsICIkRElTVF9ESVIvIiAyPi9kZXYvbnVsbCB8fCBlY2hvICJbIV0gUHl0aG9uIHdoZWVsIGJ1aWxkIHNraXBwZWQiCiAgICBjZCAiJEhJR0hfQUdFTlRfUk9PVCIKfQoKIyDilIDilIAgU3VtbWFyeSDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIAKc2hvd19zdW1tYXJ5KCkgewogICAgZWNobyAiIgogICAgZWNobyAi4pWU4pWQ4pWQ4pWQ4pWQ4pWQ4pWQ4pWQ4pWQ4pWQ4pWQ4pWQ4pWQ4pWQ4pWQ4pWQ4pWQ4pWQ4pWQ4pWQ4pWQ4pWQ4pWQ4pWQ4pWQ4pWQ4pWQ4pWQ4pWQ4pWQ4pWQ4pWQ4pWQ4pWQ4pWQ4pWQ4pWQ4pWQ4pWQ4pWQ4pWQ4pWQ4pWQ4pWQ4pWQ4pWQ4pWQ4pWQ4pWQ4pWQ4pWQ4pWXIgogICAgZWNobyAi4pWRICBSZWxlYXNlIGFydGlmYWN0cyAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICDilZEiCiAgICBlY2hvICLilZrilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZ0iCiAgICBscyAtbGggIiRESVNUX0RJUiIvKi50YXIuZ3ogIiRESVNUX0RJUiIvKi53aGwgMj4vZGV2L251bGwgfHwgbHMgLWxoICIkRElTVF9ESVIiLwogICAgZWNobyAiIgogICAgZWNobyAiU0hBMjU2IGNoZWNrc3VtczoiCiAgICBmb3IgZiBpbiAiJERJU1RfRElSIi8qLnRhci5neiAiJERJU1RfRElSIi8qLndobDsgZG8KICAgICAgICBbIC1mICIkZiIgXSAmJiBzaGEyNTZzdW0gIiRmIgogICAgZG9uZQp9CgojIOKUgOKUgCBNYWluIOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgApjYXNlICIkezE6LWFsbH0iIGluCiAgICBsaW51eC1tdXNsKSAgYnVpbGRfbGludXhfbXVzbDs7CiAgICBsaW51eC1nbnUpICAgYnVpbGRfbGludXhfZ251OzsKICAgIG1hY29zKSAgICAgICBidWlsZF9tYWNvczs7CiAgICBweXRob24pICAgICAgYnVpbGRfcHl0aG9uOzsKICAgIGFsbCkKICAgICAgICBidWlsZF9saW51eF9nbnUKICAgICAgICBidWlsZF9weXRob24KICAgICAgICA7OwogICAgY2xlYW4pCiAgICAgICAgcm0gLXJmICIkRElTVF9ESVIiLyoKICAgICAgICBlY2hvICJbK10gQ2xlYW5lZCBkaXN0LyIKICAgICAgICA7OwogICAgKikgZWNobyAiVXNhZ2U6ICQwIFtsaW51eC1tdXNsfGxpbnV4LWdudXxtYWNvc3xweXRob258YWxsfGNsZWFuXSI7Owplc2FjCgpzaG93X3N1bW1hcnkK
+#!/bin/bash
+# Build release binaries for distribution
+# Creates portable tarballs for Linux, macOS, and Windows
+
+set -euo pipefail
+
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+HIGH_AGENT_ROOT="$(cd "$SCRIPT_DIR/.." && pwd)"
+DIST_DIR="$HIGH_AGENT_ROOT/dist"
+BUILD_DIR="$DIST_DIR/build"
+
+echo "╔══════════════════════════════════════════════════╗"
+echo "║  Graph_x_0x0 Release Builder                  ║"
+echo "╚══════════════════════════════════════════════════╝"
+
+mkdir -p "$DIST_DIR" "$BUILD_DIR"
+cd "$HIGH_AGENT_ROOT"
+
+# ── Linux x86_64 musl ──────────────────────────────────────────
+build_linux_musl() {
+    echo ""
+    echo "[*] Building: Linux x86_64 (musl)"
+    rustup target add x86_64-unknown-linux-musl 2>/dev/null || true
+    cargo build --features tui --release --target x86_64-unknown-linux-musl
+    mkdir -p "$BUILD_DIR/high-agent-x86_64-unknown-linux-musl"
+    cp rust/target/x86_64-unknown-linux-musl/release/high-agent-tui \
+       "$BUILD_DIR/high-agent-x86_64-unknown-linux-musl/" 2>/dev/null || \
+    cp rust/target/x86_64-unknown-linux-musl/release/high-agent \
+       "$BUILD_DIR/high-agent-x86_64-unknown-linux-musl/"
+    cp "$HIGH_AGENT_ROOT/rust/README.md" "$BUILD_DIR/high-agent-x86_64-unknown-linux-musl/README.txt"
+    tar -C "$BUILD_DIR" -czf "$DIST_DIR/high-agent-x86_64-unknown-linux-musl.tar.gz" \
+        high-agent-x86_64-unknown-linux-musl/
+    echo "[+] Created: dist/high-agent-x86_64-unknown-linux-musl.tar.gz"
+}
+
+# ── Linux GNU ──────────────────────────────────────────────────
+build_linux_gnu() {
+    echo ""
+    echo "[*] Building: Linux x86_64 (GNU)"
+    cargo build --features tui --release
+    mkdir -p "$BUILD_DIR/high-agent-x86_64-unknown-linux-gnu"
+    cp rust/target/release/high-agent-tui "$BUILD_DIR/high-agent-x86_64-unknown-linux-gnu/" 2>/dev/null || \
+    cp rust/target/release/high-agent "$BUILD_DIR/high-agent-x86_64-unknown-linux-gnu/"
+    cp "$HIGH_AGENT_ROOT/rust/README.md" "$BUILD_DIR/high-agent-x86_64-unknown-linux-gnu/README.txt"
+    tar -C "$BUILD_DIR" -czf "$DIST_DIR/high-agent-x86_64-unknown-linux-gnu.tar.gz" \
+        high-agent-x86_64-unknown-linux-gnu/
+    echo "[+] Created: dist/high-agent-x86_64-unknown-linux-gnu.tar.gz"
+}
+
+# ── macOS ──────────────────────────────────────────────────────
+build_macos() {
+    echo ""
+    echo "[*] Building: macOS (universal)"
+    cargo build --features tui --release 2>&1 || {
+        echo "[!] macOS build failed (likely not on macOS)"
+        return 1
+    }
+    mkdir -p "$BUILD_DIR/high-agent-aarch64-apple-darwin"
+    cp rust/target/release/high-agent-tui "$BUILD_DIR/high-agent-aarch64-apple-darwin/" 2>/dev/null || \
+    cp rust/target/release/high-agent "$BUILD_DIR/high-agent-aarch64-apple-darwin/"
+    cp "$HIGH_AGENT_ROOT/rust/README.md" "$BUILD_DIR/high-agent-aarch64-apple-darwin/README.txt"
+    tar -C "$BUILD_DIR" -czf "$DIST_DIR/high-agent-aarch64-apple-darwin.tar.gz" \
+        high-agent-aarch64-apple-darwin/
+    echo "[+] Created: dist/high-agent-aarch64-apple-darwin.tar.gz"
+}
+
+# ── Python wheel ───────────────────────────────────────────────
+build_python() {
+    echo ""
+    echo "[*] Building: Python wheel"
+    cd "$HIGH_AGENT_ROOT/python"
+    python -m build --wheel 2>/dev/null || {
+        pip install build --quiet 2>/dev/null
+        python -m build --wheel
+    }
+    cp dist/*.whl "$DIST_DIR/" 2>/dev/null || echo "[!] Python wheel build skipped"
+    cd "$HIGH_AGENT_ROOT"
+}
+
+# ── Summary ────────────────────────────────────────────────────
+show_summary() {
+    echo ""
+    echo "╔══════════════════════════════════════════════════╗"
+    echo "║  Release artifacts                               ║"
+    echo "╚══════════════════════════════════════════════════╝"
+    ls -lh "$DIST_DIR"/*.tar.gz "$DIST_DIR"/*.whl 2>/dev/null || ls -lh "$DIST_DIR"/
+    echo ""
+    echo "SHA256 checksums:"
+    for f in "$DIST_DIR"/*.tar.gz "$DIST_DIR"/*.whl; do
+        [ -f "$f" ] && sha256sum "$f"
+    done
+}
+
+# ── Main ───────────────────────────────────────────────────────
+case "${1:-all}" in
+    linux-musl)  build_linux_musl;;
+    linux-gnu)   build_linux_gnu;;
+    macos)       build_macos;;
+    python)      build_python;;
+    all)
+        build_linux_gnu
+        build_python
+        ;;
+    clean)
+        rm -rf "$DIST_DIR"/*
+        echo "[+] Cleaned dist/"
+        ;;
+    *) echo "Usage: $0 [linux-musl|linux-gnu|macos|python|all|clean]";;
+esac
+
+show_summary

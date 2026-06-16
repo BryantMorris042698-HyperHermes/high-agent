@@ -1,1 +1,218 @@
-Ly8hIEJ1aWxkIG1hbmFnZXIg4oCUIGRldGVjdCwgcnVuLCBhbmQgYW5hbHl6ZSBidWlsZCBvdXRwdXRzIGFjcm9zcyBtdWx0aXBsZSBsYW5ndWFnZXMuCgp1c2UgY3JhdGU6OmVycm9yOjp7SGlnaEFnZW50RXJyb3IsIFJlc3VsdH07CnVzZSBzZXJkZTo6e0Rlc2VyaWFsaXplLCBTZXJpYWxpemV9Owp1c2Ugc3RkOjpjb2xsZWN0aW9uczo6SGFzaE1hcDsKdXNlIHN0ZDo6cGF0aDo6UGF0aEJ1ZjsKdXNlIHN0ZDo6dGltZTo6e1N5c3RlbVRpbWUsIFVOSVhfRVBPQ0h9OwoKI1tkZXJpdmUoRGVidWcsIENsb25lLCBTZXJpYWxpemUsIERlc2VyaWFsaXplKV0KcHViIHN0cnVjdCBCdWlsZENvbmZpZyB7CiAgICBwdWIgbmFtZTogU3RyaW5nLAogICAgcHViIGNvbW1hbmQ6IFN0cmluZywKICAgIHB1YiB3b3JraW5nX2RpcjogUGF0aEJ1ZiwKICAgIHB1YiBsYW5ndWFnZTogTGFuZ3VhZ2UsCiAgICBwdWIgd2F0Y2hfcGF0dGVybnM6IFZlYzxTdHJpbmc+LAogICAgcHViIGVudjogSGFzaE1hcDxTdHJpbmcsIFN0cmluZz4sCn0KCiNbZGVyaXZlKERlYnVnLCBDbG9uZSwgQ29weSwgU2VyaWFsaXplLCBEZXNlcmlhbGl6ZSwgUGFydGlhbEVxLCBFcSldCnB1YiBlbnVtIExhbmd1YWdlIHsKICAgIFJ1c3QsCiAgICBQeXRob24sCiAgICBHbywKICAgIE5vZGUsCiAgICBKYXZhU2NyaXB0LAogICAgVHlwZVNjcmlwdCwKICAgIEMsCiAgICBDcHAsCiAgICBKYXZhLAogICAgVW5rbm93biwKfQoKaW1wbCBMYW5ndWFnZSB7CiAgICBwdWIgZm4gZGV0ZWN0KHBhdGg6ICZQYXRoQnVmKSAtPiBTZWxmIHsKICAgICAgICBpZiBwYXRoLmpvaW4oIkNhcmdvLnRvbWwiKS5leGlzdHMoKSB7IHJldHVybiBTZWxmOjpSdXN0OyB9CiAgICAgICAgaWYgcGF0aC5qb2luKCJweXByb2plY3QudG9tbCIpLmV4aXN0cygpIHx8IHBhdGguam9pbigicmVxdWlyZW1lbnRzLnR4dCIpLmV4aXN0cygpIHsgcmV0dXJuIFNlbGY6OlB5dGhvbjsgfQogICAgICAgIGlmIHBhdGguam9pbigiZ28ubW9kIikuZXhpc3RzKCkgeyByZXR1cm4gU2VsZjo6R287IH0KICAgICAgICBpZiBwYXRoLmpvaW4oInBhY2thZ2UuanNvbiIpLmV4aXN0cygpIHsgcmV0dXJuIFNlbGY6Ok5vZGU7IH0KICAgICAgICBpZiBwYXRoLmpvaW4oInRzY29uZmlnLmpzb24iKS5leGlzdHMoKSB7IHJldHVybiBTZWxmOjpUeXBlU2NyaXB0OyB9CiAgICAgICAgaWYgcGF0aC5qb2luKCJwb20ueG1sIikuZXhpc3RzKCkgeyByZXR1cm4gU2VsZjo6SmF2YTsgfQogICAgICAgIGlmIHBhdGguam9pbigiQ01ha2VMaXN0cy50eHQiKS5leGlzdHMoKSB7IHJldHVybiBTZWxmOjpDcHA7IH0KICAgICAgICBTZWxmOjpVbmtub3duCiAgICB9CgogICAgcHViIGZuIGJ1aWxkX2NtZCgmc2VsZikgLT4gJnN0ciB7CiAgICAgICAgbWF0Y2ggc2VsZiB7CiAgICAgICAgICAgIFNlbGY6OlJ1c3QgPT4gImNhcmdvIGJ1aWxkIiwKICAgICAgICAgICAgU2VsZjo6UHl0aG9uID0+ICJweXRob24gLW0gcGlwIGluc3RhbGwgLWUgLiIsCiAgICAgICAgICAgIFNlbGY6OkdvID0+ICJnbyBidWlsZCAuLy4uLiIsCiAgICAgICAgICAgIFNlbGY6Ok5vZGUgfCBTZWxmOjpKYXZhU2NyaXB0ID0+ICJucG0gaW5zdGFsbCAmJiBucG0gcnVuIGJ1aWxkIiwKICAgICAgICAgICAgU2VsZjo6VHlwZVNjcmlwdCA9PiAibnB4IHRzYyIsCiAgICAgICAgICAgIFNlbGY6OkphdmEgPT4gIm12biBjb21waWxlIiwKICAgICAgICAgICAgU2VsZjo6Q3BwID0+ICJjbWFrZSAuICYmIG1ha2UiLAogICAgICAgICAgICBTZWxmOjpDID0+ICJtYWtlIiwKICAgICAgICAgICAgU2VsZjo6VW5rbm93biA9PiAiZWNobyAnTm8gYnVpbGQgc3lzdGVtIGRldGVjdGVkJyIsCiAgICAgICAgfQogICAgfQoKICAgIHB1YiBmbiB0ZXN0X2NtZCgmc2VsZikgLT4gJnN0ciB7CiAgICAgICAgbWF0Y2ggc2VsZiB7CiAgICAgICAgICAgIFNlbGY6OlJ1c3QgPT4gImNhcmdvIHRlc3QiLAogICAgICAgICAgICBTZWxmOjpQeXRob24gPT4gInB5dGVzdCIsCiAgICAgICAgICAgIFNlbGY6OkdvID0+ICJnbyB0ZXN0IC4vLi4uIiwKICAgICAgICAgICAgU2VsZjo6Tm9kZSB8IFNlbGY6OkphdmFTY3JpcHQgfCBTZWxmOjpUeXBlU2NyaXB0ID0+ICJucG0gdGVzdCIsCiAgICAgICAgICAgIFNlbGY6OkphdmEgPT4gIm12biB0ZXN0IiwKICAgICAgICAgICAgU2VsZjo6Q3BwID0+ICJjdGVzdCIsCiAgICAgICAgICAgIFNlbGY6OkMgPT4gIm1ha2UgdGVzdCIsCiAgICAgICAgICAgIFNlbGY6OlVua25vd24gPT4gImVjaG8gJ05vIHRlc3Qgc3lzdGVtIGRldGVjdGVkJyIsCiAgICAgICAgfQogICAgfQoKICAgIHB1YiBmbiBjbGVhbl9jbWQoJnNlbGYpIC0+ICZzdHIgewogICAgICAgIG1hdGNoIHNlbGYgewogICAgICAgICAgICBTZWxmOjpSdXN0ID0+ICJjYXJnbyBjbGVhbiIsCiAgICAgICAgICAgIFNlbGY6OlB5dGhvbiA9PiAicm0gLXJmIGJ1aWxkIGRpc3QgKi5lZ2ctaW5mbyIsCiAgICAgICAgICAgIFNlbGY6OkdvID0+ICJnbyBjbGVhbiIsCiAgICAgICAgICAgIFNlbGY6Ok5vZGUgfCBTZWxmOjpKYXZhU2NyaXB0IHwgU2VsZjo6VHlwZVNjcmlwdCA9PiAicm0gLXJmIGRpc3Qgbm9kZV9tb2R1bGVzLy5jYWNoZSIsCiAgICAgICAgICAgIFNlbGY6OkphdmEgPT4gIm12biBjbGVhbiIsCiAgICAgICAgICAgIFNlbGY6OkNwcCA9PiAibWFrZSBjbGVhbiIsCiAgICAgICAgICAgIFNlbGY6OkMgPT4gIm1ha2UgY2xlYW4iLAogICAgICAgICAgICBTZWxmOjpVbmtub3duID0+ICJlY2hvICdObyBjbGVhbiBjb21tYW5kJyIsCiAgICAgICAgfQogICAgfQp9CgojW2Rlcml2ZShEZWJ1ZywgQ2xvbmUsIFNlcmlhbGl6ZSwgRGVzZXJpYWxpemUpXQpwdWIgc3RydWN0IEJ1aWxkUmVzdWx0IHsKICAgIHB1YiBzdWNjZXNzOiBib29sLAogICAgcHViIGV4aXRfY29kZTogaTMyLAogICAgcHViIHN0ZG91dDogU3RyaW5nLAogICAgcHViIHN0ZGVycjogU3RyaW5nLAogICAgcHViIGR1cmF0aW9uX21zOiB1NjQsCiAgICBwdWIgdGltZXN0YW1wOiBTdHJpbmcsCiAgICBwdWIgYnVpbGRfdHlwZTogQnVpbGRUeXBlLAogICAgcHViIHdhcm5pbmdzOiB1c2l6ZSwKICAgIHB1YiBlcnJvcnM6IHVzaXplLAp9CgojW2Rlcml2ZShEZWJ1ZywgQ2xvbmUsIENvcHksIFNlcmlhbGl6ZSwgRGVzZXJpYWxpemUpXQpwdWIgZW51bSBCdWlsZFR5cGUgeyBCdWlsZCwgVGVzdCwgQ2xlYW4sIEN1c3RvbSB9CgppbXBsIEJ1aWxkUmVzdWx0IHsKICAgIHB1YiBmbiBuZXcoc3VjY2VzczogYm9vbCwgZXhpdF9jb2RlOiBpMzIsIHN0ZG91dDogU3RyaW5nLCBzdGRlcnI6IFN0cmluZywgZHVyYXRpb25fbXM6IHU2NCwgYnVpbGRfdHlwZTogQnVpbGRUeXBlKSAtPiBTZWxmIHsKICAgICAgICBsZXQgd2FybmluZ3MgPSBzdGRlcnIubGluZXMoKS5maWx0ZXIofGx8IGwuY29udGFpbnMoIndhcm5pbmciKSkuY291bnQoKTsKICAgICAgICBsZXQgZXJyb3JzID0gc3RkZXJyLmxpbmVzKCkuZmlsdGVyKHxsfCBsLmNvbnRhaW5zKCJlcnJvciIpKS5jb3VudCgpOwogICAgICAgIFNlbGYgeyBzdWNjZXNzLCBleGl0X2NvZGUsIHN0ZG91dCwgc3RkZXJyLCBkdXJhdGlvbl9tcywgdGltZXN0YW1wOiBjaHJvbm9fbm93KCksIGJ1aWxkX3R5cGUsIHdhcm5pbmdzLCBlcnJvcnMgfQogICAgfQp9CgpwdWIgc3RydWN0IEJ1aWxkTWFuYWdlciB7CiAgICBwdWIgY29uZmlnczogSGFzaE1hcDxTdHJpbmcsIEJ1aWxkQ29uZmlnPiwKICAgIHB1YiBsYXN0X3Jlc3VsdDogT3B0aW9uPEJ1aWxkUmVzdWx0PiwKICAgIHB1YiBoaXN0b3J5OiBWZWM8QnVpbGRSZXN1bHQ+LAp9CgppbXBsIEJ1aWxkTWFuYWdlciB7CiAgICBwdWIgZm4gbmV3KCkgLT4gU2VsZiB7CiAgICAgICAgU2VsZiB7IGNvbmZpZ3M6IEhhc2hNYXA6Om5ldygpLCBsYXN0X3Jlc3VsdDogTm9uZSwgaGlzdG9yeTogVmVjOjpuZXcoKSB9CiAgICB9CgogICAgcHViIGZuIGRldGVjdCgmbXV0IHNlbGYsIHBhdGg6ICZzdHIpIC0+IFJlc3VsdDxMYW5ndWFnZT4gewogICAgICAgIGxldCBwYXRoID0gUGF0aEJ1Zjo6ZnJvbShwYXRoKTsKICAgICAgICBsZXQgbGFuZyA9IExhbmd1YWdlOjpkZXRlY3QoJnBhdGgpOwogICAgICAgIGlmIGxhbmcgIT0gTGFuZ3VhZ2U6OlVua25vd24gewogICAgICAgICAgICBsZXQgY29uZmlnID0gQnVpbGRDb25maWcgewogICAgICAgICAgICAgICAgbmFtZTogcGF0aC5maWxlX25hbWUoKS5hbmRfdGhlbih8c3wgcy50b19zdHIoKSkudW53cmFwX29yKCJwcm9qZWN0IikudG9fc3RyaW5nKCksCiAgICAgICAgICAgICAgICBjb21tYW5kOiBsYW5nLmJ1aWxkX2NtZCgpLnRvX3N0cmluZygpLAogICAgICAgICAgICAgICAgd29ya2luZ19kaXI6IHBhdGguY2xvbmUoKSwKICAgICAgICAgICAgICAgIGxhbmd1YWdlOiBsYW5nLAogICAgICAgICAgICAgICAgd2F0Y2hfcGF0dGVybnM6IHZlYyFbXSwKICAgICAgICAgICAgICAgIGVudjogSGFzaE1hcDo6bmV3KCksCiAgICAgICAgICAgIH07CiAgICAgICAgICAgIHNlbGYuY29uZmlncy5pbnNlcnQoY29uZmlnLm5hbWUuY2xvbmUoKSwgY29uZmlnKTsKICAgICAgICB9CiAgICAgICAgT2sobGFuZykKICAgIH0KCiAgICBwdWIgZm4gYnVpbGQoJm11dCBzZWxmLCBuYW1lOiAmc3RyLCBjdXN0b21fY21kOiBPcHRpb248JnN0cj4pIC0+IFJlc3VsdDxCdWlsZFJlc3VsdD4gewogICAgICAgIGxldCBjb25maWcgPSBzZWxmLmNvbmZpZ3MuZ2V0KG5hbWUpLm9rX29yX2Vsc2UofHwgSGlnaEFnZW50RXJyb3I6OkJ1aWxkKGZvcm1hdCEoIkNvbmZpZyAne30nIG5vdCBmb3VuZCIsIG5hbWUpKSk/OwogICAgICAgIGxldCBjbWQgPSBjdXN0b21fY21kLnVud3JhcF9vcigmY29uZmlnLmNvbW1hbmQpOwoKICAgICAgICBsZXQgc3RhcnQgPSBTeXN0ZW1UaW1lOjpub3coKTsKICAgICAgICBsZXQgb3V0cHV0ID0gc3RkOjpwcm9jZXNzOjpDb21tYW5kOjpuZXcoInNoIikKICAgICAgICAgICAgLmFyZygiLWMiKQogICAgICAgICAgICAuYXJnKGNtZCkKICAgICAgICAgICAgLmN1cnJlbnRfZGlyKCZjb25maWcud29ya2luZ19kaXIpCiAgICAgICAgICAgIC5lbnZzKCZjb25maWcuZW52KQogICAgICAgICAgICAub3V0cHV0KCk/OwogICAgICAgIGxldCBkdXJhdGlvbiA9IFN5c3RlbVRpbWU6Om5vdygpLmR1cmF0aW9uX3NpbmNlKHN0YXJ0KS51bndyYXBfb3JfZGVmYXVsdCgpLmFzX21pbGxpcygpIGFzIHU2NDsKCiAgICAgICAgbGV0IHJlc3VsdCA9IEJ1aWxkUmVzdWx0OjpuZXcoCiAgICAgICAgICAgIG91dHB1dC5zdGF0dXMuc3VjY2VzcygpLAogICAgICAgICAgICBvdXRwdXQuc3RhdHVzLmNvZGUoKS51bndyYXBfb3IoLTEpLAogICAgICAgICAgICBTdHJpbmc6OmZyb21fdXRmOF9sb3NzeSgmb3V0cHV0LnN0ZG91dCkudG9fc3RyaW5nKCksCiAgICAgICAgICAgIFN0cmluZzo6ZnJvbV91dGY4X2xvc3N5KCZvdXRwdXQuc3RkZXJyKS50b19zdHJpbmcoKSwKICAgICAgICAgICAgZHVyYXRpb24sCiAgICAgICAgICAgIGlmIGN1c3RvbV9jbWQuaXNfc29tZSgpIHsgQnVpbGRUeXBlOjpDdXN0b20gfSBlbHNlIHsgQnVpbGRUeXBlOjpCdWlsZCB9LAogICAgICAgICk7CiAgICAgICAgc2VsZi5sYXN0X3Jlc3VsdCA9IFNvbWUocmVzdWx0LmNsb25lKCkpOwogICAgICAgIHNlbGYuaGlzdG9yeS5wdXNoKHJlc3VsdC5jbG9uZSgpKTsKICAgICAgICBpZiBzZWxmLmhpc3RvcnkubGVuKCkgPiAxMDAgeyBzZWxmLmhpc3RvcnkucmVtb3ZlKDApOyB9CiAgICAgICAgT2socmVzdWx0KQogICAgfQoKICAgIHB1YiBmbiB0ZXN0KCZtdXQgc2VsZiwgbmFtZTogJnN0cikgLT4gUmVzdWx0PEJ1aWxkUmVzdWx0PiB7CiAgICAgICAgbGV0IGNvbmZpZyA9IHNlbGYuY29uZmlncy5nZXQobmFtZSkub2tfb3JfZWxzZSh8fCBIaWdoQWdlbnRFcnJvcjo6QnVpbGQoZm9ybWF0ISgiQ29uZmlnICd7fScgbm90IGZvdW5kIiwgbmFtZSkpKT87CiAgICAgICAgbGV0IHN0YXJ0ID0gU3lzdGVtVGltZTo6bm93KCk7CiAgICAgICAgbGV0IG91dHB1dCA9IHN0ZDo6cHJvY2Vzczo6Q29tbWFuZDo6bmV3KCJzaCIpCiAgICAgICAgICAgIC5hcmcoIi1jIikKICAgICAgICAgICAgLmFyZyhjb25maWcubGFuZ3VhZ2UudGVzdF9jbWQoKSkKICAgICAgICAgICAgLmN1cnJlbnRfZGlyKCZjb25maWcud29ya2luZ19kaXIpCiAgICAgICAgICAgIC5lbnZzKCZjb25maWcuZW52KQogICAgICAgICAgICAub3V0cHV0KCk/OwogICAgICAgIGxldCBkdXJhdGlvbiA9IFN5c3RlbVRpbWU6Om5vdygpLmR1cmF0aW9uX3NpbmNlKHN0YXJ0KS51bndyYXBfb3JfZGVmYXVsdCgpLmFzX21pbGxpcygpIGFzIHU2NDsKICAgICAgICBsZXQgcmVzdWx0ID0gQnVpbGRSZXN1bHQ6Om5ldygKICAgICAgICAgICAgb3V0cHV0LnN0YXR1cy5zdWNjZXNzKCksIG91dHB1dC5zdGF0dXMuY29kZSgpLnVud3JhcF9vcigtMSksCiAgICAgICAgICAgIFN0cmluZzo6ZnJvbV91dGY4X2xvc3N5KCZvdXRwdXQuc3Rkb3V0KS50b19zdHJpbmcoKSwKICAgICAgICAgICAgU3RyaW5nOjpmcm9tX3V0ZjhfbG9zc3koJm91dHB1dC5zdGRlcnIpLnRvX3N0cmluZygpLAogICAgICAgICAgICBkdXJhdGlvbiwgQnVpbGRUeXBlOjpUZXN0LAogICAgICAgICk7CiAgICAgICAgc2VsZi5sYXN0X3Jlc3VsdCA9IFNvbWUocmVzdWx0LmNsb25lKCkpOwogICAgICAgIHNlbGYuaGlzdG9yeS5wdXNoKHJlc3VsdC5jbG9uZSgpKTsKICAgICAgICBPayhyZXN1bHQpCiAgICB9CgogICAgcHViIGZuIGNsZWFuKCZtdXQgc2VsZiwgbmFtZTogJnN0cikgLT4gUmVzdWx0PEJ1aWxkUmVzdWx0PiB7CiAgICAgICAgbGV0IGNvbmZpZyA9IHNlbGYuY29uZmlncy5nZXQobmFtZSkub2tfb3JfZWxzZSh8fCBIaWdoQWdlbnRFcnJvcjo6QnVpbGQoZm9ybWF0ISgiQ29uZmlnICd7fScgbm90IGZvdW5kIiwgbmFtZSkpKT87CiAgICAgICAgbGV0IHN0YXJ0ID0gU3lzdGVtVGltZTo6bm93KCk7CiAgICAgICAgbGV0IG91dHB1dCA9IHN0ZDo6cHJvY2Vzczo6Q29tbWFuZDo6bmV3KCJzaCIpCiAgICAgICAgICAgIC5hcmcoIi1jIikKICAgICAgICAgICAgLmFyZyhjb25maWcubGFuZ3VhZ2UuY2xlYW5fY21kKCkpCiAgICAgICAgICAgIC5jdXJyZW50X2RpcigmY29uZmlnLndvcmtpbmdfZGlyKQogICAgICAgICAgICAuZW52cygmY29uZmlnLmVudikKICAgICAgICAgICAgLm91dHB1dCgpPzsKICAgICAgICBsZXQgZHVyYXRpb24gPSBTeXN0ZW1UaW1lOjpub3coKS5kdXJhdGlvbl9zaW5jZShzdGFydCkudW53cmFwX29yX2RlZmF1bHQoKS5hc19taWxsaXMoKSBhcyB1NjQ7CiAgICAgICAgbGV0IHJlc3VsdCA9IEJ1aWxkUmVzdWx0OjpuZXcoCiAgICAgICAgICAgIG91dHB1dC5zdGF0dXMuc3VjY2VzcygpLCBvdXRwdXQuc3RhdHVzLmNvZGUoKS51bndyYXBfb3IoLTEpLAogICAgICAgICAgICBTdHJpbmc6OmZyb21fdXRmOF9sb3NzeSgmb3V0cHV0LnN0ZG91dCkudG9fc3RyaW5nKCksCiAgICAgICAgICAgIFN0cmluZzo6ZnJvbV91dGY4X2xvc3N5KCZvdXRwdXQuc3RkZXJyKS50b19zdHJpbmcoKSwKICAgICAgICAgICAgZHVyYXRpb24sIEJ1aWxkVHlwZTo6Q2xlYW4sCiAgICAgICAgKTsKICAgICAgICBzZWxmLmxhc3RfcmVzdWx0ID0gU29tZShyZXN1bHQuY2xvbmUoKSk7CiAgICAgICAgc2VsZi5oaXN0b3J5LnB1c2gocmVzdWx0LmNsb25lKCkpOwogICAgICAgIE9rKHJlc3VsdCkKICAgIH0KCiAgICBwdWIgZm4gYWRkX2NvbmZpZygmbXV0IHNlbGYsIGNvbmZpZzogQnVpbGRDb25maWcpIHsgc2VsZi5jb25maWdzLmluc2VydChjb25maWcubmFtZS5jbG9uZSgpLCBjb25maWcpOyB9CiAgICBwdWIgZm4gbGlzdF9jb25maWdzKCZzZWxmKSAtPiBWZWM8JkJ1aWxkQ29uZmlnPiB7IHNlbGYuY29uZmlncy52YWx1ZXMoKS5jb2xsZWN0KCkgfQp9CgppbXBsIERlZmF1bHQgZm9yIEJ1aWxkTWFuYWdlciB7CiAgICBmbiBkZWZhdWx0KCkgLT4gU2VsZiB7IFNlbGY6Om5ldygpIH0KfQoKZm4gY2hyb25vX25vdygpIC0+IFN0cmluZyB7CiAgICBsZXQgZHVyID0gU3lzdGVtVGltZTo6bm93KCkuZHVyYXRpb25fc2luY2UoVU5JWF9FUE9DSCkudW53cmFwX29yX2RlZmF1bHQoKTsKICAgIGZvcm1hdCEoInt9Lns6MDl9IiwgZHVyLmFzX3NlY3MoKSwgZHVyLnN1YnNlY19uYW5vcygpKQp9
+//! Build manager — detect, run, and analyze build outputs across multiple languages.
+
+use crate::error::{HighAgentError, Result};
+use serde::{Deserialize, Serialize};
+use std::collections::HashMap;
+use std::path::PathBuf;
+use std::time::{SystemTime, UNIX_EPOCH};
+
+#[derive(Debug, Clone, Serialize, Deserialize)]
+pub struct BuildConfig {
+    pub name: String,
+    pub command: String,
+    pub working_dir: PathBuf,
+    pub language: Language,
+    pub watch_patterns: Vec<String>,
+    pub env: HashMap<String, String>,
+}
+
+#[derive(Debug, Clone, Copy, Serialize, Deserialize, PartialEq, Eq)]
+pub enum Language {
+    Rust,
+    Python,
+    Go,
+    Node,
+    JavaScript,
+    TypeScript,
+    C,
+    Cpp,
+    Java,
+    Unknown,
+}
+
+impl Language {
+    pub fn detect(path: &PathBuf) -> Self {
+        if path.join("Cargo.toml").exists() { return Self::Rust; }
+        if path.join("pyproject.toml").exists() || path.join("requirements.txt").exists() { return Self::Python; }
+        if path.join("go.mod").exists() { return Self::Go; }
+        if path.join("package.json").exists() { return Self::Node; }
+        if path.join("tsconfig.json").exists() { return Self::TypeScript; }
+        if path.join("pom.xml").exists() { return Self::Java; }
+        if path.join("CMakeLists.txt").exists() { return Self::Cpp; }
+        Self::Unknown
+    }
+
+    pub fn build_cmd(&self) -> &str {
+        match self {
+            Self::Rust => "cargo build",
+            Self::Python => "python -m pip install -e .",
+            Self::Go => "go build ./...",
+            Self::Node | Self::JavaScript => "npm install && npm run build",
+            Self::TypeScript => "npx tsc",
+            Self::Java => "mvn compile",
+            Self::Cpp => "cmake . && make",
+            Self::C => "make",
+            Self::Unknown => "echo 'No build system detected'",
+        }
+    }
+
+    pub fn test_cmd(&self) -> &str {
+        match self {
+            Self::Rust => "cargo test",
+            Self::Python => "pytest",
+            Self::Go => "go test ./...",
+            Self::Node | Self::JavaScript | Self::TypeScript => "npm test",
+            Self::Java => "mvn test",
+            Self::Cpp => "ctest",
+            Self::C => "make test",
+            Self::Unknown => "echo 'No test system detected'",
+        }
+    }
+
+    pub fn clean_cmd(&self) -> &str {
+        match self {
+            Self::Rust => "cargo clean",
+            Self::Python => "rm -rf build dist *.egg-info",
+            Self::Go => "go clean",
+            Self::Node | Self::JavaScript | Self::TypeScript => "rm -rf dist node_modules/.cache",
+            Self::Java => "mvn clean",
+            Self::Cpp => "make clean",
+            Self::C => "make clean",
+            Self::Unknown => "echo 'No clean command'",
+        }
+    }
+}
+
+#[derive(Debug, Clone, Serialize, Deserialize)]
+pub struct BuildResult {
+    pub success: bool,
+    pub exit_code: i32,
+    pub stdout: String,
+    pub stderr: String,
+    pub duration_ms: u64,
+    pub timestamp: String,
+    pub build_type: BuildType,
+    pub warnings: usize,
+    pub errors: usize,
+}
+
+#[derive(Debug, Clone, Copy, Serialize, Deserialize)]
+pub enum BuildType { Build, Test, Clean, Custom }
+
+impl BuildResult {
+    pub fn new(success: bool, exit_code: i32, stdout: String, stderr: String, duration_ms: u64, build_type: BuildType) -> Self {
+        let warnings = stderr.lines().filter(|l| l.contains("warning")).count();
+        let errors = stderr.lines().filter(|l| l.contains("error")).count();
+        Self { success, exit_code, stdout, stderr, duration_ms, timestamp: chrono_now(), build_type, warnings, errors }
+    }
+}
+
+pub struct BuildManager {
+    pub configs: HashMap<String, BuildConfig>,
+    pub last_result: Option<BuildResult>,
+    pub history: Vec<BuildResult>,
+}
+
+impl BuildManager {
+    pub fn new() -> Self {
+        Self { configs: HashMap::new(), last_result: None, history: Vec::new() }
+    }
+
+    pub fn detect(&mut self, path: &str) -> Result<Language> {
+        let path = PathBuf::from(path);
+        let lang = Language::detect(&path);
+        if lang != Language::Unknown {
+            let config = BuildConfig {
+                name: path.file_name().and_then(|s| s.to_str()).unwrap_or("project").to_string(),
+                command: lang.build_cmd().to_string(),
+                working_dir: path.clone(),
+                language: lang,
+                watch_patterns: vec![],
+                env: HashMap::new(),
+            };
+            self.configs.insert(config.name.clone(), config);
+        }
+        Ok(lang)
+    }
+
+    pub fn build(&mut self, name: &str, custom_cmd: Option<&str>) -> Result<BuildResult> {
+        let config = self.configs.get(name).ok_or_else(|| HighAgentError::Build(format!("Config '{}' not found", name)))?;
+        let cmd = custom_cmd.unwrap_or(&config.command);
+
+        let start = SystemTime::now();
+        let output = std::process::Command::new("sh")
+            .arg("-c")
+            .arg(cmd)
+            .current_dir(&config.working_dir)
+            .envs(&config.env)
+            .output()?;
+        let duration = SystemTime::now().duration_since(start).unwrap_or_default().as_millis() as u64;
+
+        let result = BuildResult::new(
+            output.status.success(),
+            output.status.code().unwrap_or(-1),
+            String::from_utf8_lossy(&output.stdout).to_string(),
+            String::from_utf8_lossy(&output.stderr).to_string(),
+            duration,
+            if custom_cmd.is_some() { BuildType::Custom } else { BuildType::Build },
+        );
+        self.last_result = Some(result.clone());
+        self.history.push(result.clone());
+        if self.history.len() > 100 { self.history.remove(0); }
+        Ok(result)
+    }
+
+    pub fn test(&mut self, name: &str) -> Result<BuildResult> {
+        let config = self.configs.get(name).ok_or_else(|| HighAgentError::Build(format!("Config '{}' not found", name)))?;
+        let start = SystemTime::now();
+        let output = std::process::Command::new("sh")
+            .arg("-c")
+            .arg(config.language.test_cmd())
+            .current_dir(&config.working_dir)
+            .envs(&config.env)
+            .output()?;
+        let duration = SystemTime::now().duration_since(start).unwrap_or_default().as_millis() as u64;
+        let result = BuildResult::new(
+            output.status.success(), output.status.code().unwrap_or(-1),
+            String::from_utf8_lossy(&output.stdout).to_string(),
+            String::from_utf8_lossy(&output.stderr).to_string(),
+            duration, BuildType::Test,
+        );
+        self.last_result = Some(result.clone());
+        self.history.push(result.clone());
+        Ok(result)
+    }
+
+    pub fn clean(&mut self, name: &str) -> Result<BuildResult> {
+        let config = self.configs.get(name).ok_or_else(|| HighAgentError::Build(format!("Config '{}' not found", name)))?;
+        let start = SystemTime::now();
+        let output = std::process::Command::new("sh")
+            .arg("-c")
+            .arg(config.language.clean_cmd())
+            .current_dir(&config.working_dir)
+            .envs(&config.env)
+            .output()?;
+        let duration = SystemTime::now().duration_since(start).unwrap_or_default().as_millis() as u64;
+        let result = BuildResult::new(
+            output.status.success(), output.status.code().unwrap_or(-1),
+            String::from_utf8_lossy(&output.stdout).to_string(),
+            String::from_utf8_lossy(&output.stderr).to_string(),
+            duration, BuildType::Clean,
+        );
+        self.last_result = Some(result.clone());
+        self.history.push(result.clone());
+        Ok(result)
+    }
+
+    pub fn add_config(&mut self, config: BuildConfig) { self.configs.insert(config.name.clone(), config); }
+    pub fn list_configs(&self) -> Vec<&BuildConfig> { self.configs.values().collect() }
+}
+
+impl Default for BuildManager {
+    fn default() -> Self { Self::new() }
+}
+
+fn chrono_now() -> String {
+    let dur = SystemTime::now().duration_since(UNIX_EPOCH).unwrap_or_default();
+    format!("{}.{:09}", dur.as_secs(), dur.subsec_nanos())
+}

@@ -1,0 +1,54 @@
+skills:
+  - id: reduce-coupling
+    name: Reduce Cross-Module Coupling
+    description: Refactor cross-module dependencies to reduce Č(G)
+    trigger:
+      metric: coupling
+      operator: ">"
+      threshold: 0.5
+    action: |
+      Identify the highest-weight cross-module edge and extract an interface.
+      Move shared logic into a dedicated adapter module.
+    verification:
+      metric: coupling
+      improvement_required: true
+    rating: 4.2
+    uses: 0
+    tags: [refactor, coupling, architecture]
+
+  - id: split-god-function
+    name: Split God Function
+    description: Decompose functions with cyclomatic complexity > 15
+    trigger:
+      metric: max_cyclomatic
+      operator: ">"
+      threshold: 15
+    action: |
+      Identify the function with highest cyclomatic complexity.
+      Extract logical branches into named helper functions.
+      Each helper should have cyclomatic <= 5.
+    verification:
+      metric: max_cyclomatic
+      operator: "<"
+      threshold: 10
+    rating: 4.5
+    uses: 0
+    tags: [refactor, complexity, readability]
+
+  - id: add-type-hints
+    name: Add Type Hints
+    description: Add Python type hints to improve code quality score
+    trigger:
+      metric: quality
+      operator: "<"
+      threshold: 0.7
+    action: |
+      Scan functions without return type annotations.
+      Add type hints to parameters and return values.
+      Use typing module for complex types.
+    verification:
+      metric: quality
+      improvement_required: true
+    rating: 3.8
+    uses: 0
+    tags: [quality, python, typing]

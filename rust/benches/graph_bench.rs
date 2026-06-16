@@ -1,1 +1,91 @@
-dXNlIGNyaXRlcmlvbjo6e2JsYWNrX2JveCwgY3JpdGVyaW9uX2dyb3VwLCBjcml0ZXJpb25fbWFpbiwgQ3JpdGVyaW9uLCBCZW5jaG1hcmtJZH07CnVzZSBoaWdoX2FnZW50Ojp7RGlyZWN0ZWRHcmFwaCwgTm9kZSwgRWRnZSwgR3JhcGhTbmFwc2hvdH07CgpmbiBjcmVhdGVfdGVzdF9ncmFwaChuX25vZGVzOiB1c2l6ZSwgbl9lZGdlczogdXNpemUpIC0+IERpcmVjdGVkR3JhcGggewogICAgbGV0IG11dCBnID0gRGlyZWN0ZWRHcmFwaDo6bmV3KCk7CiAgICBmb3IgaSBpbiAwLi5uX25vZGVzIHsKICAgICAgICBsZXQgbm9kZSA9IE5vZGU6Om5ldyhmb3JtYXQhKCJmbl97fSIsIGkpLCBmb3JtYXQhKCJtb2Rfe30iLCBpICUgNCksIGZvcm1hdCEoInNyYy9tb2Rfe30ucnMiLCBpICUgNCkpOwogICAgICAgIGcuYWRkX25vZGUobm9kZSk7CiAgICB9CiAgICBmb3IgaSBpbiAwLi5uX2VkZ2VzIHsKICAgICAgICBsZXQgZnJvbV9pZHggPSBpICUgbl9ub2RlczsKICAgICAgICBsZXQgdG9faWR4ID0gKGkgKyAxKSAlIG5fbm9kZXM7CiAgICAgICAgbGV0IGVkZ2UgPSBFZGdlOjpuZXcoZm9ybWF0ISgiZm5fe30iLCBmcm9tX2lkeCksIGZvcm1hdCEoImZuX3t9IiwgdG9faWR4KSk7CiAgICAgICAgZWRnZS5zZXRfd2VpZ2h0KDEuMCArIChpICUgMykgYXMgZjY0ICogMC41KTsKICAgICAgICBnLmFkZF9lZGdlKGVkZ2UpOwogICAgfQogICAgZwp9CgpwdWIgZm4gYmVuY2hfbW9kdWxhcml0eShjOiAmbXV0IENyaXRlcmlvbikgewogICAgbGV0IHNpemVzID0gWzEwLCA1MCwgMTAwLCA1MDBdOwogICAgbGV0IG11dCBncm91cCA9IGMuYmVuY2htYXJrX2dyb3VwKCJtb2R1bGFyaXR5Iik7CiAgICBmb3Igc2l6ZSBpbiBzaXplcyB7CiAgICAgICAgbGV0IGcgPSBjcmVhdGVfdGVzdF9ncmFwaChzaXplLCBzaXplICogMik7CiAgICAgICAgZ3JvdXAuYmVuY2hfd2l0aF9pbnB1dChCZW5jaG1hcmtJZDo6ZnJvbV9wYXJhbWV0ZXIoc2l6ZSksICZzaXplLCB8YiwgX3wgewogICAgICAgICAgICBiLml0ZXIofHwgYmxhY2tfYm94KCZnKS5tb2R1bGFyaXR5KCkpOwogICAgICAgIH0pOwogICAgfQogICAgZ3JvdXAuZmluaXNoKCk7Cn0KCnB1YiBmbiBiZW5jaF9waGkoYzogJm11dCBDcml0ZXJpb24pIHsKICAgIGxldCBzaXplcyA9IFsxMCwgNTAsIDEwMCwgNTAwXTsKICAgIGxldCBtdXQgZ3JvdXAgPSBjLmJlbmNobWFya19ncm91cCgicGhpX2NvbXB1dGF0aW9uIik7CiAgICBmb3Igc2l6ZSBpbiBzaXplcyB7CiAgICAgICAgbGV0IGcgPSBjcmVhdGVfdGVzdF9ncmFwaChzaXplLCBzaXplICogMik7CiAgICAgICAgZ3JvdXAuYmVuY2hfd2l0aF9pbnB1dChCZW5jaG1hcmtJZDo6ZnJvbV9wYXJhbWV0ZXIoc2l6ZSksICZzaXplLCB8YiwgX3wgewogICAgICAgICAgICBiLml0ZXIofHwgYmxhY2tfYm94KCZnKS5waGkoMS4wLCAwLjYsIDAuNCkpOwogICAgICAgIH0pOwogICAgfQogICAgZ3JvdXAuZmluaXNoKCk7Cn0KCnB1YiBmbiBiZW5jaF9zbmFwc2hvdChjOiAmbXV0IENyaXRlcmlvbikgewogICAgbGV0IGcgPSBjcmVhdGVfdGVzdF9ncmFwaCgxMDAsIDIwMCk7CiAgICBjLmJlbmNoX2Z1bmN0aW9uKCJzbmFwc2hvdCIsIHxifCB7CiAgICAgICAgYi5pdGVyKHx8IGJsYWNrX2JveCgmZykuc25hcHNob3QoKSk7CiAgICB9KTsKfQoKcHViIGZuIGJlbmNoX3BhZ2VyYW5rKGM6ICZtdXQgQ3JpdGVyaW9uKSB7CiAgICBsZXQgZyA9IGNyZWF0ZV90ZXN0X2dyYXBoKDEwMCwgMjAwKTsKICAgIGMuYmVuY2hfZnVuY3Rpb24oInBhZ2VyYW5rIiwgfGJ8IHsKICAgICAgICBiLml0ZXIofHwgYmxhY2tfYm94KCZnKS5ub2RlX2ltcG9ydGFuY2UoMjApKTsKICAgIH0pOwp9CgpwdWIgZm4gYmVuY2hfaG90c3BvdHMoYzogJm11dCBDcml0ZXJpb24pIHsKICAgIGxldCBnID0gY3JlYXRlX3Rlc3RfZ3JhcGgoMTAwLCAyMDApOwogICAgYy5iZW5jaF9mdW5jdGlvbigiaG90c3BvdHMiLCB8YnwgewogICAgICAgIGIuaXRlcih8fCBibGFja19ib3goJmcpLmhvdF9zcG90cyg1LjApKTsKICAgIH0pOwp9CgpwdWIgZm4gYmVuY2hfY291cGxpbmdfdmlvbGF0aW9ucyhjOiAmbXV0IENyaXRlcmlvbikgewogICAgbGV0IGcgPSBjcmVhdGVfdGVzdF9ncmFwaCgxMDAsIDIwMCk7CiAgICBjLmJlbmNoX2Z1bmN0aW9uKCJjb3VwbGluZ192aW9sYXRpb25zIiwgfGJ8IHsKICAgICAgICBiLml0ZXIofHwgYmxhY2tfYm94KCZnKS5jb3VwbGluZ192aW9sYXRpb25zKCkpOwogICAgfSk7Cn0KCnB1YiBmbiBiZW5jaF9yZWdpbWVfc3dpdGNoKGM6ICZtdXQgQ3JpdGVyaW9uKSB7CiAgICBsZXQgbXV0IGcgPSBjcmVhdGVfdGVzdF9ncmFwaCg1MCwgMTAwKTsKICAgIGMuYmVuY2hfZnVuY3Rpb24oInJlZ2ltZV9zd2l0Y2giLCB8YnwgewogICAgICAgIGIuaXRlcih8fCB7CiAgICAgICAgICAgIGcuc2ltdWxhdGVfdGFzayhibGFja19ib3goInJlZmFjdG9yIikpOwogICAgICAgIH0pOwogICAgfSk7Cn0KCmNyaXRlcmlvbl9ncm91cCEoCiAgICBiZW5jaGVzLAogICAgYmVuY2hfbW9kdWxhcml0eSwKICAgIGJlbmNoX3BoaSwKICAgIGJlbmNoX3NuYXBzaG90LAogICAgYmVuY2hfcGFnZXJhbmssCiAgICBiZW5jaF9ob3RzcG90cywKICAgIGJlbmNoX2NvdXBsaW5nX3Zpb2xhdGlvbnMsCiAgICBiZW5jaF9yZWdpbWVfc3dpdGNoLAopOwpjcml0ZXJpb25fbWFpbiEoYmVuY2hlcyk7Cg==
+use criterion::{black_box, criterion_group, criterion_main, Criterion, BenchmarkId};
+use high_agent::{DirectedGraph, Node, Edge, GraphSnapshot};
+
+fn create_test_graph(n_nodes: usize, n_edges: usize) -> DirectedGraph {
+    let mut g = DirectedGraph::new();
+    for i in 0..n_nodes {
+        let node = Node::new(format!("fn_{}", i), format!("mod_{}", i % 4), format!("src/mod_{}.rs", i % 4));
+        g.add_node(node);
+    }
+    for i in 0..n_edges {
+        let from_idx = i % n_nodes;
+        let to_idx = (i + 1) % n_nodes;
+        let edge = Edge::new(format!("fn_{}", from_idx), format!("fn_{}", to_idx));
+        edge.set_weight(1.0 + (i % 3) as f64 * 0.5);
+        g.add_edge(edge);
+    }
+    g
+}
+
+pub fn bench_modularity(c: &mut Criterion) {
+    let sizes = [10, 50, 100, 500];
+    let mut group = c.benchmark_group("modularity");
+    for size in sizes {
+        let g = create_test_graph(size, size * 2);
+        group.bench_with_input(BenchmarkId::from_parameter(size), &size, |b, _| {
+            b.iter(|| black_box(&g).modularity());
+        });
+    }
+    group.finish();
+}
+
+pub fn bench_phi(c: &mut Criterion) {
+    let sizes = [10, 50, 100, 500];
+    let mut group = c.benchmark_group("phi_computation");
+    for size in sizes {
+        let g = create_test_graph(size, size * 2);
+        group.bench_with_input(BenchmarkId::from_parameter(size), &size, |b, _| {
+            b.iter(|| black_box(&g).phi(1.0, 0.6, 0.4));
+        });
+    }
+    group.finish();
+}
+
+pub fn bench_snapshot(c: &mut Criterion) {
+    let g = create_test_graph(100, 200);
+    c.bench_function("snapshot", |b| {
+        b.iter(|| black_box(&g).snapshot());
+    });
+}
+
+pub fn bench_pagerank(c: &mut Criterion) {
+    let g = create_test_graph(100, 200);
+    c.bench_function("pagerank", |b| {
+        b.iter(|| black_box(&g).node_importance(20));
+    });
+}
+
+pub fn bench_hotspots(c: &mut Criterion) {
+    let g = create_test_graph(100, 200);
+    c.bench_function("hotspots", |b| {
+        b.iter(|| black_box(&g).hot_spots(5.0));
+    });
+}
+
+pub fn bench_coupling_violations(c: &mut Criterion) {
+    let g = create_test_graph(100, 200);
+    c.bench_function("coupling_violations", |b| {
+        b.iter(|| black_box(&g).coupling_violations());
+    });
+}
+
+pub fn bench_regime_switch(c: &mut Criterion) {
+    let mut g = create_test_graph(50, 100);
+    c.bench_function("regime_switch", |b| {
+        b.iter(|| {
+            g.simulate_task(black_box("refactor"));
+        });
+    });
+}
+
+criterion_group!(
+    benches,
+    bench_modularity,
+    bench_phi,
+    bench_snapshot,
+    bench_pagerank,
+    bench_hotspots,
+    bench_coupling_violations,
+    bench_regime_switch,
+);
+criterion_main!(benches);

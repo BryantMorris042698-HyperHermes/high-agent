@@ -1,1 +1,239 @@
-IiIiaGlnaF9hZ2VudF9lbmdpbmUuX19tYWluX18g4oCUIENMSSBlbnRyeSBwb2ludC4KClVzYWdlOgogIHB5dGhvbiAtbSBoaWdoX2FnZW50X2VuZ2luZQogIHB5dGhvbiAtbSBoaWdoX2FnZW50X2VuZ2luZSAtLWNyYXdsIC9wYXRoL3RvL2NvZGViYXNlCiAgcHl0aG9uIC1tIGhpZ2hfYWdlbnRfZW5naW5lIGNoYXQgIkFuYWx5emUgbXkgY29kZWJhc2UiCiAgcHl0aG9uIC1tIGhpZ2hfYWdlbnRfZW5naW5lIHN3YXJtICJSZWR1Y2UgY291cGxpbmciCiAgcHl0aG9uIC1tIGhpZ2hfYWdlbnRfZW5naW5lIC0tbW9kZWwgZ3B0LTRvIC0tYXBpLWtleSBzay0uLi4gY2hhdCAiRXhwbGFpbiB0aGUgaG90IHNwb3RzIgoiIiIKCmZyb20gX19mdXR1cmVfXyBpbXBvcnQgYW5ub3RhdGlvbnMKaW1wb3J0IGFyZ3BhcnNlCmltcG9ydCBzeXMKCmZyb20gaGlnaF9hZ2VudF9lbmdpbmUgaW1wb3J0IFJlZ2ltZUVuZ2luZQpmcm9tIGhpZ2hfYWdlbnRfZW5naW5lLmNyYXdsZXIgaW1wb3J0IENvZGViYXNlQ3Jhd2xlcgoKCmRlZiBjbWRfbWV0cmljcyhlbmdpbmU6IFJlZ2ltZUVuZ2luZSk6CiAgICBzbmFwID0gZW5naW5lLnNuYXBzaG90KCkKICAgIHBoaSA9IGVuZ2luZS5jb21wdXRlX3BoaSgpCiAgICBjb2VmZnMgPSBlbmdpbmUucmVnaW1lX2NvZWZmcygpCiAgICBwcmludChmIiIiR3JhcGggTWV0cmljcwp7J+KUgCcgKiA1MH0KzqYoRykgICAgICAgPSB7cGhpWydwaGknXTorLjRmfQpRKEcpICAgICAgID0ge3BoaVsncSddOi40Zn0KxIwoRykgICAgICAgPSB7cGhpWydjb3VwbGluZyddOi40Zn0KbWVhbihWKSAgICA9IHtwaGlbJ21lYW5fdiddOi4yZn0KbWF4KFYpICAgICAgPSB7c25hcFsnbWF4X3YnXTouMmZ9CkdyYXBoOiAgICAge3NuYXBbJ25fbm9kZXMnXX0gbm9kZXMsIHtzbmFwWyduX2VkZ2VzJ119IGVkZ2VzLCB7c25hcFsnbl9tb2R1bGVzJ119IG1vZHVsZXMKUmVnaW1lOiAgICB7ZW5naW5lLmN1cnJlbnRfcmVnaW1lfSAozrE9e2NvZWZmcy5hbHBoYX0sIM6yPXtjb2VmZnMuYmV0YX0sIM6zPXtjb2VmZnMuZ2FtbWF9KQpIaXN0b3J5OiAgIHtsZW4oZW5naW5lLmhpc3RvcnkpfSBzbmFwc2hvdHMsIHtsZW4oZW5naW5lLnRyYW5zaXRpb25zKX0gcmVnaW1lIHN3aXRjaGVzCiIiIikKCgpkZWYgY21kX3N3ZWVwKGVuZ2luZTogUmVnaW1lRW5naW5lKToKICAgIHJlc3VsdHMgPSBlbmdpbmUuc3dlZXBfcmVnaW1lcygpCiAgICBwcmludCgiXG5SZWdpbWUgU3dlZXA6IikKICAgIHByaW50KGYiICB7J1JlZ2ltZSc6PDEyfSB7J86mKEcpJzo+MTB9IikKICAgIHByaW50KCIgICIgKyAiLSIgKiAyNCkKICAgIGJlc3QgPSBtYXgocmVzdWx0cywga2V5PWxhbWJkYSB4OiB4WzFdKQogICAgZm9yIHJlZ2ltZSwgcGhpIGluIHNvcnRlZChyZXN1bHRzLCBrZXk9bGFtYmRhIHg6IHhbMV0sIHJldmVyc2U9VHJ1ZSk6CiAgICAgICAgdGFnID0gIiDihpAgQkVTVCIgaWYgcmVnaW1lID09IGJlc3RbMF0gZWxzZSAiIgogICAgICAgIGN1ciA9ICIgW2N1cnJlbnRdIiBpZiByZWdpbWUgPT0gZW5naW5lLmN1cnJlbnRfcmVnaW1lIGVsc2UgIiIKICAgICAgICBwcmludChmIiAge3JlZ2ltZTo8MTJ9IHtwaGk6PisxMC40Zn17dGFnfXtjdXJ9IikKICAgIHByaW50KCkKCgpkZWYgY21kX3RoZW9yeShlbmdpbmU6IFJlZ2ltZUVuZ2luZSk6CiAgICBwcmludChlbmdpbmUudGhlb3J5X2V4cGxhaW4oKSkKCgpkZWYgY21kX2NyYXdsKHBhdGg6IHN0ciwgcmVjdXJzaXZlOiBib29sID0gVHJ1ZSk6CiAgICBwcmludChmIkNyYXdsaW5nIHtwYXRofSAocmVjdXJzaXZlPXtyZWN1cnNpdmV9KS4uLiIpCiAgICBjcmF3bGVyID0gQ29kZWJhc2VDcmF3bGVyKHJlY3Vyc2l2ZT1yZWN1cnNpdmUpCiAgICBncmFwaCA9IGNyYXdsZXIuY3Jhd2wocGF0aCkKICAgIGVuZ2luZSA9IFJlZ2ltZUVuZ2luZSgpCiAgICBlbmdpbmUuZ3JhcGggPSBncmFwaAogICAgZW5naW5lLnNlZWRfZ3JhcGgoKQogICAgc25hcCA9IGVuZ2luZS5zbmFwc2hvdCgpCiAgICBwaGkgPSBlbmdpbmUuY29tcHV0ZV9waGkoKQogICAgcHJpbnQoZiJCdWlsdDoge2dyYXBoLm5fbm9kZXN9IG5vZGVzLCB7Z3JhcGgubl9lZGdlc30gZWRnZXMiKQogICAgcHJpbnQoZiLOpihHKT17cGhpWydwaGknXTorLjRmfSAgcmVnaW1lPXtlbmdpbmUuY3VycmVudF9yZWdpbWV9IikKCgpkZWYgY21kX2NoYXQobWVzc2FnZTogc3RyLCBtb2RlbDogc3RyID0gTm9uZSwgYXBpX2tleTogc3RyID0gTm9uZSwgcHJvdmlkZXI6IHN0ciA9IE5vbmUpOgogICAgdHJ5OgogICAgICAgIGZyb20gaGlnaF9hZ2VudF9lbmdpbmUubGxtIGltcG9ydCBMTE1DbGllbnQsIGF1dG9fc2V0dXAKICAgIGV4Y2VwdCBJbXBvcnRFcnJvcjoKICAgICAgICBwcmludCgiTExNIHN1cHBvcnQgcmVxdWlyZXMgJ3JlcXVlc3RzJy4gSW5zdGFsbCB3aXRoOiBwaXAgaW5zdGFsbCBoaWdoLWFnZW50W29sbGFtYV0iKQogICAgICAgIHN5cy5leGl0KDEpCgogICAgbGxtX2t3YXJncyA9IHt9CiAgICBpZiBtb2RlbDoKICAgICAgICBsbG1fa3dhcmdzWyJtb2RlbCJdID0gbW9kZWwKICAgIGlmIGFwaV9rZXk6CiAgICAgICAgbGxtX2t3YXJnc1siYXBpX2tleSJdID0gYXBpX2tleQogICAgaWYgcHJvdmlkZXI6CiAgICAgICAgbGxtX2t3YXJnc1sicHJvdmlkZXIiXSA9IHByb3ZpZGVyCgogICAgaWYgbGxtX2t3YXJnczoKICAgICAgICBsbG0gPSBMTE1DbGllbnQoKipsbG1fa3dhcmdzKQogICAgZWxzZToKICAgICAgICBsbG0gPSBhdXRvX3NldHVwKCkKCiAgICBpZiBub3QgbGxtLmlzX2F2YWlsYWJsZSgpOgogICAgICAgIHByaW50KGYiTm8gTExNIHByb3ZpZGVyIGF2YWlsYWJsZSAoe2xsbS5wcm92aWRlcn0ve2xsbS5tb2RlbH0pIikKICAgICAgICBwcmludCgiU2V0IHVwIHdpdGg6IHB5dGhvbiAtbSBoaWdoX2FnZW50X2VuZ2luZSBzZXR1cCAtLW1vZGVsIDxtb2RlbD4gLS1hcGkta2V5IDxrZXk+IikKICAgICAgICBzeXMuZXhpdCgxKQoKICAgIGZyb20gaGlnaF9hZ2VudF9lbmdpbmUuY2hhdCBpbXBvcnQgTmV1cmFsQWdlbnQKICAgIGFnZW50ID0gTmV1cmFsQWdlbnQobGxtX2NsaWVudD1sbG0pCiAgICBwcmludChhZ2VudC5jaGF0KG1lc3NhZ2UpKQoKCmRlZiBjbWRfc3dhcm0odGFzazogc3RyLCBtb2RlbDogc3RyID0gTm9uZSwgYXBpX2tleTogc3RyID0gTm9uZSk6CiAgICBlbmdpbmUgPSBSZWdpbWVFbmdpbmUoKQogICAgZW5naW5lLnNlZWRfZ3JhcGgoKQoKICAgIGxsbSA9IE5vbmUKICAgIGlmIG1vZGVsIG9yIGFwaV9rZXk6CiAgICAgICAgdHJ5OgogICAgICAgICAgICBmcm9tIGhpZ2hfYWdlbnRfZW5naW5lLmxsbSBpbXBvcnQgTExNQ2xpZW50CiAgICAgICAgICAgIGt3YXJncyA9IHt9CiAgICAgICAgICAgIGlmIG1vZGVsOgogICAgICAgICAgICAgICAga3dhcmdzWyJtb2RlbCJdID0gbW9kZWwKICAgICAgICAgICAgaWYgYXBpX2tleToKICAgICAgICAgICAgICAgIGt3YXJnc1siYXBpX2tleSJdID0gYXBpX2tleQogICAgICAgICAgICBsbG0gPSBMTE1DbGllbnQoKiprd2FyZ3MpCiAgICAgICAgZXhjZXB0IEltcG9ydEVycm9yOgogICAgICAgICAgICBwYXNzCgogICAgZnJvbSBoaWdoX2FnZW50X2VuZ2luZS5hZ2VudCBpbXBvcnQgU3dhcm0KICAgIHN3YXJtID0gU3dhcm0oZW5naW5lLCBsbG0pCiAgICByZXN1bHQgPSBzd2FybS5zb2x2ZSh0YXNrKQogICAgcHJpbnQocmVzdWx0WyJyZXBvcnQiXSkKCgpkZWYgY21kX3N0YXR1cyhtb2RlbDogc3RyID0gTm9uZSwgYXBpX2tleTogc3RyID0gTm9uZSwgcHJvdmlkZXI6IHN0ciA9IE5vbmUpOgogICAgZnJvbSBoaWdoX2FnZW50X2VuZ2luZS5sbG0gaW1wb3J0IHByaW50X3N0YXR1cwogICAgcHJpbnRfc3RhdHVzKCkKCiAgICBlbmdpbmUgPSBSZWdpbWVFbmdpbmUoKQogICAgZW5naW5lLnNlZWRfZ3JhcGgoKQogICAgc25hcCA9IGVuZ2luZS5zbmFwc2hvdCgpCiAgICBwaGkgPSBlbmdpbmUuY29tcHV0ZV9waGkoKQogICAgcHJpbnQoZiJcbkVuZ2luZToge3NuYXBbJ25fbm9kZXMnXX0gbm9kZXMsIHtzbmFwWyduX2VkZ2VzJ119IGVkZ2VzIikKICAgIHByaW50KGYizqYoRyk9e3BoaVsncGhpJ106Ky40Zn0gIHJlZ2ltZT17ZW5naW5lLmN1cnJlbnRfcmVnaW1lfSIpCgoKZGVmIGNtZF9zZXR1cChtb2RlbDogc3RyID0gTm9uZSwgYXBpX2tleTogc3RyID0gTm9uZSwgcHJvdmlkZXI6IHN0ciA9IE5vbmUpOgogICAgdHJ5OgogICAgICAgIGZyb20gaGlnaF9hZ2VudF9lbmdpbmUubGxtIGltcG9ydCBMTE1DbGllbnQsIHByaW50X3N0YXR1cwogICAgZXhjZXB0IEltcG9ydEVycm9yOgogICAgICAgIHByaW50KCJMTE0gc3VwcG9ydCByZXF1aXJlcyAncmVxdWVzdHMnLiBJbnN0YWxsIHdpdGg6IHBpcCBpbnN0YWxsIGhpZ2gtYWdlbnRbb2xsYW1hXSIpCiAgICAgICAgc3lzLmV4aXQoMSkKCiAgICBrd2FyZ3MgPSB7fQogICAgaWYgbW9kZWw6CiAgICAgICAga3dhcmdzWyJtb2RlbCJdID0gbW9kZWwKICAgIGlmIGFwaV9rZXk6CiAgICAgICAga3dhcmdzWyJhcGlfa2V5Il0gPSBhcGlfa2V5CiAgICBpZiBwcm92aWRlcjoKICAgICAgICBrd2FyZ3NbInByb3ZpZGVyIl0gPSBwcm92aWRlcgoKICAgIGlmIG5vdCBrd2FyZ3M6CiAgICAgICAgcHJpbnRfc3RhdHVzKCkKICAgICAgICByZXR1cm4KCiAgICBjbGllbnQgPSBMTE1DbGllbnQoKiprd2FyZ3MpCiAgICBpZiBjbGllbnQuaXNfYXZhaWxhYmxlKCk6CiAgICAgICAgcHJpbnQoZiJbe2NsaWVudC5wcm92aWRlcn1dIENvbm5lY3RlZCDigJQge2NsaWVudC5tb2RlbH0iKQogICAgZWxzZToKICAgICAgICBwcmludChmIlt7Y2xpZW50LnByb3ZpZGVyfV0gTm90IGF2YWlsYWJsZSB3aXRoIHtjbGllbnQubW9kZWx9IikKICAgICAgICBwcmludChmIiAgQ2hlY2sgeW91ciBBUEkga2V5IG9yIHRyeTogcGlwIGluc3RhbGwgaGlnaC1hZ2VudFtvbGxhbWFdIikKCgpkZWYgbWFpbigpOgogICAgcGFyc2VyID0gYXJncGFyc2UuQXJndW1lbnRQYXJzZXIoCiAgICAgICAgZGVzY3JpcHRpb249IkdyYXBoX3hfMHgwIOKAlCBBSU9TIGZvciBNb2JpbGUgVFVJIERlZXAgQWdlbnRzIFN0b3JtIFN3YXJtIiwKICAgICAgICBmb3JtYXR0ZXJfY2xhc3M9YXJncGFyc2UuUmF3RGVzY3JpcHRpb25IZWxwRm9ybWF0dGVyLAogICAgICAgIGVwaWxvZz0iIiIKRXhhbXBsZXM6CiAgcHl0aG9uIC1tIGhpZ2hfYWdlbnRfZW5naW5lICAgICAgICAgICAgICAgICAgICAjIEludGVyYWN0aXZlIFJFUEwKICBweXRob24gLW0gaGlnaF9hZ2VudF9lbmdpbmUgbWV0cmljcyAgICAgICAgICAgICMgU2hvdyBsaXZlIG1ldHJpY3MKICBweXRob24gLW0gaGlnaF9hZ2VudF9lbmdpbmUgc3dlZXAgICAgICAgICAgICAgICMgRXZhbHVhdGUgYWxsIHJlZ2ltZXMKICBweXRob24gLW0gaGlnaF9hZ2VudF9lbmdpbmUgdGhlb3J5ICAgICAgICAgICAgICMgRnVsbCBtYXRoIGV4cGxhbmF0aW9uCiAgcHl0aG9uIC1tIGhpZ2hfYWdlbnRfZW5naW5lIGNyYXdsIC4vc3JjICAgICAgICAjIENyYXdsIGFuZCBhbmFseXplCiAgcHl0aG9uIC1tIGhpZ2hfYWdlbnRfZW5naW5lIGNoYXQgIi4uLiIgICAgICAgICAjIE5ldXJhbCBjaGF0CiAgcHl0aG9uIC1tIGhpZ2hfYWdlbnRfZW5naW5lIHN3YXJtICIuLi4iICAgICAgICAjIFJ1biBhZ2VudCBzd2FybQogIHB5dGhvbiAtbSBoaWdoX2FnZW50X2VuZ2luZSBzdGF0dXMgICAgICAgICAgICAgIyBTeXN0ZW0gKyBMTE0gc3RhdHVzCiAgcHl0aG9uIC1tIGhpZ2hfYWdlbnRfZW5naW5lIHNldHVwIC1tIGdwdC00byAtayBzay0uLi4gICMgQ29uZmlndXJlIExMTQoKV2l0aCBjaGF0L3N3YXJtLCBwYXNzIC0tbW9kZWwgYW5kIC0tYXBpLWtleSBmb3IgY2xvdWQgTExNcywKb3IganVzdCB1c2UgT2xsYW1hIChhdXRvLWRldGVjdGVkKS4KICAgICAgICAiIiIsCiAgICApCgogICAgIyBTdWJjb21tYW5kcwogICAgc3VicGFyc2VycyA9IHBhcnNlci5hZGRfc3VicGFyc2VycyhkZXN0PSJjb21tYW5kIiwgaGVscD0iQ29tbWFuZCB0byBydW4iKQoKICAgIHN1YnBhcnNlcnMuYWRkX3BhcnNlcigibWV0cmljcyIsIGhlbHA9IlNob3cgbGl2ZSDOpihHKSBtZXRyaWNzIikKICAgIHN1YnBhcnNlcnMuYWRkX3BhcnNlcigic3dlZXAiLCBoZWxwPSJFdmFsdWF0ZSBhbGwgMyByZWdpbWVzIikKICAgIHN1YnBhcnNlcnMuYWRkX3BhcnNlcigidGhlb3J5IiwgaGVscD0iRnVsbCBUaGVvcnkgTW9kZSBleHBsYW5hdGlvbiIpCiAgICBzdWJwYXJzZXJzLmFkZF9wYXJzZXIoInN0YXR1cyIsIGhlbHA9IlN5c3RlbSArIExMTSBzdGF0dXMiKQoKICAgIGNyYXdsX3AgPSBzdWJwYXJzZXJzLmFkZF9wYXJzZXIoImNyYXdsIiwgaGVscD0iQ3Jhd2wgYW5kIGFuYWx5emUgYSBjb2RlYmFzZSIpCiAgICBjcmF3bF9wLmFkZF9hcmd1bWVudCgicGF0aCIsIGhlbHA9IkRpcmVjdG9yeSB0byBjcmF3bCIpCiAgICBjcmF3bF9wLmFkZF9hcmd1bWVudCgiLS1uby1yZWN1cnNpdmUiLCBhY3Rpb249InN0b3JlX3RydWUiLCBoZWxwPSJEaXNhYmxlIHJlY3Vyc2l2ZSBjcmF3bCIpCgogICAgY2hhdF9wID0gc3VicGFyc2Vycy5hZGRfcGFyc2VyKCJjaGF0IiwgaGVscD0iTmV1cmFsIGNoYXQgd2l0aCB0aGUgYWdlbnQiKQogICAgY2hhdF9wLmFkZF9hcmd1bWVudCgibWVzc2FnZSIsIGhlbHA9Ik1lc3NhZ2UgdG8gc2VuZCB0byB0aGUgYWdlbnQiKQogICAgY2hhdF9wLmFkZF9hcmd1bWVudCgiLS1tb2RlbCIsICItbSIsIGRlZmF1bHQ9Tm9uZSkKICAgIGNoYXRfcC5hZGRfYXJndW1lbnQoIi0tYXBpLWtleSIsICItayIsIGRlZmF1bHQ9Tm9uZSkKICAgIGNoYXRfcC5hZGRfYXJndW1lbnQoIi0tcHJvdmlkZXIiLCAiLXAiLCBkZWZhdWx0PU5vbmUsCiAgICAgICAgICAgICAgICAgICAgICAgIGNob2ljZXM9WyJvcGVuYWkiLCAib3BlbnJvdXRlciIsICJncm9xIiwgImRlZXBzZWVrIiwgIm9sbGFtYSJdKQoKICAgIHN3YXJtX3AgPSBzdWJwYXJzZXJzLmFkZF9wYXJzZXIoInN3YXJtIiwgaGVscD0iUnVuIGFnZW50IHN3YXJtIG9uIGEgdGFzayIpCiAgICBzd2FybV9wLmFkZF9hcmd1bWVudCgidGFzayIsIGhlbHA9IlRhc2sgZm9yIHRoZSBzd2FybSIpCiAgICBzd2FybV9wLmFkZF9hcmd1bWVudCgiLS1tb2RlbCIsICItbSIsIGRlZmF1bHQ9Tm9uZSkKICAgIHN3YXJtX3AuYWRkX2FyZ3VtZW50KCItLWFwaS1rZXkiLCAiLWsiLCBkZWZhdWx0PU5vbmUpCgogICAgc2V0dXBfcCA9IHN1YnBhcnNlcnMuYWRkX3BhcnNlcigic2V0dXAiLCBoZWxwPSJDb25maWd1cmUgTExNIHByb3ZpZGVyIikKICAgIHNldHVwX3AuYWRkX2FyZ3VtZW50KCItLW1vZGVsIiwgIi1tIiwgZGVmYXVsdD1Ob25lKQogICAgc2V0dXBfcC5hZGRfYXJndW1lbnQoIi0tYXBpLWtleSIsICItayIsIGRlZmF1bHQ9Tm9uZSkKICAgIHNldHVwX3AuYWRkX2FyZ3VtZW50KCItLXByb3ZpZGVyIiwgIi1wIiwgZGVmYXVsdD1Ob25lLAogICAgICAgICAgICAgICAgICAgICAgICAgY2hvaWNlcz1bIm9wZW5haSIsICJvcGVucm91dGVyIiwgImdyb3EiLCAiZGVlcHNlZWsiLCAib2xsYW1hIl0pCgogICAgYXJncyA9IHBhcnNlci5wYXJzZV9hcmdzKCkKCiAgICAjIERlZmF1bHQ6IHJ1biBSRVBMCiAgICBpZiBhcmdzLmNvbW1hbmQgaXMgTm9uZToKICAgICAgICBmcm9tIGhpZ2hfYWdlbnRfZW5naW5lLnJlcGwgaW1wb3J0IG1haW4gYXMgcmVwbF9tYWluCiAgICAgICAgcmVwbF9tYWluKCkKICAgICAgICByZXR1cm4KCiAgICBlbmdpbmUgPSBSZWdpbWVFbmdpbmUoKQogICAgZW5naW5lLnNlZWRfZ3JhcGgoKQoKICAgIGlmIGFyZ3MuY29tbWFuZCA9PSAibWV0cmljcyI6CiAgICAgICAgY21kX21ldHJpY3MoZW5naW5lKQogICAgZWxpZiBhcmdzLmNvbW1hbmQgPT0gInN3ZWVwIjoKICAgICAgICBjbWRfc3dlZXAoZW5naW5lKQogICAgZWxpZiBhcmdzLmNvbW1hbmQgPT0gInRoZW9yeSI6CiAgICAgICAgY21kX3RoZW9yeShlbmdpbmUpCiAgICBlbGlmIGFyZ3MuY29tbWFuZCA9PSAiY3Jhd2wiOgogICAgICAgIGNtZF9jcmF3bChhcmdzLnBhdGgsIHJlY3Vyc2l2ZT1ub3QgYXJncy5ub19yZWN1cnNpdmUpCiAgICBlbGlmIGFyZ3MuY29tbWFuZCA9PSAiY2hhdCI6CiAgICAgICAgY21kX2NoYXQoYXJncy5tZXNzYWdlLCBhcmdzLm1vZGVsLCBhcmdzLmFwaV9rZXksIGFyZ3MucHJvdmlkZXIpCiAgICBlbGlmIGFyZ3MuY29tbWFuZCA9PSAic3dhcm0iOgogICAgICAgIGNtZF9zd2FybShhcmdzLnRhc2ssIGFyZ3MubW9kZWwsIGFyZ3MuYXBpX2tleSkKICAgIGVsaWYgYXJncy5jb21tYW5kID09ICJzdGF0dXMiOgogICAgICAgIGNtZF9zdGF0dXMoYXJncy5tb2RlbCwgYXJncy5hcGlfa2V5LCBhcmdzLnByb3ZpZGVyKQogICAgZWxpZiBhcmdzLmNvbW1hbmQgPT0gInNldHVwIjoKICAgICAgICBjbWRfc2V0dXAoYXJncy5tb2RlbCwgYXJncy5hcGlfa2V5LCBhcmdzLnByb3ZpZGVyKQoKCmlmIF9fbmFtZV9fID09ICJfX21haW5fXyI6CiAgICBtYWluKCk=
+"""high_agent_engine.__main__ — CLI entry point.
+
+Usage:
+  python -m high_agent_engine
+  python -m high_agent_engine --crawl /path/to/codebase
+  python -m high_agent_engine chat "Analyze my codebase"
+  python -m high_agent_engine swarm "Reduce coupling"
+  python -m high_agent_engine --model gpt-4o --api-key sk-... chat "Explain the hot spots"
+"""
+
+from __future__ import annotations
+import argparse
+import sys
+
+from high_agent_engine import RegimeEngine
+from high_agent_engine.crawler import CodebaseCrawler
+
+
+def cmd_metrics(engine: RegimeEngine):
+    snap = engine.snapshot()
+    phi = engine.compute_phi()
+    coeffs = engine.regime_coeffs()
+    print(f"""Graph Metrics
+{'─' * 50}
+Φ(G)       = {phi['phi']:+.4f}
+Q(G)       = {phi['q']:.4f}
+Č(G)       = {phi['coupling']:.4f}
+mean(V)    = {phi['mean_v']:.2f}
+max(V)      = {snap['max_v']:.2f}
+Graph:     {snap['n_nodes']} nodes, {snap['n_edges']} edges, {snap['n_modules']} modules
+Regime:    {engine.current_regime} (α={coeffs.alpha}, β={coeffs.beta}, γ={coeffs.gamma})
+History:   {len(engine.history)} snapshots, {len(engine.transitions)} regime switches
+""")
+
+
+def cmd_sweep(engine: RegimeEngine):
+    results = engine.sweep_regimes()
+    print("\nRegime Sweep:")
+    print(f"  {'Regime':<12} {'Φ(G)':>10}")
+    print("  " + "-" * 24)
+    best = max(results, key=lambda x: x[1])
+    for regime, phi in sorted(results, key=lambda x: x[1], reverse=True):
+        tag = " ← BEST" if regime == best[0] else ""
+        cur = " [current]" if regime == engine.current_regime else ""
+        print(f"  {regime:<12} {phi:>+10.4f}{tag}{cur}")
+    print()
+
+
+def cmd_theory(engine: RegimeEngine):
+    print(engine.theory_explain())
+
+
+def cmd_crawl(path: str, recursive: bool = True):
+    print(f"Crawling {path} (recursive={recursive})...")
+    crawler = CodebaseCrawler(recursive=recursive)
+    graph = crawler.crawl(path)
+    engine = RegimeEngine()
+    engine.graph = graph
+    engine.seed_graph()
+    snap = engine.snapshot()
+    phi = engine.compute_phi()
+    print(f"Built: {graph.n_nodes} nodes, {graph.n_edges} edges")
+    print(f"Φ(G)={phi['phi']:+.4f}  regime={engine.current_regime}")
+
+
+def cmd_chat(message: str, model: str = None, api_key: str = None, provider: str = None):
+    try:
+        from high_agent_engine.llm import LLMClient, auto_setup
+    except ImportError:
+        print("LLM support requires 'requests'. Install with: pip install high-agent[ollama]")
+        sys.exit(1)
+
+    llm_kwargs = {}
+    if model:
+        llm_kwargs["model"] = model
+    if api_key:
+        llm_kwargs["api_key"] = api_key
+    if provider:
+        llm_kwargs["provider"] = provider
+
+    if llm_kwargs:
+        llm = LLMClient(**llm_kwargs)
+    else:
+        llm = auto_setup()
+
+    if not llm.is_available():
+        print(f"No LLM provider available ({llm.provider}/{llm.model})")
+        print("Set up with: python -m high_agent_engine setup --model <model> --api-key <key>")
+        sys.exit(1)
+
+    from high_agent_engine.chat import NeuralAgent
+    agent = NeuralAgent(llm_client=llm)
+    print(agent.chat(message))
+
+
+def cmd_swarm(task: str, model: str = None, api_key: str = None):
+    engine = RegimeEngine()
+    engine.seed_graph()
+
+    llm = None
+    if model or api_key:
+        try:
+            from high_agent_engine.llm import LLMClient
+            kwargs = {}
+            if model:
+                kwargs["model"] = model
+            if api_key:
+                kwargs["api_key"] = api_key
+            llm = LLMClient(**kwargs)
+        except ImportError:
+            pass
+
+    from high_agent_engine.agent import Swarm
+    swarm = Swarm(engine, llm)
+    result = swarm.solve(task)
+    print(result["report"])
+
+
+def cmd_status(model: str = None, api_key: str = None, provider: str = None):
+    from high_agent_engine.llm import print_status
+    print_status()
+
+    engine = RegimeEngine()
+    engine.seed_graph()
+    snap = engine.snapshot()
+    phi = engine.compute_phi()
+    print(f"\nEngine: {snap['n_nodes']} nodes, {snap['n_edges']} edges")
+    print(f"Φ(G)={phi['phi']:+.4f}  regime={engine.current_regime}")
+
+
+def cmd_setup(model: str = None, api_key: str = None, provider: str = None):
+    try:
+        from high_agent_engine.llm import LLMClient, print_status
+    except ImportError:
+        print("LLM support requires 'requests'. Install with: pip install high-agent[ollama]")
+        sys.exit(1)
+
+    kwargs = {}
+    if model:
+        kwargs["model"] = model
+    if api_key:
+        kwargs["api_key"] = api_key
+    if provider:
+        kwargs["provider"] = provider
+
+    if not kwargs:
+        print_status()
+        return
+
+    client = LLMClient(**kwargs)
+    if client.is_available():
+        print(f"[{client.provider}] Connected — {client.model}")
+    else:
+        print(f"[{client.provider}] Not available with {client.model}")
+        print(f"  Check your API key or try: pip install high-agent[ollama]")
+
+
+def main():
+    parser = argparse.ArgumentParser(
+        description="Graph_x_0x0 — AIOS for Mobile TUI Deep Agents Storm Swarm",
+        formatter_class=argparse.RawDescriptionHelpFormatter,
+        epilog="""
+Examples:
+  python -m high_agent_engine                    # Interactive REPL
+  python -m high_agent_engine metrics            # Show live metrics
+  python -m high_agent_engine sweep              # Evaluate all regimes
+  python -m high_agent_engine theory             # Full math explanation
+  python -m high_agent_engine crawl ./src        # Crawl and analyze
+  python -m high_agent_engine chat "..."         # Neural chat
+  python -m high_agent_engine swarm "..."        # Run agent swarm
+  python -m high_agent_engine status             # System + LLM status
+  python -m high_agent_engine setup -m gpt-4o -k sk-...  # Configure LLM
+
+With chat/swarm, pass --model and --api-key for cloud LLMs,
+or just use Ollama (auto-detected).
+        """,
+    )
+
+    # Subcommands
+    subparsers = parser.add_subparsers(dest="command", help="Command to run")
+
+    subparsers.add_parser("metrics", help="Show live Φ(G) metrics")
+    subparsers.add_parser("sweep", help="Evaluate all 3 regimes")
+    subparsers.add_parser("theory", help="Full Theory Mode explanation")
+    subparsers.add_parser("status", help="System + LLM status")
+
+    crawl_p = subparsers.add_parser("crawl", help="Crawl and analyze a codebase")
+    crawl_p.add_argument("path", help="Directory to crawl")
+    crawl_p.add_argument("--no-recursive", action="store_true", help="Disable recursive crawl")
+
+    chat_p = subparsers.add_parser("chat", help="Neural chat with the agent")
+    chat_p.add_argument("message", help="Message to send to the agent")
+    chat_p.add_argument("--model", "-m", default=None)
+    chat_p.add_argument("--api-key", "-k", default=None)
+    chat_p.add_argument("--provider", "-p", default=None,
+                        choices=["openai", "openrouter", "groq", "deepseek", "ollama"])
+
+    swarm_p = subparsers.add_parser("swarm", help="Run agent swarm on a task")
+    swarm_p.add_argument("task", help="Task for the swarm")
+    swarm_p.add_argument("--model", "-m", default=None)
+    swarm_p.add_argument("--api-key", "-k", default=None)
+
+    setup_p = subparsers.add_parser("setup", help="Configure LLM provider")
+    setup_p.add_argument("--model", "-m", default=None)
+    setup_p.add_argument("--api-key", "-k", default=None)
+    setup_p.add_argument("--provider", "-p", default=None,
+                         choices=["openai", "openrouter", "groq", "deepseek", "ollama"])
+
+    args = parser.parse_args()
+
+    # Default: run REPL
+    if args.command is None:
+        from high_agent_engine.repl import main as repl_main
+        repl_main()
+        return
+
+    engine = RegimeEngine()
+    engine.seed_graph()
+
+    if args.command == "metrics":
+        cmd_metrics(engine)
+    elif args.command == "sweep":
+        cmd_sweep(engine)
+    elif args.command == "theory":
+        cmd_theory(engine)
+    elif args.command == "crawl":
+        cmd_crawl(args.path, recursive=not args.no_recursive)
+    elif args.command == "chat":
+        cmd_chat(args.message, args.model, args.api_key, args.provider)
+    elif args.command == "swarm":
+        cmd_swarm(args.task, args.model, args.api_key)
+    elif args.command == "status":
+        cmd_status(args.model, args.api_key, args.provider)
+    elif args.command == "setup":
+        cmd_setup(args.model, args.api_key, args.provider)
+
+
+if __name__ == "__main__":
+    main()

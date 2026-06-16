@@ -1,1 +1,181 @@
-Ly8hIFNraWxsIG1hbmFnZW1lbnQg4oCUIGxvYWQsIGNyZWF0ZSwgdXBkYXRlLCBkZWxldGUgc2tpbGxzIG9uIGRlbWFuZC4KCnVzZSBjcmF0ZTo6ZXJyb3I6OntIaWdoQWdlbnRFcnJvciwgUmVzdWx0fTsKdXNlIHNlcmRlOjp7RGVzZXJpYWxpemUsIFNlcmlhbGl6ZX07CnVzZSBzdGQ6OmNvbGxlY3Rpb25zOjpIYXNoTWFwOwp1c2Ugc3RkOjpwYXRoOjpQYXRoQnVmOwoKI1tkZXJpdmUoRGVidWcsIENsb25lLCBTZXJpYWxpemUsIERlc2VyaWFsaXplKV0KcHViIHN0cnVjdCBTa2lsbCB7CiAgICBwdWIgbmFtZTogU3RyaW5nLAogICAgcHViIGNhdGVnb3J5OiBPcHRpb248U3RyaW5nPiwKICAgIHB1YiBkZXNjcmlwdGlvbjogU3RyaW5nLAogICAgcHViIGNvbnRlbnQ6IFN0cmluZywKICAgIHB1YiB0cmlnZ2VyczogVmVjPFN0cmluZz4sCiAgICBwdWIgdGFnczogVmVjPFN0cmluZz4sCiAgICBwdWIgY3JlYXRlZF9hdDogU3RyaW5nLAogICAgcHViIHVwZGF0ZWRfYXQ6IFN0cmluZywKfQoKaW1wbCBTa2lsbCB7CiAgICBwdWIgZm4gbmV3KG5hbWU6ICZzdHIsIGRlc2NyaXB0aW9uOiAmc3RyLCBjb250ZW50OiAmc3RyKSAtPiBTZWxmIHsKICAgICAgICBsZXQgbm93ID0gY2hyb25vX25vdygpOwogICAgICAgIFNlbGYgewogICAgICAgICAgICBuYW1lOiBuYW1lLnRvX3N0cmluZygpLAogICAgICAgICAgICBjYXRlZ29yeTogTm9uZSwKICAgICAgICAgICAgZGVzY3JpcHRpb246IGRlc2NyaXB0aW9uLnRvX3N0cmluZygpLAogICAgICAgICAgICBjb250ZW50OiBjb250ZW50LnRvX3N0cmluZygpLAogICAgICAgICAgICB0cmlnZ2VyczogdmVjIVtdLAogICAgICAgICAgICB0YWdzOiB2ZWMhW10sCiAgICAgICAgICAgIGNyZWF0ZWRfYXQ6IG5vdy5jbG9uZSgpLAogICAgICAgICAgICB1cGRhdGVkX2F0OiBub3csCiAgICAgICAgfQogICAgfQogICAgcHViIGZuIHdpdGhfY2F0ZWdvcnkobXV0IHNlbGYsIGNhdDogJnN0cikgLT4gU2VsZiB7IHNlbGYuY2F0ZWdvcnkgPSBTb21lKGNhdC50b19zdHJpbmcoKSk7IHNlbGYgfQogICAgcHViIGZuIHdpdGhfdHJpZ2dlcnMobXV0IHNlbGYsIHRyaWdnZXJzOiBWZWM8JnN0cj4pIC0+IFNlbGYgeyBzZWxmLnRyaWdnZXJzID0gdHJpZ2dlcnMuaXRlcigpLm1hcCh8c3wgcy50b19zdHJpbmcoKSkuY29sbGVjdCgpOyBzZWxmIH0KICAgIHB1YiBmbiB3aXRoX3RhZ3MobXV0IHNlbGYsIHRhZ3M6IFZlYzwmc3RyPikgLT4gU2VsZiB7IHNlbGYudGFncyA9IHRhZ3MuaXRlcigpLm1hcCh8c3wgcy50b19zdHJpbmcoKSkuY29sbGVjdCgpOyBzZWxmIH0KfQoKcHViIHN0cnVjdCBTa2lsbE1hbmFnZXIgewogICAgcHViIHNraWxsczogSGFzaE1hcDxTdHJpbmcsIFNraWxsPiwKICAgIHB1YiBza2lsbHNfZGlyOiBQYXRoQnVmLAp9CgppbXBsIFNraWxsTWFuYWdlciB7CiAgICBwdWIgZm4gbmV3KCkgLT4gU2VsZiB7CiAgICAgICAgbGV0IHNraWxsc19kaXIgPSBzdGQ6OmVudjo6dmFyKCJIRVJNRVNfU0tJTExTX0RJUiIpCiAgICAgICAgICAgIC5tYXAoUGF0aEJ1Zjo6ZnJvbSkKICAgICAgICAgICAgLnVud3JhcF9vcl9lbHNlKHxffCB7CiAgICAgICAgICAgICAgICBsZXQgbXV0IHAgPSBzdGQ6OmVudjo6dmFyKCJIT01FIikubWFwKFBhdGhCdWY6OmZyb20pLnVud3JhcF9vcl9lbHNlKHxffCBQYXRoQnVmOjpmcm9tKCIuIikpOwogICAgICAgICAgICAgICAgcC5wdXNoKCIuaGVybWVzL3NraWxscyIpOwogICAgICAgICAgICAgICAgcAogICAgICAgICAgICB9KTsKICAgICAgICBsZXQgbXV0IG1nciA9IFNlbGYgeyBza2lsbHM6IEhhc2hNYXA6Om5ldygpLCBza2lsbHNfZGlyIH07CiAgICAgICAgbWdyLmxvYWRfYWxsKCkub2soKTsKICAgICAgICBtZ3IKICAgIH0KCiAgICAvLy8gTG9hZCBhbGwgLm1kIHNraWxsIGZpbGVzIGZyb20gdGhlIHNraWxscyBkaXJlY3RvcnkuCiAgICBwdWIgZm4gbG9hZF9hbGwoJm11dCBzZWxmKSAtPiBzdGQ6OmlvOjpSZXN1bHQ8KCk+IHsKICAgICAgICBzZWxmLnNraWxscy5jbGVhcigpOwogICAgICAgIGlmICFzZWxmLnNraWxsc19kaXIuZXhpc3RzKCkgeyByZXR1cm4gT2soKCkpOyB9CgogICAgICAgIGZvciBlbnRyeSBpbiB3YWxrZGlyKCZzZWxmLnNraWxsc19kaXIpPyB7CiAgICAgICAgICAgIGxldCBwYXRoID0gZW50cnkucGF0aCgpOwogICAgICAgICAgICBpZiBwYXRoLmV4dGVuc2lvbigpLmFuZF90aGVuKHxzfCBzLnRvX3N0cigpKSA9PSBTb21lKCJtZCIpIHsKICAgICAgICAgICAgICAgIGlmIGxldCBPayhjb250ZW50KSA9IHN0ZDo6ZnM6OnJlYWRfdG9fc3RyaW5nKCZwYXRoKSB7CiAgICAgICAgICAgICAgICAgICAgbGV0IG5hbWUgPSBwYXRoLmZpbGVfc3RlbSgpLmFuZF90aGVuKHxzfCBzLnRvX3N0cigpKS51bndyYXBfb3IoInVua25vd24iKS50b19zdHJpbmcoKTsKICAgICAgICAgICAgICAgICAgICBsZXQgc2tpbGwgPSBTZWxmOjpwYXJzZV9za2lsbF9tZCgmbmFtZSwgJmNvbnRlbnQpOwogICAgICAgICAgICAgICAgICAgIHNlbGYuc2tpbGxzLmluc2VydChuYW1lLCBza2lsbCk7CiAgICAgICAgICAgICAgICB9CiAgICAgICAgICAgIH0KICAgICAgICB9CiAgICAgICAgT2soKCkpCiAgICB9CgogICAgZm4gcGFyc2Vfc2tpbGxfbWQobmFtZTogJnN0ciwgY29udGVudDogJnN0cikgLT4gU2tpbGwgewogICAgICAgIGxldCBtdXQgZGVzY3JpcHRpb24gPSBTdHJpbmc6Om5ldygpOwogICAgICAgIGxldCBtdXQgdHJpZ2dlcnMgPSBWZWM6Om5ldygpOwogICAgICAgIGxldCBtdXQgdGFncyA9IFZlYzo6bmV3KCk7CiAgICAgICAgbGV0IG11dCBjYXRlZ29yeSA9IE5vbmU7CgogICAgICAgIGZvciBsaW5lIGluIGNvbnRlbnQubGluZXMoKSB7CiAgICAgICAgICAgIGlmIGxpbmUuc3RhcnRzX3dpdGgoImRlc2NyaXB0aW9uOiIpIHsKICAgICAgICAgICAgICAgIGRlc2NyaXB0aW9uID0gbGluZS50cmltX3N0YXJ0X21hdGNoZXMoImRlc2NyaXB0aW9uOiIpLnRyaW0oKS50b19zdHJpbmcoKTsKICAgICAgICAgICAgfSBlbHNlIGlmIGxpbmUuc3RhcnRzX3dpdGgoInRyaWdnZXJzOiIpIHsKICAgICAgICAgICAgICAgIHRyaWdnZXJzID0gbGluZS50cmltX3N0YXJ0X21hdGNoZXMoInRyaWdnZXJzOiIpLnNwbGl0KCcsJykKICAgICAgICAgICAgICAgICAgICAubWFwKHxzfCBzLnRyaW0oKS50b19zdHJpbmcoKSkuZmlsdGVyKHxzfCAhcy5pc19lbXB0eSgpKS5jb2xsZWN0KCk7CiAgICAgICAgICAgIH0gZWxzZSBpZiBsaW5lLnN0YXJ0c193aXRoKCJ0YWdzOiIpIHsKICAgICAgICAgICAgICAgIHRhZ3MgPSBsaW5lLnRyaW1fc3RhcnRfbWF0Y2hlcygidGFnczoiKS5zcGxpdCgnLCcpCiAgICAgICAgICAgICAgICAgICAgLm1hcCh8c3wgcy50cmltKCkudG9fc3RyaW5nKCkpLmZpbHRlcih8c3wgIXMuaXNfZW1wdHkoKSkuY29sbGVjdCgpOwogICAgICAgICAgICB9IGVsc2UgaWYgbGluZS5zdGFydHNfd2l0aCgiY2F0ZWdvcnk6IikgewogICAgICAgICAgICAgICAgY2F0ZWdvcnkgPSBTb21lKGxpbmUudHJpbV9zdGFydF9tYXRjaGVzKCJjYXRlZ29yeToiKS50cmltKCkudG9fc3RyaW5nKCkpOwogICAgICAgICAgICB9CiAgICAgICAgfQoKICAgICAgICBTa2lsbCB7CiAgICAgICAgICAgIG5hbWU6IG5hbWUudG9fc3RyaW5nKCksCiAgICAgICAgICAgIGNhdGVnb3J5LAogICAgICAgICAgICBkZXNjcmlwdGlvbjogaWYgZGVzY3JpcHRpb24uaXNfZW1wdHkoKSB7ICJObyBkZXNjcmlwdGlvbiIuaW50bygpIH0gZWxzZSB7IGRlc2NyaXB0aW9uIH0sCiAgICAgICAgICAgIGNvbnRlbnQ6IGNvbnRlbnQudG9fc3RyaW5nKCksCiAgICAgICAgICAgIHRyaWdnZXJzLAogICAgICAgICAgICB0YWdzLAogICAgICAgICAgICBjcmVhdGVkX2F0OiBjaHJvbm9fbm93KCksCiAgICAgICAgICAgIHVwZGF0ZWRfYXQ6IGNocm9ub19ub3coKSwKICAgICAgICB9CiAgICB9CgogICAgcHViIGZuIGdldCgmc2VsZiwgbmFtZTogJnN0cikgLT4gT3B0aW9uPCZTa2lsbD4geyBzZWxmLnNraWxscy5nZXQobmFtZSkgfQoKICAgIHB1YiBmbiBsaXN0KCZzZWxmKSAtPiBWZWM8JlNraWxsPiB7IHNlbGYuc2tpbGxzLnZhbHVlcygpLmNvbGxlY3QoKSB9CgogICAgcHViIGZuIHNlYXJjaCgmc2VsZiwgcXVlcnk6ICZzdHIpIC0+IFZlYzwmU2tpbGw+IHsKICAgICAgICBsZXQgcSA9IHF1ZXJ5LnRvX2xvd2VyY2FzZSgpOwogICAgICAgIHNlbGYuc2tpbGxzLnZhbHVlcygpLmZpbHRlcih8c3wgewogICAgICAgICAgICBzLm5hbWUudG9fbG93ZXJjYXNlKCkuY29udGFpbnMoJnEpCiAgICAgICAgICAgIHx8IHMuZGVzY3JpcHRpb24udG9fbG93ZXJjYXNlKCkuY29udGFpbnMoJnEpCiAgICAgICAgICAgIHx8IHMudGFncy5pdGVyKCkuYW55KHx0fCB0LnRvX2xvd2VyY2FzZSgpLmNvbnRhaW5zKCZxKSkKICAgICAgICAgICAgfHwgcy50cmlnZ2Vycy5pdGVyKCkuYW55KHx0fCB0LnRvX2xvd2VyY2FzZSgpLmNvbnRhaW5zKCZxKSkKICAgICAgICB9KS5jb2xsZWN0KCkKICAgIH0KCiAgICBwdWIgZm4gc2F2ZSgmbXV0IHNlbGYsIHNraWxsOiBTa2lsbCkgLT4gUmVzdWx0PCgpPiB7CiAgICAgICAgbGV0IHBhdGggPSBzZWxmLnNraWxsc19kaXIuam9pbihmb3JtYXQhKCJ7fS5tZCIsIHNraWxsLm5hbWUpKTsKICAgICAgICBpZiBsZXQgU29tZShwYXJlbnQpID0gcGF0aC5wYXJlbnQoKSB7CiAgICAgICAgICAgIHN0ZDo6ZnM6OmNyZWF0ZV9kaXJfYWxsKHBhcmVudCk/OwogICAgICAgIH0KICAgICAgICBzdGQ6OmZzOjp3cml0ZSgmcGF0aCwgJnNraWxsLmNvbnRlbnQpPzsKICAgICAgICBzZWxmLnNraWxscy5pbnNlcnQoc2tpbGwubmFtZS5jbG9uZSgpLCBza2lsbCk7CiAgICAgICAgT2soKCkpCiAgICB9CgogICAgcHViIGZuIGRlbGV0ZSgmbXV0IHNlbGYsIG5hbWU6ICZzdHIpIC0+IFJlc3VsdDwoKT4gewogICAgICAgIGxldCBwYXRoID0gc2VsZi5za2lsbHNfZGlyLmpvaW4oZm9ybWF0ISgie30ubWQiLCBuYW1lKSk7CiAgICAgICAgc3RkOjpmczo6cmVtb3ZlX2ZpbGUoJnBhdGgpPzsKICAgICAgICBzZWxmLnNraWxscy5yZW1vdmUobmFtZSk7CiAgICAgICAgT2soKCkpCiAgICB9CgogICAgcHViIGZuIHVwZGF0ZSgmbXV0IHNlbGYsIG5hbWU6ICZzdHIsIGNvbnRlbnQ6ICZzdHIpIC0+IFJlc3VsdDwoKT4gewogICAgICAgIGxldCBza2lsbCA9IHNlbGYuc2tpbGxzLmdldChuYW1lKS5jbG9uZWQoKS5va19vcl9lbHNlKHx8IEhpZ2hBZ2VudEVycm9yOjpTa2lsbChmb3JtYXQhKCJTa2lsbCAne30nIG5vdCBmb3VuZCIsIG5hbWUpKSk/OwogICAgICAgIGxldCBtdXQgdXBkYXRlZCA9IHNraWxsOwogICAgICAgIHVwZGF0ZWQuY29udGVudCA9IGNvbnRlbnQudG9fc3RyaW5nKCk7CiAgICAgICAgdXBkYXRlZC51cGRhdGVkX2F0ID0gY2hyb25vX25vdygpOwogICAgICAgIHNlbGYuc2F2ZSh1cGRhdGVkKQogICAgfQoKICAgIC8vLyBTdWdnZXN0IGEgc2tpbGwgYmFzZWQgb24gdXNlciBpbnRlbnQuCiAgICBwdWIgZm4gc3VnZ2VzdCgmc2VsZiwgaW50ZW50OiAmc3RyKSAtPiBWZWM8JlNraWxsPiB7CiAgICAgICAgc2VsZi5zZWFyY2goaW50ZW50KQogICAgfQoKICAgIC8vLyBDcmVhdGUgc2tpbGwgZnJvbSBjb252ZXJzYXRpb24gY29udGVudC4KICAgIHB1YiBmbiBjcmVhdGVfZnJvbV9jb250ZW50KCZtdXQgc2VsZiwgbmFtZTogJnN0ciwgZGVzY3JpcHRpb246ICZzdHIsIGNvbnRlbnQ6ICZzdHIpIC0+IFJlc3VsdDwoKT4gewogICAgICAgIGxldCBza2lsbCA9IFNraWxsOjpuZXcobmFtZSwgZGVzY3JpcHRpb24sIGNvbnRlbnQpOwogICAgICAgIHNlbGYuc2F2ZShza2lsbCkKICAgIH0KfQoKaW1wbCBEZWZhdWx0IGZvciBTa2lsbE1hbmFnZXIgewogICAgZm4gZGVmYXVsdCgpIC0+IFNlbGYgeyBTZWxmOjpuZXcoKSB9Cn0KCmZuIHdhbGtkaXIoZGlyOiAmUGF0aEJ1ZikgLT4gc3RkOjppbzo6UmVzdWx0PFZlYzxzdGQ6OmZzOjpEaXJFbnRyeT4+IHsKICAgIGxldCBtdXQgcmVzdWx0cyA9IFZlYzo6bmV3KCk7CiAgICBsZXQgbXV0IHN0YWNrID0gdmVjIVtkaXIuY2xvbmUoKV07CiAgICB3aGlsZSBsZXQgU29tZShjdXJyZW50KSA9IHN0YWNrLnBvcCgpIHsKICAgICAgICBpZiBsZXQgT2soZW50cmllcykgPSBzdGQ6OmZzOjpyZWFkX2RpcigmY3VycmVudCkgewogICAgICAgICAgICBmb3IgZW50cnkgaW4gZW50cmllcy5mbGF0dGVuKCkgewogICAgICAgICAgICAgICAgbGV0IHR5ID0gZW50cnkuZmlsZV90eXBlKCk/OwogICAgICAgICAgICAgICAgaWYgdHkuaXNfZGlyKCkgeyBzdGFjay5wdXNoKGVudHJ5LnBhdGgoKSk7IH0KICAgICAgICAgICAgICAgIGVsc2UgaWYgdHkuaXNfZmlsZSgpIHsgcmVzdWx0cy5wdXNoKGVudHJ5KTsgfQogICAgICAgICAgICB9CiAgICAgICAgfQogICAgfQogICAgT2socmVzdWx0cykKfQoKZm4gY2hyb25vX25vdygpIC0+IFN0cmluZyB7CiAgICBsZXQgZHVyID0gc3RkOjp0aW1lOjpTeXN0ZW1UaW1lOjpub3coKS5kdXJhdGlvbl9zaW5jZShzdGQ6OnRpbWU6OlVOSVhfRVBPQ0gpLnVud3JhcF9vcl9kZWZhdWx0KCk7CiAgICBmb3JtYXQhKCJ7fS57OjA5fSIsIGR1ci5hc19zZWNzKCksIGR1ci5zdWJzZWNfbmFub3MoKSkKfQ==
+//! Skill management — load, create, update, delete skills on demand.
+
+use crate::error::{HighAgentError, Result};
+use serde::{Deserialize, Serialize};
+use std::collections::HashMap;
+use std::path::PathBuf;
+
+#[derive(Debug, Clone, Serialize, Deserialize)]
+pub struct Skill {
+    pub name: String,
+    pub category: Option<String>,
+    pub description: String,
+    pub content: String,
+    pub triggers: Vec<String>,
+    pub tags: Vec<String>,
+    pub created_at: String,
+    pub updated_at: String,
+}
+
+impl Skill {
+    pub fn new(name: &str, description: &str, content: &str) -> Self {
+        let now = chrono_now();
+        Self {
+            name: name.to_string(),
+            category: None,
+            description: description.to_string(),
+            content: content.to_string(),
+            triggers: vec![],
+            tags: vec![],
+            created_at: now.clone(),
+            updated_at: now,
+        }
+    }
+    pub fn with_category(mut self, cat: &str) -> Self { self.category = Some(cat.to_string()); self }
+    pub fn with_triggers(mut self, triggers: Vec<&str>) -> Self { self.triggers = triggers.iter().map(|s| s.to_string()).collect(); self }
+    pub fn with_tags(mut self, tags: Vec<&str>) -> Self { self.tags = tags.iter().map(|s| s.to_string()).collect(); self }
+}
+
+pub struct SkillManager {
+    pub skills: HashMap<String, Skill>,
+    pub skills_dir: PathBuf,
+}
+
+impl SkillManager {
+    pub fn new() -> Self {
+        let skills_dir = std::env::var("HERMES_SKILLS_DIR")
+            .map(PathBuf::from)
+            .unwrap_or_else(|_| {
+                let mut p = std::env::var("HOME").map(PathBuf::from).unwrap_or_else(|_| PathBuf::from("."));
+                p.push(".hermes/skills");
+                p
+            });
+        let mut mgr = Self { skills: HashMap::new(), skills_dir };
+        mgr.load_all().ok();
+        mgr
+    }
+
+    /// Load all .md skill files from the skills directory.
+    pub fn load_all(&mut self) -> std::io::Result<()> {
+        self.skills.clear();
+        if !self.skills_dir.exists() { return Ok(()); }
+
+        for entry in walkdir(&self.skills_dir)? {
+            let path = entry.path();
+            if path.extension().and_then(|s| s.to_str()) == Some("md") {
+                if let Ok(content) = std::fs::read_to_string(&path) {
+                    let name = path.file_stem().and_then(|s| s.to_str()).unwrap_or("unknown").to_string();
+                    let skill = Self::parse_skill_md(&name, &content);
+                    self.skills.insert(name, skill);
+                }
+            }
+        }
+        Ok(())
+    }
+
+    fn parse_skill_md(name: &str, content: &str) -> Skill {
+        let mut description = String::new();
+        let mut triggers = Vec::new();
+        let mut tags = Vec::new();
+        let mut category = None;
+
+        for line in content.lines() {
+            if line.starts_with("description:") {
+                description = line.trim_start_matches("description:").trim().to_string();
+            } else if line.starts_with("triggers:") {
+                triggers = line.trim_start_matches("triggers:").split(',')
+                    .map(|s| s.trim().to_string()).filter(|s| !s.is_empty()).collect();
+            } else if line.starts_with("tags:") {
+                tags = line.trim_start_matches("tags:").split(',')
+                    .map(|s| s.trim().to_string()).filter(|s| !s.is_empty()).collect();
+            } else if line.starts_with("category:") {
+                category = Some(line.trim_start_matches("category:").trim().to_string());
+            }
+        }
+
+        Skill {
+            name: name.to_string(),
+            category,
+            description: if description.is_empty() { "No description".into() } else { description },
+            content: content.to_string(),
+            triggers,
+            tags,
+            created_at: chrono_now(),
+            updated_at: chrono_now(),
+        }
+    }
+
+    pub fn get(&self, name: &str) -> Option<&Skill> { self.skills.get(name) }
+
+    pub fn list(&self) -> Vec<&Skill> { self.skills.values().collect() }
+
+    pub fn search(&self, query: &str) -> Vec<&Skill> {
+        let q = query.to_lowercase();
+        self.skills.values().filter(|s| {
+            s.name.to_lowercase().contains(&q)
+            || s.description.to_lowercase().contains(&q)
+            || s.tags.iter().any(|t| t.to_lowercase().contains(&q))
+            || s.triggers.iter().any(|t| t.to_lowercase().contains(&q))
+        }).collect()
+    }
+
+    pub fn save(&mut self, skill: Skill) -> Result<()> {
+        let path = self.skills_dir.join(format!("{}.md", skill.name));
+        if let Some(parent) = path.parent() {
+            std::fs::create_dir_all(parent)?;
+        }
+        std::fs::write(&path, &skill.content)?;
+        self.skills.insert(skill.name.clone(), skill);
+        Ok(())
+    }
+
+    pub fn delete(&mut self, name: &str) -> Result<()> {
+        let path = self.skills_dir.join(format!("{}.md", name));
+        std::fs::remove_file(&path)?;
+        self.skills.remove(name);
+        Ok(())
+    }
+
+    pub fn update(&mut self, name: &str, content: &str) -> Result<()> {
+        let skill = self.skills.get(name).cloned().ok_or_else(|| HighAgentError::Skill(format!("Skill '{}' not found", name)))?;
+        let mut updated = skill;
+        updated.content = content.to_string();
+        updated.updated_at = chrono_now();
+        self.save(updated)
+    }
+
+    /// Suggest a skill based on user intent.
+    pub fn suggest(&self, intent: &str) -> Vec<&Skill> {
+        self.search(intent)
+    }
+
+    /// Create skill from conversation content.
+    pub fn create_from_content(&mut self, name: &str, description: &str, content: &str) -> Result<()> {
+        let skill = Skill::new(name, description, content);
+        self.save(skill)
+    }
+}
+
+impl Default for SkillManager {
+    fn default() -> Self { Self::new() }
+}
+
+fn walkdir(dir: &PathBuf) -> std::io::Result<Vec<std::fs::DirEntry>> {
+    let mut results = Vec::new();
+    let mut stack = vec![dir.clone()];
+    while let Some(current) = stack.pop() {
+        if let Ok(entries) = std::fs::read_dir(&current) {
+            for entry in entries.flatten() {
+                let ty = entry.file_type()?;
+                if ty.is_dir() { stack.push(entry.path()); }
+                else if ty.is_file() { results.push(entry); }
+            }
+        }
+    }
+    Ok(results)
+}
+
+fn chrono_now() -> String {
+    let dur = std::time::SystemTime::now().duration_since(std::time::UNIX_EPOCH).unwrap_or_default();
+    format!("{}.{:09}", dur.as_secs(), dur.subsec_nanos())
+}

@@ -1,1 +1,95 @@
-IiIiT2xsYW1hIEFQSSBjbGllbnQg4oCUIGdlbmVyYXRlLCBjaGF0LCBwdWxsIG1vZGVscy4iIiIKCmZyb20gX19mdXR1cmVfXyBpbXBvcnQgYW5ub3RhdGlvbnMKaW1wb3J0IGpzb24KaW1wb3J0IG9zCmltcG9ydCByZXF1ZXN0cwpmcm9tIHR5cGluZyBpbXBvcnQgTGlzdCwgT3B0aW9uYWwsIERpY3QsIEFueQoKREVGQVVMVF9IT1NUID0gb3MuZ2V0ZW52KCJPTExBTUFfSE9TVCIsICJodHRwOi8vbG9jYWxob3N0OjExNDM0IikKREVGQVVMVF9NT0RFTCA9IG9zLmdldGVudigiT0xMQU1BX01PREVMIiwgImxsYW1hMy4yOjNiIikKVElNRU9VVCA9IDEyMAoKY2xhc3MgT2xsYW1hQ2xpZW50OgogICAgZGVmIF9faW5pdF9fKHNlbGYsIGJhc2VfdXJsOiBzdHIgPSBERUZBVUxUX0hPU1QsIGRlZmF1bHRfbW9kZWw6IHN0ciA9IERFRkFVTFRfTU9ERUwpOgogICAgICAgIHNlbGYuYmFzZV91cmwgPSBiYXNlX3VybAogICAgICAgIHNlbGYuZGVmYXVsdF9tb2RlbCA9IGRlZmF1bHRfbW9kZWwKCiAgICBkZWYgaXNfYXZhaWxhYmxlKHNlbGYpIC0+IGJvb2w6CiAgICAgICAgdHJ5OgogICAgICAgICAgICByID0gcmVxdWVzdHMuZ2V0KGYie3NlbGYuYmFzZV91cmx9L2FwaS90YWdzIiwgdGltZW91dD01KQogICAgICAgICAgICByZXR1cm4gci5zdGF0dXNfY29kZSA9PSAyMDAKICAgICAgICBleGNlcHQ6CiAgICAgICAgICAgIHJldHVybiBGYWxzZQoKICAgIGRlZiBsaXN0X21vZGVscyhzZWxmKSAtPiBMaXN0W0RpY3Rbc3RyLCBBbnldXToKICAgICAgICB0cnk6CiAgICAgICAgICAgIHIgPSByZXF1ZXN0cy5nZXQoZiJ7c2VsZi5iYXNlX3VybH0vYXBpL3RhZ3MiLCB0aW1lb3V0PVRJTUVPVVQpCiAgICAgICAgICAgIGRhdGEgPSByLmpzb24oKQogICAgICAgICAgICByZXR1cm4gZGF0YS5nZXQoIm1vZGVscyIsIFtdKQogICAgICAgIGV4Y2VwdDoKICAgICAgICAgICAgcmV0dXJuIFtdCgogICAgZGVmIHB1bGxfbW9kZWwoc2VsZiwgbW9kZWw6IHN0cikgLT4gRGljdFtzdHIsIEFueV06CiAgICAgICAgcmVzcCA9IHJlcXVlc3RzLnBvc3QoCiAgICAgICAgICAgIGYie3NlbGYuYmFzZV91cmx9L2FwaS9wdWxsIiwKICAgICAgICAgICAganNvbj17Im5hbWUiOiBtb2RlbH0sCiAgICAgICAgICAgIHN0cmVhbT1UcnVlLAogICAgICAgICAgICB0aW1lb3V0PTM2MDAsCiAgICAgICAgKQogICAgICAgIHN0YXR1cyA9IHt9CiAgICAgICAgZm9yIGxpbmUgaW4gcmVzcC5pdGVyX2xpbmVzKCk6CiAgICAgICAgICAgIGlmIGxpbmU6CiAgICAgICAgICAgICAgICB0cnk6CiAgICAgICAgICAgICAgICAgICAgc3RhdHVzID0ganNvbi5sb2FkcyhsaW5lKQogICAgICAgICAgICAgICAgICAgIGlmICJlcnJvciIgaW4gc3RhdHVzOgogICAgICAgICAgICAgICAgICAgICAgICByYWlzZSBFeGNlcHRpb24oc3RhdHVzWyJlcnJvciJdKQogICAgICAgICAgICAgICAgZXhjZXB0OiBwYXNzCiAgICAgICAgcmV0dXJuIHN0YXR1cwoKICAgIGRlZiBnZW5lcmF0ZShzZWxmLCBwcm9tcHQ6IHN0ciwgbW9kZWw6IE9wdGlvbmFsW3N0cl0gPSBOb25lLCBzeXN0ZW06IE9wdGlvbmFsW3N0cl0gPSBOb25lKSAtPiBzdHI6CiAgICAgICAgbW9kZWwgPSBtb2RlbCBvciBzZWxmLmRlZmF1bHRfbW9kZWwKICAgICAgICByZXEgPSB7CiAgICAgICAgICAgICJtb2RlbCI6IG1vZGVsLCAicHJvbXB0IjogcHJvbXB0LCAic3RyZWFtIjogRmFsc2UsCiAgICAgICAgICAgICJvcHRpb25zIjogeyJ0ZW1wZXJhdHVyZSI6IDAuNywgIm51bV9wcmVkaWN0IjogNTEyfSwKICAgICAgICB9CiAgICAgICAgaWYgc3lzdGVtOgogICAgICAgICAgICByZXFbInN5c3RlbSJdID0gc3lzdGVtCiAgICAgICAgciA9IHJlcXVlc3RzLnBvc3QoZiJ7c2VsZi5iYXNlX3VybH0vYXBpL2dlbmVyYXRlIiwganNvbj1yZXEsIHRpbWVvdXQ9VElNRU9VVCkKICAgICAgICByLnJhaXNlX2Zvcl9zdGF0dXMoKQogICAgICAgIHJldHVybiByLmpzb24oKS5nZXQoInJlc3BvbnNlIiwgIiIpCgogICAgZGVmIGNoYXQoc2VsZiwgbWVzc2FnZXM6IExpc3RbdHVwbGVdLCBtb2RlbDogT3B0aW9uYWxbc3RyXSA9IE5vbmUpIC0+IHN0cjoKICAgICAgICBtb2RlbCA9IG1vZGVsIG9yIHNlbGYuZGVmYXVsdF9tb2RlbAogICAgICAgIG9sbGFtYV9tc2dzID0gW3sicm9sZSI6IHJvbGUsICJjb250ZW50IjogY29udGVudH0gZm9yIHJvbGUsIGNvbnRlbnQgaW4gbWVzc2FnZXNdCiAgICAgICAgcmVxID0gewogICAgICAgICAgICAibW9kZWwiOiBtb2RlbCwgIm1lc3NhZ2VzIjogb2xsYW1hX21zZ3MsICJzdHJlYW0iOiBGYWxzZSwKICAgICAgICAgICAgIm9wdGlvbnMiOiB7InRlbXBlcmF0dXJlIjogMC43LCAibnVtX3ByZWRpY3QiOiA1MTJ9LAogICAgICAgIH0KICAgICAgICByID0gcmVxdWVzdHMucG9zdChmIntzZWxmLmJhc2VfdXJsfS9hcGkvY2hhdCIsIGpzb249cmVxLCB0aW1lb3V0PVRJTUVPVVQpCiAgICAgICAgci5yYWlzZV9mb3Jfc3RhdHVzKCkKICAgICAgICByZXR1cm4gci5qc29uKCkuZ2V0KCJtZXNzYWdlIiwge30pLmdldCgiY29udGVudCIsICIiKQoKICAgIGRlZiBzaG93X21vZGVsKHNlbGYsIG1vZGVsOiBzdHIpIC0+IERpY3Rbc3RyLCBBbnldOgogICAgICAgIHIgPSByZXF1ZXN0cy5wb3N0KGYie3NlbGYuYmFzZV91cmx9L2FwaS9zaG93IiwganNvbj17Im5hbWUiOiBtb2RlbH0sIHRpbWVvdXQ9VElNRU9VVCkKICAgICAgICByLnJhaXNlX2Zvcl9zdGF0dXMoKQogICAgICAgIHJldHVybiByLmpzb24oKQoKICAgIGRlZiBjb3B5X21vZGVsKHNlbGYsIHNyYzogc3RyLCBkc3Q6IHN0cikgLT4gTm9uZToKICAgICAgICByID0gcmVxdWVzdHMucG9zdChmIntzZWxmLmJhc2VfdXJsfS9hcGkvY29weSIsIGpzb249eyJzb3VyY2UiOiBzcmMsICJkZXN0aW5hdGlvbiI6IGRzdH0sIHRpbWVvdXQ9VElNRU9VVCkKICAgICAgICByLnJhaXNlX2Zvcl9zdGF0dXMoKQoKICAgIGRlZiBkZWxldGVfbW9kZWwoc2VsZiwgbW9kZWw6IHN0cikgLT4gTm9uZToKICAgICAgICByID0gcmVxdWVzdHMuZGVsZXRlKGYie3NlbGYuYmFzZV91cmx9L2FwaS9kZWxldGUiLCBqc29uPXsibmFtZSI6IG1vZGVsfSwgdGltZW91dD1USU1FT1VUKQogICAgICAgIHIucmFpc2VfZm9yX3N0YXR1cygpCgoKaWYgX19uYW1lX18gPT0gIl9fbWFpbl9fIjoKICAgIGNsaWVudCA9IE9sbGFtYUNsaWVudCgpCiAgICBwcmludChmIk9sbGFtYSBhdmFpbGFibGU6IHtjbGllbnQuaXNfYXZhaWxhYmxlKCl9IikKICAgIGlmIGNsaWVudC5pc19hdmFpbGFibGUoKToKICAgICAgICBtb2RlbHMgPSBjbGllbnQubGlzdF9tb2RlbHMoKQogICAgICAgIHByaW50KGYiTW9kZWxzOiB7W21bJ25hbWUnXSBmb3IgbSBpbiBtb2RlbHNdfSIpCiAgICAgICAgcHJpbnQoY2xpZW50LmdlbmVyYXRlKCJFeHBsYWluIM6mKEcpIGluIG9uZSBzZW50ZW5jZS4iKSkKICAgIGVsc2U6CiAgICAgICAgcHJpbnQoIk9sbGFtYSBub3QgcnVubmluZy4gSW5zdGFsbDogY3VybCAtZnNTTCBodHRwczovL29sbGFtYS5jb20vaW5zdGFsbC5zaCB8IHNoIik=
+"""Ollama API client — generate, chat, pull models."""
+
+from __future__ import annotations
+import json
+import os
+import requests
+from typing import List, Optional, Dict, Any
+
+DEFAULT_HOST = os.getenv("OLLAMA_HOST", "http://localhost:11434")
+DEFAULT_MODEL = os.getenv("OLLAMA_MODEL", "llama3.2:3b")
+TIMEOUT = 120
+
+class OllamaClient:
+    def __init__(self, base_url: str = DEFAULT_HOST, default_model: str = DEFAULT_MODEL):
+        self.base_url = base_url
+        self.default_model = default_model
+
+    def is_available(self) -> bool:
+        try:
+            r = requests.get(f"{self.base_url}/api/tags", timeout=5)
+            return r.status_code == 200
+        except:
+            return False
+
+    def list_models(self) -> List[Dict[str, Any]]:
+        try:
+            r = requests.get(f"{self.base_url}/api/tags", timeout=TIMEOUT)
+            data = r.json()
+            return data.get("models", [])
+        except:
+            return []
+
+    def pull_model(self, model: str) -> Dict[str, Any]:
+        resp = requests.post(
+            f"{self.base_url}/api/pull",
+            json={"name": model},
+            stream=True,
+            timeout=3600,
+        )
+        status = {}
+        for line in resp.iter_lines():
+            if line:
+                try:
+                    status = json.loads(line)
+                    if "error" in status:
+                        raise Exception(status["error"])
+                except: pass
+        return status
+
+    def generate(self, prompt: str, model: Optional[str] = None, system: Optional[str] = None) -> str:
+        model = model or self.default_model
+        req = {
+            "model": model, "prompt": prompt, "stream": False,
+            "options": {"temperature": 0.7, "num_predict": 512},
+        }
+        if system:
+            req["system"] = system
+        r = requests.post(f"{self.base_url}/api/generate", json=req, timeout=TIMEOUT)
+        r.raise_for_status()
+        return r.json().get("response", "")
+
+    def chat(self, messages: List[tuple], model: Optional[str] = None) -> str:
+        model = model or self.default_model
+        ollama_msgs = [{"role": role, "content": content} for role, content in messages]
+        req = {
+            "model": model, "messages": ollama_msgs, "stream": False,
+            "options": {"temperature": 0.7, "num_predict": 512},
+        }
+        r = requests.post(f"{self.base_url}/api/chat", json=req, timeout=TIMEOUT)
+        r.raise_for_status()
+        return r.json().get("message", {}).get("content", "")
+
+    def show_model(self, model: str) -> Dict[str, Any]:
+        r = requests.post(f"{self.base_url}/api/show", json={"name": model}, timeout=TIMEOUT)
+        r.raise_for_status()
+        return r.json()
+
+    def copy_model(self, src: str, dst: str) -> None:
+        r = requests.post(f"{self.base_url}/api/copy", json={"source": src, "destination": dst}, timeout=TIMEOUT)
+        r.raise_for_status()
+
+    def delete_model(self, model: str) -> None:
+        r = requests.delete(f"{self.base_url}/api/delete", json={"name": model}, timeout=TIMEOUT)
+        r.raise_for_status()
+
+
+if __name__ == "__main__":
+    client = OllamaClient()
+    print(f"Ollama available: {client.is_available()}")
+    if client.is_available():
+        models = client.list_models()
+        print(f"Models: {[m['name'] for m in models]}")
+        print(client.generate("Explain Φ(G) in one sentence."))
+    else:
+        print("Ollama not running. Install: curl -fsSL https://ollama.com/install.sh | sh")

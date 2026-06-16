@@ -1,1 +1,228 @@
-IiIiUmVnaW1lRW5naW5lIOKAlCBtaXJyb3JzIFJ1c3QgY29yZS5ycy4iIiIKCmZyb20gX19mdXR1cmVfXyBpbXBvcnQgYW5ub3RhdGlvbnMKZnJvbSB0eXBpbmcgaW1wb3J0IE9wdGlvbmFsCmltcG9ydCBqc29uCmltcG9ydCB0aW1lCmZyb20gLmdyYXBoIGltcG9ydCBEaXJlY3RlZEdyYXBoLCBHcmFwaFNuYXBzaG90LCBOb2RlLCBFZGdlCmZyb20gLnJlZ2ltZSBpbXBvcnQgUmVnaW1lLCBSZWdpbWVUcmFuc2l0aW9uLCBIWVNURVJFU0lTX01BUkdJTgoKCmNsYXNzIE1ldHJpY3M6CiAgICBkZWYgX19pbml0X18oc2VsZiwgc25hcHNob3Q6IEdyYXBoU25hcHNob3QsIHJlZ2ltZTogc3RyKToKICAgICAgICBzZWxmLnBoaSA9IHNuYXBzaG90LnBoaQogICAgICAgIHNlbGYucSA9IHNuYXBzaG90LnEKICAgICAgICBzZWxmLmNvdXBsaW5nID0gc25hcHNob3QuY291cGxpbmcKICAgICAgICBzZWxmLm1lYW5fdiA9IHNuYXBzaG90Lm1lYW5fdgogICAgICAgIHNlbGYubWF4X3YgPSBzbmFwc2hvdC5tYXhfdgogICAgICAgIHNlbGYucXVhbGl0eSA9IHNuYXBzaG90LnF1YWxpdHkKICAgICAgICBzZWxmLm5fbm9kZXMgPSBzbmFwc2hvdC5uX25vZGVzCiAgICAgICAgc2VsZi5uX2VkZ2VzID0gc25hcHNob3Qubl9lZGdlcwogICAgICAgIHNlbGYubl9tb2R1bGVzID0gc25hcHNob3Qubl9tb2R1bGVzCiAgICAgICAgc2VsZi5yZWdpbWUgPSByZWdpbWUKICAgICAgICBzZWxmLnRpbWVzdGFtcCA9IGYie3RpbWUudGltZSgpOi45Zn0iCgogICAgZGVmIHRvX2pzb24oc2VsZikgLT4gc3RyOgogICAgICAgIHJldHVybiBqc29uLmR1bXBzKHsKICAgICAgICAgICAgInBoaSI6IHNlbGYucGhpLCAicSI6IHNlbGYucSwgImNvdXBsaW5nIjogc2VsZi5jb3VwbGluZywKICAgICAgICAgICAgIm1lYW5fdiI6IHNlbGYubWVhbl92LCAibWF4X3YiOiBzZWxmLm1heF92LCAicXVhbGl0eSI6IHNlbGYucXVhbGl0eSwKICAgICAgICAgICAgIm5fbm9kZXMiOiBzZWxmLm5fbm9kZXMsICJuX2VkZ2VzIjogc2VsZi5uX2VkZ2VzLCAibl9tb2R1bGVzIjogc2VsZi5uX21vZHVsZXMsCiAgICAgICAgICAgICJyZWdpbWUiOiBzZWxmLnJlZ2ltZSwgInJlZ2ltZV9zdHIiOiBzZWxmLnJlZ2ltZSwKICAgICAgICAgICAgInBoaV9mb3JtYXR0ZWQiOiBmIntzZWxmLnBoaTorLjRmfSIsCiAgICAgICAgICAgICJwaGlfY29sb3IiOiAiZ3JlZW4iIGlmIHNlbGYucGhpID4gMCBlbHNlICJ5ZWxsb3ciIGlmIHNlbGYucGhpID4gLTIgZWxzZSAicmVkIiwKICAgICAgICAgICAgInBoaV90cmVuZCI6ICJzdGFibGUiLCAidGltZXN0YW1wIjogc2VsZi50aW1lc3RhbXAsCiAgICAgICAgfSwgaW5kZW50PTIpCgogICAgZGVmIHdyaXRlX3N0YXRlKHNlbGYsIHBhdGg6IHN0ciA9ICJ+Ly5oaWdoLWFnZW50L3N0YXRlLmpzb24iKToKICAgICAgICBpbXBvcnQgb3MKICAgICAgICBwYXRoID0gcGF0aC5yZXBsYWNlKCJ+Iiwgb3MuZW52aXJvbi5nZXQoIkhPTUUiLCAiLiIpKQogICAgICAgIG9zLm1ha2VkaXJzKG9zLnBhdGguZGlybmFtZShwYXRoKSBvciAiLiIsIGV4aXN0X29rPVRydWUpCiAgICAgICAgd2l0aCBvcGVuKHBhdGgsICJ3IikgYXMgZjoKICAgICAgICAgICAgZi53cml0ZShzZWxmLnRvX2pzb24oKSkKCgpjbGFzcyBSZWdpbWVFbmdpbmU6CiAgICBkZWYgX19pbml0X18oc2VsZik6CiAgICAgICAgc2VsZi5ncmFwaCA9IERpcmVjdGVkR3JhcGgoKQogICAgICAgIHNlbGYuY3VycmVudF9yZWdpbWUgPSBSZWdpbWUuZGVmYXVsdCgpCiAgICAgICAgc2VsZi5kZXRlY3RvciA9IE5vbmUKICAgICAgICBzZWxmLm1ldHJpY3M6IE9wdGlvbmFsW01ldHJpY3NdID0gTm9uZQogICAgICAgIHNlbGYuaGlzdG9yeTogbGlzdCA9IFtdCiAgICAgICAgc2VsZi50cmFuc2l0aW9uczogbGlzdCA9IFtdCiAgICAgICAgc2VsZi5zdGF0ZV9maWxlID0gIn4vLmhpZ2gtYWdlbnQvc3RhdGUuanNvbiIKCiAgICBkZWYgc2VlZF9ncmFwaChzZWxmKSAtPiBOb25lOgogICAgICAgIHNlbGYuZ3JhcGguc2VlZCgpCiAgICAgICAgc2VsZi51cGRhdGVfbWV0cmljcygpCgogICAgZGVmIHVwZGF0ZV9tZXRyaWNzKHNlbGYpIC0+IE5vbmU6CiAgICAgICAgc25hcHNob3QgPSBzZWxmLmdyYXBoLnNuYXBzaG90X2Z1bGwoc2VsZi5jdXJyZW50X3JlZ2ltZSkKICAgICAgICBzZWxmLm1ldHJpY3MgPSBNZXRyaWNzKHNuYXBzaG90LCBzZWxmLmN1cnJlbnRfcmVnaW1lKQogICAgICAgIHNlbGYuaGlzdG9yeS5hcHBlbmQodmFycyhzZWxmLm1ldHJpY3MpKQoKICAgIGRlZiBzd2VlcF9yZWdpbWVzKHNlbGYpIC0+IGxpc3Q6CiAgICAgICAgcmV0dXJuIFsociwgc2VsZi5ncmFwaC5waGlfcmVnaW1lKHIpKSBmb3IgciBpbiBSZWdpbWUuYWxsKCldCgogICAgZGVmIGJlc3RfcmVnaW1lKHNlbGYpIC0+IHR1cGxlOgogICAgICAgIHJlc3VsdHMgPSBzZWxmLnN3ZWVwX3JlZ2ltZXMoKQogICAgICAgIHJldHVybiBtYXgocmVzdWx0cywga2V5PWxhbWJkYSB4OiB4WzFdKQoKICAgIGRlZiBzd2l0Y2hfcmVnaW1lKHNlbGYsIHJlZ2ltZTogc3RyKSAtPiBzdHI6CiAgICAgICAgb2xkID0gc2VsZi5jdXJyZW50X3JlZ2ltZQogICAgICAgIHNlbGYuY3VycmVudF9yZWdpbWUgPSByZWdpbWUKICAgICAgICBzZWxmLnVwZGF0ZV9tZXRyaWNzKCkKICAgICAgICB0ID0gUmVnaW1lVHJhbnNpdGlvbigKICAgICAgICAgICAgb2xkLCByZWdpbWUsICJNYW51YWwgc3dpdGNoIiwKICAgICAgICAgICAgc2VsZi5ncmFwaC5waGlfcmVnaW1lKG9sZCksCiAgICAgICAgICAgIHNlbGYubWV0cmljcy5waGkgaWYgc2VsZi5tZXRyaWNzIGVsc2UgMC4wCiAgICAgICAgKQogICAgICAgIHNlbGYudHJhbnNpdGlvbnMuYXBwZW5kKHQpCiAgICAgICAgcmV0dXJuIG9sZAoKICAgIGRlZiBkZXRlY3RfYW5kX2V2YWx1YXRlKHNlbGYpOgogICAgICAgIGlmIHNlbGYuZGV0ZWN0b3IgaXMgTm9uZToKICAgICAgICAgICAgZnJvbSAuZ3JhcGggaW1wb3J0IFNlZ21lbnRlZFJlZ2ltZURldGVjdG9yCiAgICAgICAgICAgIHNlbGYuZGV0ZWN0b3IgPSBTZWdtZW50ZWRSZWdpbWVEZXRlY3RvcigxMCwgMi4wKQoKICAgICAgICBzbmFwc2hvdCA9IHNlbGYuZ3JhcGguc25hcHNob3RfZnVsbChzZWxmLmN1cnJlbnRfcmVnaW1lKQogICAgICAgIGFsZXJ0ID0gc2VsZi5kZXRlY3Rvci5mZWVkKHNuYXBzaG90KQoKICAgICAgICBiZXN0X3IsIGJlc3RfcGhpID0gc2VsZi5iZXN0X3JlZ2ltZSgpCiAgICAgICAgY3VycmVudF9waGkgPSBzZWxmLmdyYXBoLnBoaV9yZWdpbWUoc2VsZi5jdXJyZW50X3JlZ2ltZSkKCiAgICAgICAgdHJhbnNpdGlvbiA9IE5vbmUKICAgICAgICBpZiBiZXN0X3IgIT0gc2VsZi5jdXJyZW50X3JlZ2ltZSBhbmQgKGJlc3RfcGhpIC0gY3VycmVudF9waGkpID4gSFlTVEVSRVNJU19NQVJHSU46CiAgICAgICAgICAgIHRyYW5zaXRpb24gPSBSZWdpbWVUcmFuc2l0aW9uKAogICAgICAgICAgICAgICAgc2VsZi5jdXJyZW50X3JlZ2ltZSwgYmVzdF9yLAogICAgICAgICAgICAgICAgZiLOpiBpbXByb3ZlZCBieSB7YmVzdF9waGkgLSBjdXJyZW50X3BoaTouNGZ9ID4gaHlzdGVyZXNpcyB7SFlTVEVSRVNJU19NQVJHSU59IiwKICAgICAgICAgICAgICAgIGN1cnJlbnRfcGhpLCBiZXN0X3BoaQogICAgICAgICAgICApCiAgICAgICAgICAgIHNlbGYuY3VycmVudF9yZWdpbWUgPSBiZXN0X3IKICAgICAgICAgICAgc2VsZi50cmFuc2l0aW9ucy5hcHBlbmQodHJhbnNpdGlvbikKCiAgICAgICAgc2VsZi51cGRhdGVfbWV0cmljcygpCiAgICAgICAgcmV0dXJuIHRyYW5zaXRpb24sIGFsZXJ0CgogICAgZGVmIHByb2Nlc3NfdGFzayhzZWxmLCB0YXNrOiBzdHIpIC0+IE5vbmU6CiAgICAgICAgaWYgdGFzayA9PSAicmVmYWN0b3IiOgogICAgICAgICAgICB2aW9sYXRpb25zID0gc2VsZi5ncmFwaC5jb3VwbGluZ192aW9sYXRpb25zKCkKICAgICAgICAgICAgaWYgdmlvbGF0aW9uczoKICAgICAgICAgICAgICAgIHNlbGYuZ3JhcGgucmVtb3ZlX2VkZ2UodmlvbGF0aW9uc1swXS5mcm9tXywgdmlvbGF0aW9uc1swXS50bykKICAgICAgICBlbGlmIHRhc2sgPT0gImZlYXR1cmUiOgogICAgICAgICAgICBuaWQgPSBmImZuX2ZlYXR1cmVfe3NlbGYuZ3JhcGgubl9ub2Rlc30iCiAgICAgICAgICAgIG4gPSBOb2RlKG5pZCwgImZlYXR1cmVzIiwgImZlYXR1cmVzL21vZC5weSIpCiAgICAgICAgICAgIG4uY3ljbG9tYXRpYyA9IDMuMAogICAgICAgICAgICBuLnF1YWxpdHkgPSAwLjcKICAgICAgICAgICAgc2VsZi5ncmFwaC5hZGRfbm9kZShuKQogICAgICAgIGVsaWYgdGFzayA9PSAidGVzdCI6CiAgICAgICAgICAgIGZvciBub2RlIGluIHNlbGYuZ3JhcGgubm9kZXMudmFsdWVzKCk6CiAgICAgICAgICAgICAgICBub2RlLnF1YWxpdHkgPSBtaW4oMS4wLCBub2RlLnF1YWxpdHkgKyAwLjA1KQogICAgICAgIGVsaWYgdGFzayA9PSAiY29tcGxleGl0eSI6CiAgICAgICAgICAgIGZvciBub2RlIGluIHNlbGYuZ3JhcGgubm9kZXMudmFsdWVzKCk6CiAgICAgICAgICAgICAgICBub2RlLmN5Y2xvbWF0aWMgPSBtYXgoMS4wLCBub2RlLmN5Y2xvbWF0aWMgKiAwLjkpCiAgICAgICAgc2VsZi51cGRhdGVfbWV0cmljcygpCgogICAgZGVmIHNpbXVsYXRlX2RldmlhdGlvbihzZWxmKSAtPiBOb25lOgogICAgICAgIGlmIHNlbGYuY3VycmVudF9yZWdpbWUgPT0gInNpbXBsZSI6CiAgICAgICAgICAgIGZvciBuIGluIHNlbGYuZ3JhcGgubm9kZXMudmFsdWVzKCk6CiAgICAgICAgICAgICAgICBuLnF1YWxpdHkgPSBtaW4oMS4wLCBuLnF1YWxpdHkgKyAwLjA1KQogICAgICAgIGVsaWYgc2VsZi5jdXJyZW50X3JlZ2ltZSA9PSAiYWR2YW5jZWQiOgogICAgICAgICAgICB2aW9sYXRpb25zID0gc2VsZi5ncmFwaC5jb3VwbGluZ192aW9sYXRpb25zKCkKICAgICAgICAgICAgaWYgbGVuKHZpb2xhdGlvbnMpID4gMToKICAgICAgICAgICAgICAgIHNlbGYuZ3JhcGgucmVtb3ZlX2VkZ2UodmlvbGF0aW9uc1sxXS5mcm9tXywgdmlvbGF0aW9uc1sxXS50bykKICAgICAgICBlbHNlOgogICAgICAgICAgICBmb3IgbiBpbiBzZWxmLmdyYXBoLm5vZGVzLnZhbHVlcygpOgogICAgICAgICAgICAgICAgbi5jeWNsb21hdGljID0gbWF4KDEuMCwgbi5jeWNsb21hdGljICogMC45NSkKICAgICAgICBzZWxmLnVwZGF0ZV9tZXRyaWNzKCkKICAgICAgICBzZWxmLmRldGVjdF9hbmRfZXZhbHVhdGUoKQoKICAgIGRlZiB0aGVvcnlfZXhwbGFpbihzZWxmKSAtPiBzdHI6CiAgICAgICAgY29lZmZzID0gUmVnaW1lLmNvZWZmcyhzZWxmLmN1cnJlbnRfcmVnaW1lKQogICAgICAgIHMgPSBzZWxmLmdyYXBoLnNuYXBzaG90X2Z1bGwoc2VsZi5jdXJyZW50X3JlZ2ltZSkKICAgICAgICByZXR1cm4gZiIiIuKVkOKVkOKVkOKVkOKVkOKVkOKVkOKVkOKVkOKVkOKVkOKVkOKVkOKVkOKVkOKVkOKVkOKVkOKVkOKVkOKVkOKVkOKVkOKVkOKVkOKVkOKVkOKVkOKVkOKVkOKVkOKVkOKVkOKVkOKVkOKVkOKVkOKVkOKVkOKVkOKVkOKVkOKVkOKVkOKVkOKVkOKVkOKVkOKVkOKVkOKVkOKVkOKVkOKVkOKVkOKVkOKVkOKVkOKVkAogICAgICAgICAgICAgIFRIRU9SWSBNT0RFIOKAlCBNYXRoZW1hdGljYWwgRm91bmRhdGlvbgrilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZAKT0JKRUNUSVZFOiAgzqYoRykgPSDOscK3UShHKSDiiJIgzrLCt8SMKEcpIOKIkiDOs8K3bWVhbihWKQpDVVJSRU5UIFJFR0lNRToge3NlbGYuY3VycmVudF9yZWdpbWV9ICh7UmVnaW1lLmRlc2NyaXB0aW9uKHNlbGYuY3VycmVudF9yZWdpbWUpfSkKQ09FRkZJQ0lFTlRTOiDOsT17Y29lZmZzLmFscGhhfSwgzrI9e2NvZWZmcy5iZXRhfSwgzrM9e2NvZWZmcy5nYW1tYX0KTElWRSBNRVRSSUNTOgogIM6mKEcpICAgID0ge3MucGhpOisuNGZ9CiAgUShHKSAgICA9IHtzLnE6LjRmfSAgKG1vZHVsYXJpdHkpCiAgxIwoRykgICAgPSB7cy5jb3VwbGluZzouNGZ9ICAoY291cGxpbmcpCiAgbWVhbihWKSA9IHtzLm1lYW5fdjouMmZ9ICAoY3ljbG9tYXRpYykKQ09NUE9ORU5UIEJSRUFLRE9XTjoKICDOscK3UShHKSAgICA9IHtjb2VmZnMuYWxwaGEgKiBzLnE6Ky40Zn0KICDOssK3xIwoRykgICAgPSB7Y29lZmZzLmJldGEgKiBzLmNvdXBsaW5nOisuNGZ9CiAgzrPCt21lYW4oVikgPSB7Y29lZmZzLmdhbW1hICogcy5tZWFuX3Y6Ky40Zn0KICDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIAKICDOpihHKSAgICA9IHtzLnBoaTorLjRmfQrilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZAiIiIKCiAgICBkZWYgc25hcHNob3Qoc2VsZik6CiAgICAgICAgIiIiUmV0dXJuIGN1cnJlbnQgbWV0cmljcyBhcyBhIGRpY3QgKGNvbXBhdGlibGUgd2l0aCBHcmFwaFNuYXBzaG90IGZpZWxkcykuIiIiCiAgICAgICAgaWYgc2VsZi5tZXRyaWNzOgogICAgICAgICAgICByZXR1cm4gewogICAgICAgICAgICAgICAgInBoaSI6IHNlbGYubWV0cmljcy5waGksCiAgICAgICAgICAgICAgICAicSI6IHNlbGYubWV0cmljcy5xLAogICAgICAgICAgICAgICAgImNvdXBsaW5nIjogc2VsZi5tZXRyaWNzLmNvdXBsaW5nLAogICAgICAgICAgICAgICAgIm1lYW5fdiI6IHNlbGYubWV0cmljcy5tZWFuX3YsCiAgICAgICAgICAgICAgICAibWF4X3YiOiBzZWxmLm1ldHJpY3MubWF4X3YsCiAgICAgICAgICAgICAgICAicXVhbGl0eSI6IHNlbGYubWV0cmljcy5xdWFsaXR5LAogICAgICAgICAgICAgICAgIm5fbm9kZXMiOiBzZWxmLm1ldHJpY3Mubl9ub2RlcywKICAgICAgICAgICAgICAgICJuX2VkZ2VzIjogc2VsZi5tZXRyaWNzLm5fZWRnZXMsCiAgICAgICAgICAgICAgICAibl9tb2R1bGVzIjogc2VsZi5tZXRyaWNzLm5fbW9kdWxlcywKICAgICAgICAgICAgICAgICJyZWdpbWUiOiBzZWxmLmN1cnJlbnRfcmVnaW1lLAogICAgICAgICAgICAgICAgImRpcmVjdGlvbiI6ICJzdGFibGUiLAogICAgICAgICAgICB9CiAgICAgICAgcmV0dXJuIHNlbGYuZ3JhcGguc25hcHNob3RfZnVsbChzZWxmLmN1cnJlbnRfcmVnaW1lKQoKICAgIGRlZiBjb21wdXRlX3BoaShzZWxmKSAtPiBkaWN0OgogICAgICAgICIiIlJldHVybiDOpihHKSBjb21wb25lbnRzIGRpY3QuIiIiCiAgICAgICAgc25hcCA9IHNlbGYuc25hcHNob3QoKQogICAgICAgIGNvZWZmcyA9IFJlZ2ltZS5jb2VmZnMoc2VsZi5jdXJyZW50X3JlZ2ltZSkKICAgICAgICByZXR1cm4gewogICAgICAgICAgICAicGhpIjogY29lZmZzLmFscGhhICogc25hcFsicSJdIC0gY29lZmZzLmJldGEgKiBzbmFwWyJjb3VwbGluZyJdIC0gY29lZmZzLmdhbW1hICogc25hcFsibWVhbl92Il0sCiAgICAgICAgICAgICJxIjogc25hcFsicSJdLAogICAgICAgICAgICAiY291cGxpbmciOiBzbmFwWyJjb3VwbGluZyJdLAogICAgICAgICAgICAibWVhbl92Ijogc25hcFsibWVhbl92Il0sCiAgICAgICAgICAgICJyZWdpbWUiOiBzZWxmLmN1cnJlbnRfcmVnaW1lLAogICAgICAgIH0KCiAgICBkZWYgcmVnaW1lX2NvZWZmcyhzZWxmKToKICAgICAgICAiIiJSZXR1cm4gUmVnaW1lQ29lZmZzIGZvciB0aGUgY3VycmVudCByZWdpbWUuIiIiCiAgICAgICAgcmV0dXJuIFJlZ2ltZS5jb2VmZnMoc2VsZi5jdXJyZW50X3JlZ2ltZSkKCiAgICBkZWYgdXBkYXRlKHNlbGYpIC0+IE5vbmU6CiAgICAgICAgIiIiQWxpYXMgZm9yIHVwZGF0ZV9tZXRyaWNzKCkuIiIiCiAgICAgICAgc2VsZi51cGRhdGVfbWV0cmljcygpCgogICAgZGVmIGxvYWRfZnJvbV9qc29uKHNlbGYsIGpzb25fc3RyOiBzdHIpIC0+IE5vbmU6CiAgICAgICAgc2VsZi5ncmFwaCA9IERpcmVjdGVkR3JhcGguZnJvbV9qc29uKGpzb25fc3RyKQogICAgICAgIHNlbGYudXBkYXRlX21ldHJpY3MoKQoKICAgIGRlZiB3cml0ZV9zdGF0ZShzZWxmKSAtPiBOb25lOgogICAgICAgIGlmIHNlbGYubWV0cmljczoKICAgICAgICAgICAgc2VsZi5tZXRyaWNzLndyaXRlX3N0YXRlKHNlbGYuc3RhdGVfZmlsZSkKCiAgICBkZWYgYWlfYW5hbHl6ZShzZWxmLCBjbGllbnQpIC0+IHN0cjoKICAgICAgICBpZiBub3Qgc2VsZi5tZXRyaWNzOgogICAgICAgICAgICByZXR1cm4gIk5vIG1ldHJpY3MgYXZhaWxhYmxlLiBDYWxsIHNlZWRfZ3JhcGgoKSBmaXJzdC4iCiAgICAgICAgaG90X3Nwb3RzID0gW10KICAgICAgICB0cnk6CiAgICAgICAgICAgIGhvdF9zcG90cyA9IFtuLmlkIGZvciBuIGluIHNlbGYuZ3JhcGguaG90X3Nwb3RzKDUuMCldCiAgICAgICAgZXhjZXB0IEV4Y2VwdGlvbjoKICAgICAgICAgICAgcGFzcwogICAgICAgIHZpb2xhdGlvbnMgPSBbXQogICAgICAgIHRyeToKICAgICAgICAgICAgdmlvbGF0aW9ucyA9IGxlbihzZWxmLmdyYXBoLmNvdXBsaW5nX3Zpb2xhdGlvbnMoKSkKICAgICAgICBleGNlcHQgRXhjZXB0aW9uOgogICAgICAgICAgICBwYXNzCiAgICAgICAgcHJvbXB0ID0gZiIiIkFuYWx5emUgdGhpcyBjb2RlYmFzZSBncmFwaCBmb3IgYXJjaGl0ZWN0dXJhbCBpc3N1ZXM6Ck5vZGVzOiB7c2VsZi5tZXRyaWNzLm5fbm9kZXN9IGZ1bmN0aW9ucyBhY3Jvc3Mge3NlbGYubWV0cmljcy5uX21vZHVsZXN9IG1vZHVsZXMKRWRnZXM6IHtzZWxmLm1ldHJpY3Mubl9lZGdlc30gZGVwZW5kZW5jaWVzCk1ldHJpY3M6IM6mPXtzZWxmLm1ldHJpY3MucGhpOi40Zn0sIFE9e3NlbGYubWV0cmljcy5xOi40Zn0sIMSMPXtzZWxmLm1ldHJpY3MuY291cGxpbmc6LjRmfSwgVj17c2VsZi5tZXRyaWNzLm1lYW5fdjouMmZ9ClJlZ2ltZToge3NlbGYuY3VycmVudF9yZWdpbWV9CkhvdCBzcG90czoge2hvdF9zcG90c30KQ291cGxpbmcgdmlvbGF0aW9uczoge3Zpb2xhdGlvbnN9IGNyb3NzLW1vZHVsZSBlZGdlcwpQcm92aWRlIHNwZWNpZmljIHJlZmFjdG9yaW5nIHN1Z2dlc3Rpb25zLiIiIgogICAgICAgIHJldHVybiBjbGllbnQuZ2VuZXJhdGUocHJvbXB0KSBpZiBjbGllbnQgZWxzZSBwcm9tcHQ=
+"""RegimeEngine — mirrors Rust core.rs."""
+
+from __future__ import annotations
+from typing import Optional
+import json
+import time
+from .graph import DirectedGraph, GraphSnapshot, Node, Edge
+from .regime import Regime, RegimeTransition, HYSTERESIS_MARGIN
+
+
+class Metrics:
+    def __init__(self, snapshot: GraphSnapshot, regime: str):
+        self.phi = snapshot.phi
+        self.q = snapshot.q
+        self.coupling = snapshot.coupling
+        self.mean_v = snapshot.mean_v
+        self.max_v = snapshot.max_v
+        self.quality = snapshot.quality
+        self.n_nodes = snapshot.n_nodes
+        self.n_edges = snapshot.n_edges
+        self.n_modules = snapshot.n_modules
+        self.regime = regime
+        self.timestamp = f"{time.time():.9f}"
+
+    def to_json(self) -> str:
+        return json.dumps({
+            "phi": self.phi, "q": self.q, "coupling": self.coupling,
+            "mean_v": self.mean_v, "max_v": self.max_v, "quality": self.quality,
+            "n_nodes": self.n_nodes, "n_edges": self.n_edges, "n_modules": self.n_modules,
+            "regime": self.regime, "regime_str": self.regime,
+            "phi_formatted": f"{self.phi:+.4f}",
+            "phi_color": "green" if self.phi > 0 else "yellow" if self.phi > -2 else "red",
+            "phi_trend": "stable", "timestamp": self.timestamp,
+        }, indent=2)
+
+    def write_state(self, path: str = "~/.high-agent/state.json"):
+        import os
+        path = path.replace("~", os.environ.get("HOME", "."))
+        os.makedirs(os.path.dirname(path) or ".", exist_ok=True)
+        with open(path, "w") as f:
+            f.write(self.to_json())
+
+
+class RegimeEngine:
+    def __init__(self):
+        self.graph = DirectedGraph()
+        self.current_regime = Regime.default()
+        self.detector = None
+        self.metrics: Optional[Metrics] = None
+        self.history: list = []
+        self.transitions: list = []
+        self.state_file = "~/.high-agent/state.json"
+
+    def seed_graph(self) -> None:
+        self.graph.seed()
+        self.update_metrics()
+
+    def update_metrics(self) -> None:
+        snapshot = self.graph.snapshot_full(self.current_regime)
+        self.metrics = Metrics(snapshot, self.current_regime)
+        self.history.append(vars(self.metrics))
+
+    def sweep_regimes(self) -> list:
+        return [(r, self.graph.phi_regime(r)) for r in Regime.all()]
+
+    def best_regime(self) -> tuple:
+        results = self.sweep_regimes()
+        return max(results, key=lambda x: x[1])
+
+    def switch_regime(self, regime: str) -> str:
+        old = self.current_regime
+        self.current_regime = regime
+        self.update_metrics()
+        t = RegimeTransition(
+            old, regime, "Manual switch",
+            self.graph.phi_regime(old),
+            self.metrics.phi if self.metrics else 0.0
+        )
+        self.transitions.append(t)
+        return old
+
+    def detect_and_evaluate(self):
+        if self.detector is None:
+            from .graph import SegmentedRegimeDetector
+            self.detector = SegmentedRegimeDetector(10, 2.0)
+
+        snapshot = self.graph.snapshot_full(self.current_regime)
+        alert = self.detector.feed(snapshot)
+
+        best_r, best_phi = self.best_regime()
+        current_phi = self.graph.phi_regime(self.current_regime)
+
+        transition = None
+        if best_r != self.current_regime and (best_phi - current_phi) > HYSTERESIS_MARGIN:
+            transition = RegimeTransition(
+                self.current_regime, best_r,
+                f"Φ improved by {best_phi - current_phi:.4f} > hysteresis {HYSTERESIS_MARGIN}",
+                current_phi, best_phi
+            )
+            self.current_regime = best_r
+            self.transitions.append(transition)
+
+        self.update_metrics()
+        return transition, alert
+
+    def process_task(self, task: str) -> None:
+        if task == "refactor":
+            violations = self.graph.coupling_violations()
+            if violations:
+                self.graph.remove_edge(violations[0].from_, violations[0].to)
+        elif task == "feature":
+            nid = f"fn_feature_{self.graph.n_nodes}"
+            n = Node(nid, "features", "features/mod.py")
+            n.cyclomatic = 3.0
+            n.quality = 0.7
+            self.graph.add_node(n)
+        elif task == "test":
+            for node in self.graph.nodes.values():
+                node.quality = min(1.0, node.quality + 0.05)
+        elif task == "complexity":
+            for node in self.graph.nodes.values():
+                node.cyclomatic = max(1.0, node.cyclomatic * 0.9)
+        self.update_metrics()
+
+    def simulate_deviation(self) -> None:
+        if self.current_regime == "simple":
+            for n in self.graph.nodes.values():
+                n.quality = min(1.0, n.quality + 0.05)
+        elif self.current_regime == "advanced":
+            violations = self.graph.coupling_violations()
+            if len(violations) > 1:
+                self.graph.remove_edge(violations[1].from_, violations[1].to)
+        else:
+            for n in self.graph.nodes.values():
+                n.cyclomatic = max(1.0, n.cyclomatic * 0.95)
+        self.update_metrics()
+        self.detect_and_evaluate()
+
+    def theory_explain(self) -> str:
+        coeffs = Regime.coeffs(self.current_regime)
+        s = self.graph.snapshot_full(self.current_regime)
+        return f"""═══════════════════════════════════════════════════════════
+              THEORY MODE — Mathematical Foundation
+═══════════════════════════════════════════════════════════
+OBJECTIVE:  Φ(G) = α·Q(G) − β·Č(G) − γ·mean(V)
+CURRENT REGIME: {self.current_regime} ({Regime.description(self.current_regime)})
+COEFFICIENTS: α={coeffs.alpha}, β={coeffs.beta}, γ={coeffs.gamma}
+LIVE METRICS:
+  Φ(G)    = {s.phi:+.4f}
+  Q(G)    = {s.q:.4f}  (modularity)
+  Č(G)    = {s.coupling:.4f}  (coupling)
+  mean(V) = {s.mean_v:.2f}  (cyclomatic)
+COMPONENT BREAKDOWN:
+  α·Q(G)    = {coeffs.alpha * s.q:+.4f}
+  β·Č(G)    = {coeffs.beta * s.coupling:+.4f}
+  γ·mean(V) = {coeffs.gamma * s.mean_v:+.4f}
+  ─────────────────────────────────
+  Φ(G)    = {s.phi:+.4f}
+═══════════════════════════════════════════════════════════"""
+
+    def snapshot(self):
+        """Return current metrics as a dict (compatible with GraphSnapshot fields)."""
+        if self.metrics:
+            return {
+                "phi": self.metrics.phi,
+                "q": self.metrics.q,
+                "coupling": self.metrics.coupling,
+                "mean_v": self.metrics.mean_v,
+                "max_v": self.metrics.max_v,
+                "quality": self.metrics.quality,
+                "n_nodes": self.metrics.n_nodes,
+                "n_edges": self.metrics.n_edges,
+                "n_modules": self.metrics.n_modules,
+                "regime": self.current_regime,
+                "direction": "stable",
+            }
+        return self.graph.snapshot_full(self.current_regime)
+
+    def compute_phi(self) -> dict:
+        """Return Φ(G) components dict."""
+        snap = self.snapshot()
+        coeffs = Regime.coeffs(self.current_regime)
+        return {
+            "phi": coeffs.alpha * snap["q"] - coeffs.beta * snap["coupling"] - coeffs.gamma * snap["mean_v"],
+            "q": snap["q"],
+            "coupling": snap["coupling"],
+            "mean_v": snap["mean_v"],
+            "regime": self.current_regime,
+        }
+
+    def regime_coeffs(self):
+        """Return RegimeCoeffs for the current regime."""
+        return Regime.coeffs(self.current_regime)
+
+    def update(self) -> None:
+        """Alias for update_metrics()."""
+        self.update_metrics()
+
+    def load_from_json(self, json_str: str) -> None:
+        self.graph = DirectedGraph.from_json(json_str)
+        self.update_metrics()
+
+    def write_state(self) -> None:
+        if self.metrics:
+            self.metrics.write_state(self.state_file)
+
+    def ai_analyze(self, client) -> str:
+        if not self.metrics:
+            return "No metrics available. Call seed_graph() first."
+        hot_spots = []
+        try:
+            hot_spots = [n.id for n in self.graph.hot_spots(5.0)]
+        except Exception:
+            pass
+        violations = []
+        try:
+            violations = len(self.graph.coupling_violations())
+        except Exception:
+            pass
+        prompt = f"""Analyze this codebase graph for architectural issues:
+Nodes: {self.metrics.n_nodes} functions across {self.metrics.n_modules} modules
+Edges: {self.metrics.n_edges} dependencies
+Metrics: Φ={self.metrics.phi:.4f}, Q={self.metrics.q:.4f}, Č={self.metrics.coupling:.4f}, V={self.metrics.mean_v:.2f}
+Regime: {self.current_regime}
+Hot spots: {hot_spots}
+Coupling violations: {violations} cross-module edges
+Provide specific refactoring suggestions."""
+        return client.generate(prompt) if client else prompt

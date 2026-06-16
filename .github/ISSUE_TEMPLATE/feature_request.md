@@ -1,1 +1,32 @@
-LS0tCm5hbWU6IEZlYXR1cmUgUmVxdWVzdAphYm91dDogUHJvcG9zZSBhIG5ldyBmZWF0dXJlIG9yIGltcHJvdmVtZW50Lgp0aXRsZTogIltGZWF0dXJlXSAiCmxhYmVsczogZW5oYW5jZW1lbnQKYXNzaWduZWVzOiAiIgotLS0KCiMjIFByb2JsZW0KV2hhdCBwcm9ibGVtIGRvZXMgdGhpcyBzb2x2ZT8gV2h5IGRvZXMgaXQgbWF0dGVyPwoKIyMgUHJvcG9zZWQgU29sdXRpb24KQSBjbGVhciBkZXNjcmlwdGlvbiBvZiB0aGUgZmVhdHVyZSBvciBjaGFuZ2UgeW91IHdhbnQuCgojIyBBbHRlcm5hdGl2ZXMgQ29uc2lkZXJlZApXaGF0IG90aGVyIGFwcHJvYWNoZXMgZGlkIHlvdSBjb25zaWRlcj8KCiMjIEltcGFjdCBvbiDOpihHKQpEb2VzIHRoaXMgYWZmZWN0IHRoZSBncmFwaCBtb2RlbCwgcmVnaW1lIGVuZ2luZSwgb3IgVFVJPwotIFsgXSBHcmFwaCBjb3JlIChHPShWLEUpLCBRLCDEjCwgViBtZXRyaWNzKQotIFsgXSBSZWdpbWUgZW5naW5lIChyZWdpbWUgc3dpdGNoaW5nLCBkZXZpYXRpb24gZGV0ZWN0aW9uKQotIFsgXSBUVUkgKHJhdGF0dWkgZGFzaGJvYXJkKQotIFsgXSBBZ2VudCBzd2FybSAoT3JjaGVzdHJhdG9yLCBSZWZhY3RvciwgZXRjLikKLSBbIF0gUHl0aG9uIG1pcnJvcgotIFsgXSBPdGhlcjoKCiMjIFdpbGxpbmcgdG8gSW1wbGVtZW50PwpBcmUgeW91IHdpbGxpbmcgdG8gc3VibWl0IGEgUFIgZm9yIHRoaXM/Ci0gWyBdIFllcywgSSdsbCBpbXBsZW1lbnQgaXQKLSBbIF0gWWVzLCBidXQgSSBuZWVkIGd1aWRhbmNlCi0gWyBdIE5vLCBJIGp1c3Qgd2FudCB0aGUgZmVhdHVyZQotIFsgXSBVbmRlY2lkZWQK
+---
+name: Feature Request
+about: Propose a new feature or improvement.
+title: "[Feature] "
+labels: enhancement
+assignees: ""
+---
+
+## Problem
+What problem does this solve? Why does it matter?
+
+## Proposed Solution
+A clear description of the feature or change you want.
+
+## Alternatives Considered
+What other approaches did you consider?
+
+## Impact on Φ(G)
+Does this affect the graph model, regime engine, or TUI?
+- [ ] Graph core (G=(V,E), Q, Č, V metrics)
+- [ ] Regime engine (regime switching, deviation detection)
+- [ ] TUI (ratatui dashboard)
+- [ ] Agent swarm (Orchestrator, Refactor, etc.)
+- [ ] Python mirror
+- [ ] Other:
+
+## Willing to Implement?
+Are you willing to submit a PR for this?
+- [ ] Yes, I'll implement it
+- [ ] Yes, but I need guidance
+- [ ] No, I just want the feature
+- [ ] Undecided

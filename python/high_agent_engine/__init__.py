@@ -1,1 +1,115 @@
-IiIiaGlnaF9hZ2VudF9lbmdpbmUg4oCUIEdyYXBoX3hfMHgwIFB5dGhvbiBNaXJyb3IuCgpFeHBvcnRzIGFsbCBwdWJsaWMgdHlwZXM6IGdyYXBoIGVuZ2luZSwgcmVnaW1lIHN5c3RlbSwgbWV0cmljcywKc2tpbGxzLCByZXBvcywgTExNIGNsaWVudCwgbmV1cmFsIGNoYXQgYWdlbnQsIGFuZCBzd2FybSBvcmNoZXN0cmF0b3IuCiIiIgoKZnJvbSBoaWdoX2FnZW50X2VuZ2luZS5ncmFwaCBpbXBvcnQgKAogICAgRGlyZWN0ZWRHcmFwaCwKICAgIEdyYXBoU25hcHNob3QsCiAgICBOb2RlLAogICAgRWRnZSwKKQpmcm9tIGhpZ2hfYWdlbnRfZW5naW5lLnJlZ2ltZSBpbXBvcnQgKAogICAgUmVnaW1lLAogICAgUmVnaW1lQ29lZmZzLAogICAgUmVnaW1lVHJhbnNpdGlvbiwKICAgIEhZU1RFUkVTSVNfTUFSR0lOLAopCmZyb20gaGlnaF9hZ2VudF9lbmdpbmUuZW5naW5lIGltcG9ydCBSZWdpbWVFbmdpbmUKZnJvbSBoaWdoX2FnZW50X2VuZ2luZS5tZXRyaWNzIGltcG9ydCAoCiAgICBNZXRyaWNzLAogICAgSGlzdG9yeSwKICAgIFRyZW5kLAogICAgUGhpQ29sb3IsCiAgICBSZWdpbWVNZXRyaWNzLAopCmZyb20gaGlnaF9hZ2VudF9lbmdpbmUuc2tpbGxzIGltcG9ydCBTa2lsbCwgU2tpbGxNYW5hZ2VyCmZyb20gaGlnaF9hZ2VudF9lbmdpbmUucmVwb3MgaW1wb3J0IFJlcG8sIFJlcG9NYW5hZ2VyCmZyb20gaGlnaF9hZ2VudF9lbmdpbmUub2xsYW1hIGltcG9ydCBPbGxhbWFDbGllbnQKZnJvbSBoaWdoX2FnZW50X2VuZ2luZS5jcmF3bGVyIGltcG9ydCBDb2RlYmFzZUNyYXdsZXIKZnJvbSBoaWdoX2FnZW50X2VuZ2luZS5kYWVtb24gaW1wb3J0IERhZW1vbgoKIyDilIDilIAgTExNICYgTmV1cmFsIENoYXQgKGxhenkgaW1wb3J0cyDigJQgYXZvaWQgaGFyZCBkZXBzKSDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIAKCmRlZiBfbGxtX2F2YWlsYWJsZSgpIC0+IGJvb2w6CiAgICB0cnk6CiAgICAgICAgaW1wb3J0IHJlcXVlc3RzICAjIG5vcWE6IEY0MDEKICAgICAgICByZXR1cm4gVHJ1ZQogICAgZXhjZXB0IEltcG9ydEVycm9yOgogICAgICAgIHJldHVybiBGYWxzZQoKCmRlZiBnZXRfbGxtX2NsaWVudCgqKmt3YXJncyk6CiAgICAiIiJMYXppbHkgaW1wb3J0IGFuZCByZXR1cm4gTExNQ2xpZW50LiBSZXF1aXJlcyAncmVxdWVzdHMnIHBhY2thZ2UuIiIiCiAgICBpZiBub3QgX2xsbV9hdmFpbGFibGUoKToKICAgICAgICByYWlzZSBSdW50aW1lRXJyb3IoCiAgICAgICAgICAgICJMTE0gc3VwcG9ydCByZXF1aXJlcyAncmVxdWVzdHMnLiBJbnN0YWxsIHdpdGg6XG4iCiAgICAgICAgICAgICIgIHBpcCBpbnN0YWxsIGhpZ2gtYWdlbnRbb2xsYW1hXVxuIgogICAgICAgICAgICAiICAjIG9yXG4iCiAgICAgICAgICAgICIgIHBpcCBpbnN0YWxsIHJlcXVlc3RzIgogICAgICAgICkKICAgIGZyb20gaGlnaF9hZ2VudF9lbmdpbmUubGxtIGltcG9ydCBMTE1DbGllbnQKICAgIHJldHVybiBMTE1DbGllbnQoKiprd2FyZ3MpCgoKZGVmIGdldF9uZXVyYWxfYWdlbnQoKiprd2FyZ3MpOgogICAgIiIiTGF6aWx5IGltcG9ydCBhbmQgcmV0dXJuIE5ldXJhbEFnZW50LiIiIgogICAgaWYgbm90IF9sbG1fYXZhaWxhYmxlKCk6CiAgICAgICAgcmFpc2UgUnVudGltZUVycm9yKAogICAgICAgICAgICAiTmV1cmFsIGNoYXQgcmVxdWlyZXMgJ3JlcXVlc3RzJy4gSW5zdGFsbCB3aXRoOlxuIgogICAgICAgICAgICAiICBwaXAgaW5zdGFsbCBoaWdoLWFnZW50W29sbGFtYV0iCiAgICAgICAgKQogICAgZnJvbSBoaWdoX2FnZW50X2VuZ2luZS5jaGF0IGltcG9ydCBOZXVyYWxBZ2VudAogICAgcmV0dXJuIE5ldXJhbEFnZW50KCoqa3dhcmdzKQoKCmRlZiBnZXRfYWdlbnRfc3dhcm0oZW5naW5lPU5vbmUsIGxsbV9jbGllbnQ9Tm9uZSk6CiAgICAiIiJMYXppbHkgaW1wb3J0IGFuZCByZXR1cm4gU3dhcm0uIiIiCiAgICBpZiBub3QgX2xsbV9hdmFpbGFibGUoKToKICAgICAgICByYWlzZSBSdW50aW1lRXJyb3IoCiAgICAgICAgICAgICJBZ2VudCBzd2FybSByZXF1aXJlcyAncmVxdWVzdHMnLiBJbnN0YWxsIHdpdGg6XG4iCiAgICAgICAgICAgICIgIHBpcCBpbnN0YWxsIGhpZ2gtYWdlbnRbb2xsYW1hXSIKICAgICAgICApCiAgICBmcm9tIGhpZ2hfYWdlbnRfZW5naW5lLmFnZW50IGltcG9ydCBTd2FybQogICAgZnJvbSBoaWdoX2FnZW50X2VuZ2luZS5lbmdpbmUgaW1wb3J0IFJlZ2ltZUVuZ2luZQogICAgcmV0dXJuIFN3YXJtKGVuZ2luZSBvciBSZWdpbWVFbmdpbmUoKSwgbGxtX2NsaWVudCkKCgpfX3ZlcnNpb25fXyA9ICIwLjIuMCIKX19hbGxfXyA9IFsKICAgICMgR3JhcGggY29yZQogICAgIkRpcmVjdGVkR3JhcGgiLAogICAgIkdyYXBoU25hcHNob3QiLAogICAgIk5vZGUiLAogICAgIkVkZ2UiLAogICAgIyBSZWdpbWUgc3lzdGVtCiAgICAiUmVnaW1lIiwKICAgICJSZWdpbWVDb2VmZnMiLAogICAgIlJlZ2ltZVRyYW5zaXRpb24iLAogICAgIkhZU1RFUkVTSVNfTUFSR0lOIiwKICAgICMgRW5naW5lCiAgICAiUmVnaW1lRW5naW5lIiwKICAgICMgTWV0cmljcwogICAgIk1ldHJpY3MiLAogICAgIkhpc3RvcnkiLAogICAgIlRyZW5kIiwKICAgICJQaGlDb2xvciIsCiAgICAiUmVnaW1lTWV0cmljcyIsCiAgICAjIFNraWxscwogICAgIlNraWxsIiwKICAgICJTa2lsbE1hbmFnZXIiLAogICAgIyBSZXBvcwogICAgIlJlcG8iLAogICAgIlJlcG9NYW5hZ2VyIiwKICAgICMgTExNL09sbGFtYQogICAgIk9sbGFtYUNsaWVudCIsCiAgICAjIENyYXdsZXIgJiBEYWVtb24KICAgICJDb2RlYmFzZUNyYXdsZXIiLAogICAgIkRhZW1vbiIsCiAgICAjIExhenktbG9hZGVkIChyZXF1aXJlICdyZXF1ZXN0cycpCiAgICAiZ2V0X2xsbV9jbGllbnQiLAogICAgImdldF9uZXVyYWxfYWdlbnQiLAogICAgImdldF9hZ2VudF9zd2FybSIsCl0=
+"""high_agent_engine — Graph_x_0x0 Python Mirror.
+
+Exports all public types: graph engine, regime system, metrics,
+skills, repos, LLM client, neural chat agent, and swarm orchestrator.
+"""
+
+from high_agent_engine.graph import (
+    DirectedGraph,
+    GraphSnapshot,
+    Node,
+    Edge,
+    SegmentedRegimeDetector,
+)
+from high_agent_engine.regime import (
+    Regime,
+    RegimeCoeffs,
+    RegimeTransition,
+    HYSTERESIS_MARGIN,
+)
+from high_agent_engine.engine import RegimeEngine, Metrics
+from high_agent_engine.metrics import (
+    History,
+    Trend,
+    PhiColor,
+    RegimeMetrics,
+)
+from high_agent_engine.skills import Skill, SkillManager
+from high_agent_engine.repos import Repo, RepoManager
+from high_agent_engine.ollama import OllamaClient
+from high_agent_engine.crawler import CodebaseCrawler
+from high_agent_engine.daemon import Daemon
+
+# ── LLM & Neural Chat (lazy imports — avoid hard deps) ────────────────────────
+
+def _llm_available() -> bool:
+    try:
+        import requests  # noqa: F401
+        return True
+    except ImportError:
+        return False
+
+
+def get_llm_client(**kwargs):
+    """Lazily import and return LLMClient. Requires 'requests' package."""
+    if not _llm_available():
+        raise RuntimeError(
+            "LLM support requires 'requests'. Install with:\n"
+            "  pip install high-agent[ollama]\n"
+            "  # or\n"
+            "  pip install requests"
+        )
+    from high_agent_engine.llm import LLMClient
+    return LLMClient(**kwargs)
+
+
+def get_neural_agent(**kwargs):
+    """Lazily import and return NeuralAgent."""
+    if not _llm_available():
+        raise RuntimeError(
+            "Neural chat requires 'requests'. Install with:\n"
+            "  pip install high-agent[ollama]"
+        )
+    from high_agent_engine.chat import NeuralAgent
+    return NeuralAgent(**kwargs)
+
+
+def get_agent_swarm(engine=None, llm_client=None):
+    """Lazily import and return Swarm."""
+    if not _llm_available():
+        raise RuntimeError(
+            "Agent swarm requires 'requests'. Install with:\n"
+            "  pip install high-agent[ollama]"
+        )
+    from high_agent_engine.agent import Swarm
+    from high_agent_engine.engine import RegimeEngine
+    return Swarm(engine or RegimeEngine(), llm_client)
+
+
+__version__ = "0.2.0"
+__all__ = [
+    # Graph core
+    "DirectedGraph",
+    "GraphSnapshot",
+    "Node",
+    "Edge",
+    "SegmentedRegimeDetector",
+    # Regime system
+    "Regime",
+    "RegimeCoeffs",
+    "RegimeTransition",
+    "HYSTERESIS_MARGIN",
+    # Engine
+    "RegimeEngine",
+    # Metrics
+    "Metrics",
+    "History",
+    "Trend",
+    "PhiColor",
+    "RegimeMetrics",
+    # Skills
+    "Skill",
+    "SkillManager",
+    # Repos
+    "Repo",
+    "RepoManager",
+    # LLM/Ollama
+    "OllamaClient",
+    # Crawler & Daemon
+    "CodebaseCrawler",
+    "Daemon",
+    # Lazy-loaded (require 'requests')
+    "get_llm_client",
+    "get_neural_agent",
+    "get_agent_swarm",
+]

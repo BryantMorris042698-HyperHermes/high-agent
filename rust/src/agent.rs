@@ -1,1 +1,145 @@
-Ly8hIEFnZW50IGRlZmluaXRpb25zIOKAlCBEZWVwIEFnZW50IHR5cGVzIHdpdGggcm9sZXMsIG1lbW9yeSwgYW5kIGNhcGFiaWxpdGllcy4KCnVzZSBjcmF0ZTo6ZXJyb3I6OntIaWdoQWdlbnRFcnJvciwgUmVzdWx0fTsKdXNlIHNlcmRlOjp7RGVzZXJpYWxpemUsIFNlcmlhbGl6ZX07CnVzZSBzdGQ6OmNvbGxlY3Rpb25zOjpIYXNoTWFwOwoKI1tkZXJpdmUoRGVidWcsIENsb25lLCBDb3B5LCBTZXJpYWxpemUsIERlc2VyaWFsaXplLCBQYXJ0aWFsRXEsIEVxLCBIYXNoLCBEZWZhdWx0KV0KcHViIGVudW0gQWdlbnRSb2xlIHsKICAgIE9yY2hlc3RyYXRvciwKICAgIFJlZmFjdG9yLAogICAgUXVhbGl0eSwKICAgIFRlc3QsCiAgICBTa2lsbCwKICAgIFJlcG8sCiAgICBCdWlsZCwKICAgIFBsYW5uZXIsCiAgICAjW2RlZmF1bHRdCiAgICBHZW5lcmFsLAp9CgppbXBsIEFnZW50Um9sZSB7CiAgICBwdWIgZm4gZGVzY3JpcHRpb24oJnNlbGYpIC0+ICYnc3RhdGljIHN0ciB7CiAgICAgICAgbWF0Y2ggc2VsZiB7CiAgICAgICAgICAgIFNlbGY6Ok9yY2hlc3RyYXRvciA9PiAiQ2VudHJhbCBjb29yZGluYXRvciwgb3ducyDOpihHKSwgbWFuYWdlcyByZWdpbWUiLAogICAgICAgICAgICBTZWxmOjpSZWZhY3RvciA9PiAiT3B0aW1pemVzIGdyYXBoIHN0cnVjdHVyZSDigJQgc3BsaXQgbm9kZXMsIG1lcmdlIGVkZ2VzIiwKICAgICAgICAgICAgU2VsZjo6UXVhbGl0eSA9PiAiTW9uaXRvcnMgY3ljbG9tYXRpYyBjb21wbGV4aXR5LCBmbGFncyB2aW9sYXRpb25zIiwKICAgICAgICAgICAgU2VsZjo6VGVzdCA9PiAiRW5zdXJlcyB0ZXN0IGNvdmVyYWdlIHBlciBtb2R1bGUiLAogICAgICAgICAgICBTZWxmOjpTa2lsbCA9PiAiTWFuYWdlcyBza2lsbCBsaWJyYXJ5IOKAlCBsb2FkLCBjcmVhdGUsIHVwZGF0ZSBza2lsbHMiLAogICAgICAgICAgICBTZWxmOjpSZXBvID0+ICJNYW5hZ2VzIHJlcG9zaXRvcnkgY29ubmVjdGlvbnMg4oCUIGNsb25lLCBzeW5jLCBmZXRjaCIsCiAgICAgICAgICAgIFNlbGY6OkJ1aWxkID0+ICJIYW5kbGVzIGJ1aWxkIHN5c3RlbSDigJQgY29tcGlsZSwgdGVzdCwgY2xlYW4iLAogICAgICAgICAgICBTZWxmOjpQbGFubmVyID0+ICJQbGFucyBtdWx0aS1zdGVwIGFnZW50IHRhc2tzLCBjb29yZGluYXRlcyBzdWItYWdlbnRzIiwKICAgICAgICAgICAgU2VsZjo6R2VuZXJhbCA9PiAiR2VuZXJhbCBwdXJwb3NlIOKAlCBoYW5kbGVzIGFueSByZXF1ZXN0IiwKICAgICAgICB9CiAgICB9CiAgICBwdWIgZm4gaWNvbigmc2VsZikgLT4gJidzdGF0aWMgc3RyIHsKICAgICAgICBtYXRjaCBzZWxmIHsKICAgICAgICAgICAgU2VsZjo6T3JjaGVzdHJhdG9yID0+ICLimqEiLCBTZWxmOjpSZWZhY3RvciA9PiAi8J+UpyIsIFNlbGY6OlF1YWxpdHkgPT4gIvCflI0iLAogICAgICAgICAgICBTZWxmOjpUZXN0ID0+ICLwn6eqIiwgU2VsZjo6U2tpbGwgPT4gIvCfk5oiLCBTZWxmOjpSZXBvID0+ICLwn5OmIiwKICAgICAgICAgICAgU2VsZjo6QnVpbGQgPT4gIvCfj5ciLCBTZWxmOjpQbGFubmVyID0+ICLwn5e6IiwgU2VsZjo6R2VuZXJhbCA9PiAi8J+kliIsCiAgICAgICAgfQogICAgfQp9CgppbXBsIHN0ZDo6Zm10OjpEaXNwbGF5IGZvciBBZ2VudFJvbGUgewogICAgZm4gZm10KCZzZWxmLCBmOiAmbXV0IHN0ZDo6Zm10OjpGb3JtYXR0ZXI8J18+KSAtPiBzdGQ6OmZtdDo6UmVzdWx0IHsKICAgICAgICBsZXQgcyA9IG1hdGNoIHNlbGYgewogICAgICAgICAgICBTZWxmOjpPcmNoZXN0cmF0b3IgPT4gIk9yY2hlc3RyYXRvciIsIFNlbGY6OlJlZmFjdG9yID0+ICJSZWZhY3RvciIsCiAgICAgICAgICAgIFNlbGY6OlF1YWxpdHkgPT4gIlF1YWxpdHkiLCBTZWxmOjpUZXN0ID0+ICJUZXN0IiwKICAgICAgICAgICAgU2VsZjo6U2tpbGwgPT4gIlNraWxsIiwgU2VsZjo6UmVwbyA9PiAiUmVwbyIsCiAgICAgICAgICAgIFNlbGY6OkJ1aWxkID0+ICJCdWlsZCIsIFNlbGY6OlBsYW5uZXIgPT4gIlBsYW5uZXIiLAogICAgICAgICAgICBTZWxmOjpHZW5lcmFsID0+ICJHZW5lcmFsIiwKICAgICAgICB9OwogICAgICAgIHdyaXRlIShmLCAie30iLCBzKQogICAgfQp9CgojW2Rlcml2ZShEZWJ1ZywgQ2xvbmUsIFNlcmlhbGl6ZSwgRGVzZXJpYWxpemUsIERlZmF1bHQpXQpwdWIgc3RydWN0IEFnZW50TWVtb3J5IHsKICAgIHB1YiBlbnRyaWVzOiBWZWM8TWVtb3J5RW50cnk+LAogICAgcHViIG1heF9lbnRyaWVzOiB1c2l6ZSwKfQoKaW1wbCBBZ2VudE1lbW9yeSB7CiAgICBwdWIgZm4gbmV3KG1heF9lbnRyaWVzOiB1c2l6ZSkgLT4gU2VsZiB7IFNlbGYgeyBlbnRyaWVzOiBWZWM6Om5ldygpLCBtYXhfZW50cmllcyB9IH0KICAgIHB1YiBmbiBwdXNoKCZtdXQgc2VsZiwgcm9sZTogJnN0ciwgY29udGVudDogJnN0cikgewogICAgICAgIHNlbGYuZW50cmllcy5wdXNoKE1lbW9yeUVudHJ5IHsgcm9sZTogcm9sZS50b19zdHJpbmcoKSwgY29udGVudDogY29udGVudC50b19zdHJpbmcoKSwgdGltZXN0YW1wOiBjaHJvbm9fbm93KCkgfSk7CiAgICAgICAgaWYgc2VsZi5lbnRyaWVzLmxlbigpID4gc2VsZi5tYXhfZW50cmllcyB7IHNlbGYuZW50cmllcy5yZW1vdmUoMCk7IH0KICAgIH0KICAgIHB1YiBmbiByZWNlbnQoJnNlbGYsIG46IHVzaXplKSAtPiBWZWM8Jk1lbW9yeUVudHJ5PiB7CiAgICAgICAgc2VsZi5lbnRyaWVzLml0ZXIoKS5yZXYoKS50YWtlKG4pLmNvbGxlY3QoKQogICAgfQp9CgojW2Rlcml2ZShEZWJ1ZywgQ2xvbmUsIFNlcmlhbGl6ZSwgRGVzZXJpYWxpemUpXQpwdWIgc3RydWN0IE1lbW9yeUVudHJ5IHsKICAgIHB1YiByb2xlOiBTdHJpbmcsCiAgICBwdWIgY29udGVudDogU3RyaW5nLAogICAgcHViIHRpbWVzdGFtcDogU3RyaW5nLAp9CgojW2Rlcml2ZShEZWJ1ZywgQ2xvbmUsIFNlcmlhbGl6ZSwgRGVzZXJpYWxpemUsIERlZmF1bHQpXQpwdWIgc3RydWN0IEFnZW50Q29uZmlnIHsKICAgIHB1YiBtb2RlbDogU3RyaW5nLAogICAgcHViIHRlbXBlcmF0dXJlOiBmNjQsCiAgICBwdWIgbWF4X3Rva2VuczogaTMyLAogICAgcHViIHN5c3RlbV9wcm9tcHQ6IFN0cmluZywKfQoKaW1wbCBBZ2VudENvbmZpZyB7CiAgICBwdWIgZm4gZGVmYXVsdF9mb3Iocm9sZTogQWdlbnRSb2xlKSAtPiBTZWxmIHsKICAgICAgICBsZXQgKG1vZGVsLCB0ZW1wLCBtYXhfdG9rZW5zKSA9IG1hdGNoIHJvbGUgewogICAgICAgICAgICBBZ2VudFJvbGU6Ok9yY2hlc3RyYXRvciA9PiAoImxsYW1hMy4yOjNiIiwgMC4zLCAxMDI0KSwKICAgICAgICAgICAgQWdlbnRSb2xlOjpSZWZhY3RvciA9PiAoImxsYW1hMy4yOjNiIiwgMC40LCA1MTIpLAogICAgICAgICAgICBBZ2VudFJvbGU6OlF1YWxpdHkgPT4gKCJsbGFtYTMuMjozYiIsIDAuMywgNTEyKSwKICAgICAgICAgICAgQWdlbnRSb2xlOjpUZXN0ID0+ICgibGxhbWEzLjI6M2IiLCAwLjQsIDUxMiksCiAgICAgICAgICAgIEFnZW50Um9sZTo6U2tpbGwgPT4gKCJsbGFtYTMuMjozYiIsIDAuNSwgNTEyKSwKICAgICAgICAgICAgQWdlbnRSb2xlOjpSZXBvID0+ICgibGxhbWEzLjI6M2IiLCAwLjMsIDUxMiksCiAgICAgICAgICAgIEFnZW50Um9sZTo6QnVpbGQgPT4gKCJsbGFtYTMuMjozYiIsIDAuMywgNTEyKSwKICAgICAgICAgICAgQWdlbnRSb2xlOjpQbGFubmVyID0+ICgibGxhbWEzLjI6M2IiLCAwLjUsIDEwMjQpLAogICAgICAgICAgICBBZ2VudFJvbGU6OkdlbmVyYWwgPT4gKCJsbGFtYTMuMjozYiIsIDAuNywgNTEyKSwKICAgICAgICB9OwogICAgICAgIFNlbGYgewogICAgICAgICAgICBtb2RlbDogbW9kZWwudG9fc3RyaW5nKCksIHRlbXBlcmF0dXJlOiB0ZW1wLCBtYXhfdG9rZW5zLAogICAgICAgICAgICBzeXN0ZW1fcHJvbXB0OiBmb3JtYXQhKCJZb3UgYXJlIGEge30gYWdlbnQgaW4gdGhlIEdyYXBoX3hfMHgwIHN3YXJtLiB7fSIsIHJvbGUsIHJvbGUuZGVzY3JpcHRpb24oKSksCiAgICAgICAgfQogICAgfQp9CgojW2Rlcml2ZShEZWJ1ZywgQ2xvbmUsIFNlcmlhbGl6ZSwgRGVzZXJpYWxpemUsIERlZmF1bHQpXQpwdWIgc3RydWN0IEFnZW50IHsKICAgIHB1YiBpZDogQWdlbnRJZCwKICAgIHB1YiByb2xlOiBBZ2VudFJvbGUsCiAgICBwdWIgbmFtZTogU3RyaW5nLAogICAgcHViIGNvbmZpZzogQWdlbnRDb25maWcsCiAgICBwdWIgbWVtb3J5OiBBZ2VudE1lbW9yeSwKICAgIHB1YiBhY3RpdmU6IGJvb2wsCiAgICBwdWIgdGFza3NfY29tcGxldGVkOiB1MzIsCiAgICBwdWIgdGFza3NfZmFpbGVkOiB1MzIsCn0KCnB1YiB0eXBlIEFnZW50SWQgPSB1MzI7CgppbXBsIEFnZW50IHsKICAgIHB1YiBmbiBuZXcoaWQ6IEFnZW50SWQsIHJvbGU6IEFnZW50Um9sZSwgbmFtZTogJnN0cikgLT4gU2VsZiB7CiAgICAgICAgU2VsZiB7CiAgICAgICAgICAgIGlkLCByb2xlLCBuYW1lOiBuYW1lLnRvX3N0cmluZygpLAogICAgICAgICAgICBjb25maWc6IEFnZW50Q29uZmlnOjpkZWZhdWx0X2Zvcihyb2xlKSwKICAgICAgICAgICAgbWVtb3J5OiBBZ2VudE1lbW9yeTo6bmV3KDUwKSwKICAgICAgICAgICAgYWN0aXZlOiB0cnVlLAogICAgICAgICAgICB0YXNrc19jb21wbGV0ZWQ6IDAsCiAgICAgICAgICAgIHRhc2tzX2ZhaWxlZDogMCwKICAgICAgICB9CiAgICB9CiAgICBwdWIgZm4gbWFya19zdWNjZXNzKCZtdXQgc2VsZikgeyBzZWxmLnRhc2tzX2NvbXBsZXRlZCArPSAxOyB9CiAgICBwdWIgZm4gbWFya19mYWlsdXJlKCZtdXQgc2VsZikgeyBzZWxmLnRhc2tzX2ZhaWxlZCArPSAxOyB9CiAgICBwdWIgZm4gc3VjY2Vzc19yYXRlKCZzZWxmKSAtPiBmNjQgewogICAgICAgIGxldCB0b3RhbCA9IHNlbGYudGFza3NfY29tcGxldGVkICsgc2VsZi50YXNrc19mYWlsZWQ7CiAgICAgICAgaWYgdG90YWwgPT0gMCB7IDAuMCB9IGVsc2UgeyBzZWxmLnRhc2tzX2NvbXBsZXRlZCBhcyBmNjQgLyB0b3RhbCBhcyBmNjQgfQogICAgfQp9CgpmbiBjaHJvbm9fbm93KCkgLT4gU3RyaW5nIHsKICAgIGxldCBkdXIgPSBzdGQ6OnRpbWU6OlN5c3RlbVRpbWU6Om5vdygpLmR1cmF0aW9uX3NpbmNlKHN0ZDo6dGltZTo6VU5JWF9FUE9DSCkudW53cmFwX29yX2RlZmF1bHQoKTsKICAgIGZvcm1hdCEoInt9Lns6MDl9IiwgZHVyLmFzX3NlY3MoKSwgZHVyLnN1YnNlY19uYW5vcygpKQp9
+//! Agent definitions — Deep Agent types with roles, memory, and capabilities.
+
+use crate::error::{HighAgentError, Result};
+use serde::{Deserialize, Serialize};
+use std::collections::HashMap;
+
+#[derive(Debug, Clone, Copy, Serialize, Deserialize, PartialEq, Eq, Hash, Default)]
+pub enum AgentRole {
+    Orchestrator,
+    Refactor,
+    Quality,
+    Test,
+    Skill,
+    Repo,
+    Build,
+    Planner,
+    #[default]
+    General,
+}
+
+impl AgentRole {
+    pub fn description(&self) -> &'static str {
+        match self {
+            Self::Orchestrator => "Central coordinator, owns Φ(G), manages regime",
+            Self::Refactor => "Optimizes graph structure — split nodes, merge edges",
+            Self::Quality => "Monitors cyclomatic complexity, flags violations",
+            Self::Test => "Ensures test coverage per module",
+            Self::Skill => "Manages skill library — load, create, update skills",
+            Self::Repo => "Manages repository connections — clone, sync, fetch",
+            Self::Build => "Handles build system — compile, test, clean",
+            Self::Planner => "Plans multi-step agent tasks, coordinates sub-agents",
+            Self::General => "General purpose — handles any request",
+        }
+    }
+    pub fn icon(&self) -> &'static str {
+        match self {
+            Self::Orchestrator => "⚡", Self::Refactor => "🔧", Self::Quality => "🔍",
+            Self::Test => "🧪", Self::Skill => "📚", Self::Repo => "📦",
+            Self::Build => "🏗", Self::Planner => "🗺", Self::General => "🤖",
+        }
+    }
+}
+
+impl std::fmt::Display for AgentRole {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let s = match self {
+            Self::Orchestrator => "Orchestrator", Self::Refactor => "Refactor",
+            Self::Quality => "Quality", Self::Test => "Test",
+            Self::Skill => "Skill", Self::Repo => "Repo",
+            Self::Build => "Build", Self::Planner => "Planner",
+            Self::General => "General",
+        };
+        write!(f, "{}", s)
+    }
+}
+
+#[derive(Debug, Clone, Serialize, Deserialize, Default)]
+pub struct AgentMemory {
+    pub entries: Vec<MemoryEntry>,
+    pub max_entries: usize,
+}
+
+impl AgentMemory {
+    pub fn new(max_entries: usize) -> Self { Self { entries: Vec::new(), max_entries } }
+    pub fn push(&mut self, role: &str, content: &str) {
+        self.entries.push(MemoryEntry { role: role.to_string(), content: content.to_string(), timestamp: chrono_now() });
+        if self.entries.len() > self.max_entries { self.entries.remove(0); }
+    }
+    pub fn recent(&self, n: usize) -> Vec<&MemoryEntry> {
+        self.entries.iter().rev().take(n).collect()
+    }
+}
+
+#[derive(Debug, Clone, Serialize, Deserialize)]
+pub struct MemoryEntry {
+    pub role: String,
+    pub content: String,
+    pub timestamp: String,
+}
+
+#[derive(Debug, Clone, Serialize, Deserialize, Default)]
+pub struct AgentConfig {
+    pub model: String,
+    pub temperature: f64,
+    pub max_tokens: i32,
+    pub system_prompt: String,
+}
+
+impl AgentConfig {
+    pub fn default_for(role: AgentRole) -> Self {
+        let (model, temp, max_tokens) = match role {
+            AgentRole::Orchestrator => ("llama3.2:3b", 0.3, 1024),
+            AgentRole::Refactor => ("llama3.2:3b", 0.4, 512),
+            AgentRole::Quality => ("llama3.2:3b", 0.3, 512),
+            AgentRole::Test => ("llama3.2:3b", 0.4, 512),
+            AgentRole::Skill => ("llama3.2:3b", 0.5, 512),
+            AgentRole::Repo => ("llama3.2:3b", 0.3, 512),
+            AgentRole::Build => ("llama3.2:3b", 0.3, 512),
+            AgentRole::Planner => ("llama3.2:3b", 0.5, 1024),
+            AgentRole::General => ("llama3.2:3b", 0.7, 512),
+        };
+        Self {
+            model: model.to_string(), temperature: temp, max_tokens,
+            system_prompt: format!("You are a {} agent in the Graph_x_0x0 swarm. {}", role, role.description()),
+        }
+    }
+}
+
+#[derive(Debug, Clone, Serialize, Deserialize, Default)]
+pub struct Agent {
+    pub id: AgentId,
+    pub role: AgentRole,
+    pub name: String,
+    pub config: AgentConfig,
+    pub memory: AgentMemory,
+    pub active: bool,
+    pub tasks_completed: u32,
+    pub tasks_failed: u32,
+}
+
+pub type AgentId = u32;
+
+impl Agent {
+    pub fn new(id: AgentId, role: AgentRole, name: &str) -> Self {
+        Self {
+            id, role, name: name.to_string(),
+            config: AgentConfig::default_for(role),
+            memory: AgentMemory::new(50),
+            active: true,
+            tasks_completed: 0,
+            tasks_failed: 0,
+        }
+    }
+    pub fn mark_success(&mut self) { self.tasks_completed += 1; }
+    pub fn mark_failure(&mut self) { self.tasks_failed += 1; }
+    pub fn success_rate(&self) -> f64 {
+        let total = self.tasks_completed + self.tasks_failed;
+        if total == 0 { 0.0 } else { self.tasks_completed as f64 / total as f64 }
+    }
+}
+
+fn chrono_now() -> String {
+    let dur = std::time::SystemTime::now().duration_since(std::time::UNIX_EPOCH).unwrap_or_default();
+    format!("{}.{:09}", dur.as_secs(), dur.subsec_nanos())
+}

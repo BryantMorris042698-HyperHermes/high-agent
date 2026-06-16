@@ -1,1 +1,33 @@
-Ly8hIEVycm9yIHR5cGVzIGZvciB0aGUgaGlnaC1hZ2VudCBsaWJyYXJ5LgoKdXNlIHRoaXNlcnJvcjo6RXJyb3I7CgojW2Rlcml2ZShFcnJvciwgRGVidWcpXQpwdWIgZW51bSBIaWdoQWdlbnRFcnJvciB7CiAgICAjW2Vycm9yKCJHcmFwaCBlcnJvcjogezB9IildCiAgICBHcmFwaChTdHJpbmcpLAogICAgI1tlcnJvcigiUmVnaW1lIGVycm9yOiB7MH0iKV0KICAgIFJlZ2ltZShTdHJpbmcpLAogICAgI1tlcnJvcigiSU8gZXJyb3I6IHswfSIpXQogICAgSW8oI1tmcm9tXSBzdGQ6OmlvOjpFcnJvciksCiAgICAjW2Vycm9yKCJKU09OIGVycm9yOiB7MH0iKV0KICAgIEpzb24oI1tmcm9tXSBzZXJkZV9qc29uOjpFcnJvciksCiAgICAjW2Vycm9yKCJZQU1MIGVycm9yOiB7MH0iKV0KICAgIFlhbWwoI1tmcm9tXSBzZXJkZV95YW1sOjpFcnJvciksCiAgICAjW2Vycm9yKCJTa2lsbCBlcnJvcjogezB9IildCiAgICBTa2lsbChTdHJpbmcpLAogICAgI1tlcnJvcigiUmVwbyBlcnJvcjogezB9IildCiAgICBSZXBvKFN0cmluZyksCiAgICAjW2Vycm9yKCJCdWlsZCBlcnJvcjogezB9IildCiAgICBCdWlsZChTdHJpbmcpLAogICAgI1tlcnJvcigiT2xsYW1hIGVycm9yOiB7MH0iKV0KICAgIE9sbGFtYShTdHJpbmcpLAogICAgI1tlcnJvcigiQWdlbnQgZXJyb3I6IHswfSIpXQogICAgQWdlbnQoU3RyaW5nKSwKICAgICNbZXJyb3IoIlRVSSBlcnJvcjogezB9IildCiAgICBUdWkoU3RyaW5nKSwKICAgICNbZXJyb3IoIkhUVFAgZXJyb3I6IHswfSIpXQogICAgSHR0cCgjW2Zyb21dIHJlcXdlc3Q6OkVycm9yKSwKfQoKcHViIHR5cGUgUmVzdWx0PFQ+ID0gc3RkOjpyZXN1bHQ6OlJlc3VsdDxULCBIaWdoQWdlbnRFcnJvcj47
+//! Error types for the high-agent library.
+
+use thiserror::Error;
+
+#[derive(Error, Debug)]
+pub enum HighAgentError {
+    #[error("Graph error: {0}")]
+    Graph(String),
+    #[error("Regime error: {0}")]
+    Regime(String),
+    #[error("IO error: {0}")]
+    Io(#[from] std::io::Error),
+    #[error("JSON error: {0}")]
+    Json(#[from] serde_json::Error),
+    #[error("YAML error: {0}")]
+    Yaml(#[from] serde_yaml::Error),
+    #[error("Skill error: {0}")]
+    Skill(String),
+    #[error("Repo error: {0}")]
+    Repo(String),
+    #[error("Build error: {0}")]
+    Build(String),
+    #[error("Ollama error: {0}")]
+    Ollama(String),
+    #[error("Agent error: {0}")]
+    Agent(String),
+    #[error("TUI error: {0}")]
+    Tui(String),
+    #[error("HTTP error: {0}")]
+    Http(#[from] reqwest::Error),
+}
+
+pub type Result<T> = std::result::Result<T, HighAgentError>;

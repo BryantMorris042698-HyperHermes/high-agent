@@ -1,1 +1,144 @@
-IiIiUmVwb3NpdG9yeSBtYW5hZ2VtZW50IGZvciBQeXRob24gZW5naW5lIOKAlCBtaXJyb3JzIHJ1c3Qvc3JjL3JlcG9zLnJzLiIiIgoKaW1wb3J0IGpzb24KaW1wb3J0IG9zCmltcG9ydCBzdWJwcm9jZXNzCmZyb20gZGF0YWNsYXNzZXMgaW1wb3J0IGRhdGFjbGFzcywgZmllbGQKZnJvbSBwYXRobGliIGltcG9ydCBQYXRoCmZyb20gdHlwaW5nIGltcG9ydCBEaWN0LCBMaXN0LCBPcHRpb25hbAppbXBvcnQgdGltZQoKCkBkYXRhY2xhc3MKY2xhc3MgUmVwbzoKICAgICIiIkEgdHJhY2tlZCByZXBvc2l0b3J5LiIiIgogICAgbmFtZTogc3RyCiAgICB1cmw6IHN0cgogICAgbG9jYWxfcGF0aDogc3RyCiAgICBicmFuY2g6IHN0ciA9ICJtYWluIgogICAgbGFzdF9zeW5jOiBPcHRpb25hbFtmbG9hdF0gPSBOb25lICAjIHVuaXggdGltZXN0YW1wCiAgICBsYXN0X3BoaTogZmxvYXQgPSAwLjAKICAgIG5fbm9kZXM6IGludCA9IDAKICAgIG5fZWRnZXM6IGludCA9IDAKICAgIHN0YXR1czogc3RyID0gInVua25vd24iICAjIHVua25vd24sIGNsb25lZCwgc3luY2VkLCBlcnJvcgoKICAgIGRlZiBzeW5jKHNlbGYpIC0+IGJvb2w6CiAgICAgICAgIiIiU3luYyB0aGUgcmVwbyAoZ2l0IGZldGNoICsgb3B0aW9uYWxseSBwdWxsKS4iIiIKICAgICAgICB0cnk6CiAgICAgICAgICAgIGlmIG5vdCBQYXRoKHNlbGYubG9jYWxfcGF0aCkuZXhpc3RzKCk6CiAgICAgICAgICAgICAgICBzdWJwcm9jZXNzLnJ1bigKICAgICAgICAgICAgICAgICAgICBbImdpdCIsICJjbG9uZSIsICItLWRlcHRoIiwgIjEiLCBzZWxmLnVybCwgc2VsZi5sb2NhbF9wYXRoXSwKICAgICAgICAgICAgICAgICAgICBjaGVjaz1UcnVlLCBjYXB0dXJlX291dHB1dD1UcnVlLCB0aW1lb3V0PTEyMAogICAgICAgICAgICAgICAgKQogICAgICAgICAgICAgICAgc2VsZi5zdGF0dXMgPSAiY2xvbmVkIgogICAgICAgICAgICBlbHNlOgogICAgICAgICAgICAgICAgc3VicHJvY2Vzcy5ydW4oCiAgICAgICAgICAgICAgICAgICAgWyJnaXQiLCAiLUMiLCBzZWxmLmxvY2FsX3BhdGgsICJmZXRjaCIsICJvcmlnaW4iLCBzZWxmLmJyYW5jaF0sCiAgICAgICAgICAgICAgICAgICAgY2hlY2s9VHJ1ZSwgY2FwdHVyZV9vdXRwdXQ9VHJ1ZSwgdGltZW91dD0zMAogICAgICAgICAgICAgICAgKQogICAgICAgICAgICAgICAgc2VsZi5zdGF0dXMgPSAic3luY2VkIgogICAgICAgICAgICBzZWxmLmxhc3Rfc3luYyA9IHRpbWUudGltZSgpCiAgICAgICAgICAgIHJldHVybiBUcnVlCiAgICAgICAgZXhjZXB0IEV4Y2VwdGlvbjoKICAgICAgICAgICAgc2VsZi5zdGF0dXMgPSAiZXJyb3IiCiAgICAgICAgICAgIHJldHVybiBGYWxzZQoKICAgIGRlZiB0b19kaWN0KHNlbGYpIC0+IGRpY3Q6CiAgICAgICAgcmV0dXJuIHsKICAgICAgICAgICAgIm5hbWUiOiBzZWxmLm5hbWUsCiAgICAgICAgICAgICJ1cmwiOiBzZWxmLnVybCwKICAgICAgICAgICAgImxvY2FsX3BhdGgiOiBzZWxmLmxvY2FsX3BhdGgsCiAgICAgICAgICAgICJicmFuY2giOiBzZWxmLmJyYW5jaCwKICAgICAgICAgICAgImxhc3Rfc3luYyI6IHNlbGYubGFzdF9zeW5jLAogICAgICAgICAgICAibGFzdF9waGkiOiBzZWxmLmxhc3RfcGhpLAogICAgICAgICAgICAibl9ub2RlcyI6IHNlbGYubl9ub2RlcywKICAgICAgICAgICAgIm5fZWRnZXMiOiBzZWxmLm5fZWRnZXMsCiAgICAgICAgICAgICJzdGF0dXMiOiBzZWxmLnN0YXR1cywKICAgICAgICB9CgogICAgQGNsYXNzbWV0aG9kCiAgICBkZWYgZnJvbV9kaWN0KGNscywgZDogZGljdCkgLT4gIlJlcG8iOgogICAgICAgIHJldHVybiBjbHMoKipkKQoKCmNsYXNzIFJlcG9NYW5hZ2VyOgogICAgIiIiCiAgICBNYW5hZ2VzIGEgY29sbGVjdGlvbiBvZiB0cmFja2VkIHJlcG9zaXRvcmllcy4KICAgIE1pcnJvcnMgcnVzdC9zcmMvcmVwb3MucnMuCiAgICAiIiIKCiAgICBkZWYgX19pbml0X18oc2VsZiwgc3RhdGVfZmlsZTogT3B0aW9uYWxbc3RyXSA9IE5vbmUpOgogICAgICAgIHNlbGYucmVwb3M6IERpY3Rbc3RyLCBSZXBvXSA9IHt9CiAgICAgICAgc2VsZi5zdGF0ZV9maWxlID0gc3RhdGVfZmlsZSBvciBvcy5wYXRoLmV4cGFuZHVzZXIoIn4vLmhpZ2gtYWdlbnQvcmVwb3Mvc3RhdGUuanNvbiIpCiAgICAgICAgc2VsZi5fZW5zdXJlX2RpcigpCiAgICAgICAgc2VsZi5fbG9hZCgpCgogICAgZGVmIF9lbnN1cmVfZGlyKHNlbGYpIC0+IE5vbmU6CiAgICAgICAgUGF0aChzZWxmLnN0YXRlX2ZpbGUpLnBhcmVudC5ta2RpcihwYXJlbnRzPVRydWUsIGV4aXN0X29rPVRydWUpCgogICAgZGVmIF9sb2FkKHNlbGYpIC0+IE5vbmU6CiAgICAgICAgIiIiTG9hZCByZXBvcyBmcm9tIEpTT04gc3RhdGUgZmlsZS4iIiIKICAgICAgICBpZiBub3QgUGF0aChzZWxmLnN0YXRlX2ZpbGUpLmV4aXN0cygpOgogICAgICAgICAgICByZXR1cm4KICAgICAgICB0cnk6CiAgICAgICAgICAgIHdpdGggb3BlbihzZWxmLnN0YXRlX2ZpbGUsICJyIikgYXMgZjoKICAgICAgICAgICAgICAgIGRhdGEgPSBqc29uLmxvYWQoZikKICAgICAgICAgICAgZm9yIG5hbWUsIGQgaW4gZGF0YS5nZXQoInJlcG9zIiwge30pLml0ZW1zKCk6CiAgICAgICAgICAgICAgICBzZWxmLnJlcG9zW25hbWVdID0gUmVwby5mcm9tX2RpY3QoZCkKICAgICAgICBleGNlcHQgKGpzb24uSlNPTkRlY29kZUVycm9yLCBLZXlFcnJvcik6CiAgICAgICAgICAgIHBhc3MKCiAgICBkZWYgX3NhdmUoc2VsZikgLT4gTm9uZToKICAgICAgICAiIiJQZXJzaXN0IHJlcG9zIHRvIEpTT04gc3RhdGUgZmlsZS4iIiIKICAgICAgICBkYXRhID0geyJyZXBvcyI6IHtuYW1lOiByLnRvX2RpY3QoKSBmb3IgbmFtZSwgciBpbiBzZWxmLnJlcG9zLml0ZW1zKCl9fQogICAgICAgIHdpdGggb3BlbihzZWxmLnN0YXRlX2ZpbGUsICJ3IikgYXMgZjoKICAgICAgICAgICAganNvbi5kdW1wKGRhdGEsIGYsIGluZGVudD0yKQoKICAgIGRlZiBhZGQoc2VsZiwgbmFtZTogc3RyLCB1cmw6IHN0ciwgbG9jYWxfcGF0aDogT3B0aW9uYWxbc3RyXSA9IE5vbmUsCiAgICAgICAgICAgIGJyYW5jaDogc3RyID0gIm1haW4iKSAtPiBSZXBvOgogICAgICAgICIiIkFkZCBhbmQgY2xvbmUgYSBuZXcgcmVwb3NpdG9yeS4iIiIKICAgICAgICBpZiBsb2NhbF9wYXRoIGlzIE5vbmU6CiAgICAgICAgICAgICMgRGVmYXVsdDogY2xvbmUgaW50byB+Ly5oaWdoLWFnZW50L3JlcG9zLzxuYW1lPgogICAgICAgICAgICBsb2NhbF9wYXRoID0gb3MucGF0aC5qb2luKAogICAgICAgICAgICAgICAgb3MucGF0aC5leHBhbmR1c2VyKCJ+Ly5oaWdoLWFnZW50L3JlcG9zIiksIG5hbWUKICAgICAgICAgICAgKQogICAgICAgIHJlcG8gPSBSZXBvKG5hbWU9bmFtZSwgdXJsPXVybCwgbG9jYWxfcGF0aD1sb2NhbF9wYXRoLCBicmFuY2g9YnJhbmNoKQogICAgICAgIHJlcG8uc3luYygpCiAgICAgICAgc2VsZi5yZXBvc1tuYW1lXSA9IHJlcG8KICAgICAgICBzZWxmLl9zYXZlKCkKICAgICAgICByZXR1cm4gcmVwbwoKICAgIGRlZiByZW1vdmUoc2VsZiwgbmFtZTogc3RyKSAtPiBib29sOgogICAgICAgICIiIlJlbW92ZSBhIHJlcG9zaXRvcnkgZnJvbSB0cmFja2luZyAoZG9lcyBOT1QgZGVsZXRlIGxvY2FsIGZpbGVzKS4iIiIKICAgICAgICByZW1vdmVkID0gc2VsZi5yZXBvcy5wb3AobmFtZSwgTm9uZSkgaXMgbm90IE5vbmUKICAgICAgICBpZiByZW1vdmVkOgogICAgICAgICAgICBzZWxmLl9zYXZlKCkKICAgICAgICByZXR1cm4gcmVtb3ZlZAoKICAgIGRlZiBzeW5jKHNlbGYsIG5hbWU6IE9wdGlvbmFsW3N0cl0gPSBOb25lKSAtPiBEaWN0W3N0ciwgYm9vbF06CiAgICAgICAgIiIiU3luYyBvbmUgb3IgYWxsIHJlcG9zLiBSZXR1cm5zIGRpY3Qgb2YgbmFtZSAtPiBzdWNjZXNzLiIiIgogICAgICAgIGlmIG5hbWU6CiAgICAgICAgICAgIHJlc3VsdCA9IHtuYW1lOiBzZWxmLnJlcG9zW25hbWVdLnN5bmMoKSBpZiBuYW1lIGluIHNlbGYucmVwb3MgZWxzZSBGYWxzZX0KICAgICAgICBlbHNlOgogICAgICAgICAgICByZXN1bHQgPSB7bjogci5zeW5jKCkgZm9yIG4sIHIgaW4gc2VsZi5yZXBvcy5pdGVtcygpfQogICAgICAgIHNlbGYuX3NhdmUoKQogICAgICAgIHJldHVybiByZXN1bHQKCiAgICBkZWYgbGlzdChzZWxmKSAtPiBMaXN0W1JlcG9dOgogICAgICAgICIiIkxpc3QgYWxsIHRyYWNrZWQgcmVwb3MuIiIiCiAgICAgICAgcmV0dXJuIGxpc3Qoc2VsZi5yZXBvcy52YWx1ZXMoKSkKCiAgICBkZWYgZ2V0KHNlbGYsIG5hbWU6IHN0cikgLT4gT3B0aW9uYWxbUmVwb106CiAgICAgICAgIiIiR2V0IGEgcmVwbyBieSBuYW1lLiIiIgogICAgICAgIHJldHVybiBzZWxmLnJlcG9zLmdldChuYW1lKQoKICAgIGRlZiB1cGRhdGVfbWV0cmljcyhzZWxmLCBuYW1lOiBzdHIsIG5fbm9kZXM6IGludCwgbl9lZGdlczogaW50LCBwaGk6IGZsb2F0KSAtPiBOb25lOgogICAgICAgICIiIlVwZGF0ZSBncmFwaCBtZXRyaWNzIGZvciBhIHJlcG8gYWZ0ZXIgYW5hbHlzaXMuIiIiCiAgICAgICAgaWYgbmFtZSBpbiBzZWxmLnJlcG9zOgogICAgICAgICAgICBzZWxmLnJlcG9zW25hbWVdLm5fbm9kZXMgPSBuX25vZGVzCiAgICAgICAgICAgIHNlbGYucmVwb3NbbmFtZV0ubl9lZGdlcyA9IG5fZWRnZXMKICAgICAgICAgICAgc2VsZi5yZXBvc1tuYW1lXS5sYXN0X3BoaSA9IHBoaQogICAgICAgICAgICBzZWxmLl9zYXZlKCkKCiAgICBkZWYgX19yZXByX18oc2VsZikgLT4gc3RyOgogICAgICAgIHJldHVybiBmIlJlcG9NYW5hZ2VyKHtsZW4oc2VsZi5yZXBvcyl9IHJlcG9zKSIK
+"""Repository management for Python engine — mirrors rust/src/repos.rs."""
+
+import json
+import os
+import subprocess
+from dataclasses import dataclass, field
+from pathlib import Path
+from typing import Dict, List, Optional
+import time
+
+
+@dataclass
+class Repo:
+    """A tracked repository."""
+    name: str
+    url: str
+    local_path: str
+    branch: str = "main"
+    last_sync: Optional[float] = None  # unix timestamp
+    last_phi: float = 0.0
+    n_nodes: int = 0
+    n_edges: int = 0
+    status: str = "unknown"  # unknown, cloned, synced, error
+
+    def sync(self) -> bool:
+        """Sync the repo (git fetch + optionally pull)."""
+        try:
+            if not Path(self.local_path).exists():
+                subprocess.run(
+                    ["git", "clone", "--depth", "1", self.url, self.local_path],
+                    check=True, capture_output=True, timeout=120
+                )
+                self.status = "cloned"
+            else:
+                subprocess.run(
+                    ["git", "-C", self.local_path, "fetch", "origin", self.branch],
+                    check=True, capture_output=True, timeout=30
+                )
+                self.status = "synced"
+            self.last_sync = time.time()
+            return True
+        except Exception:
+            self.status = "error"
+            return False
+
+    def to_dict(self) -> dict:
+        return {
+            "name": self.name,
+            "url": self.url,
+            "local_path": self.local_path,
+            "branch": self.branch,
+            "last_sync": self.last_sync,
+            "last_phi": self.last_phi,
+            "n_nodes": self.n_nodes,
+            "n_edges": self.n_edges,
+            "status": self.status,
+        }
+
+    @classmethod
+    def from_dict(cls, d: dict) -> "Repo":
+        return cls(**d)
+
+
+class RepoManager:
+    """
+    Manages a collection of tracked repositories.
+    Mirrors rust/src/repos.rs.
+    """
+
+    def __init__(self, state_file: Optional[str] = None):
+        self.repos: Dict[str, Repo] = {}
+        self.state_file = state_file or os.path.expanduser("~/.high-agent/repos/state.json")
+        self._ensure_dir()
+        self._load()
+
+    def _ensure_dir(self) -> None:
+        Path(self.state_file).parent.mkdir(parents=True, exist_ok=True)
+
+    def _load(self) -> None:
+        """Load repos from JSON state file."""
+        if not Path(self.state_file).exists():
+            return
+        try:
+            with open(self.state_file, "r") as f:
+                data = json.load(f)
+            for name, d in data.get("repos", {}).items():
+                self.repos[name] = Repo.from_dict(d)
+        except (json.JSONDecodeError, KeyError):
+            pass
+
+    def _save(self) -> None:
+        """Persist repos to JSON state file."""
+        data = {"repos": {name: r.to_dict() for name, r in self.repos.items()}}
+        with open(self.state_file, "w") as f:
+            json.dump(data, f, indent=2)
+
+    def add(self, name: str, url: str, local_path: Optional[str] = None,
+            branch: str = "main") -> Repo:
+        """Add and clone a new repository."""
+        if local_path is None:
+            # Default: clone into ~/.high-agent/repos/<name>
+            local_path = os.path.join(
+                os.path.expanduser("~/.high-agent/repos"), name
+            )
+        repo = Repo(name=name, url=url, local_path=local_path, branch=branch)
+        repo.sync()
+        self.repos[name] = repo
+        self._save()
+        return repo
+
+    def remove(self, name: str) -> bool:
+        """Remove a repository from tracking (does NOT delete local files)."""
+        removed = self.repos.pop(name, None) is not None
+        if removed:
+            self._save()
+        return removed
+
+    def sync(self, name: Optional[str] = None) -> Dict[str, bool]:
+        """Sync one or all repos. Returns dict of name -> success."""
+        if name:
+            result = {name: self.repos[name].sync() if name in self.repos else False}
+        else:
+            result = {n: r.sync() for n, r in self.repos.items()}
+        self._save()
+        return result
+
+    def list(self) -> List[Repo]:
+        """List all tracked repos."""
+        return list(self.repos.values())
+
+    def get(self, name: str) -> Optional[Repo]:
+        """Get a repo by name."""
+        return self.repos.get(name)
+
+    def update_metrics(self, name: str, n_nodes: int, n_edges: int, phi: float) -> None:
+        """Update graph metrics for a repo after analysis."""
+        if name in self.repos:
+            self.repos[name].n_nodes = n_nodes
+            self.repos[name].n_edges = n_edges
+            self.repos[name].last_phi = phi
+            self._save()
+
+    def __repr__(self) -> str:
+        return f"RepoManager({len(self.repos)} repos)"

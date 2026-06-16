@@ -1,1 +1,57 @@
-Ly8hIE9yY2hlc3RyYXRvciDigJQgcGllY2V3aXNlIHJlZ2ltZSBzd2l0Y2hpbmcgbG9naWMuCgp1c2UgY3JhdGU6OmVycm9yOjp7SGlnaEFnZW50RXJyb3IsIFJlc3VsdH07CnVzZSBjcmF0ZTo6Z3JhcGg6OntEaXJlY3RlZEdyYXBoLCBHcmFwaFNuYXBzaG90LCBTZWdtZW50ZWRSZWdpbWVEZXRlY3Rvcn07CnVzZSBjcmF0ZTo6cmVnaW1lOjp7SFlTVEVSRVNJU19NQVJHSU4sIFJlZ2ltZSwgUmVnaW1lQ29lZmZzLCBSZWdpbWVUcmFuc2l0aW9ufTsKCnB1YiBzdHJ1Y3QgT3JjaGVzdHJhdG9yIHsKICAgIHB1YiBjdXJyZW50X3JlZ2ltZTogUmVnaW1lLAogICAgcHViIGRldGVjdG9yOiBTZWdtZW50ZWRSZWdpbWVEZXRlY3RvciwKfQoKaW1wbCBPcmNoZXN0cmF0b3IgewogICAgcHViIGZuIG5ldygpIC0+IFNlbGYgewogICAgICAgIFNlbGYgewogICAgICAgICAgICBjdXJyZW50X3JlZ2ltZTogUmVnaW1lOjpkZWZhdWx0KCksCiAgICAgICAgICAgIGRldGVjdG9yOiBTZWdtZW50ZWRSZWdpbWVEZXRlY3Rvcjo6bmV3KDEwLCAyLjApLAogICAgICAgIH0KICAgIH0KCiAgICAvLy8gRXZhbHVhdGUgYWxsIDMgcmVnaW1lcyBhZ2FpbnN0IHRoZSBjdXJyZW50IGdyYXBoLCByZXR1cm4gdGhlIGJlc3Qgb25lLgogICAgcHViIGZuIGJlc3RfcmVnaW1lKCZzZWxmLCBncmFwaDogJkRpcmVjdGVkR3JhcGgpIC0+IChSZWdpbWUsIGY2NCkgewogICAgICAgIGxldCBtdXQgYmVzdCA9IChSZWdpbWU6OlNpbXBsZSwgZjY0OjpORUdfSU5GSU5JVFkpOwogICAgICAgIGZvciByZWdpbWUgaW4gUmVnaW1lOjphbGwoKSB7CiAgICAgICAgICAgIGxldCBwaGkgPSBncmFwaC5waGlfcmVnaW1lKHJlZ2ltZSk7CiAgICAgICAgICAgIGlmIHBoaSA+IGJlc3QuMSB7IGJlc3QgPSAocmVnaW1lLCBwaGkpOyB9CiAgICAgICAgfQogICAgICAgIGJlc3QKICAgIH0KCiAgICAvLy8gRXZhbHVhdGUgYW5kIHN3aXRjaCBpZiB0aGUgYmVzdCByZWdpbWUgYmVhdHMgY3VycmVudCBieSBoeXN0ZXJlc2lzIG1hcmdpbi4KICAgIHB1YiBmbiBldmFsdWF0ZV9hbmRfc3dpdGNoKCZtdXQgc2VsZiwgZ3JhcGg6ICZEaXJlY3RlZEdyYXBoKSAtPiBPcHRpb248UmVnaW1lVHJhbnNpdGlvbj4gewogICAgICAgIGxldCAoYmVzdF9yZWdpbWUsIGJlc3RfcGhpKSA9IHNlbGYuYmVzdF9yZWdpbWUoZ3JhcGgpOwogICAgICAgIGxldCBjdXJyZW50X3BoaSA9IGdyYXBoLnBoaV9yZWdpbWUoc2VsZi5jdXJyZW50X3JlZ2ltZSk7CgogICAgICAgIGlmIGJlc3RfcmVnaW1lICE9IHNlbGYuY3VycmVudF9yZWdpbWUgJiYgKGJlc3RfcGhpIC0gY3VycmVudF9waGkpID4gSFlTVEVSRVNJU19NQVJHSU4gewogICAgICAgICAgICBsZXQgdHJhbnNpdGlvbiA9IFJlZ2ltZVRyYW5zaXRpb246Om5ldygKICAgICAgICAgICAgICAgIHNlbGYuY3VycmVudF9yZWdpbWUsIGJlc3RfcmVnaW1lLAogICAgICAgICAgICAgICAgJmZvcm1hdCEoIs6mIGltcHJvdmVkIGJ5IHs6LjR9ID4gaHlzdGVyZXNpcyB7Oi40fSIsIGJlc3RfcGhpIC0gY3VycmVudF9waGksIEhZU1RFUkVTSVNfTUFSR0lOKSwKICAgICAgICAgICAgICAgIGN1cnJlbnRfcGhpLCBiZXN0X3BoaSwKICAgICAgICAgICAgKTsKICAgICAgICAgICAgc2VsZi5jdXJyZW50X3JlZ2ltZSA9IGJlc3RfcmVnaW1lOwogICAgICAgICAgICByZXR1cm4gU29tZSh0cmFuc2l0aW9uKTsKICAgICAgICB9CiAgICAgICAgTm9uZQogICAgfQoKICAgIC8vLyBGZWVkIGRldGVjdG9yLCBhbmQgaWYgZGV2aWF0aW9uIGRldGVjdGVkLCByZS1ldmFsdWF0ZSByZWdpbWUuCiAgICBwdWIgZm4gZGV0ZWN0X2FuZF9zd2l0Y2goJm11dCBzZWxmLCBncmFwaDogJkRpcmVjdGVkR3JhcGgpIC0+IChPcHRpb248UmVnaW1lVHJhbnNpdGlvbj4sIE9wdGlvbjxjcmF0ZTo6Z3JhcGg6OkRldmlhdGlvbkFsZXJ0PikgewogICAgICAgIGxldCBzbmFwc2hvdCA9IGdyYXBoLnNuYXBzaG90X2Z1bGwoc2VsZi5jdXJyZW50X3JlZ2ltZSk7CiAgICAgICAgbGV0IGFsZXJ0ID0gc2VsZi5kZXRlY3Rvci5mZWVkKHNuYXBzaG90KTsKICAgICAgICBsZXQgdHJhbnNpdGlvbiA9IHNlbGYuZXZhbHVhdGVfYW5kX3N3aXRjaChncmFwaCk7CiAgICAgICAgKHRyYW5zaXRpb24sIGFsZXJ0KQogICAgfQoKICAgIHB1YiBmbiBzZXRfcmVnaW1lKCZtdXQgc2VsZiwgcmVnaW1lOiBSZWdpbWUpIHsgc2VsZi5jdXJyZW50X3JlZ2ltZSA9IHJlZ2ltZTsgfQogICAgcHViIGZuIHJlc2V0X2RldGVjdG9yKCZtdXQgc2VsZikgeyBzZWxmLmRldGVjdG9yLmNsZWFyKCk7IH0KfQ==
+//! Orchestrator — piecewise regime switching logic.
+
+use crate::error::{HighAgentError, Result};
+use crate::graph::{DirectedGraph, GraphSnapshot, SegmentedRegimeDetector};
+use crate::regime::{HYSTERESIS_MARGIN, Regime, RegimeCoeffs, RegimeTransition};
+
+pub struct Orchestrator {
+    pub current_regime: Regime,
+    pub detector: SegmentedRegimeDetector,
+}
+
+impl Orchestrator {
+    pub fn new() -> Self {
+        Self {
+            current_regime: Regime::default(),
+            detector: SegmentedRegimeDetector::new(10, 2.0),
+        }
+    }
+
+    /// Evaluate all 3 regimes against the current graph, return the best one.
+    pub fn best_regime(&self, graph: &DirectedGraph) -> (Regime, f64) {
+        let mut best = (Regime::Simple, f64::NEG_INFINITY);
+        for regime in Regime::all() {
+            let phi = graph.phi_regime(regime);
+            if phi > best.1 { best = (regime, phi); }
+        }
+        best
+    }
+
+    /// Evaluate and switch if the best regime beats current by hysteresis margin.
+    pub fn evaluate_and_switch(&mut self, graph: &DirectedGraph) -> Option<RegimeTransition> {
+        let (best_regime, best_phi) = self.best_regime(graph);
+        let current_phi = graph.phi_regime(self.current_regime);
+
+        if best_regime != self.current_regime && (best_phi - current_phi) > HYSTERESIS_MARGIN {
+            let transition = RegimeTransition::new(
+                self.current_regime, best_regime,
+                &format!("Φ improved by {:.4} > hysteresis {:.4}", best_phi - current_phi, HYSTERESIS_MARGIN),
+                current_phi, best_phi,
+            );
+            self.current_regime = best_regime;
+            return Some(transition);
+        }
+        None
+    }
+
+    /// Feed detector, and if deviation detected, re-evaluate regime.
+    pub fn detect_and_switch(&mut self, graph: &DirectedGraph) -> (Option<RegimeTransition>, Option<crate::graph::DeviationAlert>) {
+        let snapshot = graph.snapshot_full(self.current_regime);
+        let alert = self.detector.feed(snapshot);
+        let transition = self.evaluate_and_switch(graph);
+        (transition, alert)
+    }
+
+    pub fn set_regime(&mut self, regime: Regime) { self.current_regime = regime; }
+    pub fn reset_detector(&mut self) { self.detector.clear(); }
+}

@@ -1,1 +1,148 @@
-Ly8hIFN3YXJtIOKAlCBtdWx0aS1hZ2VudCBjb29yZGluYXRpb24gc3lzdGVtLgoKdXNlIGNyYXRlOjphZ2VudDo6e0FnZW50LCBBZ2VudElkLCBBZ2VudFJvbGUsIEFnZW50TWVtb3J5fTsKdXNlIGNyYXRlOjplcnJvcjo6e0hpZ2hBZ2VudEVycm9yLCBSZXN1bHR9Owp1c2Ugc2VyZGU6OntEZXNlcmlhbGl6ZSwgU2VyaWFsaXplfTsKdXNlIHN0ZDo6Y29sbGVjdGlvbnM6Okhhc2hNYXA7CgojW2Rlcml2ZShEZWJ1ZywgQ2xvbmUsIFNlcmlhbGl6ZSwgRGVzZXJpYWxpemUsIERlZmF1bHQpXQpwdWIgc3RydWN0IFN3YXJtIHsKICAgIHB1YiBhZ2VudHM6IEhhc2hNYXA8QWdlbnRJZCwgQWdlbnQ+LAogICAgcHViIG5leHRfaWQ6IEFnZW50SWQsCiAgICBwdWIgYWN0aXZlX3Rhc2tzOiBWZWM8U3dhcm1UYXNrPiwKICAgIHB1YiBjb21wbGV0ZWRfdGFza3M6IFZlYzxTd2FybVRhc2s+LAogICAgcHViIGRpc3BhdGNoX2xvZzogVmVjPERpc3BhdGNoRW50cnk+LAp9CgojW2Rlcml2ZShEZWJ1ZywgQ2xvbmUsIFNlcmlhbGl6ZSwgRGVzZXJpYWxpemUpXQpwdWIgc3RydWN0IFN3YXJtVGFzayB7CiAgICBwdWIgaWQ6IHUzMiwKICAgIHB1YiBkZXNjcmlwdGlvbjogU3RyaW5nLAogICAgcHViIGFzc2lnbmVkX3RvOiBPcHRpb248QWdlbnRJZD4sCiAgICBwdWIgc3RhdHVzOiBUYXNrU3RhdHVzLAogICAgcHViIGNyZWF0ZWRfYXQ6IFN0cmluZywKICAgIHB1YiByZXN1bHQ6IE9wdGlvbjxTdHJpbmc+LAp9CgojW2Rlcml2ZShEZWJ1ZywgQ2xvbmUsIENvcHksIFNlcmlhbGl6ZSwgRGVzZXJpYWxpemUsIFBhcnRpYWxFcSwgRXEpXQpwdWIgZW51bSBUYXNrU3RhdHVzIHsgUGVuZGluZywgUnVubmluZywgQ29tcGxldGVkLCBGYWlsZWQsIENhbmNlbGxlZCB9CgojW2Rlcml2ZShEZWJ1ZywgQ2xvbmUsIFNlcmlhbGl6ZSwgRGVzZXJpYWxpemUpXQpwdWIgc3RydWN0IERpc3BhdGNoRW50cnkgewogICAgcHViIGZyb206IEFnZW50SWQsCiAgICBwdWIgdG86IEFnZW50SWQsCiAgICBwdWIgdGFza19pZDogdTMyLAogICAgcHViIG1lc3NhZ2U6IFN0cmluZywKICAgIHB1YiB0aW1lc3RhbXA6IFN0cmluZywKfQoKaW1wbCBTd2FybSB7CiAgICBwdWIgZm4gbmV3KCkgLT4gU2VsZiB7IFNlbGY6OmRlZmF1bHQoKSB9CgogICAgcHViIGZuIHNwYXduKCZtdXQgc2VsZiwgcm9sZTogQWdlbnRSb2xlLCBuYW1lOiAmc3RyKSAtPiBBZ2VudElkIHsKICAgICAgICBsZXQgaWQgPSBzZWxmLm5leHRfaWQ7CiAgICAgICAgc2VsZi5uZXh0X2lkICs9IDE7CiAgICAgICAgbGV0IGFnZW50ID0gQWdlbnQ6Om5ldyhpZCwgcm9sZSwgbmFtZSk7CiAgICAgICAgc2VsZi5hZ2VudHMuaW5zZXJ0KGlkLCBhZ2VudCk7CiAgICAgICAgaWQKICAgIH0KCiAgICBwdWIgZm4gc3Bhd25fYWxsX2RlZmF1bHRzKCZtdXQgc2VsZikgewogICAgICAgIGxldCByb2xlcyA9IFsKICAgICAgICAgICAgKEFnZW50Um9sZTo6T3JjaGVzdHJhdG9yLCAizqYtT3JjaGVzdHJhdG9yIiksCiAgICAgICAgICAgIChBZ2VudFJvbGU6OlJlZmFjdG9yLCAiUmVmYWN0b3ItQWdlbnQiKSwKICAgICAgICAgICAgKEFnZW50Um9sZTo6UXVhbGl0eSwgIlF1YWxpdHktQWdlbnQiKSwKICAgICAgICAgICAgKEFnZW50Um9sZTo6VGVzdCwgIlRlc3QtQWdlbnQiKSwKICAgICAgICAgICAgKEFnZW50Um9sZTo6U2tpbGwsICJTa2lsbC1BZ2VudCIpLAogICAgICAgICAgICAoQWdlbnRSb2xlOjpSZXBvLCAiUmVwby1BZ2VudCIpLAogICAgICAgICAgICAoQWdlbnRSb2xlOjpCdWlsZCwgIkJ1aWxkLUFnZW50IiksCiAgICAgICAgICAgIChBZ2VudFJvbGU6OlBsYW5uZXIsICJQbGFubmVyLUFnZW50IiksCiAgICAgICAgXTsKICAgICAgICBmb3IgKHJvbGUsIG5hbWUpIGluIHJvbGVzIHsKICAgICAgICAgICAgc2VsZi5zcGF3bihyb2xlLCBuYW1lKTsKICAgICAgICB9CiAgICB9CgogICAgcHViIGZuIGdldCgmc2VsZiwgaWQ6IEFnZW50SWQpIC0+IE9wdGlvbjwmQWdlbnQ+IHsgc2VsZi5hZ2VudHMuZ2V0KCZpZCkgfQogICAgcHViIGZuIGdldF9tdXQoJm11dCBzZWxmLCBpZDogQWdlbnRJZCkgLT4gT3B0aW9uPCZtdXQgQWdlbnQ+IHsgc2VsZi5hZ2VudHMuZ2V0X211dCgmaWQpIH0KCiAgICBwdWIgZm4gbGlzdF9ieV9yb2xlKCZzZWxmLCByb2xlOiBBZ2VudFJvbGUpIC0+IFZlYzwmQWdlbnQ+IHsKICAgICAgICBzZWxmLmFnZW50cy52YWx1ZXMoKS5maWx0ZXIofGF8IGEucm9sZSA9PSByb2xlKS5jb2xsZWN0KCkKICAgIH0KCiAgICBwdWIgZm4gZGlzcGF0Y2goJm11dCBzZWxmLCBmcm9tOiBBZ2VudElkLCB0bzogQWdlbnRJZCwgdGFza19pZDogdTMyLCBtZXNzYWdlOiAmc3RyKSAtPiBSZXN1bHQ8KCk+IHsKICAgICAgICBpZiAhc2VsZi5hZ2VudHMuY29udGFpbnNfa2V5KCZmcm9tKSB7IHJldHVybiBFcnIoSGlnaEFnZW50RXJyb3I6OkFnZW50KGZvcm1hdCEoIkFnZW50IHt9IG5vdCBmb3VuZCIsIGZyb20pKSk7IH0KICAgICAgICBpZiAhc2VsZi5hZ2VudHMuY29udGFpbnNfa2V5KCZ0bykgeyByZXR1cm4gRXJyKEhpZ2hBZ2VudEVycm9yOjpBZ2VudChmb3JtYXQhKCJBZ2VudCB7fSBub3QgZm91bmQiLCB0bykpKTsgfQogICAgICAgIHNlbGYuZGlzcGF0Y2hfbG9nLnB1c2goRGlzcGF0Y2hFbnRyeSB7CiAgICAgICAgICAgIGZyb20sIHRvLCB0YXNrX2lkLCBtZXNzYWdlOiBtZXNzYWdlLnRvX3N0cmluZygpLCB0aW1lc3RhbXA6IGNocm9ub19ub3coKSwKICAgICAgICB9KTsKICAgICAgICBPaygoKSkKICAgIH0KCiAgICBwdWIgZm4gY3JlYXRlX3Rhc2soJm11dCBzZWxmLCBkZXNjcmlwdGlvbjogJnN0cikgLT4gdTMyIHsKICAgICAgICBsZXQgaWQgPSBzZWxmLmFjdGl2ZV90YXNrcy5sZW4oKSBhcyB1MzIgKyBzZWxmLmNvbXBsZXRlZF90YXNrcy5sZW4oKSBhcyB1MzI7CiAgICAgICAgc2VsZi5hY3RpdmVfdGFza3MucHVzaChTd2FybVRhc2sgewogICAgICAgICAgICBpZCwgZGVzY3JpcHRpb246IGRlc2NyaXB0aW9uLnRvX3N0cmluZygpLCBhc3NpZ25lZF90bzogTm9uZSwKICAgICAgICAgICAgc3RhdHVzOiBUYXNrU3RhdHVzOjpQZW5kaW5nLCBjcmVhdGVkX2F0OiBjaHJvbm9fbm93KCksIHJlc3VsdDogTm9uZSwKICAgICAgICB9KTsKICAgICAgICBpZAogICAgfQoKICAgIHB1YiBmbiBhc3NpZ25fdGFzaygmbXV0IHNlbGYsIHRhc2tfaWQ6IHUzMiwgYWdlbnRfaWQ6IEFnZW50SWQpIC0+IFJlc3VsdDwoKT4gewogICAgICAgIGxldCB0YXNrID0gc2VsZi5hY3RpdmVfdGFza3MuaXRlcl9tdXQoKS5maW5kKHx0fCB0LmlkID09IHRhc2tfaWQpCiAgICAgICAgICAgIC5va19vcl9lbHNlKHx8IEhpZ2hBZ2VudEVycm9yOjpBZ2VudChmb3JtYXQhKCJUYXNrIHt9IG5vdCBmb3VuZCIsIHRhc2tfaWQpKSk/OwogICAgICAgIGlmICFzZWxmLmFnZW50cy5jb250YWluc19rZXkoJmFnZW50X2lkKSB7CiAgICAgICAgICAgIHJldHVybiBFcnIoSGlnaEFnZW50RXJyb3I6OkFnZW50KGZvcm1hdCEoIkFnZW50IHt9IG5vdCBmb3VuZCIsIGFnZW50X2lkKSkpOwogICAgICAgIH0KICAgICAgICB0YXNrLmFzc2lnbmVkX3RvID0gU29tZShhZ2VudF9pZCk7CiAgICAgICAgdGFzay5zdGF0dXMgPSBUYXNrU3RhdHVzOjpSdW5uaW5nOwogICAgICAgIE9rKCgpKQogICAgfQoKICAgIHB1YiBmbiBjb21wbGV0ZV90YXNrKCZtdXQgc2VsZiwgdGFza19pZDogdTMyLCByZXN1bHQ6ICZzdHIpIHsKICAgICAgICBpZiBsZXQgU29tZShwb3MpID0gc2VsZi5hY3RpdmVfdGFza3MuaXRlcigpLnBvc2l0aW9uKHx0fCB0LmlkID09IHRhc2tfaWQpIHsKICAgICAgICAgICAgbGV0IG11dCB0YXNrID0gc2VsZi5hY3RpdmVfdGFza3MucmVtb3ZlKHBvcyk7CiAgICAgICAgICAgIHRhc2suc3RhdHVzID0gVGFza1N0YXR1czo6Q29tcGxldGVkOwogICAgICAgICAgICB0YXNrLnJlc3VsdCA9IFNvbWUocmVzdWx0LnRvX3N0cmluZygpKTsKICAgICAgICAgICAgc2VsZi5jb21wbGV0ZWRfdGFza3MucHVzaCh0YXNrKTsKICAgICAgICB9CiAgICB9CgogICAgcHViIGZuIGZhaWxfdGFzaygmbXV0IHNlbGYsIHRhc2tfaWQ6IHUzMikgewogICAgICAgIGlmIGxldCBTb21lKHBvcykgPSBzZWxmLmFjdGl2ZV90YXNrcy5pdGVyKCkucG9zaXRpb24ofHR8IHQuaWQgPT0gdGFza19pZCkgewogICAgICAgICAgICBsZXQgbXV0IHRhc2sgPSBzZWxmLmFjdGl2ZV90YXNrcy5yZW1vdmUocG9zKTsKICAgICAgICAgICAgdGFzay5zdGF0dXMgPSBUYXNrU3RhdHVzOjpGYWlsZWQ7CiAgICAgICAgICAgIHNlbGYuY29tcGxldGVkX3Rhc2tzLnB1c2godGFzayk7CiAgICAgICAgfQogICAgfQoKICAgIHB1YiBmbiBhY3RpdmVfYWdlbnRzKCZzZWxmKSAtPiBWZWM8JkFnZW50PiB7CiAgICAgICAgc2VsZi5hZ2VudHMudmFsdWVzKCkuZmlsdGVyKHxhfCBhLmFjdGl2ZSkuY29sbGVjdCgpCiAgICB9CgogICAgcHViIGZuIHN0YXRzKCZzZWxmKSAtPiBTd2FybVN0YXRzIHsKICAgICAgICBTd2FybVN0YXRzIHsKICAgICAgICAgICAgdG90YWxfYWdlbnRzOiBzZWxmLmFnZW50cy5sZW4oKSwKICAgICAgICAgICAgYWN0aXZlX2FnZW50czogc2VsZi5hY3RpdmVfYWdlbnRzKCkubGVuKCksCiAgICAgICAgICAgIHBlbmRpbmdfdGFza3M6IHNlbGYuYWN0aXZlX3Rhc2tzLml0ZXIoKS5maWx0ZXIofHR8IHQuc3RhdHVzID09IFRhc2tTdGF0dXM6OlBlbmRpbmcpLmNvdW50KCksCiAgICAgICAgICAgIHJ1bm5pbmdfdGFza3M6IHNlbGYuYWN0aXZlX3Rhc2tzLml0ZXIoKS5maWx0ZXIofHR8IHQuc3RhdHVzID09IFRhc2tTdGF0dXM6OlJ1bm5pbmcpLmNvdW50KCksCiAgICAgICAgICAgIGNvbXBsZXRlZF90YXNrczogc2VsZi5jb21wbGV0ZWRfdGFza3MubGVuKCksCiAgICAgICAgICAgIGZhaWxlZF90YXNrczogc2VsZi5jb21wbGV0ZWRfdGFza3MuaXRlcigpLmZpbHRlcih8dHwgdC5zdGF0dXMgPT0gVGFza1N0YXR1czo6RmFpbGVkKS5jb3VudCgpLAogICAgICAgIH0KICAgIH0KfQoKI1tkZXJpdmUoRGVidWcsIENsb25lLCBTZXJpYWxpemUsIERlc2VyaWFsaXplKV0KcHViIHN0cnVjdCBTd2FybVN0YXRzIHsKICAgIHB1YiB0b3RhbF9hZ2VudHM6IHVzaXplLAogICAgcHViIGFjdGl2ZV9hZ2VudHM6IHVzaXplLAogICAgcHViIHBlbmRpbmdfdGFza3M6IHVzaXplLAogICAgcHViIHJ1bm5pbmdfdGFza3M6IHVzaXplLAogICAgcHViIGNvbXBsZXRlZF90YXNrczogdXNpemUsCiAgICBwdWIgZmFpbGVkX3Rhc2tzOiB1c2l6ZSwKfQoKZm4gY2hyb25vX25vdygpIC0+IFN0cmluZyB7CiAgICBsZXQgZHVyID0gc3RkOjp0aW1lOjpTeXN0ZW1UaW1lOjpub3coKS5kdXJhdGlvbl9zaW5jZShzdGQ6OnRpbWU6OlVOSVhfRVBPQ0gpLnVud3JhcF9vcl9kZWZhdWx0KCk7CiAgICBmb3JtYXQhKCJ7fS57OjA5fSIsIGR1ci5hc19zZWNzKCksIGR1ci5zdWJzZWNfbmFub3MoKSkKfQ==
+//! Swarm — multi-agent coordination system.
+
+use crate::agent::{Agent, AgentId, AgentRole, AgentMemory};
+use crate::error::{HighAgentError, Result};
+use serde::{Deserialize, Serialize};
+use std::collections::HashMap;
+
+#[derive(Debug, Clone, Serialize, Deserialize, Default)]
+pub struct Swarm {
+    pub agents: HashMap<AgentId, Agent>,
+    pub next_id: AgentId,
+    pub active_tasks: Vec<SwarmTask>,
+    pub completed_tasks: Vec<SwarmTask>,
+    pub dispatch_log: Vec<DispatchEntry>,
+}
+
+#[derive(Debug, Clone, Serialize, Deserialize)]
+pub struct SwarmTask {
+    pub id: u32,
+    pub description: String,
+    pub assigned_to: Option<AgentId>,
+    pub status: TaskStatus,
+    pub created_at: String,
+    pub result: Option<String>,
+}
+
+#[derive(Debug, Clone, Copy, Serialize, Deserialize, PartialEq, Eq)]
+pub enum TaskStatus { Pending, Running, Completed, Failed, Cancelled }
+
+#[derive(Debug, Clone, Serialize, Deserialize)]
+pub struct DispatchEntry {
+    pub from: AgentId,
+    pub to: AgentId,
+    pub task_id: u32,
+    pub message: String,
+    pub timestamp: String,
+}
+
+impl Swarm {
+    pub fn new() -> Self { Self::default() }
+
+    pub fn spawn(&mut self, role: AgentRole, name: &str) -> AgentId {
+        let id = self.next_id;
+        self.next_id += 1;
+        let agent = Agent::new(id, role, name);
+        self.agents.insert(id, agent);
+        id
+    }
+
+    pub fn spawn_all_defaults(&mut self) {
+        let roles = [
+            (AgentRole::Orchestrator, "Φ-Orchestrator"),
+            (AgentRole::Refactor, "Refactor-Agent"),
+            (AgentRole::Quality, "Quality-Agent"),
+            (AgentRole::Test, "Test-Agent"),
+            (AgentRole::Skill, "Skill-Agent"),
+            (AgentRole::Repo, "Repo-Agent"),
+            (AgentRole::Build, "Build-Agent"),
+            (AgentRole::Planner, "Planner-Agent"),
+        ];
+        for (role, name) in roles {
+            self.spawn(role, name);
+        }
+    }
+
+    pub fn get(&self, id: AgentId) -> Option<&Agent> { self.agents.get(&id) }
+    pub fn get_mut(&mut self, id: AgentId) -> Option<&mut Agent> { self.agents.get_mut(&id) }
+
+    pub fn list_by_role(&self, role: AgentRole) -> Vec<&Agent> {
+        self.agents.values().filter(|a| a.role == role).collect()
+    }
+
+    pub fn dispatch(&mut self, from: AgentId, to: AgentId, task_id: u32, message: &str) -> Result<()> {
+        if !self.agents.contains_key(&from) { return Err(HighAgentError::Agent(format!("Agent {} not found", from))); }
+        if !self.agents.contains_key(&to) { return Err(HighAgentError::Agent(format!("Agent {} not found", to))); }
+        self.dispatch_log.push(DispatchEntry {
+            from, to, task_id, message: message.to_string(), timestamp: chrono_now(),
+        });
+        Ok(())
+    }
+
+    pub fn create_task(&mut self, description: &str) -> u32 {
+        let id = self.active_tasks.len() as u32 + self.completed_tasks.len() as u32;
+        self.active_tasks.push(SwarmTask {
+            id, description: description.to_string(), assigned_to: None,
+            status: TaskStatus::Pending, created_at: chrono_now(), result: None,
+        });
+        id
+    }
+
+    pub fn assign_task(&mut self, task_id: u32, agent_id: AgentId) -> Result<()> {
+        let task = self.active_tasks.iter_mut().find(|t| t.id == task_id)
+            .ok_or_else(|| HighAgentError::Agent(format!("Task {} not found", task_id)))?;
+        if !self.agents.contains_key(&agent_id) {
+            return Err(HighAgentError::Agent(format!("Agent {} not found", agent_id)));
+        }
+        task.assigned_to = Some(agent_id);
+        task.status = TaskStatus::Running;
+        Ok(())
+    }
+
+    pub fn complete_task(&mut self, task_id: u32, result: &str) {
+        if let Some(pos) = self.active_tasks.iter().position(|t| t.id == task_id) {
+            let mut task = self.active_tasks.remove(pos);
+            task.status = TaskStatus::Completed;
+            task.result = Some(result.to_string());
+            self.completed_tasks.push(task);
+        }
+    }
+
+    pub fn fail_task(&mut self, task_id: u32) {
+        if let Some(pos) = self.active_tasks.iter().position(|t| t.id == task_id) {
+            let mut task = self.active_tasks.remove(pos);
+            task.status = TaskStatus::Failed;
+            self.completed_tasks.push(task);
+        }
+    }
+
+    pub fn active_agents(&self) -> Vec<&Agent> {
+        self.agents.values().filter(|a| a.active).collect()
+    }
+
+    pub fn stats(&self) -> SwarmStats {
+        SwarmStats {
+            total_agents: self.agents.len(),
+            active_agents: self.active_agents().len(),
+            pending_tasks: self.active_tasks.iter().filter(|t| t.status == TaskStatus::Pending).count(),
+            running_tasks: self.active_tasks.iter().filter(|t| t.status == TaskStatus::Running).count(),
+            completed_tasks: self.completed_tasks.len(),
+            failed_tasks: self.completed_tasks.iter().filter(|t| t.status == TaskStatus::Failed).count(),
+        }
+    }
+}
+
+#[derive(Debug, Clone, Serialize, Deserialize)]
+pub struct SwarmStats {
+    pub total_agents: usize,
+    pub active_agents: usize,
+    pub pending_tasks: usize,
+    pub running_tasks: usize,
+    pub completed_tasks: usize,
+    pub failed_tasks: usize,
+}
+
+fn chrono_now() -> String {
+    let dur = std::time::SystemTime::now().duration_since(std::time::UNIX_EPOCH).unwrap_or_default();
+    format!("{}.{:09}", dur.as_secs(), dur.subsec_nanos())
+}

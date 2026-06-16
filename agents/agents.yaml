@@ -1,0 +1,110 @@
+agents:
+  - id: orchestrator
+    name: Orchestrator
+    role: Routes tasks to specialized agents based on intent classification
+    regime_preference: hybrid
+    tools:
+      - classify_intent
+      - route_task
+      - aggregate_results
+      - switch_regime
+    memory: short_term
+    description: |
+      Top-level coordinator. Receives all incoming tasks, classifies them,
+      and dispatches to the appropriate specialist. Monitors Φ(G) globally
+      and initiates regime switches when the detector fires.
+
+  - id: refactorer
+    name: Refactorer
+    role: Reduces coupling and improves graph structure
+    regime_preference: advanced
+    tools:
+      - inspect_graph
+      - remove_edge
+      - extract_interface
+      - move_function
+      - apply_patch
+    memory: long_term
+    description: |
+      Targets Č(G) minimization. Finds the highest-weight cross-module edges,
+      proposes extraction points, and applies structural changes. Validates
+      each change by re-measuring Φ(G) and rolling back if degraded.
+
+  - id: quality-auditor
+    name: Quality Auditor
+    role: Enforces code quality metrics and reduces cyclomatic complexity
+    regime_preference: advanced
+    tools:
+      - scan_hotspots
+      - split_function
+      - add_type_hints
+      - remove_dead_code
+      - check_quality
+    memory: short_term
+    description: |
+      Targets mean(V) reduction and quality score improvement.
+      Scans for god functions (V > 15), dead code, and missing type hints.
+      Works in Advanced regime where γ penalizes complexity most.
+
+  - id: test-engineer
+    name: Test Engineer
+    role: Writes and verifies tests for refactored code
+    regime_preference: simple
+    tools:
+      - run_tests
+      - write_test
+      - check_coverage
+      - verify_behavior
+    memory: short_term
+    description: |
+      Ensures every refactoring is covered by tests. Runs before and after
+      structural changes to confirm behavior is preserved. Uses Simple regime
+      where fast iteration is prioritized over modularity.
+
+  - id: skill-miner
+    name: Skill Miner
+    role: Learns and catalogs reusable code patterns from successful changes
+    regime_preference: hybrid
+    tools:
+      - learn_pattern
+      - rate_skill
+      - search_skills
+      - export_skill
+    memory: long_term
+    description: |
+      Observes successful refactorings and encodes them as reusable skills.
+      Maintains the skill library with relevance scoring. When Φ(G) improves,
+      records the operation as a potential skill candidate.
+
+  - id: git-keeper
+    name: Git Keeper
+    role: Manages repository operations — clone, commit, rollback
+    regime_preference: simple
+    tools:
+      - clone_repo
+      - commit
+      - rollback
+      - status
+      - diff
+    memory: short_term
+    description: |
+      Handles all git operations. Creates checkpoints before risky changes.
+      Rolls back to the last good commit if Φ(G) degrades below threshold.
+      Manages the self-improving loop's commit/rollback cycle.
+
+  - id: planner
+    name: Planner
+    role: Strategic refactoring planning from Φ(G) analysis
+    regime_preference: advanced
+    tools:
+      - analyze_phi
+      - sweep_regimes
+      - prioritize_tasks
+      - estimate_impact
+      - create_plan
+    memory: long_term
+    description: |
+      High-level strategist. Analyzes the full Φ(G) decomposition,
+      identifies the highest-leverage intervention points (which term
+      in α·Q − β·Č − γ·V is most improvable), and produces a ranked
+      action plan for the other agents to execute.
