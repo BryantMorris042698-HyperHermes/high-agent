@@ -9,7 +9,7 @@ description = "Graph_x_0x0 — AIOS for Mobile TUI Deep Agents Storm Swarm"
 readme = "README.md"
 license = {text = "MIT"}
 authors = [
-    {name = "Graph_x_0x0", email = "graph@high-agent.ai"}
+    {name = "Bryant Morris", email = "bryant.morris.042698@gmail.com"}
 ]
 keywords = [
     "ai", "agents", "graph", "code-analysis", "tui",

@@ -3,6 +3,7 @@ name = "high-agent-rs"
 version = "0.1.0"
 edition = "2021"
 rust-version = "1.75"
+authors = ["Bryant Morris <bryant.morris.042698@gmail.com>"]
 description = "AIOS for Mobile TUI Deep Agents — graph-based agent orchestration with live Φ(G) optimization"
 license = "MIT"
 repository = "https://github.com/BryantMorris042698-HyperHermes/high-agent"
