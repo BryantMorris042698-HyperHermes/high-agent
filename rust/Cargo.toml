@@ -5,7 +5,7 @@ edition = "2021"
 rust-version = "1.75"
 description = "AIOS for Mobile TUI Deep Agents — graph-based agent orchestration with live Φ(G) optimization"
 license = "MIT"
-repository = "https://github.com/graphx0x0/high-agent"
+repository = "https://github.com/BryantMorris042698-HyperHermes/high-agent"
 keywords = ["ai", "agents", "graph", "tui", "orchestration"]
 
 [dependencies]

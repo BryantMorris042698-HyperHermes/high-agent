@@ -50,10 +50,10 @@ all = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/Graph_x_0x0/high-agent"
-Repository = "https://github.com/Graph_x_0x0/high-agent"
-Documentation = "https://github.com/Graph_x_0x0/high-agent#readme"
-Issues = "https://github.com/Graph_x_0x0/high-agent/issues"
+Homepage = "https://github.com/BryantMorris042698-HyperHermes/high-agent"
+Repository = "https://github.com/BryantMorris042698-HyperHermes/high-agent"
+Documentation = "https://github.com/BryantMorris042698-HyperHermes/high-agent#readme"
+Issues = "https://github.com/BryantMorris042698-HyperHermes/high-agent/issues"
 
 [project.scripts]
 high-agent = "high_agent_engine.__main__:main"

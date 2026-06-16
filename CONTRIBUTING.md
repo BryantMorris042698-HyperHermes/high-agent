@@ -7,7 +7,7 @@ Thank you for contributing to Graph_x_0x0! This document covers everything you n
 - [SPEC.md](SPEC.md) — Full system specification
 - [README.md](README.md) — Project overview and quick start
 - [Rust README](rust/README.md) — Rust-specific documentation
-- GitHub Issues: https://github.com/Graph_x_0x0/high-agent/issues
+- GitHub Issues: https://github.com/BryantMorris042698-HyperHermes/high-agent/issues
 
 ## Project Structure
 
@@ -41,7 +41,7 @@ high-agent/
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 
 # Clone and enter
-git clone https://github.com/Graph_x_0x0/high-agent.git
+git clone https://github.com/BryantMorris042698-HyperHermes/high-agent.git
 cd high-agent/rust
 
 # Core only (fast, works everywhere)

@@ -216,7 +216,7 @@ The TUI is a **projection** of the mathematical model. It doesn't compute anythi
 Download from GitHub Releases:
 ```bash
 # Linux x86_64
-curl -L https://github.com/Graph_x_0x0/high-agent/releases/latest/download/high-agent-x86_64-unknown-linux-musl.tar.gz \
+curl -L https://github.com/BryantMorris042698-HyperHermes/high-agent/releases/latest/download/high-agent-x86_64-unknown-linux-musl.tar.gz \
   | tar xz && ./high-agent-tui
 
 # Or use the Python version (no compilation needed)
@@ -227,7 +227,7 @@ python -m high_agent_engine.engine
 ### From Source
 
 ```bash
-git clone https://github.com/Graph_x_0x0/high-agent.git
+git clone https://github.com/BryantMorris042698-HyperHermes/high-agent.git
 cd high-agent/rust
 
 # Core engine (Termux/Mobile)
@@ -243,7 +243,7 @@ cargo run --features tui
 ### Python Only (No Rust)
 
 ```bash
-git clone https://github.com/Graph_x_0x0/high-agent.git
+git clone https://github.com/BryantMorris042698-HyperHermes/high-agent.git
 cd high-agent/python
 pip install -e .
 
