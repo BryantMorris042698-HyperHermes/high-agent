@@ -8,6 +8,7 @@ Run with:
 """
 
 import curses
+import os
 import sys
 import time
 import textwrap
@@ -237,6 +238,7 @@ class Tab(Enum):
     HISTORY = 3
     AGENTS  = 4
     CODE    = 5
+    SETUP   = 6
 
 
 @dataclass
@@ -312,12 +314,13 @@ def draw_header(stdscr, state: AppState) -> None:
     _fill_line(stdscr, 1, cp("hdr_dim"))
 
     tabs_info = [
-        (Tab.CHAT,    "1 CHAT ★"),
+        (Tab.CHAT,    "1 CHAT"),
         (Tab.METRICS, "2 METRICS"),
         (Tab.THEORY,  "3 THEORY"),
         (Tab.HISTORY, "4 HISTORY"),
         (Tab.AGENTS,  "5 AGENTS"),
         (Tab.CODE,    "6 CODE"),
+        (Tab.SETUP,   "7 SETUP ⚙"),
     ]
 
     col = 1
@@ -504,7 +507,7 @@ def draw_sidebar(stdscr, state: AppState, top: int, bottom: int, col: int) -> No
         _sline(row, "[r] refresh  [?] help", cp("dim"))
         row += 1
     if row < bottom:
-        _sline(row, "[q] quit  [1-5] tabs", cp("dim"))
+        _sline(row, "[q] quit  [1-7] tabs", cp("dim"))
 
 
 # ── Chat line builder ─────────────────────────────────────────────────────────
@@ -933,6 +936,192 @@ def draw_agents_tab(stdscr, state: AppState, top: int, bottom: int) -> None:
         row += 1
 
 
+# ── Setup tab ─────────────────────────────────────────────────────────────────
+
+_PROVIDER_MODELS_DEFAULT = {
+    "deepseek":   ("deepseek-coder", "deepseek-chat", "deepseek-reasoner"),
+    "groq":       ("llama-3.3-70b-versatile", "mixtral-8x7b-32768", "llama3-8b-8192"),
+    "openai":     ("gpt-4o-mini", "gpt-4o", "gpt-3.5-turbo"),
+    "openrouter": ("anthropic/claude-3.5-haiku", "google/gemini-flash-1.5", "meta-llama/llama-3.2-3b-instruct:free"),
+    "ollama":     ("phi3.5", "llama3.2:3b", "qwen2.5:1.5b", "mistral:7b"),
+}
+
+_PROVIDER_ENV = {
+    "deepseek":   "DEEPSEEK_API_KEY",
+    "groq":       "GROQ_API_KEY",
+    "openai":     "OPENAI_API_KEY",
+    "openrouter": "OPENROUTER_API_KEY",
+    "ollama":     "(local — no key needed)",
+}
+
+
+def _check_provider(provider: str) -> Tuple[bool, str]:
+    """Quick non-blocking provider check. Returns (available, status_msg)."""
+    import os
+    if provider == "ollama":
+        try:
+            import requests as _r
+            r = _r.get("http://127.0.0.1:11434/api/tags", timeout=1.5)
+            if r.status_code == 200:
+                models = [m["name"] for m in r.json().get("models", [])]
+                return True, f"running · {len(models)} models"
+            return False, "not running"
+        except Exception:
+            return False, "not running"
+    env = _PROVIDER_ENV.get(provider, "")
+    key = os.getenv(env, "")
+    if not key:
+        try:
+            from .llm import _load_config
+            cfg = _load_config()
+            if cfg and cfg.get("provider") == provider:
+                key = cfg.get("api_key", "")
+        except Exception:
+            pass
+    if key:
+        return True, f"key set ({key[:6]}…)"
+    return False, "no key"
+
+
+def draw_setup_tab(stdscr, state: AppState, top: int, bottom: int) -> None:
+    """Tab.SETUP — configure LLM providers and Ollama models."""
+    h, w = stdscr.getmaxyx()
+    visible = bottom - top
+    row = 0
+
+    def _sline(offset: int, text: str, attr: int = 0) -> None:
+        screen_row = top + offset
+        if screen_row >= bottom or screen_row >= h:
+            return
+        _fill_line(stdscr, screen_row, cp("text"))
+        if text:
+            _safe_addstr(stdscr, screen_row, 0, text, attr)
+
+    # ── Header ────────────────────────────────────────────────────────────────
+    _sline(row, "  ══ LLM SETUP & API KEYS ═══════════════════════════", cp("code_hdr", bold=True))
+    row += 1
+    _sline(row, "", 0)
+    row += 1
+
+    # ── Saved config ──────────────────────────────────────────────────────────
+    try:
+        from .llm import _load_config
+        cfg = _load_config()
+    except Exception:
+        cfg = None
+
+    if cfg:
+        _sline(row, "  ── ACTIVE CONFIG ──────────────────────────────────", cp("feed_hdr", bold=True))
+        row += 1
+        _sline(row, f"  Provider : {cfg.get('provider', '?')}", cp("agent_done", bold=True))
+        row += 1
+        _sline(row, f"  Model    : {cfg.get('model', '?')}", cp("agent_done"))
+        row += 1
+        _sline(row, f"  Config   : ~/.high-agent/llm-config.json", cp("dim"))
+        row += 1
+        _sline(row, "", 0)
+        row += 1
+    else:
+        _sline(row, "  ── NO CONFIG SAVED ─────────────────────────────────", cp("up_bad", bold=True))
+        row += 1
+        _sline(row, "  Use /key command below to configure.", cp("dim"))
+        row += 1
+        _sline(row, "", 0)
+        row += 1
+
+    # ── Provider status ───────────────────────────────────────────────────────
+    _sline(row, "  ── PROVIDER STATUS ─────────────────────────────────", cp("feed_hdr", bold=True))
+    row += 1
+
+    for provider in ("ollama", "deepseek", "groq", "openai", "openrouter"):
+        if row >= visible - 2:
+            break
+        available, status_msg = _check_provider(provider)
+        icon   = "✓" if available else "✗"
+        pair   = "agent_done" if available else "up_bad"
+        active = (cfg and cfg.get("provider") == provider)
+        star   = " ← ACTIVE" if active else ""
+        env    = _PROVIDER_ENV.get(provider, "")
+
+        _safe_addstr(stdscr, top + row, 0, " " * w, cp("text"))
+        _safe_addstr(stdscr, top + row, 2,  icon,           cp(pair, bold=True))
+        _safe_addstr(stdscr, top + row, 4,  f"{provider:<12}", cp("text", bold=active))
+        _safe_addstr(stdscr, top + row, 16, status_msg[:w - 28], cp(pair))
+        if star:
+            _safe_addstr(stdscr, top + row, 16 + len(status_msg) + 2, star, cp("skill_on", bold=True))
+        row += 1
+
+        # Show env var hint if not configured
+        if not available and provider != "ollama" and row < visible - 2:
+            _safe_addstr(stdscr, top + row, 0, " " * w, cp("text"))
+            _safe_addstr(stdscr, top + row, 6,
+                         f"export {env}=your-key-here"[:w - 6],
+                         cp("dim"))
+            row += 1
+
+    _sline(row, "", 0)
+    row += 1
+
+    # ── Quick setup commands ───────────────────────────────────────────────────
+    if row < visible - 2:
+        _sline(row, "  ── QUICK SETUP (type in CHAT tab) ─────────────────", cp("feed_hdr", bold=True))
+        row += 1
+
+    commands = [
+        ("/key deepseek sk-your-key",       "save DeepSeek key + switch"),
+        ("/key deepseek sk-key deepseek-reasoner", "use a specific model"),
+        ("/key groq gsk_your-key",           "save Groq key (free tier)"),
+        ("/key openai sk-your-key",          "save OpenAI key"),
+        ("/ollama list",                     "show pulled Ollama models"),
+        ("/ollama pull phi3.5",              "download phi3.5"),
+        ("/ollama pull llama3.2:3b",         "download llama3.2 (3B, fast)"),
+        ("/status",                          "check current connection"),
+    ]
+    for cmd, desc in commands:
+        if row >= visible - 1:
+            break
+        avail = max(0, w - 4)
+        cmd_w = min(38, avail // 2)
+        desc_w = max(0, avail - cmd_w - 2)
+        _safe_addstr(stdscr, top + row, 0, " " * w, cp("text"))
+        _safe_addstr(stdscr, top + row, 2, cmd[:cmd_w], cp("code_imp", bold=True))
+        _safe_addstr(stdscr, top + row, 2 + cmd_w + 2, desc[:desc_w], cp("dim"))
+        row += 1
+
+    _sline(row, "", 0)
+    row += 1
+
+    # ── Ollama models ─────────────────────────────────────────────────────────
+    if row < visible - 2:
+        try:
+            import requests as _r
+            r = _r.get("http://127.0.0.1:11434/api/tags", timeout=1.5)
+            if r.status_code == 200:
+                models = r.json().get("models", [])
+                _sline(row, f"  ── OLLAMA MODELS ({len(models)} pulled) ──────────────────", cp("feed_hdr", bold=True))
+                row += 1
+                for m in models[:8]:
+                    if row >= visible - 1:
+                        break
+                    name = m.get("name", "?")
+                    size = m.get("size", 0)
+                    size_str = f"{size // 1_000_000_000:.1f}GB" if size > 1e9 else f"{size // 1_000_000}MB"
+                    _safe_addstr(stdscr, top + row, 0, " " * w, cp("text"))
+                    _safe_addstr(stdscr, top + row, 4, f"● {name}", cp("agent_done"))
+                    _safe_addstr(stdscr, top + row, 4 + len(name) + 4, size_str, cp("dim"))
+                    row += 1
+        except Exception:
+            _sline(row, "  ── OLLAMA ── not running (ollama serve)", cp("dim"))
+            row += 1
+            _sline(row, "  Start with: ollama serve  (in a new Termux session)", cp("dim"))
+            row += 1
+
+    # Fill remainder
+    while row < visible:
+        _sline(row, "", 0)
+        row += 1
+
+
 # ── Code tab ──────────────────────────────────────────────────────────────────
 
 _COLOR_MAP = {
@@ -1175,26 +1364,28 @@ def draw_help_overlay(stdscr) -> None:
     content = [
         "  DEEP AGENT STORM SWARM — HELP    ",
         "  ─────────────────────────────────",
-        "  [1] CHAT   [2] METRICS           ",
-        "  [3] THEORY [4] HISTORY           ",
-        "  [5] AGENTS [6] CODE VIEWER       ",
-        "  [r]   Refresh  [q] Quit          ",
-        "  [↑↓]  Scroll / select file       ",
-        "  [PgUp/Dn] Scroll code            ",
-        "  [Enter] Open selected file       ",
-        "  [?]   Toggle this help           ",
-        "  ─────────────────────────────────",
-        "  CHAT COMMANDS                    ",
-        "  /metrics   Φ(G) breakdown        ",
-        "  /sweep     Compare regimes        ",
-        "  /skills    Show skills            ",
-        "  /swarm <task>  Run swarm          ",
-        "  /connect <path>  Connect FS       ",
-        "  /ls        List files             ",
-        "  /read <file>   Open file          ",
-        "  /switch <r>  Change regime        ",
-        "  ─────────────────────────────────",
-        "  Press any key to close           ",
+        "  [1] CHAT   [2] METRICS            ",
+        "  [3] THEORY [4] HISTORY            ",
+        "  [5] AGENTS [6] CODE  [7] SETUP    ",
+        "  [r]   Refresh  [q] Quit           ",
+        "  [↑↓]  Scroll / select file        ",
+        "  [PgUp/Dn] Scroll code             ",
+        "  [Enter] Open selected file        ",
+        "  [?]   Toggle this help            ",
+        "  ──────────────────────────────────",
+        "  CHAT COMMANDS                     ",
+        "  /metrics   Φ(G) breakdown         ",
+        "  /sweep     Compare regimes         ",
+        "  /skills    Show skills             ",
+        "  /swarm <task>  Run swarm           ",
+        "  /connect <path>  Connect FS        ",
+        "  /ls        List files              ",
+        "  /read <file>   Open file           ",
+        "  /key <prov> <key>  Set API key     ",
+        "  /ollama list|pull  Ollama models   ",
+        "  /switch <r>  Change regime         ",
+        "  ──────────────────────────────────",
+        "  Press any key to close            ",
     ]
 
     box_h = len(content) + 2
@@ -1353,6 +1544,9 @@ def render(stdscr, state: AppState) -> None:
 
     elif state.tab == Tab.CODE:
         draw_code_tab(stdscr, state, main_top, main_bottom)
+
+    elif state.tab == Tab.SETUP:
+        draw_setup_tab(stdscr, state, main_top, main_bottom)
 
     # ── Input + status ────────────────────────────────────────────────────────
     draw_input(stdscr, state, input_row)
@@ -1581,6 +1775,117 @@ def _smart_response(state: AppState, user_msg: str) -> str:
             f"\n"
             f"Type /metrics for full breakdown."
         )
+
+    # /key <provider> <api-key> [model]
+    if msg_lower.startswith("/key ") or msg_lower.startswith("key "):
+        parts = user_msg.strip().split()
+        if len(parts) < 3:
+            return (
+                "Usage: /key <provider> <api-key> [model]\n\n"
+                "Examples:\n"
+                "  /key deepseek sk-abc123\n"
+                "  /key deepseek sk-abc123 deepseek-reasoner\n"
+                "  /key groq gsk_abc123\n"
+                "  /key openai sk-abc123 gpt-4o\n\n"
+                "Tab [7] → see all providers and status"
+            )
+        provider = parts[1].lower()
+        api_key  = parts[2]
+        model    = parts[3] if len(parts) > 3 else None
+
+        valid = ("deepseek", "groq", "openai", "openrouter", "ollama")
+        if provider not in valid:
+            return f"Unknown provider '{provider}'. Valid: {', '.join(valid)}"
+
+        try:
+            from .llm import LLMClient, _save_config
+            kwargs: dict = {"provider": provider, "api_key": api_key}
+            if model:
+                kwargs["model"] = model
+            client = LLMClient(**kwargs)
+            if client.is_available():
+                _save_config(client.provider, client.model, api_key)
+                # Update the TUI's NeuralAgent to use the new client
+                if state._agent and hasattr(state._agent, 'reset_llm'):
+                    state._agent.reset_llm(provider=provider, api_key=api_key,
+                                           model=client.model)
+                state._agent = None  # force reinit with new config
+                _emit(state, "System", f"connected: {client.provider}/{client.model}",
+                      "api_key", 0.0, "done")
+                state.tab = Tab.CHAT  # switch back to chat
+                return (
+                    f"✓ Connected: {client.provider} / {client.model}\n"
+                    f"Config saved — will use this automatically.\n\n"
+                    f"You can now chat with AI. Try:\n"
+                    f"  hello\n"
+                    f"  /swarm reduce coupling\n"
+                    f"  what are the hot spots in my code?"
+                )
+            else:
+                return (
+                    f"✗ Could not connect to {provider} with that key.\n"
+                    f"Check the key at:\n"
+                    f"  deepseek → platform.deepseek.com\n"
+                    f"  groq     → console.groq.com\n"
+                    f"  openai   → platform.openai.com"
+                )
+        except Exception as e:
+            return f"Error: {e}"
+
+    # /ollama <list|pull|run> [model]
+    if msg_lower.startswith("/ollama") or (msg_lower.startswith("ollama ") and not msg_lower.startswith("ollama serve")):
+        parts = user_msg.strip().split()
+        sub = parts[1].lower() if len(parts) > 1 else "list"
+
+        if sub == "list":
+            try:
+                import requests as _r
+                r = _r.get("http://127.0.0.1:11434/api/tags", timeout=3)
+                if r.status_code == 200:
+                    models = r.json().get("models", [])
+                    if not models:
+                        return "Ollama is running but no models pulled yet.\n\nPull one:\n  /ollama pull phi3.5\n  /ollama pull llama3.2:3b"
+                    lines = [f"Ollama models ({len(models)} pulled):\n"]
+                    for m in models:
+                        sz = m.get("size", 0)
+                        sz_str = f"{sz // 1_000_000_000:.1f}GB" if sz > 1e9 else f"{sz // 1_000_000}MB"
+                        lines.append(f"  ● {m['name']:<30} {sz_str}")
+                    lines.append("\nUse: /key ollama <model-name>  to switch")
+                    return "\n".join(lines)
+                return f"Ollama returned {r.status_code}. Is it running?"
+            except Exception:
+                return ("Ollama is not running.\n\n"
+                        "Start it in a new Termux session:\n"
+                        "  ollama serve\n\n"
+                        "Then pull a model:\n"
+                        "  ollama pull phi3.5")
+
+        elif sub == "pull":
+            model_name = parts[2] if len(parts) > 2 else "phi3.5"
+            return (
+                f"Run this in a Termux session:\n\n"
+                f"  ollama pull {model_name}\n\n"
+                f"(Ollama pull runs in the terminal — it can't run inside the TUI.)\n"
+                f"After it downloads, come back and type:\n"
+                f"  /key ollama {model_name}"
+            )
+
+        return "Usage: /ollama list  |  /ollama pull <model>"
+
+    # /status
+    if msg_lower in ("/status", "status"):
+        try:
+            from .llm import _load_config, _save_config
+            cfg = _load_config()
+            lines = ["LLM Status\n"]
+            if cfg:
+                lines.append(f"  Active: {cfg.get('provider')} / {cfg.get('model')}")
+            else:
+                lines.append("  No provider configured.")
+            lines.append("\nTab [7] → full setup panel")
+            return "\n".join(lines)
+        except Exception as e:
+            return f"Status error: {e}"
 
     # /connect <path>
     if msg_lower.startswith("/connect") or msg_lower.startswith("connect "):
@@ -1842,7 +2147,7 @@ def _initial_messages(engine: RegimeEngine) -> List[Message]:
         f"  /connect ~        connect to your files\n"
         f"  /swarm <task>     run 8-agent swarm\n"
         f"  /skills  /metrics  /sweep  /help\n"
-        f"Tab [5] agents · [6] code viewer"
+        f"Tab [5] agents · [6] code · [7] setup"
     )
     return [Message(Role.SYSTEM, text)]
 
@@ -1918,6 +2223,9 @@ def _main(stdscr) -> None:
             continue
         if key == ord('6'):
             state.tab = Tab.CODE
+            continue
+        if key == ord('7'):
+            state.tab = Tab.SETUP
             continue
 
         # ── Refresh ───────────────────────────────────────────────────────────
