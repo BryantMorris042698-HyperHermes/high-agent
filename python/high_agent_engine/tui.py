@@ -91,6 +91,13 @@ _PAIR_DEFS: List[Tuple[str, str, str]] = [
     ("regime_lbl_s","blue",     "base"),
     ("regime_lbl_a","green",    "base"),
     ("regime_lbl_h","peach",    "base"),
+    ("agent_work",  "teal",     "base"),
+    ("agent_done",  "green",    "base"),
+    ("agent_err",   "red",      "base"),
+    ("skill_on",    "yellow",   "base"),
+    ("skill_off",   "subtext",  "base"),
+    ("feed_hdr",    "lavender", "surface"),
+    ("agent_name",  "pink",     "base"),
 ]
 
 # Module-level pair number registry
@@ -195,11 +202,23 @@ class Message:
     ts: float = field(default_factory=time.time)
 
 
+@dataclass
+class AgentEvent:
+    """Tracks one unit of agent work for the live activity feed."""
+    ts: float
+    agent: str        # "Refactor", "Quality", "Skill", "Chat", …
+    action: str       # short description of what it did
+    tool: str         # tool or skill invoked (empty if none)
+    phi_delta: float  # Φ change from this action (0.0 if not applicable)
+    status: str       # "working" | "done" | "error"
+
+
 class Tab(Enum):
     CHAT    = 0
     METRICS = 1
     THEORY  = 2
     HISTORY = 3
+    AGENTS  = 4
 
 
 @dataclass
@@ -212,6 +231,8 @@ class AppState:
     show_help: bool = False
     error: Optional[str] = None
     _agent: object = None   # lazy NeuralAgent
+    agent_events: List[AgentEvent] = field(default_factory=list)
+    active_skills: List[dict] = field(default_factory=list)
 
 
 # ── Header ────────────────────────────────────────────────────────────────────
@@ -273,6 +294,7 @@ def draw_header(stdscr, state: AppState) -> None:
         (Tab.METRICS, "2 METRICS"),
         (Tab.THEORY,  "3 THEORY"),
         (Tab.HISTORY, "4 HISTORY"),
+        (Tab.AGENTS,  "5 AGENTS"),
     ]
 
     col = 1
@@ -412,6 +434,42 @@ def draw_sidebar(stdscr, state: AppState, top: int, bottom: int, col: int) -> No
     n_trans = len(state.engine.transitions)
     _sline(row, f"{n_trans} transitions", cp("dim"))
     row += 1
+    row = _blank(row)
+
+    # ── ACTIVE SKILLS ─────────────────────────────────────────────────────────
+    if row < bottom - 2:
+        row = _section(row, "── SKILLS ──────")
+        if state.active_skills:
+            for sk in state.active_skills[:3]:
+                if row >= bottom - 1:
+                    break
+                sid = sk.get("id", "?")
+                _sline(row, f"★ {sid}", cp("skill_on", bold=True))
+                row += 1
+        else:
+            _sline(row, "none active", cp("skill_off"))
+            row += 1
+        row = _blank(row)
+
+    # ── LAST AGENT EVENT ──────────────────────────────────────────────────────
+    if state.agent_events and row < bottom - 2:
+        row = _section(row, "── LAST EVENT ──")
+        ev = state.agent_events[-1]
+        status_pair = "agent_done" if ev.status == "done" else ("agent_err" if ev.status == "error" else "agent_work")
+        _sline(row, ev.agent[:16], cp("agent_name", bold=True))
+        row += 1
+        if row < bottom - 1:
+            action_short = ev.action[:sidebar_w - 3]
+            _sline(row, action_short, cp(status_pair))
+            row += 1
+        if row < bottom - 1 and ev.tool:
+            _sline(row, f"  {ev.tool[:sidebar_w - 5]}", cp("skill_on"))
+            row += 1
+        if row < bottom - 1 and ev.phi_delta != 0.0:
+            delta_pair = "down_good" if ev.phi_delta > 0 else "up_bad"
+            _sline(row, f"  ΔΦ {ev.phi_delta:+.4f}", cp(delta_pair, bold=True))
+            row += 1
+        row = _blank(row)
 
     # Fill remaining rows
     while row < bottom - 2:
@@ -423,7 +481,7 @@ def draw_sidebar(stdscr, state: AppState, top: int, bottom: int, col: int) -> No
         _sline(row, "[r] refresh  [?] help", cp("dim"))
         row += 1
     if row < bottom:
-        _sline(row, "[q] quit  [1-4] tabs", cp("dim"))
+        _sline(row, "[q] quit  [1-5] tabs", cp("dim"))
 
 
 # ── Chat line builder ─────────────────────────────────────────────────────────
@@ -668,6 +726,160 @@ def draw_history(stdscr, state: AppState, top: int, bottom: int) -> None:
             _safe_addstr(stdscr, screen_row, 0, line, cp(pair))
 
 
+# ── Agents tab ────────────────────────────────────────────────────────────────
+
+_AGENT_EMOJIS = {
+    "Refactor":  "⚙",
+    "Quality":   "◈",
+    "Test":      "✓",
+    "Skill":     "★",
+    "Repo":      "⎇",
+    "Build":     "⬡",
+    "Planner":   "◉",
+    "Chat":      "◆",
+    "Swarm":     "⚡",
+    "System":    "·",
+}
+
+
+def draw_agents_tab(stdscr, state: AppState, top: int, bottom: int) -> None:
+    """Tab.AGENTS: live agent activity feed + active skills."""
+    h, w = stdscr.getmaxyx()
+    visible = bottom - top
+
+    def _aline(row_offset: int, text: str, attr: int = 0) -> None:
+        screen_row = top + row_offset
+        if screen_row >= bottom or screen_row >= h:
+            return
+        _fill_line(stdscr, screen_row, cp("text"))
+        if text:
+            _safe_addstr(stdscr, screen_row, 0, text, attr)
+
+    row = 0
+
+    # ── Header ────────────────────────────────────────────────────────────────
+    _aline(row, "  ══ AGENT ACTIVITY FEED ══════════════════════════════", cp("feed_hdr", bold=True))
+    row += 1
+    _aline(row, "", cp("text"))
+    row += 1
+
+    # ── Column header ─────────────────────────────────────────────────────────
+    col_hdr = f"  {'AGENT':<12} {'ACTION':<28} {'TOOL / SKILL':<22} {'ΔΦ':>8}  ST"
+    _aline(row, col_hdr, cp("metric_k", bold=True))
+    row += 1
+    _aline(row, "  " + "─" * (len(col_hdr) - 2), cp("dim"))
+    row += 1
+
+    # ── Events (newest first) ─────────────────────────────────────────────────
+    events = list(reversed(state.agent_events))
+    if not events:
+        _aline(row, "  No agent activity yet.", cp("dim"))
+        _aline(row + 1, "  Run /swarm <task> or type anything to see agents at work.", cp("dim"))
+        row += 2
+    else:
+        for ev in events:
+            if row >= visible - 6:
+                remaining = len(events) - events.index(ev)
+                if remaining > 0:
+                    _aline(row, f"  … {remaining} older events (scroll up)", cp("dim"))
+                break
+            status_pair = (
+                "agent_done" if ev.status == "done"
+                else "agent_err" if ev.status == "error"
+                else "agent_work"
+            )
+            status_icon = "✓" if ev.status == "done" else ("✗" if ev.status == "error" else "…")
+            icon = _AGENT_EMOJIS.get(ev.agent, "·")
+            ts_str = time.strftime("%H:%M:%S", time.localtime(ev.ts))
+            agent_col = f"{icon} {ev.agent}"[:13]
+            action_col = ev.action[:28]
+            tool_col   = ev.tool[:22] if ev.tool else ""
+            delta_col  = f"{ev.phi_delta:+.4f}" if ev.phi_delta != 0.0 else "      "
+            line = f"  {agent_col:<13} {action_col:<28} {tool_col:<22} {delta_col:>8}  {status_icon}"
+            _safe_addstr(stdscr, top + row, 0, " " * w, cp("text"))
+            # Colorize agent name
+            _safe_addstr(stdscr, top + row, 0, f"  {icon} ", cp("agent_name"))
+            _safe_addstr(stdscr, top + row, 4, f"{ev.agent:<12}", cp("agent_name", bold=True))
+            _safe_addstr(stdscr, top + row, 16, f"{action_col:<28}", cp(status_pair))
+            if tool_col:
+                _safe_addstr(stdscr, top + row, 45, f"{tool_col:<22}", cp("skill_on"))
+            if ev.phi_delta != 0.0:
+                dpair = "down_good" if ev.phi_delta > 0 else "up_bad"
+                _safe_addstr(stdscr, top + row, 68, f"{delta_col:>8}", cp(dpair, bold=True))
+            _safe_addstr(stdscr, top + row, 78, f"  {status_icon}", cp(status_pair, bold=True))
+            row += 1
+            # If there's a tool that's a skill, show it indented
+            if ev.tool and ev.tool.startswith("skill:"):
+                if row < visible - 6:
+                    skill_name = ev.tool[6:]
+                    _aline(row, f"       ★ active skill: {skill_name}", cp("skill_on"))
+                    row += 1
+
+    # ── Separator ─────────────────────────────────────────────────────────────
+    if row < visible - 2:
+        _aline(row, "", cp("text"))
+        row += 1
+        _aline(row, "  ══ ACTIVE SKILLS (triggered by current metrics) ═══════", cp("feed_hdr", bold=True))
+        row += 1
+
+    # ── Active skills ─────────────────────────────────────────────────────────
+    try:
+        from .skills import SkillManager
+        sm = SkillManager()
+        snap = state.engine.snapshot()
+        all_skills = sm._yaml_skills + list(sm.skills.values())
+        active_ids = {s.get("id") for s in sm.match_metrics(snap)}
+
+        # Update state's active_skills list
+        state.active_skills = sm.match_metrics(snap)
+
+        if not all_skills:
+            _aline(row, "  No skills loaded.", cp("dim"))
+            row += 1
+        else:
+            for sk in all_skills:
+                if row >= visible - 1:
+                    break
+                if isinstance(sk, dict):
+                    sid = sk.get("id", "?")
+                    sname = sk.get("name", sid)
+                    sdesc = sk.get("description", "")
+                    trigger = sk.get("trigger", {})
+                    if isinstance(trigger, dict):
+                        metric = trigger.get("metric", "")
+                        op = trigger.get("operator", ">")
+                        thresh = trigger.get("threshold", 0)
+                        trig_str = f"{metric} {op} {thresh}"
+                    else:
+                        trig_str = str(trigger)
+                else:
+                    sid = sk.name
+                    sname = sk.name
+                    sdesc = sk.description[:60]
+                    trig_str = sk.trigger
+
+                is_active = sid in active_ids
+                marker = "★ ACTIVE" if is_active else "  ·    "
+                pair = "skill_on" if is_active else "skill_off"
+                _safe_addstr(stdscr, top + row, 0, " " * w, cp("text"))
+                _safe_addstr(stdscr, top + row, 2, marker, cp(pair, bold=is_active))
+                _safe_addstr(stdscr, top + row, 12, f"[{sid}]", cp("metric_k"))
+                _safe_addstr(stdscr, top + row, 12 + len(sid) + 3, sname[:30], cp("text", bold=is_active))
+                _safe_addstr(stdscr, top + row, 45, f"  trigger: {trig_str}", cp("dim"))
+                row += 1
+                if is_active and row < visible - 1:
+                    _aline(row, f"    → {sdesc[:70]}", cp("agent_done"))
+                    row += 1
+    except Exception as e:
+        _aline(row, f"  Skills unavailable: {e}", cp("error"))
+        row += 1
+
+    # Fill remaining
+    while row < visible:
+        _aline(row, "", cp("text"))
+        row += 1
+
+
 # ── Divider ───────────────────────────────────────────────────────────────────
 
 def draw_divider(stdscr, top: int, bottom: int, col: int) -> None:
@@ -683,24 +895,28 @@ def draw_help_overlay(stdscr) -> None:
     h, w = stdscr.getmaxyx()
 
     content = [
-        "  DEEP AGENT STORM SWARM — HELP  ",
-        "  ───────────────────────────────",
-        "  [1-4]   Switch tabs             ",
-        "  [r]     Refresh metrics         ",
+        "  DEEP AGENT STORM SWARM — HELP    ",
+        "  ─────────────────────────────────",
+        "  [1] CHAT   [2] METRICS           ",
+        "  [3] THEORY [4] HISTORY           ",
+        "  [5] AGENTS (live activity feed)  ",
+        "  [r]     Refresh metrics          ",
         "  [↑↓]    Scroll chat              ",
-        "  [PgUp]  Scroll up fast          ",
-        "  [Esc]   Clear input             ",
-        "  [q]     Quit                    ",
-        "  [?]     Toggle this help        ",
-        "  ───────────────────────────────",
-        "  CHAT COMMANDS                   ",
-        "  /metrics  Live Φ(G) breakdown   ",
-        "  /sweep    Compare regimes        ",
-        "  /theory   Full math              ",
-        "  /switch <r>  Change regime       ",
-        "  /simulate  Run deviation         ",
-        "  ───────────────────────────────",
-        "  Press any key to close          ",
+        "  [PgUp]  Scroll up fast           ",
+        "  [Esc]   Clear input              ",
+        "  [q]     Quit                     ",
+        "  [?]     Toggle this help         ",
+        "  ─────────────────────────────────",
+        "  CHAT COMMANDS                    ",
+        "  /metrics  Live Φ(G) breakdown    ",
+        "  /sweep    Compare regimes         ",
+        "  /theory   Full math               ",
+        "  /switch <r>  Change regime        ",
+        "  /skills   Show all skills         ",
+        "  /swarm <task>  Run agent swarm    ",
+        "  /simulate  Run deviation          ",
+        "  ─────────────────────────────────",
+        "  Press any key to close           ",
     ]
 
     box_h = len(content) + 2
@@ -854,6 +1070,9 @@ def render(stdscr, state: AppState) -> None:
     elif state.tab == Tab.HISTORY:
         draw_history(stdscr, state, main_top, main_bottom)
 
+    elif state.tab == Tab.AGENTS:
+        draw_agents_tab(stdscr, state, main_top, main_bottom)
+
     # ── Input + status ────────────────────────────────────────────────────────
     draw_input(stdscr, state, input_row)
     draw_status(stdscr, state, status_row)
@@ -863,6 +1082,91 @@ def render(stdscr, state: AppState) -> None:
         draw_help_overlay(stdscr)
 
     stdscr.refresh()
+
+
+def _emit(state: AppState, agent: str, action: str, tool: str = "",
+          phi_delta: float = 0.0, status: str = "done") -> None:
+    """Append an agent event to the activity feed."""
+    state.agent_events.append(AgentEvent(
+        ts=time.time(), agent=agent, action=action,
+        tool=tool, phi_delta=phi_delta, status=status,
+    ))
+    # Keep the feed bounded
+    if len(state.agent_events) > 200:
+        state.agent_events = state.agent_events[-200:]
+
+
+def _run_swarm(state: AppState, task: str) -> str:
+    """Run the 8-agent swarm and emit live events to the activity feed."""
+    try:
+        from .agent import Swarm
+        from .skills import SkillManager
+    except ImportError as e:
+        return f"Swarm unavailable: {e}"
+
+    engine = state.engine
+    snap_before = engine.snapshot()
+    phi_before = snap_before.get("phi", 0.0) if isinstance(snap_before, dict) else snap_before.phi
+
+    _emit(state, "Swarm", f"task: {task[:40]}", "", 0.0, "working")
+
+    # Check active skills first
+    try:
+        sm = SkillManager()
+        snap = engine.snapshot()
+        active_skills = sm.match_metrics(snap)
+        state.active_skills = active_skills
+        for sk in active_skills:
+            _emit(state, "Skill", f"trigger: {sk.get('name', sk.get('id', '?'))}",
+                  f"skill:{sk.get('id', '?')}", 0.0, "done")
+    except Exception:
+        active_skills = []
+
+    swarm = Swarm(engine)
+
+    # Emit events for each agent as they run
+    _emit(state, "Planner", "analyzing Φ(G) decomposition", "analyze_phi", 0.0, "working")
+    planner_phi = engine.snapshot()
+    p_before = planner_phi.get("phi", 0.0) if isinstance(planner_phi, dict) else planner_phi.phi
+
+    result = swarm.solve(task)
+
+    phi_after = result.get("end_phi", p_before)
+
+    # Log per-agent results from the swarm
+    for agent_name, agent_result in result.get("results", {}).items():
+        if agent_name == "planner":
+            findings = agent_result.get("findings", [])
+            _emit(state, "Planner", findings[0][:40] if findings else "plan ready",
+                  "analyze_phi", agent_result.get("phi_delta", 0.0), "done")
+        elif agent_name == "refactor":
+            action_text = agent_result.get("action", "refactoring")[:40]
+            _emit(state, "Refactor", action_text, "remove_edge / extract_interface",
+                  agent_result.get("phi_delta", 0.0), "done")
+        elif agent_name == "quality":
+            action_text = agent_result.get("action", "quality boost")[:40]
+            _emit(state, "Quality", action_text, "add_type_hints / split_function",
+                  agent_result.get("phi_delta", 0.0), "done")
+        elif agent_name == "test":
+            _emit(state, "Test", agent_result.get("action", "coverage check")[:40],
+                  "run_tests / verify_behavior",
+                  agent_result.get("phi_delta", 0.0), "done")
+        elif agent_name == "skill":
+            _emit(state, "Skill", agent_result.get("action", "skills loaded")[:40],
+                  f"{agent_result.get('skill_count', 0)} skills active",
+                  0.0, "done")
+        elif agent_name == "build":
+            _emit(state, "Build", agent_result.get("action", "validate")[:40],
+                  "validate / check_tests", 0.0, "done")
+        elif agent_name == "repo":
+            _emit(state, "Repo", agent_result.get("action", "repo check")[:40],
+                  "git_status", 0.0, "done")
+
+    total_delta = phi_after - phi_before
+    _emit(state, "Swarm", f"done · {len(result.get('agents_used', []))} agents · ΔΦ {total_delta:+.4f}",
+          "", total_delta, "done")
+
+    return result.get("report", "Swarm complete.")
 
 
 # ── Smart built-in responses ──────────────────────────────────────────────────
@@ -968,6 +1272,42 @@ def _smart_response(state: AppState, user_msg: str) -> str:
             f"Type /metrics for full breakdown."
         )
 
+    # /skills
+    if msg_lower in ("/skills", "skills") or msg_lower.startswith("/skills"):
+        try:
+            from .skills import SkillManager
+            sm = SkillManager()
+            snap = engine.snapshot()
+            active = sm.match_metrics(snap)
+            state.active_skills = active
+            active_ids = {s.get("id") for s in active}
+            lines = ["Skills (★ = triggered by current metrics):\n"]
+            for sk in sm._yaml_skills:
+                marker = "★ ACTIVE" if sk.get("id") in active_ids else "  ·    "
+                lines.append(f"  {marker}  [{sk.get('id')}] {sk.get('name', '')}")
+                lines.append(f"            {sk.get('description', '')}")
+                if sk.get("id") in active_ids and sk.get("action"):
+                    lines.append(f"            → {sk['action'][:100].strip()}")
+            for sk in sm.skills.values():
+                lines.append(f"  ·       [{sk.category}] {sk.name}: {sk.description[:60]}")
+            if not sm._yaml_skills and not sm.skills:
+                lines.append("  No skills loaded.")
+            lines.append("\nSee tab [5] for live agent activity.")
+            return "\n".join(lines)
+        except Exception as e:
+            return f"Skills error: {e}"
+
+    # /swarm <task>
+    if msg_lower.startswith("/swarm") or msg_lower.startswith("swarm "):
+        task = user_msg.strip()
+        for prefix in ("/swarm ", "swarm "):
+            if task.lower().startswith(prefix):
+                task = task[len(prefix):]
+                break
+        if not task or task.lower() in ("swarm", "/swarm"):
+            task = "optimize Φ(G) — reduce coupling and complexity"
+        return _run_swarm(state, task)
+
     # /help
     if msg_lower in ("/help", "help", "?") or msg_lower.startswith("/help"):
         return (
@@ -979,9 +1319,12 @@ def _smart_response(state: AppState, user_msg: str) -> str:
             "  /history   Regime transition log\n"
             "  /switch <r>  Switch regime (simple/advanced/hybrid)\n"
             "  /simulate  Run graph deviation step\n"
+            "  /skills    Show all skills + which are active\n"
+            "  /swarm <task>  Run 8-agent swarm on a task\n"
             "  /help      Show this help\n"
             "\n"
-            "Or just type any message for automatic Φ(G) analysis."
+            "Or just type any message for automatic Φ(G) analysis.\n"
+            "Tab [5] shows live agent activity and active skills."
         )
 
     # ── General fallback: full Φ(G) analysis ──────────────────────────────────
@@ -1045,7 +1388,22 @@ def _process_input(state: AppState, user_msg: str) -> None:
     # Append user message
     state.messages.append(Message(Role.USER, user_msg))
 
+    # Always refresh active skills before processing
+    try:
+        from .skills import SkillManager
+        sm = SkillManager()
+        snap = state.engine.snapshot()
+        state.active_skills = sm.match_metrics(snap)
+        for sk in state.active_skills:
+            _emit(state, "Skill", f"monitoring: {sk.get('name', sk.get('id', '?'))}",
+                  f"skill:{sk.get('id', '?')}", 0.0, "done")
+    except Exception:
+        pass
+
     response = None
+    phi_before = state.engine.metrics.phi if state.engine.metrics else 0.0
+
+    _emit(state, "Chat", f"processing: {user_msg[:35]}", "NeuralAgent", 0.0, "working")
 
     # Try NeuralAgent if available (lazy init)
     if state._agent is None:
@@ -1058,15 +1416,21 @@ def _process_input(state: AppState, user_msg: str) -> None:
     if state._agent and state._agent is not False:
         try:
             response = state._agent.chat(user_msg)
+            _emit(state, "Chat", "response ready", "NeuralAgent + Φ(G)", 0.0, "done")
         except Exception:
             response = None
 
     if response is None:
         response = _smart_response(state, user_msg)
+        if response:
+            _emit(state, "Chat", "smart response (no LLM)", "Φ(G) analysis", 0.0, "done")
 
     # Get current phi for agent message
     state.engine.update_metrics()
     phi_now = state.engine.metrics.phi if state.engine.metrics else None
+    phi_delta = (phi_now - phi_before) if phi_now is not None else 0.0
+    if phi_delta != 0.0:
+        _emit(state, "System", f"Φ(G) changed", "metrics_update", phi_delta, "done")
 
     state.messages.append(Message(Role.AGENT, response, phi=phi_now))
     state.engine.update_metrics()
@@ -1085,8 +1449,9 @@ def _initial_messages(engine: RegimeEngine) -> List[Message]:
         f"Deep Agent Storm Swarm · 8-agent swarm online\n"
         f"Φ(G) = {phi:+.4f} · regime: {regime}\n"
         f"─────────────────────────────────────────────\n"
-        f"Type a message or command:\n"
-        f"  /metrics  /sweep  /theory  /switch  /help"
+        f"Type a message or use a command:\n"
+        f"  /metrics  /sweep  /skills  /swarm <task>  /help\n"
+        f"Tab [5] → live agent activity & active skills"
     )
     return [Message(Role.SYSTEM, text)]
 
@@ -1156,6 +1521,9 @@ def _main(stdscr) -> None:
             continue
         if key == ord('4'):
             state.tab = Tab.HISTORY
+            continue
+        if key == ord('5'):
+            state.tab = Tab.AGENTS
             continue
 
         # ── Refresh ───────────────────────────────────────────────────────────
