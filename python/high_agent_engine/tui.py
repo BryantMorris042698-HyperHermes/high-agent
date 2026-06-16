@@ -786,11 +786,10 @@ def draw_agents_tab(stdscr, state: AppState, top: int, bottom: int) -> None:
     _aline(row, "", cp("text"))
     row += 1
 
-    # ── Column header ─────────────────────────────────────────────────────────
-    col_hdr = f"  {'AGENT':<12} {'ACTION':<28} {'TOOL / SKILL':<22} {'ΔΦ':>8}  ST"
-    _aline(row, col_hdr, cp("metric_k", bold=True))
+    # ── Column header (adaptive to terminal width) ────────────────────────────
+    _aline(row, f"  {'AGENT':<14} ACTION{'ΔΦ':>{max(4, w - 22)}}  ", cp("metric_k", bold=True))
     row += 1
-    _aline(row, "  " + "─" * (len(col_hdr) - 2), cp("dim"))
+    _aline(row, "  " + "─" * max(4, w - 4), cp("dim"))
     row += 1
 
     # ── Events (newest first) ─────────────────────────────────────────────────
@@ -813,30 +812,36 @@ def draw_agents_tab(stdscr, state: AppState, top: int, bottom: int) -> None:
             )
             status_icon = "✓" if ev.status == "done" else ("✗" if ev.status == "error" else "…")
             icon = _AGENT_EMOJIS.get(ev.agent, "·")
-            ts_str = time.strftime("%H:%M:%S", time.localtime(ev.ts))
-            agent_col = f"{icon} {ev.agent}"[:13]
-            action_col = ev.action[:28]
-            tool_col   = ev.tool[:22] if ev.tool else ""
-            delta_col  = f"{ev.phi_delta:+.4f}" if ev.phi_delta != 0.0 else "      "
-            line = f"  {agent_col:<13} {action_col:<28} {tool_col:<22} {delta_col:>8}  {status_icon}"
             _safe_addstr(stdscr, top + row, 0, " " * w, cp("text"))
-            # Colorize agent name
-            _safe_addstr(stdscr, top + row, 0, f"  {icon} ", cp("agent_name"))
-            _safe_addstr(stdscr, top + row, 4, f"{ev.agent:<12}", cp("agent_name", bold=True))
-            _safe_addstr(stdscr, top + row, 16, f"{action_col:<28}", cp(status_pair))
-            if tool_col:
-                _safe_addstr(stdscr, top + row, 45, f"{tool_col:<22}", cp("skill_on"))
-            if ev.phi_delta != 0.0:
+
+            # Adaptive columns: agent(16) | action(rest-24) | ΔΦ(10) | status(2)
+            agent_w  = 16
+            delta_w  = 10
+            status_w = 3
+            action_w = max(8, w - agent_w - delta_w - status_w - 2)
+
+            action_col = ev.action[:action_w]
+            delta_col  = f"{ev.phi_delta:+.4f}" if ev.phi_delta != 0.0 else ""
+
+            _safe_addstr(stdscr, top + row, 0,  f"  {icon} ", cp("agent_name"))
+            _safe_addstr(stdscr, top + row, 4,  f"{ev.agent:<{agent_w - 4}}", cp("agent_name", bold=True))
+            _safe_addstr(stdscr, top + row, agent_w, f"{action_col}", cp(status_pair))
+            if delta_col:
                 dpair = "down_good" if ev.phi_delta > 0 else "up_bad"
-                _safe_addstr(stdscr, top + row, 68, f"{delta_col:>8}", cp(dpair, bold=True))
-            _safe_addstr(stdscr, top + row, 78, f"  {status_icon}", cp(status_pair, bold=True))
+                _safe_addstr(stdscr, top + row, w - status_w - delta_w,
+                             f"{delta_col:>{delta_w}}", cp(dpair, bold=True))
+            _safe_addstr(stdscr, top + row, w - status_w,
+                         f" {status_icon}", cp(status_pair, bold=True))
             row += 1
-            # If there's a tool that's a skill, show it indented
-            if ev.tool and ev.tool.startswith("skill:"):
-                if row < visible - 6:
-                    skill_name = ev.tool[6:]
-                    _aline(row, f"       ★ active skill: {skill_name}", cp("skill_on"))
-                    row += 1
+
+            # Tool / skill on its own indented line (always fits)
+            if ev.tool and row < visible - 6:
+                tool_avail = max(10, w - 6)
+                tool_display = ev.tool[:tool_avail]
+                pair = "skill_on" if ev.tool.startswith("skill:") else "dim"
+                prefix = "  ★" if ev.tool.startswith("skill:") else "  ·"
+                _aline(row, f"{prefix} {tool_display}", cp(pair))
+                row += 1
 
     # ── Separator ─────────────────────────────────────────────────────────────
     if row < visible - 2:
@@ -864,35 +869,60 @@ def draw_agents_tab(stdscr, state: AppState, top: int, bottom: int) -> None:
                 if row >= visible - 1:
                     break
                 if isinstance(sk, dict):
-                    sid = sk.get("id", "?")
+                    sid   = sk.get("id", "?")
                     sname = sk.get("name", sid)
                     sdesc = sk.get("description", "")
                     trigger = sk.get("trigger", {})
                     if isinstance(trigger, dict):
                         metric = trigger.get("metric", "")
-                        op = trigger.get("operator", ">")
+                        op     = trigger.get("operator", ">")
                         thresh = trigger.get("threshold", 0)
                         trig_str = f"{metric} {op} {thresh}"
                     else:
                         trig_str = str(trigger)
                 else:
-                    sid = sk.name
-                    sname = sk.name
-                    sdesc = sk.description[:60]
+                    sid      = sk.name
+                    sname    = sk.name
+                    sdesc    = sk.description
                     trig_str = sk.trigger
 
                 is_active = sid in active_ids
-                marker = "★ ACTIVE" if is_active else "  ·    "
-                pair = "skill_on" if is_active else "skill_off"
+                pair      = "skill_on" if is_active else "skill_off"
+                marker    = "★ ACTIVE" if is_active else "  ·    "
+
+                # Line 1: marker + name (full, never truncated at fixed col)
+                name_avail = max(10, w - 12)
+                name_display = sname[:name_avail]
                 _safe_addstr(stdscr, top + row, 0, " " * w, cp("text"))
                 _safe_addstr(stdscr, top + row, 2, marker, cp(pair, bold=is_active))
-                _safe_addstr(stdscr, top + row, 12, f"[{sid}]", cp("metric_k"))
-                _safe_addstr(stdscr, top + row, 12 + len(sid) + 3, sname[:30], cp("text", bold=is_active))
-                _safe_addstr(stdscr, top + row, 45, f"  trigger: {trig_str}", cp("dim"))
+                _safe_addstr(stdscr, top + row, 12, name_display,
+                             cp(pair, bold=is_active))
                 row += 1
-                if is_active and row < visible - 1:
-                    _aline(row, f"    → {sdesc[:70]}", cp("agent_done"))
+                if row >= visible - 1:
+                    break
+
+                # Line 2: trigger condition + skill id (indented)
+                trig_avail = max(10, w - 14)
+                trig_display = f"[{sid}]  trigger: {trig_str}"[:trig_avail]
+                _safe_addstr(stdscr, top + row, 0, " " * w, cp("text"))
+                _safe_addstr(stdscr, top + row, 14, trig_display, cp("dim"))
+                row += 1
+                if row >= visible - 1:
+                    break
+
+                # Line 3 (active only): what it does
+                if is_active and sdesc:
+                    desc_avail = max(10, w - 8)
+                    _safe_addstr(stdscr, top + row, 0, " " * w, cp("text"))
+                    _safe_addstr(stdscr, top + row, 6,
+                                 f"→ {sdesc[:desc_avail]}", cp("agent_done"))
                     row += 1
+                    if row >= visible - 1:
+                        break
+
+                # Blank line between skills
+                _aline(row, "")
+                row += 1
     except Exception as e:
         _aline(row, f"  Skills unavailable: {e}", cp("error"))
         row += 1
