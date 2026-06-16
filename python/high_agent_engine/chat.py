@@ -216,7 +216,18 @@ class NeuralAgent:
         coeffs = Regime.coeffs(self.engine.current_regime)
         snap = self.engine.snapshot()
 
-        return SYSTEM_PROMPT.format(
+        # Always inject all available skills so the LLM can apply them
+        skills_section = ""
+        try:
+            from .skills import SkillManager
+            sm = SkillManager()
+            ctx = sm.all_skills_context(snap)
+            if ctx and ctx != "No skills loaded.":
+                skills_section = f"\n\n## Skills (use these when relevant — starred ones are active now)\n{ctx}"
+        except Exception:
+            pass
+
+        base = SYSTEM_PROMPT.format(
             graph_context=format_graph_context(snap, self.engine),
             regime=self.engine.current_regime,
             regime_desc=Regime.description(self.engine.current_regime),
@@ -225,6 +236,7 @@ class NeuralAgent:
             gamma=coeffs.gamma,
             strategy=Regime.strategy(self.engine.current_regime),
         )
+        return base + skills_section
 
     # ── Snapshot helpers ──────────────────────────────────────────────────
 
@@ -337,6 +349,26 @@ class NeuralAgent:
         except Exception:
             pass
 
+        # Gather active skills
+        skill_lines = ""
+        try:
+            from .skills import SkillManager
+            sm = SkillManager()
+            active = sm.match_metrics(snap)
+            if active:
+                skill_lines = "\n─── Active Skills ──────────────────────\n"
+                for s in active:
+                    skill_lines += f"  ★ [{s.get('id')}] {s.get('name', '')}\n"
+                    skill_lines += f"    {s.get('description', '')}\n"
+                    if s.get("action"):
+                        skill_lines += f"    → {s['action'][:120].strip()}\n"
+            elif sm._yaml_skills or sm.skills:
+                all_names = [s.get("name", s.get("id", "?")) for s in sm._yaml_skills]
+                all_names += [s.name for s in sm.skills.values()]
+                skill_lines = f"\n─── Skills (none active now) ───────────\n  Available: {', '.join(all_names)}\n"
+        except Exception:
+            pass
+
         return textwrap.dedent(f"""\
             Φ(G) = {snap.phi:+.4f}  [{self.engine.current_regime.upper()}]
             ═══════════════════════════════════════
@@ -352,8 +384,7 @@ class NeuralAgent:
             Dominant constraint: {worst[1]} — {worst[2]}
               Term value: {worst[0]:+.4f}{switch_hint}
 
-            Graph: {snap.n_nodes} nodes · {snap.n_edges} edges · {snap.n_modules} modules{f'{chr(10)}Hot spots: {", ".join(hot)}' if hot else ''}
-
+            Graph: {snap.n_nodes} nodes · {snap.n_edges} edges · {snap.n_modules} modules{f'{chr(10)}Hot spots: {", ".join(hot)}' if hot else ''}{skill_lines}
             ─── To enable AI chat ──────────────────
             Ollama (local, free):
               pkg install ollama   # Termux
@@ -497,11 +528,24 @@ Regime: {self.engine.current_regime}  History: {len(self.engine.history)} snapsh
     def _cmd_skills(self, _: str) -> str:
         from .skills import SkillManager
         sm = SkillManager()
-        if not sm.skills:
-            return "No skills loaded. Add skills with 'learn <name>: <description>'"
-        lines = ["Available skills:", ""]
-        for s in sm.skills:
-            lines.append(f"  • {s.name}: {s.description[:80]}")
+        snap = self.snapshot()
+        active_ids = {s.get("id") for s in sm.match_metrics(snap)}
+        lines = []
+        if sm._yaml_skills:
+            lines.append("Skills (★ = active for current metrics):")
+            lines.append("")
+            for s in sm._yaml_skills:
+                marker = "★ ACTIVE" if s.get("id") in active_ids else "  ·    "
+                lines.append(f"  {marker}  [{s.get('id')}] {s.get('name', '')}")
+                lines.append(f"            {s.get('description', '')}")
+        if sm.skills:
+            if lines:
+                lines.append("")
+            lines.append("Learned skills:")
+            for s in sm.skills.values():
+                lines.append(f"  · [{s.category}] {s.name}: {s.description[:80]}")
+        if not lines:
+            return "No skills loaded. Add one with: learn <name>: <description>"
         return "\n".join(lines)
 
     def _cmd_learn(self, message: str) -> str:
@@ -509,14 +553,20 @@ Regime: {self.engine.current_regime}  History: {len(self.engine.history)} snapsh
         parts = message.split(":", 1)
         if len(parts) < 2:
             return "Usage: learn <name>: <description>"
-        name = parts[0].replace("learn", "").strip()
+        name_part = parts[0].lower().replace("learn", "").strip()
         desc = parts[1].strip()
-        from .skills import Skill, SkillManager
+        if not name_part:
+            return "Usage: learn <name>: <description>"
+        from .skills import SkillManager
         sm = SkillManager()
-        skill = Skill(name=name, description=desc, prompt_template=f"Apply {name}: {desc}")
-        sm.add(skill)
-        sm.save()
-        return f"Saved skill: {name}\n\n{desc}"
+        skill = sm.create_skill(
+            name=name_part,
+            category="learned",
+            trigger=f"query matches {name_part}",
+            description=desc,
+            steps=[f"Apply {name_part}: {desc}"],
+        )
+        return f"Saved skill: {skill.name}\n\n{desc}"
 
     def _cmd_status(self, _: str) -> str:
         print_status(self._llm)

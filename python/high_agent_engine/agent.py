@@ -21,6 +21,15 @@ if TYPE_CHECKING:
 
 # ── Agent definitions ──────────────────────────────────────────────────────────
 
+def _load_skill_manager():
+    """Load the global SkillManager — always returns one, even if no skills are found."""
+    try:
+        from .skills import SkillManager
+        return SkillManager()
+    except Exception:
+        return None
+
+
 class Agent:
     """Base agent class. All agents have a role, specialty, and execute method."""
 
@@ -31,11 +40,22 @@ class Agent:
         self.last_action = ""
         self.last_phi = 0.0
         self.findings: List[str] = []
+        self._skill_manager = _load_skill_manager()
 
     def analyze(self) -> Dict[str, Any]:
         """Analyze the current graph state. Override in subclasses."""
         snap = self.engine.snapshot()
         return {"snapshot": snap, "phi": snap.phi}
+
+    def active_skills(self) -> List[Dict]:
+        """Return skills whose metric triggers match the current graph state."""
+        if not self._skill_manager:
+            return []
+        try:
+            snap = self.engine.snapshot()
+            return self._skill_manager.match_metrics(snap)
+        except Exception:
+            return []
 
     def execute(self, task: str) -> Dict[str, Any]:
         """Execute a task. Returns dict with result, phi_before, phi_after, action."""
@@ -43,12 +63,15 @@ class Agent:
         result = self._execute_impl(task)
         snap = self.engine.snapshot()
         self.last_action = result.get("action", "")
+        skills = self.active_skills()
         return {
             **result,
             "phi_before": self.last_phi,
             "phi_after": snap.phi,
             "phi_delta": snap.phi - self.last_phi,
             "agent": self.name,
+            "active_skills": [s.get("id") for s in skills],
+            "skill_count": len(skills),
         }
 
     def _execute_impl(self, task: str) -> Dict[str, Any]:
@@ -357,6 +380,20 @@ class Swarm:
         results = {}
         plan = []
 
+        # Always load all skills and find which are active right now
+        active_skills: List[Dict] = []
+        try:
+            from .skills import SkillManager
+            sm = SkillManager()
+            snap = self.engine.snapshot()
+            active_skills = sm.match_metrics(snap)
+            # Apply any active skill actions via the skill agent
+            if active_skills:
+                skill_r = self.agents["skill"].execute(f"apply active skills: {task}")
+                results["skill"] = skill_r
+        except Exception:
+            pass
+
         # Step 1: Planner analyzes and creates a plan
         planner_result = self.agents["planner"].execute(f"plan: {task}")
         results["planner"] = planner_result
@@ -407,7 +444,7 @@ class Swarm:
             self.engine.switch_regime(best_regime)
 
         # Step 5: Generate report
-        report = self._build_report(task, start_phi, end_phi, plan, results, end_snap)
+        report = self._build_report(task, start_phi, end_phi, plan, results, end_snap, active_skills)
 
         return {
             "task": task,
@@ -417,13 +454,15 @@ class Swarm:
             "agents_used": list(results.keys()),
             "plan": plan,
             "final_regime": self.engine.current_regime,
+            "active_skills": [s.get("id") for s in active_skills],
             "report": report,
             "results": results,
         }
 
     def _build_report(
         self, task: str, start_phi: float, end_phi: float,
-        plan: List[tuple], results: Dict, snap: GraphSnapshot
+        plan: List[tuple], results: Dict, snap: GraphSnapshot,
+        active_skills: Optional[List[Dict]] = None,
     ) -> str:
         delta = end_phi - start_phi
         delta_str = f"+{delta:.4f}" if delta >= 0 else f"{delta:.4f}"
@@ -444,6 +483,14 @@ class Swarm:
         for agent_name, result in results.items():
             lines.append(f"  [{agent_name}] {result.get('action', 'no action')}")
 
+        skill_lines = []
+        if active_skills:
+            skill_lines.append("")
+            skill_lines.append("Active skills (triggered by current metrics):")
+            for s in active_skills:
+                skill_lines.append(f"  ★ [{s.get('id')}] {s.get('name', '')}")
+                skill_lines.append(f"    {s.get('description', '')}")
+
         lines.extend([
             f"",
             f"Final metrics:",
@@ -451,6 +498,7 @@ class Swarm:
             f"  Č(G) = {snap.coupling:.4f}",
             f"  V    = {snap.mean_v:.2f}",
             f"  Φ(G) = {snap.phi:+.4f}",
+            *skill_lines,
             f"═══════════════════════════════════════════════════════════",
         ])
 

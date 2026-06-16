@@ -129,7 +129,9 @@ class SkillManager:
         self.skills: Dict[str, Skill] = {}
         self.loaded: Dict[str, Skill] = {}
         self.skill_dirs = skill_dirs or DEFAULT_SKILL_DIRS
+        self._yaml_skills: List[Dict] = []
         self._load_all()
+        self._load_yaml_skills()
 
     def _load_all(self) -> None:
         """Scan all skill directories and load every skill file."""
@@ -138,11 +140,128 @@ class SkillManager:
             if not path.exists():
                 continue
             for f in path.rglob("*.md"):
+                if f.name.lower() in ("readme.md", "changelog.md", "contributing.md"):
+                    continue
                 try:
                     skill = Skill.from_file(str(f))
                     self.skills[skill.name] = skill
                 except Exception:
                     pass  # Skip malformed skills
+
+    def _load_yaml_skills(self) -> None:
+        """Load metric-triggered skills from skills.yaml files."""
+        search_paths = [
+            Path("./skills/skills.yaml"),
+            Path(__file__).parent.parent.parent / "skills" / "skills.yaml",
+        ]
+        for p in search_paths:
+            if not p.exists():
+                continue
+            try:
+                try:
+                    import yaml
+                    with open(p) as f:
+                        data = yaml.safe_load(f)
+                except ImportError:
+                    # Minimal yaml fallback — parse the skills.yaml structure manually
+                    data = self._parse_simple_yaml(str(p))
+                for entry in (data or {}).get("skills", []):
+                    self._yaml_skills.append(entry)
+            except Exception:
+                pass
+            break
+
+    @staticmethod
+    def _parse_simple_yaml(path: str) -> Dict:
+        """Minimal skills.yaml parser — handles the known format without pyyaml."""
+        import re as _re
+        skills = []
+        current: Optional[Dict] = None
+        trigger: Optional[Dict] = None
+        with open(path) as f:
+            for line in f:
+                stripped = line.rstrip()
+                indent = len(line) - len(line.lstrip())
+                if stripped.strip().startswith("- id:"):
+                    if current:
+                        skills.append(current)
+                    current = {"id": stripped.split(":", 1)[1].strip(), "trigger": {}, "action": ""}
+                    trigger = None
+                elif current is not None:
+                    kv = stripped.strip()
+                    if kv.startswith("name:"):
+                        current["name"] = kv.split(":", 1)[1].strip()
+                    elif kv.startswith("description:"):
+                        current["description"] = kv.split(":", 1)[1].strip()
+                    elif kv.startswith("tags:"):
+                        current["tags"] = kv.split(":", 1)[1].strip()
+                    elif kv.startswith("trigger:") and ":" not in kv[8:]:
+                        trigger = {}
+                        current["trigger"] = trigger
+                    elif trigger is not None and kv.startswith("metric:"):
+                        trigger["metric"] = kv.split(":", 1)[1].strip()
+                    elif trigger is not None and kv.startswith("operator:"):
+                        trigger["operator"] = kv.split(":", 1)[1].strip().strip('"')
+                    elif trigger is not None and kv.startswith("threshold:"):
+                        try:
+                            trigger["threshold"] = float(kv.split(":", 1)[1].strip())
+                        except ValueError:
+                            pass
+                    elif kv.startswith("action:") and "|" in kv:
+                        current["action"] = ""
+                    elif current.get("action") is not None and indent >= 6 and trigger is None:
+                        current["action"] = (current.get("action", "") + " " + kv.strip()).strip()
+        if current:
+            skills.append(current)
+        return {"skills": skills}
+
+    @staticmethod
+    def _snap_get(snap, key: str):
+        """Get a metric from a snap that is either a dict or an object with attributes."""
+        if isinstance(snap, dict):
+            return snap.get(key)
+        return getattr(snap, key, None)
+
+    def match_metrics(self, snap) -> List[Dict]:
+        """Return yaml skills whose metric triggers match the current snapshot."""
+        _ALIASES = {"max_cyclomatic": "max_v"}
+        matching = []
+        for skill in self._yaml_skills:
+            trigger = skill.get("trigger", {})
+            if not isinstance(trigger, dict):
+                continue
+            raw_metric = trigger.get("metric", "")
+            metric = _ALIASES.get(raw_metric, raw_metric)
+            op = trigger.get("operator", ">")
+            threshold = trigger.get("threshold", 0)
+            val = self._snap_get(snap, metric)
+            if val is None:
+                continue
+            hit = (
+                (op == ">" and val > threshold) or
+                (op == "<" and val < threshold) or
+                (op == ">=" and val >= threshold) or
+                (op == "<=" and val <= threshold)
+            )
+            if hit:
+                matching.append(skill)
+        return matching
+
+    def all_skills_context(self, snap=None) -> str:
+        """Format all skills with active markers for injection into prompts."""
+        lines: List[str] = []
+        if self._yaml_skills:
+            applicable = {s["id"] for s in (self.match_metrics(snap) if snap else [])}
+            for s in self._yaml_skills:
+                active = s["id"] in applicable
+                prefix = "★ ACTIVE  " if active else "  ·  "
+                lines.append(f"{prefix}[{s.get('id', '?')}] {s.get('name', '')}")
+                lines.append(f"           {s.get('description', '')}")
+                if active and s.get("action"):
+                    lines.append(f"           Action: {s['action'][:120].strip()}")
+        for skill in self.skills.values():
+            lines.append(f"  ·  [{skill.category}] {skill.name}: {skill.description[:80]}")
+        return "\n".join(lines) if lines else "No skills loaded."
 
     def load_skill(self, name: str) -> Optional[Skill]:
         """Load a skill by name into the active set."""
