@@ -312,21 +312,55 @@ class NeuralAgent:
             return f"LLM error: {e}\n\n{self._no_llm_response(message)}"
 
     def _no_llm_response(self, message: str) -> str:
-        """Fallback response when no LLM is available."""
+        """Fallback response using live Φ(G) analysis — works without an LLM."""
         snap = self.snapshot()
+        coeffs = Regime.coeffs(self.engine.current_regime)
+
+        q_term = coeffs.alpha * snap.q
+        c_term = -coeffs.beta * snap.coupling
+        v_term = -coeffs.gamma * snap.mean_v
+
+        terms = [
+            (q_term, "Q(G)", "modularity is weak — functions cluster poorly across modules"),
+            (c_term, "Č(G)", f"coupling is {'very high' if snap.coupling > 0.7 else 'elevated'} — cross-module dependencies dominate"),
+            (v_term, "V",    f"cyclomatic complexity is {'high' if snap.mean_v > 10 else 'moderate'} — functions have too many branches"),
+        ]
+        worst = min(terms, key=lambda x: x[0])
+        best_r, best_phi = max(self.engine.sweep_regimes(), key=lambda x: x[1])
+        switch_hint = ""
+        if best_r != self.engine.current_regime and (best_phi - snap.phi) > 0.01:
+            switch_hint = f"\nBest regime: switch {self.engine.current_regime} → {best_r}  (Δ={best_phi - snap.phi:+.4f})"
+
+        hot = []
+        try:
+            hot = [n.id for n in self.engine.graph.hot_spots(5.0)[:3]]
+        except Exception:
+            pass
+
         return textwrap.dedent(f"""\
-            No LLM available. Here's the live graph analysis:
+            Φ(G) = {snap.phi:+.4f}  [{self.engine.current_regime.upper()}]
+            ═══════════════════════════════════════
+            Φ = α·Q − β·Č − γ·V
+              = {coeffs.alpha}·({snap.q:.4f}) − {coeffs.beta}·({snap.coupling:.4f}) − {coeffs.gamma}·({snap.mean_v:.2f})
+              = {q_term:+.4f} {c_term:+.4f} {v_term:+.4f}
+              = {snap.phi:+.4f}
 
-            Φ(G) = {snap.phi:+.4f}  (regime: {self.engine.current_regime})
-            Q(G) = {snap.q:.4f}  Č(G) = {snap.coupling:.4f}  mean(V) = {snap.mean_v:.2f}
+            Q(G)     = {snap.q:.4f}  (modularity)
+            Č(G)     = {snap.coupling:.4f}  (coupling)
+            mean(V)  = {snap.mean_v:.2f}   (cyclomatic)
 
-            Graph: {snap.n_nodes} nodes, {snap.n_edges} edges across {snap.n_modules} modules.
+            Dominant constraint: {worst[1]} — {worst[2]}
+              Term value: {worst[0]:+.4f}{switch_hint}
 
-            To enable AI chat:
-              Ollama:   curl -fsSL https://ollama.com/install.sh | sh
-                        ollama pull llama3.2:3b
-              OpenAI:   export OPENAI_API_KEY=sk-...
-              Run 'agent.setup()' to auto-detect.
+            Graph: {snap.n_nodes} nodes · {snap.n_edges} edges · {snap.n_modules} modules{f'{chr(10)}Hot spots: {", ".join(hot)}' if hot else ''}
+
+            ─── To enable AI chat ──────────────────
+            Ollama (local, free):
+              pkg install ollama   # Termux
+              ollama pull llama3.2:3b
+            OpenAI:
+              export OPENAI_API_KEY=sk-...
+            Then: python -m high_agent_engine tui
         """)
 
     # ── Command routing ───────────────────────────────────────────────────

@@ -179,6 +179,7 @@ or just use Ollama (auto-detected).
     # Subcommands
     subparsers = parser.add_subparsers(dest="command", help="Command to run")
 
+    subparsers.add_parser("tui",     help="Chat-first ANSI TUI dashboard (default)")
     subparsers.add_parser("metrics", help="Show live Φ(G) metrics")
     subparsers.add_parser("sweep", help="Evaluate all 3 regimes")
     subparsers.add_parser("theory", help="Full Theory Mode explanation")
@@ -208,10 +209,15 @@ or just use Ollama (auto-detected).
 
     args = parser.parse_args()
 
-    # Default: run REPL
-    if args.command is None:
-        from high_agent_engine.repl import main as repl_main
-        repl_main()
+    # Default: run the TUI
+    if args.command is None or args.command == "tui":
+        try:
+            from high_agent_engine.tui import run_tui
+            run_tui()
+        except Exception as e:
+            print(f"TUI unavailable ({e}), falling back to REPL.")
+            from high_agent_engine.repl import main as repl_main
+            repl_main()
         return
 
     engine = RegimeEngine()
