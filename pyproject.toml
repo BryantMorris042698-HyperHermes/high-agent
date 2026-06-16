@@ -61,7 +61,7 @@ high-agent-repl = "high_agent_engine.repl:main"
 high-agent-daemon = "high_agent_engine.daemon:main"
 
 [tool.setuptools.packages.find]
-where = ["."]
+where = ["python"]
 include = ["high_agent_engine*"]
 
 [tool.pytest.ini_options]
